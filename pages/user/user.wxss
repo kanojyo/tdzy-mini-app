@@ -1,1 +1,36 @@
 /* pages/user/user.wxss */
+page{
+  background-color: #ededed;
+}
+.nav{
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.nav-item{
+  padding: 0 30rpx;
+  border-top:1rpx solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.nav-item .txt{
+  display: flex;
+}
+.nav-item .txt text{
+  display: block;
+  font-size: 30rpx;
+  color:#333;
+}
+.nav-item .txt>image{
+  width: 42rpx;
+  height: 44rpx;
+  padding-top: 18rpx;
+  margin-right: 20rpx;
+}
+.nav-item .arrow>image{
+  width: 15rpx;
+  height: 26rpx;
+  padding-top: 22rpx;
+}

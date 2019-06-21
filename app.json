@@ -1,12 +1,11 @@
 {
   "pages": [
     
-    "pages/healthNews/healthNews",
     "pages/index/index",
-    "pages/user/user",
     "pages/demo/demo",
-    "pages/chat/chat"
-    
+    "pages/healthNews/healthNews",
+    "pages/chat/chat",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
