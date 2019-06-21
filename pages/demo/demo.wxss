@@ -1,28 +1,10 @@
-/* pages/healthNews/healthNews.wxss */
-.topTabSwiper{
-  display: flex;
-  width: 100%;
-}
-.tab{
-  flex:1;
-  text-align: center;
-  padding: 10rpx 0;
-  font-size: 30rpx;
-  color:#666;
-}
+/* pages/demo/demo.wxss */
+.tab{flex:1;text-align: center;padding: 10rpx 0; }
+.topTabSwiper{ zoom: 1;width: 100%;display: flex;}
 .topTabSwiper:after{content: ""; clear: both;display: block;}
-.tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}
-.swiper{
-  width: 100%;
-}
-.swiper .tab-item{
-  display: none;
-}
-.swiper .swiper_con{
-  display: block;
-  width: 100%;
-  padding: 20rpx 0;
-}
+.tabBorer{border-bottom: 1px solid #f00; color: #f00;}
+.swiper{width: 100%;}
+.swiper_con{text-align: center; width: 100%; height: 100%; padding: 20rpx 0;}
 .hot-recommend .item{
   padding: 20rpx 30rpx 0 30rpx;
   height: 163rpx;
@@ -40,6 +22,7 @@
 .hot-recommend .item-text{
   padding-left: 20rpx;
   width: 436rpx;
+  text-align: left;
 }
 .hot-recommend .item-text .title{
   font-size: 30rpx;

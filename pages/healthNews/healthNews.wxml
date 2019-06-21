@@ -1,2 +1,57 @@
 <!--pages/healthNews/healthNews.wxml-->
-<text>pages/healthNews/healthNews.wxml</text>
+<view class="container">
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>热文推荐</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>医院快讯</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>两性要闻</view>
+    <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'>健康科普</view>
+  </view>
+  <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
+    <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} hot-recommend'>
+      <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.article_cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.article_title}}</text>
+          <text class="desc">{{item.article_description}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='tab-item {{currentData == 1 ? "swiper_con" : ""}} hot-recommend'>
+      <!-- <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.article_cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.article_title}}</text>
+          <text class="desc">{{item.article_description}}</text>
+        </view>
+      </view> -->
+      1111
+    </view>
+    <view class='tab-item {{currentData == 2 ? "swiper_con" : ""}} hot-recommend'>
+      <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.article_cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.article_title}}</text>
+          <text class="desc">{{item.article_description}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='tab-item {{currentData == 3 ? "swiper_con" : ""}} hot-recommend'>
+      <!-- <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.article_cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.article_title}}</text>
+          <text class="desc">{{item.article_description}}</text>
+        </view>
+      </view> -->
+      3333
+    </view>
+  </view>
+</view>
