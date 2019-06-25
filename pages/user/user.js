@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{
+      'avatar':'https://cdn-statis.mangguokandian.com/avatar.png',
+      'nickname':'kanojyo',
+      'telephone':'11011011011'
+    }
   },
 
   /**

@@ -2,13 +2,49 @@
 page{
   background-color: #ededed;
 }
+.user-info{
+  width: 100%;
+  background: #fff;
+  /* height: 200rpx; */
+  margin-bottom: 20rpx;
+}
+.user-info .info{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+}
+.left{
+  display: flex;
+}
+.left>image{
+  height: 120rpx;
+  width: 120rpx;
+}
+.left .text{
+  margin-left: 20rpx;
+  color:#333;
+  padding-top: 20rpx;
+}
+.left .text .nickname{
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+}
+.left .text .num{
+  font-size: 30rpx;
+}
+.right .sign{
+  border-radius: 8rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
 .nav{
   width: 100%;
   background: #fff;
-  margin-bottom: 10rpx;
+  margin-bottom: 20rpx;
 }
 .nav-item{
-  padding: 0 30rpx;
+  padding: 10rpx 30rpx;
   border-top:1rpx solid #efefef;
   display: flex;
   justify-content: space-between;

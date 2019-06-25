@@ -14,6 +14,33 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const baseUrl = "https://tdxcx.wuhanlst.com";
+const device = wx.getStorageSync('device')||'';
+const token = wx.getStorageSync('token') || '';
+
+function getRequest(model) {
+  wx.request({
+    url: baseUrl + model.url,
+    data: model.param,
+    header: {
+      'Content-Type': 'application/json',
+      'device': device,
+      'Authorization': 'Bearer ' + token
+    },
+    method: model.method,
+    success: function (res) {
+      model.success(res.data)
+    },
+    fail: function (res) {
+      wx.showModal({
+        title: res,
+        showCancel: false
+      })
+    }
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getRequest: getRequest,
 }

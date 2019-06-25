@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+import { getRequest } from '../../utils/util.js';
 const app = getApp()
 
 Page({
@@ -84,7 +85,22 @@ Page({
       },
     ]
   },
-  onLoad: function () {
-    
+  onShareAppMessage: function () {
+    return {
+      title: '泰斗医聊',
+      path: '/index/index?id=123'
+    }
   },
+  onLoad: function () {
+    getRequest({
+      url: '/v1/medical_info/index',
+      param: '',
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  },
+  
+  
 })
