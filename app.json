@@ -5,6 +5,7 @@
     "pages/healthNews/healthNews",
     "pages/chat/chat",
     "pages/user/user"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
