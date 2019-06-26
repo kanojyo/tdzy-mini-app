@@ -15,7 +15,7 @@
     </view>
     <view wx:else>请升级微信版本</view>
   </view>
-  <view class="main" wx:else>
+  <view wx:else class="main">
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>

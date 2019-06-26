@@ -61,7 +61,7 @@ Page({
           })
         }
       });
-      this.getIndex();
+      that.getIndex();
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -116,6 +116,7 @@ Page({
         }
       }
     });
+
   },
   onReady(){
   },
