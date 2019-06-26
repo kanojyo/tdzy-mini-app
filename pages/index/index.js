@@ -136,12 +136,7 @@ Page({
       },
       success(res) {
         console.log(res)
-        that.setData({
-          imgUrls: res.data.banner,
-          officeList: res.data.list_office,
-          doctorList: res.data.list_doctor,
-          article: res.data.list_hot_article
-        })
+
       }
     })
   },
