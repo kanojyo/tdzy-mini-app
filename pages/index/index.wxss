@@ -166,4 +166,9 @@
   color:#666;
   display: block;
   margin-top: 16rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;/* 只显示三行文字 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;/* 多余部分点代替 */
 }

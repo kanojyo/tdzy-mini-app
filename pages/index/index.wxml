@@ -3,14 +3,14 @@
   <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
     <block wx:for="{{imgUrls}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}" class="slide-image"/>
+        <image src="{{item.img}}" class="slide-image"/>
       </swiper-item>
     </block>
   </swiper>
   <view class="office">
     <view class="office-item" wx:for="{{officeList}}" wx:key="index">
-      <image class="icon" src="{{item.img}}"></image>
-      <text>{{item.text}}</text>
+      <image class="icon" src="{{item.office_img}}"></image>
+      <text>{{item.name}}</text>
     </view>
   </view>
   <view class='intro'>
@@ -32,7 +32,7 @@
       </view>
     </view>
     <view class="content" >
-      <view class="item" wx:for="{{doctorList}}" wx:key="index">
+      <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
         <view class="item-avatar">
           <image class="avatar" src="{{item.avatar}}"></image>
           <view class="text">力荐</view>
@@ -56,7 +56,7 @@
   <view class='intro hot-recommend'>
     <view class="title">
       <view class="hospital">热门推荐</view>
-      <view class="more">
+      <view class="more" bindtap="all_news">
         <text>更多</text>
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
       </view>
