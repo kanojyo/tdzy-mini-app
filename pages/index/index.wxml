@@ -9,14 +9,13 @@
         <view>欢迎来到泰斗医聊小程序</view>
         <text>需要你授权登录才可继续操作</text>
       </view>
-
       <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
         授权登录
       </button>
     </view>
     <view wx:else>请升级微信版本</view>
   </view>
-  <view wx:else>
+  <view class="main" wx:else>
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
@@ -73,7 +72,7 @@
     <view class='intro hot-recommend'>
       <view class="title">
         <view class="hospital">热门推荐</view>
-        <view class="more">
+        <view class="more" bindtap="all_news">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
         </view>
@@ -82,10 +81,6 @@
         <view class="item" wx:for="{{article}}" wx:key="index">
           <view class="item-img">
             <image src="{{item.article_cover}}"></image>
-          </view>
-          <view class="item-text">
-            <text class="title">{{item.article_title}}</text>
-            <text class="desc">{{item.article_description}}</text>
           </view>
         </view>
       </view>
