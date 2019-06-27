@@ -1,0 +1,20 @@
+<import src="/wxParse/wxParse.wxml"/>
+<view class="container">
+  <view class="atticle_title">{{article_info.article_title}}</view>
+  <view class="article_time">2019-04-20 18:31:22</view>
+  <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
+  <view class="middle-box">
+    <view class="star-box">
+      <view class="iconfont icon-wujiaoxing icon"></view>
+      <view class="nums">222</view>
+    </view>
+
+    <view class="share-box">
+      <view class="iconfont icon-tubiao212 icon"></view>
+      <view class="nums">222</view>
+    </view>
+  </view>
+  <view class="buttom-btn">
+    我要咨询
+  </view>
+</view>
