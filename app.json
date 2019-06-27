@@ -4,8 +4,8 @@
     "pages/demo/demo",
     "pages/healthNews/healthNews",
     "pages/chat/chat",
-    "pages/user/user"
-    
+    "pages/user/user",
+    "pages/articleInfo/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
