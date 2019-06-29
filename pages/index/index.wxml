@@ -42,7 +42,7 @@
     <view class='intro doctor-recommend'>
       <view class="title">
         <view class="hospital">名医推荐</view>
-        <view class="more">
+        <view class="more" bindtap="doctor_list">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
         </view>

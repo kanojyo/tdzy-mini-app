@@ -1,0 +1,43 @@
+<view class="container"> 
+  <view class="main">
+    <view class='intro doctor-recommend'>
+      <view class="content">
+          <view class="item-avatar">
+            <image class="avatar" src="{{doctor.avatar}}"></image>
+          </view>
+          <view class="item-content">
+            <view class="item-name">
+              <view>
+                <text class="name" style="color:black;">{{doctor.name}}</text>
+                <text class="position">{{doctor.position}}</text>
+              </view>
+              <view class="order-rule" bindtap="order_role">预约规则</view>
+            </view>
+            <text class="item-desc">擅长: {{doctor.brief}}</text>
+            <view class="item-label">
+              <view class="label" wx:for="{{doctor.label}}" wx:key="index">{{item}}</view>
+            </view>
+          </view>
+      </view>
+    </view>
+    <view class="order-tips">
+      若当日预约号已挂满，请您到医院窗口挂号
+    </view>
+    
+  </view>
+</view>
+<view class="order-list">
+  <view class="order-content" wx:for="{{work}}" wx:key="index">
+    <view class="order-time-box">
+      <view class="order-day">{{item.order_time}}（{{item.week_day}}）</view> 
+      <view class="order-time" wx:if="{{item.time_slot == 1}}">上午08：00-12：00</view>
+      <view class="order-time" wx:else>下午14：00-18：00</view>
+    </view>
+    <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
+    <view class="order-price" wx:else>免费</view>
+    <view class="order-btn success" wx-if="{{item.status == 1}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 2}}">已经预约</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 3}}">约满</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 4}}">暂停预约</view>
+  </view>
+</view>

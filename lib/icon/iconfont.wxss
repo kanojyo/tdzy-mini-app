@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tubiao212:before {
+.fenxiang:before {
   content: "\e61d";
 }
 
@@ -23,11 +23,13 @@
   content: "\e676";
 }
 
-.icon-jingdiananli_wujiaoxing_shoucanghou:before {
+.shouchang:before {
   content: "\e64a";
+  color: #FF962F;
 }
 
-.icon-fenxiang:before {
+.fenxiang-success:before {
   content: "\e658";
+  color: #FF962F;
 }
 

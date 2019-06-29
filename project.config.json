@@ -39,12 +39,97 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
 					"name": "user",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/articleInfo/index",
+					"query": "id=581",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor",
+					"pathName": "pages/doctor/list",
+					"query": "id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor-bind",
+					"pathName": "pages/doctor/bind",
+					"query": "id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_bind",
+					"pathName": "pages/doctor/bind/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor",
+					"pathName": "pages/doctor/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "doctor_id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "doctor_id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "doctor_id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "d=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "id=19",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "doctor_order",
+					"pathName": "pages/doctor/order/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
@@ -13,14 +13,14 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-    var url = options.url;
     var that = this;
+    var article_info;
     getRequest({
       url: '/v1/information/detail?article_id=' + id,
       param: '',
       method: 'GET',
       success: function (res) {
-        console.log(res.data);
+        console.log(res)
         var info = res.data;
         WxParse.wxParse('info', 'html', info.article_content, that, 0);
         that.setData({
@@ -28,6 +28,7 @@ Page({
         })
       }
     })
+    
   },
 
   /**
@@ -75,7 +76,66 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (res) {
+    var that = this;
+    
+    return {
+      title: that.data.article_info.article_title,
+      desc: that.data.article_info.article_description,
+      path: that.data.article_info.article_url,
+      success: function(res) {
+        var nums = that.data.article_info.article_share;
+        that.data.article_info.article_share = nums + 1;
+        that.data.article_info.is_share = 1;
+        that.setData({
+          article_info: that.data.article_info
+        })
+        getRequest({
+          url: '/v1/information/share_article?article_id=' + that.data.article_info.id,
+          param: '',
+          method: 'GET',
+          success: function (result) {
+        
+          }
+        })
+      }
+    }
+  },
+  //点赞
+  star:function (e) {
+    var id = e.currentTarget.id;
+    var that = this;
+    getRequest({
+      url: '/v1/information/collect?article_id=' + id,
+      param: '',
+      method: 'GET',
+      success: function (res) {
+        var nums = that.data.article_info.article_collection;
+        if (res.data.status == 1) {
+          that.data.article_info.article_collection = nums + 1;
+          that.data.article_info.is_collect = 1;
+          
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success',
+            duration: 2000
+          });
+          
+        } else {
+          that.data.article_info.article_collection = nums - 1;
+          that.data.article_info.is_collect = 2;
+          
+          wx.showToast({
+            title: '已取消收藏',
+            icon: 'success',
+            duration: 2000
+          });
+          
+        }
+        that.setData({
+          article_info: that.data.article_info
+        })
+      }
+   })
   }
 })

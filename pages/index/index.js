@@ -154,8 +154,14 @@ Page({
   //文章详情
   acticle_info: function (e) {
     var article_id = e.currentTarget.id;
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/articleInfo/index?id=' + article_id
+    })
+  },
+  //跳转医生列表
+  doctor_list: function() {
+    wx.navigateTo({
+      url: '/pages/doctor/list/index'
     })
   }
 })

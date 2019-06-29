@@ -30,7 +30,7 @@
   
 }
 .share-box {
-  margin-left: 40rpx;
+  margin-left: 60rpx;
 }
 .icon{
   padding:  5rpx 20rpx;
@@ -54,5 +54,9 @@
   text-align: center;
   position: fixed;
   bottom: 0;
+}
+
+button {
+  line-height: normal;
 }
 

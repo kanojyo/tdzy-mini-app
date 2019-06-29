@@ -1,0 +1,11 @@
+/* pages/doctor/orderRole/orderRole.wxss */
+.order-rule {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+}
+
+.order-rule-info {
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
