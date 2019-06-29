@@ -10,7 +10,6 @@ const user_age = "";
 for (let i = 1; i <= 100; i++) {
   age.push(i)
 }
-
 Page({
 
   /**
@@ -33,10 +32,10 @@ Page({
         maxTextLen: maxTextLen,
         textLen: textLen
       });
-    }
+    },
   },
   formSubmit: function (e) {
-
+    var doctor_id = this.data.doctor_id;
     var age = this.data.user_age;
     var name = e.detail.value.name;
     var sex = e.detail.value.sex;
@@ -79,7 +78,7 @@ Page({
           if (res.data.code == 200) {
             //绑定个人信息成功跳转医生预约页面
             wx.navigateTo({
-              url: '/pages/doctor/order/index?id=' . doctor_id
+              url: '/pages/doctor/order/index?id=' + doctor_id,
             })
           } else {
             wx.showModal({
@@ -100,6 +99,9 @@ Page({
    */
   onLoad: function (options) {
     var doctor_id = options.id
+    this.setData({
+      doctor_id: doctor_id
+    })
   },
 
   /**
