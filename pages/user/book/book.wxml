@@ -1,0 +1,139 @@
+<!--pages/user/book/book.wxml-->
+<view class="container">
+  <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>未就诊</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>已就诊</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>已取消</view>
+  </view>
+  <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
+    <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} list list1'>
+      <view wx:if="{{list1.length}}">
+        <view class="item" wx:for="{{list1}}" wx:key="index">
+          <view class="title">
+            <text>预约编号</text>
+            <text>{{item.appointment_code}}</text>
+          </view>
+          <view class="item-content">
+            <view class="avatar">
+              <image src="{{item.doctor_avatar}}"></image>
+            </view>
+            <view class="text">
+              <view class="doctor_name">医师：{{item.doctor_name}}</view>
+              <view class="office">就诊科室：{{item.office}}</view>
+              <view class="cost">费用：¥{{item.order_money}}</view>
+              <view class="time">
+                <view>
+                  <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+                  <text>就诊时间：</text>
+                  <text>{{filter.formatDate(item.order_time,'notime')}}</text>
+                  <text class="week">{{item.week_day}}</text>
+                </view>
+                <view class="time_slot" wx:if="{{item.time_slot}}==1">上午08:00-12:00</view>
+                <view class="time_slot" wx:else>下午14:00-18:00</view>
+
+              </view>
+            </view>
+          </view>
+          <view class="user">
+            <view class="info">
+              <text>{{item.user_name}}</text>
+              <text>{{item.mobile}}</text>
+            </view>
+            <view class="btn">
+              <button id="{{item.id}}"  bindtap="openConfirm">取消预约</button>
+            </view>
+
+          </view>
+        </view>
+      </view>
+      <view wx:else></view>
+    </view>
+    <view class='tab-item {{currentData == 1 ? "swiper_con" : ""}} list list2'>
+      <view wx:if="{{list2.length}}">
+        <view class="item" wx:for="{{list2}}" wx:key="index">
+          <view class="title">
+            <text>预约编号</text>
+            <text>{{item.appointment_code}}</text>
+          </view>
+          <view class="item-content">
+            <view class="avatar">
+              <image src="{{item.doctor_avatar}}"></image>
+            </view>
+            <view class="text">
+              <view class="doctor_name">医师：{{item.doctor_name}}</view>
+              <view class="office">就诊科室：{{item.office}}</view>
+              <view class="cost">费用：¥{{item.order_money}}</view>
+              <view class="time">
+                <view>
+                  <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+                  <text>就诊时间：</text>
+                  <text>{{filter.formatDate(item.order_time,'notime')}}</text>
+                  <text class="week">{{item.week_day}}</text>
+                </view>
+                <view class="time_slot" wx:if="{{item.time_slot}}==1">上午08:00-12:00</view>
+                <view class="time_slot" wx:else>下午14:00-18:00</view>
+              </view>
+            </view>
+          </view>
+          <view class="user">
+            <view class="info">
+              <text>{{item.user_name}}</text>
+              <text>{{item.mobile}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else></view>
+    </view>
+    <view class='tab-item {{currentData == 2 ? "swiper_con" : ""}} list list3'>
+      <view wx:if="{{list3.length}}">
+        <view class="item" wx:for="{{list3}}" wx:key="index">
+          <view class="title">
+            <text>预约编号</text>
+            <text>{{item.appointment_code}}</text>
+          </view>
+          <view class="item-content">
+            <view class="avatar">
+              <image src="{{item.doctor_avatar}}"></image>
+            </view>
+            <view class="text">
+              <view class="doctor_name">医师：{{item.doctor_name}}</view>
+              <view class="office">就诊科室：{{item.office}}</view>
+              <view class="cost">费用：¥{{item.order_money}}</view>
+              <view class="time">
+                <view>
+                  <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+                  <text>就诊时间：</text>
+                  <text>{{filter.formatDate(item.order_time,'notime')}}</text>
+                  <text class="week">{{item.week_day}}</text>
+                </view>
+                <view class="time_slot" wx:if="{{item.time_slot}}==1">上午08:00-12:00</view>
+                <view class="time_slot" wx:else>下午14:00-18:00</view>
+
+              </view>
+            </view>
+          </view>
+          <view class="user">
+            <view class="info">
+              <text>{{item.user_name}}</text>
+              <text>{{item.mobile}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else></view>
+    </view>
+  </view>
+  <!-- <view class="page">
+    <view class="page__hd">
+        <view class="page__title">Dialog</view>
+        <view class="page__desc">对话框，采用小程序原生的modal</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="default" bindtap="openConfirm">Confirm Dialog</button>
+            <button class="weui-btn" type="default" bindtap="openAlert">Alert Dialog</button>
+        </view>
+    </view>
+  </view> -->
+</view>

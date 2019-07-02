@@ -39,12 +39,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "user",
 					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "意见反馈",
+					"pathName": "pages/user/feedback/feedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "反馈意见输入页面",
+					"pathName": "pages/user/feedback/upload/upload",
+					"query": "",
 					"scene": null
 				}
 			]

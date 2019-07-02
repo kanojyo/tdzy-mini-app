@@ -1,11 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/demo/demo",
     "pages/healthNews/healthNews",
     "pages/chat/chat",
-    "pages/user/user"
-    
+    "pages/user/user",
+    "pages/user/authenticity/authenticity",
+    "pages/user/book/book",
+    "pages/user/collect/collect",
+    "pages/user/feedback/feedback",
+    "pages/user/feedback/upload/upload"
   ],
   "window": {
     "backgroundTextStyle": "light",

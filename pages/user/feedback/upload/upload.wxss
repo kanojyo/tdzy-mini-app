@@ -1,0 +1,23 @@
+/* pages/user/feedback/upload/upload.wxss */
+.content{
+  width: 90%;
+  padding: 0 30rpx;
+}
+.text textarea{
+  width: 95%;
+  border:1rpx solid #ededed;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+}
+.btn{
+  position: fixed;
+  left:0;
+  bottom: 0;
+  width: 100%;
+}
+.btn button{
+  background: #F04844;
+  color:#fff;
+}
+.page__bd{width: 100%}

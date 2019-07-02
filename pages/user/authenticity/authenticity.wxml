@@ -1,0 +1,28 @@
+<!--pages/user/authenticity/authenticity.wxml-->
+<view class="container">
+  <view class="search">
+    <input placeholder="请输入需要验证的微信号" auto-focus/>
+    <button class="btn"></button>
+  </view>
+  <view class="content">
+    <view class="declare ">
+      <view class="title">郑重申明</view>
+      <view class="text">{{declare_txt}}</view>
+    </view>
+    <view class="query declare" >
+      <view class="title">查询流程</view>
+      <view wx:for="{{queryData}}" wx:key="index" class="text">{{item.text}}</view>
+      <view class="result">
+        <view>查询结果显示“<text class="yellow">此微信号是武汉泰斗中医院所有，请您放心咨询</text>”，则表示该<text class="yellow">微信号为真</text>；</view>
+        <view>查询结果显示“<text class="red">此微信号非武汉泰斗中医院所有，谨防上当受骗</text>”，则表示该<text class="red">微信号为假</text>；</view>
+      </view>
+    </view>
+    <view class="declare ">
+      <view class="title">武汉泰斗中医院官方微信号防伪查询</view>
+      <view class="text">{{intro_txt}}</view>
+    </view>
+    <view class="address declare">
+      <view wx:for="{{addressData}}" wx:key="index" class="text">{{item.text}}</view>
+    </view>
+  </view>
+</view>
