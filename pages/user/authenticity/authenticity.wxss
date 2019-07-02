@@ -1,0 +1,51 @@
+/* pages/user/authenticity/authenticity.wxss */
+.search{
+  width: 80%;
+  position: relative;
+  margin-top: 40rpx;
+}
+.search input{
+  border:1px solid #d1b574;
+  font-size: 30rpx;
+  padding: 15rpx 0 15rpx 40rpx;
+  border-radius: 30rpx;
+}
+.search .btn{
+  position: absolute;
+  top:0;
+  right: 0;
+  background:#d1b574 url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/query%402x.png') center center no-repeat;
+  background-size: 35%;
+  height: 100%;
+  width: 140rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.content{
+  width: 100%;
+}
+.content .declare{
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  border-bottom:1px solid #efefef;
+}
+.content .title{
+  font-size: 36rpx;
+  color:#333;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.content .declare .text{
+  font-size: 26rpx;
+}
+.content .query .result{
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}
+.content .query .result .yellow{
+  color:#d1b574;
+}
+.content .query .result .red{
+  color:#d02424;
+}

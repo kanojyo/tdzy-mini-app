@@ -1,0 +1,15 @@
+<!--pages/user/collect/collect.wxml-->
+<view class="container">
+  <view wx:if="{{list.length}}" class="content">
+    <view class="item" wx:for="{{list}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.title}}</text>
+          <text class="desc">{{item.description}}</text>
+        </view>
+      </view>
+  </view>
+  <view wx:else>暂无收藏</view>
+</view>

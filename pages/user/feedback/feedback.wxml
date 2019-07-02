@@ -1,0 +1,44 @@
+<!--pages/user/feedback/feedback.wxml-->
+<view class="container">
+  <view class="chatList" >
+    <view class="item" wx:for="{{chatList}}" wx:key="item">
+      <view class="left" wx:if="{{item.type===2}}">
+        <view class="avatar">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="centens">
+          <!-- <view class="time"></view> -->
+          <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
+          <view class="pull-left" wx:if="{{item.msg_type===2}}">
+            <image src="{{item.img.url}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="right" wx:if="{{item.type===1}}">
+        <view class="avatar">
+          <image src="{{item.avatar}}"></image>
+        </view>
+        <view class="centens">
+          <!-- <view class="time"></view> -->
+          <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
+          <view class="pull-right" wx:if="{{item.msg_type===2}}">
+            <image src="{{item.img.url}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="bot">
+    <view wx:if="{{state ===1}}" class="btn1">
+      <button bindtap='gotoUpload'>提问</button>
+    </view>
+    <view wx:if="{{state ===2}}" class="btn2">
+      <button bindtap='gotoUpload'>追问</button>
+    </view>
+    <view wx:if="{{state ===3}}" class="btn3">
+      <button bindtap='gotoUpload'>追问</button>
+      <button>关闭</button>
+    </view>
+  </view>
+</view>

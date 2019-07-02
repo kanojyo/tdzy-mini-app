@@ -1,0 +1,109 @@
+/* pages/user/feedback/feedback.wxss */
+page{
+  background-color: #ededed;
+}
+.chatList{
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  padding-bottom: 100rpx;
+  width: 95%;
+}
+.chatList .item{
+  margin-bottom: 20rpx;
+}
+.chatList .left{
+  display: flex;
+  width: 100%;
+}
+.left .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  
+}
+.left .avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.left .centens .text{
+  background: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+  width: 60%;
+}
+.left .centens .text::before{
+  content: '';
+  position: absolute;
+  width:0;
+  height:0;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-right:8px solid #fff;
+  left: -14rpx;
+  top:10rpx;
+}
+.chatList .right{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.right .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+  
+}
+.right .avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.right .centens{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.right .centens .text{
+  background: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+  width: 60%;
+}
+.right .centens .text::before{
+  content: '';
+  position: absolute;
+  width:0;
+  height:0;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-left:8px solid #fff;
+  right: -14rpx;
+  top:10rpx;
+}
+.bot{
+  width: 100%;
+  position: fixed;
+  left:0;
+  bottom:0;
+}
+.btn1 button{
+  background: #F04844;
+  color:#fff;
+}
+.btn2 button{
+  background: #F04844;
+  color:#fff;
+}
+.btn3{
+  display: flex;
+}
+.btn3 button{
+  flex:1;
+  border-radius: 0;
+}
+.btn3 button+button{
+  background: #999;
+  color:#fff;
+}

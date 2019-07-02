@@ -1,0 +1,41 @@
+/* pages/user/collect/collect.wxss */
+.content{
+  border-bottom:1rpx solid #efefef;
+}
+.content .item{
+  padding: 20rpx 30rpx 0 30rpx;
+  height: 163rpx;
+  border-top:1rpx solid #efefef;
+  display: flex;
+}
+.content .item .item-img{
+  width: 224rpx;
+  height: 134rpx;
+}
+.content .item .item-img image{
+  width: 224rpx;
+  height: 134rpx;
+}
+.content .item-text{
+  padding-left: 20rpx;
+  width: 436rpx;
+}
+.content .item-text .title{
+  font-size: 30rpx;
+  color:#333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.content .item-text .desc{
+  font-size: 26rpx;
+  color:#666;
+  display: block;
+  margin-top: 16rpx;
+   display: -webkit-box;
+  -webkit-line-clamp: 2;/* 只显示三行文字 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;/* 多余部分点代替 */
+}

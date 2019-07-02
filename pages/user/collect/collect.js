@@ -1,35 +1,28 @@
-// pages/user/user.js
+// pages/user/collect/collect.js
+import { getRequest } from '../../../utils/util.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
-    telephone:'111111'
+    list: [],
+    page_index:1,
+    page_size:10,
+    maxPage:0,
   },
-  //跳转我的预约
-  GotoBook:function(){
-    wx.navigateTo({
-      url: 'book/book',
-    })
-  },
-  //跳转我的收藏
-  GotoCollect:function(){
-    wx.navigateTo({
-      url: 'collect/collect',
-    })
-  },
-  //跳转真伪查询
-  GotoAuth:function(){
-    wx.navigateTo({
-      url: 'authenticity/authenticity',
-    })
-  },
-  //跳转意见反馈
-  GotoFeedBack:function(){
-    wx.navigateTo({
-      url: 'feedback/feedback',
+  getList(){
+    var that =this;
+    getRequest({
+      url: '/v1/collection/index?page_index=' + that.data.page_index ,
+      method:'GET',
+      success(res){
+        console.log(res)
+        that.setData({
+          list:res.data.data,
+          maxPage: res.data.max_page
+        })
+      }
     })
   },
 
@@ -37,17 +30,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that =this;
-    wx.getUserInfo({
-      success: function (res) {
-        var data = JSON.parse(res.rawData)
-        console.log(data)
-        that.setData({
-          userInfo: data
-        })
-
-      }
-    })
+    this.getList();
   },
 
   /**
