@@ -1,9 +1,6 @@
 // pages/doctor/list.js
-let utils = require('../../../utils/util.js');
+
 import { getRequest } from '../../../utils/util.js';
-const app = getApp();
-const baseUrl = "https://tdxcx.wuhanlst.com";
-var session_key = '';
 
 Page({
 
@@ -19,20 +16,14 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.request({
-      url: baseUrl + '/v1/medical_info/index',
+    getRequest({
+      url: '/v1/medical_info/index',
       method: 'GET',
-      header: {
-        'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
-      },
       success(res) {
-        var arr = res.data.data;
+        var arr = res.data;
         that.setData({
           doctorList: arr.list_doctor
         })
-
       }
     })
   },
@@ -89,25 +80,42 @@ Page({
   order: function (e) {
     var doctor_id = e.currentTarget.id;
     //检测用户是否绑定信息
-    wx.request({
-      url: baseUrl + '/v1/appointment/user_info_perfect',
+
+    getRequest({
+      url: '/v1/appointment/user_info_perfect',
       method: 'GET',
-      header: {
-        'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
-      },
       success(res) {
-        if (!res.data.data.status) {
-          wx.navigateTo({
-            url: '/pages/doctor/bind/index?id=' + doctor_id
-          })
-        } else {
-          wx.navigateTo({
-            url: '/pages/doctor/order/index?id=' + doctor_id,
-          })
-        }
+        if (!res.data.status) {
+           wx.navigateTo({
+             url: '/pages/doctor/bind/index?id=' + doctor_id
+           })
+         } else {
+           wx.navigateTo({
+             url: '/pages/doctor/order/index?id=' + doctor_id,
+           })
+         }
       }
     })
+
+    // wx.request({
+    //   url: baseUrl + '/v1/appointment/user_info_perfect',
+    //   method: 'GET',
+    //   header: {
+    //     'Content-Type': 'application/json',
+    //     'device': wx.getStorageSync('device'),
+    //     'Authorization': 'Bearer ' + wx.getStorageSync('token')
+    //   },
+    //   success(res) {
+    //     if (!res.data.data.status) {
+    //       wx.navigateTo({
+    //         url: '/pages/doctor/bind/index?id=' + doctor_id
+    //       })
+    //     } else {
+    //       wx.navigateTo({
+    //         url: '/pages/doctor/order/index?id=' + doctor_id,
+    //       })
+    //     }
+    //   }
+    // })
   }
 })

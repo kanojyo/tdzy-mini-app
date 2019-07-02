@@ -24,7 +24,7 @@
       </block>
     </swiper>
     <view class="office">
-      <view class="office-item" wx:for="{{officeList}}" wx:key="index">
+      <view class="office-item" wx:for="{{officeList}}" wx:key="index" bindtap="officeInfo" data-url="{{item.office_url}}">
         <image class="icon" src="{{item.office_img}}"></image>
         <text>{{item.name}}</text>
       </view>
@@ -59,7 +59,7 @@
                 <text class="name">{{item.name}}</text>
                 <text class="position">{{item.position}}</text>
               </view>
-              <button class="btn">立即预约</button>
+              <button class="btn" bindtap="order" id="{{item.id}}">立即预约</button>
             </view>
             <text class="item-desc">{{item.brief}}</text>
             <view class="item-label">

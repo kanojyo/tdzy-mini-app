@@ -1,10 +1,6 @@
 // pages/doctor/bind.js
-let utils = require('../../../utils/util.js');
 import { getRequest } from '../../../utils/util.js';
-const app = getApp();
-const baseUrl = "https://tdxcx.wuhanlst.com";
-var session_key = '';
-
+const util = require('../../../utils/util');
 const age = [];
 const user_age = "";
 for (let i = 1; i <= 100; i++) {
@@ -66,9 +62,9 @@ Page({
       })
     } else {
       wx.request({
-        url: baseUrl + '/v1/appointment/update_user_info',
+        url: util.getBaseUrl() + '/v1/appointment/update_user_info',
         method: 'POST',
-        data: {gender : sex, name : name, age : age, mobile : mobile},
+        data: { gender: sex, name: name, age: age, mobile: mobile },
         header: {
           'Content-Type': 'application/json',
           'device': wx.getStorageSync('device'),
@@ -83,7 +79,7 @@ Page({
           } else {
             wx.showModal({
               title: '提示',
-              content: '出错了，请重试',
+              content: res.data.message,
               showCancel: false,
             })
           }

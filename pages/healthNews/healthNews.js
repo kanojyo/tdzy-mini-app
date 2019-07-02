@@ -1,4 +1,6 @@
 // pages/healthNews/healthNews.js
+import { getRequest } from '../../utils/util.js';
+
 Page({
 
   /**
@@ -6,74 +8,27 @@ Page({
    */
   data: {
     currentData: 0,
-    article: [
-      {
-        "id": 114,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190402/20190402c5de9b1bbb0da1e6c8e0d1d54242c861.jpg",
-        "category_id": 63,
-        "article_tag": "痔疮科",
-        "article_title": "24",
-        "article_description": "测试",
-        "article_url": "http://192.168.0.123:8012/info/114.html",
-        "status": 2
-      },
-      {
-        "id": 37,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190318/201903183909b0addfdfc15aceed0ceaa03337da.jpg",
-        "category_id": 30,
-        "article_tag": "痔疮科,心脏科",
-        "article_title": "几乎所有人脸上都有的生物：蠕形螨1",
-        "article_description": "本文译自 Funfactz，由译者 HTT110 基于创作共用协议(BY-NC)发布。1",
-        "article_url": "http://192.168.0.123:8012/info/37.html",
-        "status": 2
-      },
-      {
-        "id": 114,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190402/20190402c5de9b1bbb0da1e6c8e0d1d54242c861.jpg",
-        "category_id": 63,
-        "article_tag": "痔疮科",
-        "article_title": "24",
-        "article_description": "测试",
-        "article_url": "http://192.168.0.123:8012/info/114.html",
-        "status": 2
-      },
-      {
-        "id": 37,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190318/201903183909b0addfdfc15aceed0ceaa03337da.jpg",
-        "category_id": 30,
-        "article_tag": "痔疮科,心脏科",
-        "article_title": "几乎所有人脸上都有的生物：蠕形螨1",
-        "article_description": "本文译自 Funfactz，由译者 HTT110 基于创作共用协议(BY-NC)发布。1",
-        "article_url": "http://192.168.0.123:8012/info/37.html",
-        "status": 2
-      },
-      {
-        "id": 114,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190402/20190402c5de9b1bbb0da1e6c8e0d1d54242c861.jpg",
-        "category_id": 63,
-        "article_tag": "痔疮科",
-        "article_title": "24",
-        "article_description": "测试",
-        "article_url": "http://192.168.0.123:8012/info/114.html",
-        "status": 2
-      },
-      {
-        "id": 37,
-        "article_cover": "http://taidouapp-cs.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190318/201903183909b0addfdfc15aceed0ceaa03337da.jpg",
-        "category_id": 30,
-        "article_tag": "痔疮科,心脏科",
-        "article_title": "几乎所有人脸上都有的生物：蠕形螨1",
-        "article_description": "本文译自 Funfactz，由译者 HTT110 基于创作共用协议(BY-NC)发布。1",
-        "article_url": "http://192.168.0.123:8012/info/37.html",
-        "status": 2
-      },
-    ]
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    var that = this;
+
+    getRequest({
+      url: '/v1/information/list_category',
+      method: 'GET',
+      success(res) {
+        console.log(res)
+        that.setData({
+          list: res.data,
+          
+        })
+      }
+    })
   },
 
   /**
@@ -137,5 +92,12 @@ Page({
         currentData: e.target.dataset.current
       })
     }
+  },
+  //跳转新闻详情
+  articleInfo: function(e) {
+    var article_id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/articleInfo/index?id=' + article_id
+    })
   }
 })

@@ -163,5 +163,38 @@ Page({
     wx.navigateTo({
       url: '/pages/doctor/list/index'
     })
+  },
+  //首页预约医生按钮
+  order: function (e) {
+    var doctor_id = e.currentTarget.id;
+    
+    //检测用户是否绑定信息
+    wx.request({
+      url: baseUrl + '/v1/appointment/user_info_perfect',
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+      },
+      success(res) {
+        if (!res.data.data.status) {
+          wx.navigateTo({
+            url: '/pages/doctor/bind/index?id=' + doctor_id
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/doctor/order/index?id=' + doctor_id,
+          })
+        }
+      }
+    })
+  },
+  //跳转科室介绍
+  officeInfo: function (e) {
+    var office_url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: "/pages/office/introduce?office_url=" + office_url
+    })
   }
 })

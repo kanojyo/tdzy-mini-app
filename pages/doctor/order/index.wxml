@@ -35,9 +35,9 @@
     </view>
     <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
     <view class="order-price" wx:else>免费</view>
-    <view class="order-btn success" wx-if="{{item.status == 1}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 2}}">已经预约</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 3}}">约满</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 4}}">暂停预约</view>
+    <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已经预约</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 3}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">约满</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 4}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">暂停预约</view>
   </view>
 </view>

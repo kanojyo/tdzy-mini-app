@@ -22,12 +22,12 @@ function getRequest(model) {
   wx.request({
     url: baseUrl + model.url,
     data: model.param,
+    method: model.method,
     header: {
       'Content-Type': 'application/json',
       'device': device,
       'Authorization': 'Bearer ' + token
     },
-    method: model.method,
     success: function (res) {
       model.success(res.data)
     },
@@ -40,7 +40,12 @@ function getRequest(model) {
   })
 }
 
+function getBaseUrl() {
+  return baseUrl;
+}
+
 module.exports = {
   formatTime: formatTime,
   getRequest: getRequest,
+  getBaseUrl: getBaseUrl
 }

@@ -9,7 +9,8 @@
     "pages/doctor/list/index",
     "pages/doctor/bind/index",
     "pages/doctor/order/index",
-    "pages/doctor/orderRole/orderRole"
+    "pages/doctor/orderRole/orderRole",
+    "pages/office/introduce/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
