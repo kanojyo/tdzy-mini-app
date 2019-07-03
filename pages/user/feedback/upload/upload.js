@@ -34,7 +34,10 @@ Page({
           success(res) {
             let imgData = JSON.parse(res.data);
             let imgUrl = imgData.data.url;
+            //上传图片的数组
+            that.data.url.push({ url: imgUrl})
             that.setData({
+              //前端显示上传图片的数组
               files: that.data.files.concat(imgUrl)
             });
             console.log(that.data.files)
@@ -64,7 +67,7 @@ Page({
       url: baseUrl +'/v1/feedback/add',
       data:{
         describe: that.data.describe,
-        image:that.data.files
+        image: that.data.url
       },
       method:'POST',
       header: {

@@ -1,0 +1,4 @@
+<!--pages/user/sign/sign.wxml-->
+<view class="container">
+  我的签到
+</view>

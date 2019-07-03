@@ -107,3 +107,19 @@ page{
   background: #999;
   color:#fff;
 }
+.pull-left{
+  width: 320rpx;
+  height: 240rpx;
+}
+.pull-left image{
+  width: 320rpx;
+  height: 240rpx;
+}
+.pull-right{
+  width: 320rpx;
+  height: 240rpx;
+}
+.pull-right image{
+  width: 320rpx;
+  height: 240rpx;
+}

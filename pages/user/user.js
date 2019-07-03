@@ -1,4 +1,5 @@
 // pages/user/user.js
+import { getRequest } from '../../utils/util.js';
 Page({
 
   /**
@@ -6,30 +7,53 @@ Page({
    */
   data: {
     userInfo:{},
-    telephone:'111111'
+    telephone:'111111',
+    newFeedBack:false,
+  },
+  //跳转我的签到
+  GotoSign(){
+    wx.navigateTo({
+      url: 'sign/sign',
+    })
   },
   //跳转我的预约
-  GotoBook:function(){
+  GotoBook(){
     wx.navigateTo({
       url: 'book/book',
     })
   },
   //跳转我的收藏
-  GotoCollect:function(){
+  GotoCollect(){
     wx.navigateTo({
       url: 'collect/collect',
     })
   },
   //跳转真伪查询
-  GotoAuth:function(){
+  GotoAuth(){
     wx.navigateTo({
       url: 'authenticity/authenticity',
     })
   },
   //跳转意见反馈
-  GotoFeedBack:function(){
+  GotoFeedBack(){
     wx.navigateTo({
       url: 'feedback/feedback',
+    })
+  },
+  //是否有未读的意见反馈
+  check(){
+    var that =this;
+    getRequest({
+      url:'/v1/feedback/unread',
+      method:'GET',
+      success(res){
+        if (res.data.data ===1){
+          //如果有新的未读意见反馈就改变状态；
+          that.setData({
+            newFeedBack:true,
+          })
+        }
+      }
     })
   },
 
@@ -47,7 +71,8 @@ Page({
         })
 
       }
-    })
+    });
+    this.check();
   },
 
   /**

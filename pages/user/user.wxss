@@ -68,5 +68,16 @@ page{
 .nav-item .arrow>image{
   width: 15rpx;
   height: 26rpx;
-  padding-top: 22rpx;
+}
+.arrow{
+  display: flex;
+  align-items: center;
+}
+.redStar{
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  background: #F04844;
+  margin-right: 20rpx;
+  
 }
