@@ -15,9 +15,16 @@
     "pages/user/collect/collect",
     "pages/user/feedback/feedback",
     "pages/user/feedback/upload/upload",
+    "pages/user/sign/sign",
+    "pages/user/sign/rule/rule",
+    "pages/user/sign/detail/detail",
+    "pages/user/sign/score/score",
+    "pages/user/message/message",
+    "pages/user/info/info",
     "pages/test/test",
     "custom-tab-bar/index",
     "pages/map/map"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

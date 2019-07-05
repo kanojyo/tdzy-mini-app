@@ -1,0 +1,18 @@
+<!--pages/user/message/message.wxml-->
+<view class="container">
+  <view class="message">
+    <view class="item" wx:for="{{messageList}}" wx:key="index" data-url="{{item.url}}" data-id="{{item.id}}">
+      <view class="title">
+        <text class="new" wx:if="{{item.read_status==2}}">[新消息]</text>
+        <text>{{item.title}}</text>
+      </view>
+      <view class="time">
+        <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+        <text>{{filter.formatDate(item.created_at)}}</text>
+      </view>
+      <view class="img">
+        <image src="{{item.img}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

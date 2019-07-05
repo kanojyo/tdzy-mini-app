@@ -1,5 +1,5 @@
 // pages/user/book/book.js
-var time = require('../../../utils/util.js');
+let utils = require('../../../utils/util.js');
 import { getRequest } from '../../../utils/util.js';
 Page({
 
@@ -74,15 +74,20 @@ Page({
   //取消预约
   cancel(){
     var that =this;
-    getRequest({
-      url: '/v1/appointment/cancel_appointment',
+    wx.request({
+      url: utils.getBaseUrl()+'/v1/appointment/cancel_appointment',
       data:{
         appointment_id: that.data.id
       },
       method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+      },
       success: function (res) {
         // console.log(res);
-        if(res.code ==200){
+        if(res.code ===200){
           wx.showToast({
             title: '取消成功',
             icon: 'success',
@@ -90,7 +95,7 @@ Page({
           })
         }else{
           wx.showToast({
-            title: res.message,
+            title: res.data.message,
             icon: 'none',
             duration: 2000
           })

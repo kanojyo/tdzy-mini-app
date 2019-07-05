@@ -1,7 +1,6 @@
 // pages/user/feedback/upload/upload.js
 let utils = require('../../../../utils/util.js');
 import { getRequest } from '../../../../utils/util.js';
-const baseUrl ='https://tdxcx.wuhanlst.com'
 Page({
 
   /**
@@ -28,13 +27,16 @@ Page({
         // });
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: baseUrl+'/v1/uploads', //仅为示例，非真实的接口地址
+          url: utils.getBaseUrl()+'/v1/uploads', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success(res) {
             let imgData = JSON.parse(res.data);
             let imgUrl = imgData.data.url;
+            //上传图片的数组
+            that.data.url.push({ url: imgUrl})
             that.setData({
+              //前端显示上传图片的数组
               files: that.data.files.concat(imgUrl)
             });
             console.log(that.data.files)
@@ -61,10 +63,10 @@ Page({
   submit(){
     var that =this;
     wx.request({
-      url: baseUrl +'/v1/feedback/add',
+      url: utils.getBaseUrl() +'/v1/feedback/add',
       data:{
         describe: that.data.describe,
-        image:that.data.files
+        image: that.data.url
       },
       method:'POST',
       header: {
@@ -75,8 +77,8 @@ Page({
       success(res){
         console.log(res)
         if(res.data.code==200){
-          wx.navigateBack({
-            delta: 1
+          wx.redirectTo({
+            url:'../feedback'
           })
         }else{
           wx.showToast({
@@ -93,7 +95,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**

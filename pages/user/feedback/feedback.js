@@ -7,21 +7,7 @@ Page({
    */
   data: {
     state: 3,
-    chatList: [{
-        "text": "我们的工作时间：周一到周五8:30至17:30（法定节假日除外）。我们会在收到您的反馈后1-2个工作日内给您回复，请耐心等待",
-        "msg_type": 1,
-        "type": 2,
-        "avatar": "https://cdn-statis.mangguokandian.com/avatar.png",
-        "created_at": 1552879653
-      },
-      {
-        "text": "我们的工作时间：周一到周五8:30至17:30（法定节假日除外）。我们会在收到您的反馈后1-2个工作日内给您回复，请耐心等待",
-        "msg_type": 1,
-        "type": 1,
-        "avatar": "https://cdn-statis.mangguokandian.com/avatar.png",
-        "created_at": 1552879653
-      },
-    ],
+    chatList: [],
   },
   //获取意见反馈列表
   getList() {
@@ -33,7 +19,7 @@ Page({
         console.log(res)
         that.setData({
           state: res.data.state,
-          // chatList:res.data.list
+          chatList:res.data.list
         })
       }
     })
@@ -42,6 +28,23 @@ Page({
   gotoUpload() {
     wx.navigateTo({
       url: 'upload/upload',
+    })
+  },
+  //关闭
+  close(){
+    getRequest({
+      url:'/v1/feedback/end',
+      method:'GET',
+      success(res){
+        console.log(res.code)
+        if (res.code ===200){
+          //返回上一页
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+        
+      }
     })
   },
   /**

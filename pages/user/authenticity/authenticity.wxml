@@ -1,8 +1,8 @@
 <!--pages/user/authenticity/authenticity.wxml-->
 <view class="container">
   <view class="search">
-    <input placeholder="请输入需要验证的微信号" auto-focus/>
-    <button class="btn"></button>
+    <input placeholder="请输入需要验证的微信号" bindinput="updateValue" data-name="input" value="{{wechat}}" auto-focus/>
+    <button class="btn" bindtap="check"></button>
   </view>
   <view class="content">
     <view class="declare ">

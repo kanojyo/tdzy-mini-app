@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -63,15 +63,22 @@
 				},
 				{
 					"id": 1,
-					"name": "意见反馈",
-					"pathName": "pages/user/feedback/feedback",
+					"name": "我的积分",
+					"pathName": "pages/user/sign/score/score",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "反馈意见输入页面",
-					"pathName": "pages/user/feedback/upload/upload",
+					"name": "签到",
+					"pathName": "pages/user/sign/sign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "就诊人信息",
+					"pathName": "pages/user/info/info",
 					"query": "",
 					"scene": null
 				},

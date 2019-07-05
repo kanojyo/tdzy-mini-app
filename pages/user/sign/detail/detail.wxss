@@ -1,0 +1,81 @@
+/* pages/user/sign/detail/detail.wxss */
+page{
+  background: #ededed;
+}
+.container{
+  background: #fff;
+  padding: 20rpx 30rpx;
+}
+.pro{
+  display: flex;
+  width: 100%;
+}
+.pro .img{
+  height: 180rpx;
+  width: 340rpx;
+}
+.pro .img image{
+  height: 180rpx;
+  width: 340rpx;
+}
+.pro .text{
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width: 100%;
+}
+.pro .text .title{
+  font-size: 30rpx;
+  color:#333;
+}
+.bot{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.bot .score{
+  padding-left: 30rpx;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/_jinbi-2%402x.png') left 10rpx no-repeat;
+  background-size: 25%;
+}
+.bot .score .now_score{
+  font-size: 32rpx;
+  color:#d1b574;
+}
+.bot .score .original_score{
+  font-size: 26rpx;
+  color:#666;
+  text-decoration: line-through;
+}
+.bot .me{
+  font-size: 30rpx;
+  color:#333;
+}
+.intro{
+  width: 100%;
+  background: #fff;
+  margin-top: 50rpx;
+}
+.intro .title{
+  font-size: 32rpx;
+  color:#333;
+}
+.intro .text{
+  font-size: 26rpx;
+  color:#666;
+}
+.btn{
+  margin-top: 100rpx;
+  width: 100%;
+}
+.btn button{
+  font-size: 36rpx;
+  color:#fff;
+}
+.btn .btn1{
+  background: #d1b574;
+}
+.btn .btn2{
+  background: #ccc;
+}
