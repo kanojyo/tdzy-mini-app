@@ -15,6 +15,7 @@ page{
 }
 .left{
   display: flex;
+  width: 70%;
 }
 .left>image{
   height: 120rpx;
@@ -26,7 +27,7 @@ page{
   padding-top: 20rpx;
 }
 .left .text .nickname{
-  margin-bottom: 20rpx;
+  margin-bottom: 5rpx;
   font-size: 34rpx;
 }
 .left .text .num{
@@ -68,5 +69,26 @@ page{
 .nav-item .arrow>image{
   width: 15rpx;
   height: 26rpx;
-  padding-top: 22rpx;
+}
+.arrow{
+  display: flex;
+  align-items: center;
+}
+.redStar{
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  background: #F04844;
+  margin-right: 20rpx;
+}
+.newMessage{
+  height: 44rpx;
+  width: 44rpx;
+  border-radius: 50%;
+  background: #F04844;
+  margin-right: 20rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 44rpx;
+  font-size: 20rpx;
 }

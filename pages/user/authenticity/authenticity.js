@@ -1,10 +1,12 @@
-// pages/user/authenticity/authenticity.js
+202020// pages/user/authenticity/authenticity.js
+import { getRequest } from '../../../utils/util.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    wechat:'',
     declare_txt:"为提升武汉泰斗中医院服务质量，维护武汉泰斗中医院和用户的合法权益，武汉泰斗中医院特地开通了“防伪查询”服务平台，提供“微信号查询”服务，帮助用户辨微信号真伪，认准主体，防止不法分子钻空子，避免上当受骗。",
     queryData:[
       {"text": "1.打开微信找到您咨询对象的微信号"},
@@ -19,7 +21,50 @@ Page({
       { "text": "官网：http://www.whtdzyy.com/" },
     ]
   },
-
+  //双向绑定input的值
+  updateValue(e){
+    var that = this;
+    that.setData({
+      wechat: e.detail.value
+    })
+  },
+  //验证微信号真伪
+  check(){
+    console.log(22)
+    var that =this;
+    getRequest({
+      url:'/v1/verify/check_wechat?weixin='+that.data.wechat,
+      method:'GET',
+      success(res){
+        console.log(res);
+        if(res.code ===200){
+          if (res.data.status===1){
+            wx.showModal({
+              title: '提示',
+              content: '此微信号是武汉泰斗中医院所有, 请您放心使用',
+              showCancel:false,
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            })
+          } else if (res.data.status === 0){
+            wx.showModal({
+              title: '提示',
+              content: '此微信号是非武汉泰斗中医院所有,谨防上当受骗',
+              showCancel: false,
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            })
+          }
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

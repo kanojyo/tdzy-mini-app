@@ -39,6 +39,9 @@ function getRequest(model) {
     }
   })
 }
+function getBaseUrl() {
+  return baseUrl;
+}
 
 function getBaseUrl() {
   return baseUrl;

@@ -1,4 +1,5 @@
 // pages/user/user.js
+import { getRequest } from '../../utils/util.js';
 Page({
 
   /**
@@ -6,30 +7,99 @@ Page({
    */
   data: {
     userInfo:{},
-    telephone:'111111'
+    telephone:'',
+    newFeedBack:false,
+    newMessage:0,
+  },
+  //跳转我的签到
+  GotoInfo(){
+    wx.navigateTo({
+      url: 'info/info',
+    })
+  },
+  //跳转我的签到
+  GotoSign(){
+    wx.navigateTo({
+      url: 'sign/sign',
+    })
   },
   //跳转我的预约
-  GotoBook:function(){
+  GotoBook(){
     wx.navigateTo({
       url: 'book/book',
     })
   },
   //跳转我的收藏
-  GotoCollect:function(){
+  GotoCollect(){
     wx.navigateTo({
       url: 'collect/collect',
     })
   },
   //跳转真伪查询
-  GotoAuth:function(){
+  GotoAuth(){
     wx.navigateTo({
       url: 'authenticity/authenticity',
     })
   },
+  //跳转消息中心
+  GotoMessage(){
+    wx.navigateTo({
+      url: 'message/message',
+    })
+  },
   //跳转意见反馈
-  GotoFeedBack:function(){
+  GotoFeedBack(){
     wx.navigateTo({
       url: 'feedback/feedback',
+    })
+  },
+  //是否有未读的意见反馈
+  check(){
+    var that =this;
+    getRequest({
+      url:'/v1/feedback/unread',
+      method:'GET',
+      success(res){
+        if (res.data.data ===1){
+          //如果有新的未读意见反馈就改变状态；
+          that.setData({
+            newFeedBack:true,
+          })
+        }
+      }
+    })
+  },
+  //是否消息中心有新消息
+  hasMessage(){
+    var that =this;
+    getRequest({
+      url:'/v1/message/has_message',
+      method:'GET',
+      success(res){
+        let num = res.data.msg_count;
+        if (num>99){
+          that.setData({
+            newMessage:'99+',
+          })
+        }else{
+          that.setData({
+            newMessage: num,
+          })
+        }
+      }
+    })
+  },
+  getInfo(){
+    var that =this;
+    getRequest({
+      url:'/v1/sign/my_info',
+      method:'get',
+      success(res){
+        // console.log(res)
+        that.setData({
+          telephone: res.data.mobile
+        })
+      }
     })
   },
 
@@ -41,13 +111,18 @@ Page({
     wx.getUserInfo({
       success: function (res) {
         var data = JSON.parse(res.rawData)
-        console.log(data)
+        // console.log(data)
         that.setData({
           userInfo: data
         })
 
       }
-    })
+    });
+    this.check();
+    //获取基本资料
+    this.getInfo();
+    //是否消息中心有新消息
+    this.hasMessage();
   },
 
   /**

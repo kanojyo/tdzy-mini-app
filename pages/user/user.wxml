@@ -2,7 +2,7 @@
 <view class="container">
   <view class="user-info">
     <view class="info" wx:if="{{userInfo}}">
-      <view class="left">
+      <view class="left" bindtap='GotoInfo'>
         <image src="{{userInfo.avatarUrl}}"></image>
         <view class="text">
           <view class="nickname">{{userInfo.nickName}}</view>
@@ -10,7 +10,7 @@
         </view>
       </view>
       <view class="right">
-        <button class="sign">我的签到</button>
+        <button class="sign" bindtap='GotoSign'>我的签到</button>
       </view>
     </view>
     <view wx:else></view>
@@ -44,12 +44,13 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item" bindtap="GotoMessage">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
         <text>消息中心</text>
       </view>
       <view class='arrow'>
+        <view class="newMessage" wx:if="{{newMessage!==0}}">{{newMessage}}</view>
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
@@ -61,6 +62,7 @@
         <text>意见反馈</text>
       </view>
       <view class='arrow'>
+        <view class="redStar" wx:if="{{newFeedBack}}"></view>
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>

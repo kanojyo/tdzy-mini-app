@@ -38,7 +38,7 @@
     </view>
     <view wx:if="{{state ===3}}" class="btn3">
       <button bindtap='gotoUpload'>追问</button>
-      <button>关闭</button>
+      <button bindtap="close">关闭</button>
     </view>
   </view>
 </view>
