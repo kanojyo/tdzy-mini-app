@@ -23,7 +23,7 @@
     "pages/user/info/info",
     "pages/test/test",
     "custom-tab-bar/index",
-    "pages/map/map",
+    "pages/map/map"
 
   ],
   "window": {
