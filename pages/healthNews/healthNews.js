@@ -109,6 +109,11 @@ Page({
                 }
                 
               } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
                 status = false;
               }
               
