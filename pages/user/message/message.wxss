@@ -1,0 +1,33 @@
+/* pages/user/message/message.wxss */
+
+.message{
+  padding: 20rpx 20rpx;
+  background: #ededed;
+  width: 710rpx;
+}
+.item{
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.item .title{
+  font-size: 30rpx;
+  color:#333;
+}
+.item .title .new{
+  color:#fc1618;
+  margin-right: 20rpx;
+}
+.item .time{
+  margin-top: 20rpx;
+  color:#666;
+  font-size: 26rpx;
+}
+.item .img{
+  margin-top: 30rpx;
+  width: 100%;
+  height: auto !important;
+}
+.item .img image{
+  width: 100%;
+}

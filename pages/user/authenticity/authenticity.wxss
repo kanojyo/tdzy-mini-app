@@ -7,7 +7,7 @@
 .search input{
   border:1px solid #d1b574;
   font-size: 30rpx;
-  padding: 15rpx 0 15rpx 40rpx;
+  padding: 20rpx 0 20rpx 40rpx;
   border-radius: 30rpx;
 }
 .search .btn{

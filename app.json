@@ -9,7 +9,12 @@
     "pages/user/collect/collect",
     "pages/user/feedback/feedback",
     "pages/user/feedback/upload/upload",
-    "pages/user/sign/sign"
+    "pages/user/sign/sign",
+    "pages/user/sign/rule/rule",
+    "pages/user/sign/detail/detail",
+    "pages/user/sign/score/score",
+    "pages/user/message/message",
+    "pages/user/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",

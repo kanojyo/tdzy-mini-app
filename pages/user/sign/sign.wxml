@@ -1,4 +1,50 @@
-<!--pages/user/sign/sign.wxml-->
 <view class="container">
-  我的签到
+  <view class="info">
+    <view class="userInfo">
+      <view class="avatar">
+        <image src="{{userInfo.avatarurl}}"></image>
+      </view>
+      <view class="text">
+        <view class="nickName">{{userInfo.nickname}}</view>
+        <view class="jifen" bindtap='GotoScore'>我的积分</view>
+        <view class="score">{{userInfo.score}}</view>
+      </view>
+    </view>
+    <view class="rules" bindtap='GotoRules'>规则</view>
+  </view>
+  <view class="sign">
+    <view class="text">您已连续签到<text class="red">{{userInfo.sign_day}}</text>天，获得<text class="red">{{userInfo.continue_sum_score}}</text>积分</view>
+    <!-- <view class="text" wx:else>您已获得<text></text>积分</view> -->
+  </view>
+  <view class="hot">
+    <view class="title">热门推荐</view>
+    <view class="content">
+      <view class="item" wx:for="{{hotList}}" wx:key="item">
+        <view class="img">
+          <image src="{{item.pic_url}}"></image>
+        </view>
+        <view class="text">
+          <view class="title">{{item.goods_name}}</view>
+          <view class="bot">
+            <view class="left">
+              <view class="now_score">{{item.now_score}}积分</view>
+              <view class="orgin">{{item.original_score}}积分</view>
+            </view>
+            <view class="right">
+              <button class="btn1" wx:if="{{item.goods_status === 1 }}" data-id="{{item.id}}" bindtap='exchange'>立即兑换</button>
+              <button class="btn2" wx:if="{{item.goods_status === 3 }}">暂停兑换</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <view class="shade" style="height:{{height}}rpx;" wx:if="{{modelShow}}">
+    <view class="bg">
+      <view class="title">恭喜您获得</view>
+      <view class="score">{{score}}积分</view>
+      <view class="text">明天签到可领{{tomorrow_score}}积分</view>
+      <button class="btn" bindtap='modelHide'>确认</button>
+    </view>
+  </view>
 </view>

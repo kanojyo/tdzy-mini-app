@@ -1,0 +1,27 @@
+<!--pages/user/sign/detail/detail.wxml-->
+<view class="container">
+  <view class="pro">
+    <view class="img">
+      <image src="{{goods.pic_url}}"></image>
+    </view>
+    <view class="text">
+      <view class="title">{{goods.goods_name}}</view>
+      <view class="bot">
+        <view class="score">
+          <view class="now_score">{{goods.now_score}}积分</view>
+          <view class="original_score">{{goods.original_score}}积分</view>
+        </view>
+        <view class="me">我的积分{{goods.my_score}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="intro">
+    <view class="title">商品使用规则：</view>
+    <view class="text">1.本兑换商品只限于线下医院使用；</view>
+    <view class="text">2.有效期7天。</view>
+  </view>
+  <view class="btn">
+    <button class="btn1" bindtap="exchange" wx:if="{{goods.my_score>=goods.now_score}}">兑换</button>
+    <button class="btn2" wx:else >积分不足</button>
+  </view>
+</view>

@@ -1,0 +1,135 @@
+/* pages/user/sign/score/score.wxss */
+.top{
+  padding:20rpx 30rpx;
+  background: #f1f1f1;
+  
+}
+.top-inner{
+  height: 150rpx;
+  width: 630rpx;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Backgroundimage%402x.png') 30rpx top no-repeat;
+  background-size: contain;
+  padding-top: 40rpx;
+  padding-left: 60rpx;
+}
+.top-inner .text{
+  font-size: 30rpx;
+  color:#fff;
+}
+.top-inner .score{
+  font-size: 60rpx;
+  color:#fff;
+  font-weight: bold;
+}
+.topTabSwiper{
+  display: flex;
+  width: 690rpx;
+  padding: 20rpx 30rpx;
+}
+.tab{
+  flex:1;
+  text-align: center;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+  color:#666;
+}
+.topTabSwiper:after{content: ""; clear: both;display: block;}
+.tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}
+.swiper{
+  width: 690rpx;
+  padding: 20rpx 30rpx;
+}
+.swiper .tab-item{
+  display: none;
+}
+.swiper .swiper_con{
+  display: block;
+  width: 100%;
+  padding: 20rpx 0;
+}
+.exchage-item{
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.exchage-item .pic{
+  width:250rpx;
+  height: 180rpx;
+}
+.exchage-item .pic image{
+  width:250rpx;
+  height: 180rpx;
+}
+.exchage-item .text{
+  padding-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.exchage-item .text.state1{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/notused%402x.png') right top no-repeat;
+  background-size: 30%;
+}
+.exchage-item .text.state2{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Used%402x.png') right top no-repeat;
+  background-size: 30%;
+}
+.exchage-item .text.state3{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/shixiaoSeal%402x.png') right top no-repeat;
+  background-size: 30%;
+}
+
+.exchage-item .text .title{
+  font-size: 30rpx;
+  color: #333;
+}
+.exchage-item .bot{
+  font-size: 26rpx;
+}
+.exchage-item .bot .time{
+  
+}
+.score-item .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.score-item .title .month{
+  font-size: 36rpx;
+  color:#333;
+}
+.score-item .title .right{
+  font-size: 26rpx;
+  color:#333;
+}
+.score-item .title .right .red{
+  color:red;
+}
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  border-top:1rpx solid #efefef;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+}
+.list-item .left{
+  padding-left: 80rpx;
+}
+.list-item .left.sign{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Signin%402x.png') left top no-repeat;
+  background-size: 28%;
+}
+.list-item .left.exchage{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/expenditure%402x.png') left top no-repeat;
+  background-size: 28%;
+}
+.list-item .right{
+  display: flex;
+  flex-direction:column;
+  align-items:flex-end;
+}
+.list-item .right .score{
+  color:#d1b574;
+  font-size: 32rpx;
+}

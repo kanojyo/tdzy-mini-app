@@ -39,8 +39,12 @@ function getRequest(model) {
     }
   })
 }
+function getBaseUrl() {
+  return baseUrl;
+}
 
 module.exports = {
   formatTime: formatTime,
   getRequest: getRequest,
+  getBaseUrl: getBaseUrl
 }

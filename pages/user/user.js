@@ -7,8 +7,15 @@ Page({
    */
   data: {
     userInfo:{},
-    telephone:'111111',
+    telephone:'',
     newFeedBack:false,
+    newMessage:0,
+  },
+  //跳转我的签到
+  GotoInfo(){
+    wx.navigateTo({
+      url: 'info/info',
+    })
   },
   //跳转我的签到
   GotoSign(){
@@ -34,6 +41,12 @@ Page({
       url: 'authenticity/authenticity',
     })
   },
+  //跳转消息中心
+  GotoMessage(){
+    wx.navigateTo({
+      url: 'message/message',
+    })
+  },
   //跳转意见反馈
   GotoFeedBack(){
     wx.navigateTo({
@@ -56,6 +69,39 @@ Page({
       }
     })
   },
+  //是否消息中心有新消息
+  hasMessage(){
+    var that =this;
+    getRequest({
+      url:'/v1/message/has_message',
+      method:'GET',
+      success(res){
+        let num = res.data.msg_count;
+        if (num>99){
+          that.setData({
+            newMessage:'99+',
+          })
+        }else{
+          that.setData({
+            newMessage: num,
+          })
+        }
+      }
+    })
+  },
+  getInfo(){
+    var that =this;
+    getRequest({
+      url:'/v1/sign/my_info',
+      method:'get',
+      success(res){
+        // console.log(res)
+        that.setData({
+          telephone: res.data.mobile
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -65,7 +111,7 @@ Page({
     wx.getUserInfo({
       success: function (res) {
         var data = JSON.parse(res.rawData)
-        console.log(data)
+        // console.log(data)
         that.setData({
           userInfo: data
         })
@@ -73,6 +119,10 @@ Page({
       }
     });
     this.check();
+    //获取基本资料
+    this.getInfo();
+    //是否消息中心有新消息
+    this.hasMessage();
   },
 
   /**
