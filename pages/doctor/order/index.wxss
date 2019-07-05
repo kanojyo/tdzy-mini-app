@@ -20,7 +20,7 @@
   padding: 20rpx;
   background-color: #F2F2F2;
 }
-
+.main{overflow-x: hidden;}
 .intro {
   margin-bottom: 0;
 }

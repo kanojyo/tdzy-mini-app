@@ -162,7 +162,7 @@ Page({
     var that = this;
     const val = e.detail.value
     that.setData({
-      user_age: that.data.age[val[0]],
+      user_age: that.data.age[val],
     })
   }
 })
