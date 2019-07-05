@@ -1,6 +1,6 @@
 // pages/healthNews/healthNews.js
 import { getRequest } from '../../utils/util.js';
-
+const app = getApp()
 Page({
 
   /**
@@ -8,6 +8,9 @@ Page({
    */
   data: {
     currentData: 0,
+    navScrollLeft: 0,
+    scrollTop: 0,
+    scrollHeight: 0,
     list: []
   },
 
@@ -26,6 +29,16 @@ Page({
         that.setData({
           list: res.data,
           
+        })
+      }
+    });
+
+    wx.getUserInfo({
+      success: res => {
+        app.globalData.userInfo = res.userInfo
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
         })
       }
     })
@@ -60,12 +73,59 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log(1)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var that = this;
+    var currentData = that.data.currentData;//当前选项卡编号
+    var category_id = that.data.list[currentData].id;//分类id
+    var page = that.data.list[currentData].list_article.page + 1;
+    var status = true;
+    if (category_id) {
+      if (status) {
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(function () {
+          wx.hideLoading();
+          getRequest({
+            url: '/v1/information/list_article?category_id=' + category_id + '&page_index=' + page + "&page_size=20",
+            method: 'GET',
+            success(res) {
+              status = false;
+              if (res.data.data.length > 0) {
+                that.data.list[currentData].list_article.data = that.data.list[currentData].list_article.data.concat(res.data.data);
+                if (res.data.data.length < 19) {
+                  that.setData({
+                    bottomTitle: true,
+                    title: '-- 我是有底线的 --',
+                  })
+                } else {
+                  status = true;
+                }
+                
+              } else {
+                wx.showModal({
+                  title: '',
+                  content: '没有数据了',
+                })
+                status = false;
+              }
+              
+              that.data.list[currentData].list_article.data = that.data.list[currentData].list_article.data.concat(res.data.data);
+              that.data.list[currentData].list_article.page = that.data.list[currentData].list_article.page + 1;
+              that.setData({
+                list: that.data.list
+              });
+            }
+          });
+        }, 2000);
+      } 
+    }
   },
 
   /**
@@ -84,7 +144,6 @@ Page({
   //点击切换，滑块index赋值
   checkCurrent: function (e) {
     const that = this;
-    // console.log(e,2222)
     if (that.data.currentData === e.target.dataset.current) {
       return false;
     } else {
@@ -99,5 +158,25 @@ Page({
     wx.navigateTo({
       url: '/pages/articleInfo/index?id=' + article_id
     })
+  },
+  //滑动切换导航
+  switchNav(event) {
+    var cur = event.currentTarget.dataset.current;
+    var singleNavWidth = this.data.windowWidth / 4;
+    if (this.data.currentData == cur) {
+      return false;
+    } else {
+      this.setData({
+        currentData: cur
+      })
+    }
+  },
+  //点击切换选项卡内容
+  switchTab(event) {
+    var cur = event.detail.current;
+    var singleNavWidth = this.data.windowWidth / 4;
+    this.setData({
+      currentData: cur,
+    });
   }
 })

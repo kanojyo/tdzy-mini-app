@@ -19,18 +19,17 @@
       <input type="text" placeholder="请填写真实姓名,方便预约挂号（必填）" name="name" bindinput="getWords" maxlength='{{maxTextLen}}' />
     </view>
 
-    <view class="form-input">
-      <label>年龄</label>
-      <picker-view class="select-box"  bindchange="bindChange" indicator-style="height: 50px;" value="{{value}}">
-        <picker-view-column>
-          <view class="age-list">请选择年龄</view>
-          <view wx:for="{{age}}" wx-key="index" class="age-list">{{item}}</view>
-        </picker-view-column>
-        
-      </picker-view>
+    <view class="section form-input">
+      <view class="section__title">年龄</view>
+      <picker class="select-box" bindchange="bindPickerChange" value="{{index}}" range="{{age}}">
+        <view class="picker age-list" wx:if="{{user_age}}">
+          {{user_age}}
+        </view>
+        <view class="picker age-list" wx:else>
+          请选择您的年龄
+        </view>
+      </picker>
     </view>
-    
-
     <view class="form-input">
       <label>手机号</label>
       <input type="text" placeholder="请输入您的手机号（必填）" name="mobile"/>

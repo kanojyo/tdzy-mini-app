@@ -9,12 +9,15 @@
     "pages/doctor/bind/index",
     "pages/doctor/order/index",
     "pages/doctor/orderRole/orderRole",
-    "pages/office/introduce/index",
+    "pages/office/introduce",
     "pages/user/authenticity/authenticity",
     "pages/user/book/book",
     "pages/user/collect/collect",
     "pages/user/feedback/feedback",
-    "pages/user/feedback/upload/upload"
+    "pages/user/feedback/upload/upload",
+    "pages/test/test",
+    "custom-tab-bar/index",
+    "pages/map/map"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,8 +38,8 @@
       {
         "pagePath": "pages/healthNews/healthNews",
         "text": "健康科普",
-        "iconPath": "images/morenPolularScience@3x.png",
-        "selectedIconPath": "images/yixuan-PolularScience@3x.png"
+        "iconPath": "images/morenPolularScience@3x_1.png",
+        "selectedIconPath": "images/morenPolularScience@3x_2.png"
       },
       {
         "pagePath": "pages/chat/chat",
@@ -52,5 +55,10 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取你的定位"
+    }
+  }
 }

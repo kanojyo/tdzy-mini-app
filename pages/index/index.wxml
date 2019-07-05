@@ -32,7 +32,7 @@
     <view class='intro'>
       <view class="title">
         <view class="hospital">泰斗中医院</view>
-        <view class="more">
+        <view class="more" bindtap='hospitalLocation'>
           <text>医院导航</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/HospitalNavigation@2x.png"></image>
         </view>

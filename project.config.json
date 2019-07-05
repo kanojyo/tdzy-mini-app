@@ -39,8 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
-
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -54,9 +53,9 @@
 					"name": "news",
 					"pathName": "pages/healthNews/healthNews",
 					"query": "id=1"
-        },
-        {
-          "id": 3,
+				},
+				{
+					"id": 3,
 					"name": "user",
 					"pathName": "pages/user/user",
 					"query": "",
@@ -74,6 +73,27 @@
 					"name": "反馈意见输入页面",
 					"pathName": "pages/user/feedback/upload/upload",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "遮罩层",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地图",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "bind",
+					"pathName": "pages/doctor/bind/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

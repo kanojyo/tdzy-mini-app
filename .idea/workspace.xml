@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f516a08e-4bdd-4af5-b74c-262044d4ea66" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/doctor/bind/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/doctor/bind/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/doctor/list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/doctor/list/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/doctor/order/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/doctor/order/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/doctor/order/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/doctor/order/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/healthNews/healthNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/healthNews/healthNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/healthNews/healthNews.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/healthNews/healthNews.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/healthNews/healthNews.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/healthNews/healthNews.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.js" afterDir="false" />
-    </list>
+    <list default="true" id="f516a08e-4bdd-4af5-b74c-262044d4ea66" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

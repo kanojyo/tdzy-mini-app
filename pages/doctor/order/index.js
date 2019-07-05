@@ -32,9 +32,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    flag: true,
+    info: {}
   },
-
+  showBox: function (e) {
+    // 用that取代this，防止不必要的情况发生
+    var that = this;
+    // 创建一个动画实例
+    var animation = wx.createAnimation({
+      // 动画持续时间
+      duration: 500,
+      // 定义动画效果，当前是匀速
+      timingFunction: 'linear'
+    })
+    // 将该变量赋值给当前动画
+    that.animation = animation
+    // 先在y轴偏移，然后用step()完成一个动画
+    animation.translateY(200).step()
+    // 用setData改变当前动画
+    that.setData({
+      // 通过export()方法导出数据
+      animationData: animation.export(),
+      // 改变view里面的Wx：if
+      chooseSize: true
+    })
+    // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
+    setTimeout(function () {
+      animation.translateY(0).step()
+      that.setData({
+        animationData: animation.export()
+      })
+    }, 200)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -164,7 +193,9 @@ Page({
               content: '可在我的--我的预约查看',
               success: function (res) {
                 if (res.confirm) {
-                  console.log('用户点击确定')
+                  wx.navigateTo({
+                    url: '/pages/user/book/book',
+                  })
                 } else if (res.cancel) {
                   console.log('用户点击取消')
                 }
@@ -180,5 +211,32 @@ Page({
       })
       
     }
+  },
+  show: function (e) {
+    this.setData({ flag: false })
+    var index = e.currentTarget.dataset.index;
+    var that = this;
+    that.data.info.order_time = that.data.work[index].order_time;
+    that.data.info.week_day = that.data.work[index].week_day;
+    that.data.info.time_slot = that.data.work[index].time_slot;
+    that.data.info.work_id = that.data.work[index].id;
+    that.data.info.index = index;
+    getRequest({
+      url: '/v1/sign/my_info',
+      method: 'GET',
+      success(res) {
+        that.setData({
+          userinfo: res.data
+        })
+      }
+    })
+
+    that.setData({
+      info: that.data.info
+    })
+  },
+  // 当遮罩层与conts区域出现时，执行hide,flag变为true，遮罩层与conts区域再次被隐藏
+  hide: function () {
+    this.setData({ flag: true })
   }
 })
