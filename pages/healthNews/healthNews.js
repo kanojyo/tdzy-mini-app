@@ -109,14 +109,10 @@ Page({
                 }
                 
               } else {
-                wx.showModal({
-                  title: '',
-                  content: '没有数据了',
-                })
                 status = false;
               }
               
-              that.data.list[currentData].list_article.data = that.data.list[currentData].list_article.data.concat(res.data.data);
+              //that.data.list[currentData].list_article.data = that.data.list[currentData].list_article.data.concat(res.data.data);
               that.data.list[currentData].list_article.page = that.data.list[currentData].list_article.page + 1;
               that.setData({
                 list: that.data.list
