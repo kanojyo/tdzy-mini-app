@@ -1,18 +1,15 @@
 // pages/doctor/bind.js
 import { getRequest } from '../../../utils/util.js';
 const util = require('../../../utils/util');
-const age = [];
-const user_age = "";
-for (let i = 1; i <= 100; i++) {
-  age.push(i)
-}
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    age: age,
+    age: [],
+    user_age:"",
     // 最大字符数
     maxTextLen: 20,
     // 默认长度
@@ -29,10 +26,12 @@ Page({
         textLen: textLen
       });
     },
+    
   },
   formSubmit: function (e) {
-    var doctor_id = this.data.doctor_id;
-    var age = this.data.user_age;
+    var that = this;
+    var doctor_id = that.data.doctor_id;
+    var age = that.data.user_age;
     var name = e.detail.value.name;
     var sex = e.detail.value.sex;
     var mobile = e.detail.value.mobile;
@@ -86,17 +85,20 @@ Page({
         }
       })
     }
-
-
-    console.log(user_age)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var doctor_id = options.id
-    this.setData({
-      doctor_id: doctor_id
+    var that = this;
+    var doctor_id = options.id    
+    var age = [];
+    for (let i = 1; i <= 100; i++) {
+      age.push(i)
+    }
+    that.setData({
+      age:age,
+      doctor_id: doctor_id,
     })
   },
 
@@ -156,4 +158,11 @@ Page({
     })
     console.log(this)
   },
+  bindPickerChange: function (e) {
+    var that = this;
+    const val = e.detail.value
+    that.setData({
+      user_age: that.data.age[val[0]],
+    })
+  }
 })

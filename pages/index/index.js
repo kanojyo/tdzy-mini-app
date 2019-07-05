@@ -196,5 +196,11 @@ Page({
     wx.navigateTo({
       url: "/pages/office/introduce?office_url=" + office_url
     })
+  },
+  //医院导航
+  hospitalLocation: function() {
+    wx.navigateTo({
+      url: "/pages/map/map"
+    })
   }
 })

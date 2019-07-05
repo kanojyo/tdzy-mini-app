@@ -35,9 +35,43 @@
     </view>
     <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
     <view class="order-price" wx:else>免费</view>
-    <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
+    <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
     <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已经预约</view>
     <view class="order-btn fail" wx:elif="{{item.status == 3}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">约满</view>
     <view class="order-btn fail" wx:elif="{{item.status == 4}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">暂停预约</view>
   </view>
 </view>
+
+
+<view class="model-box" hidden="{{flag}}">
+  <view class="tip-box">
+    <view class='tip-top'>
+      <view class='title'>请先确认以下信息</view>
+      <view class='close'  bindtap='hide'>
+        <icon type="clear" size="25" />
+      </view>
+    </view>
+    <view class="content">
+      <view class='left'><image src="{{doctor.avatar}}"></image></view>
+      <view class='right'>
+        <view>医师：{{doctor.name}}</view>
+        <view>就诊科室：{{doctor.office}}</view>
+        <view>预约费用：¥0.00</view>
+        <view class='check-order-time'>
+          <view>就诊时间：</view>
+          <view>
+            <view>{{info.order_time}}  {{info.week_day}}</view>
+            <view wx:if="{{info.time_slot == 1}}">上午08：00-12：00</view>
+            <view wx:else>下午14：00-18：00</view>
+          </view>
+        </view>
+        <view class='order-userinfo' style='clear:both;'>
+          <view class='name'>预约人：{{userinfo.name}}</view>
+          <view class='mobile'>电话：{{userinfo.mobile}}</view>
+        </view>
+      </view>
+    </view>
+    <button class='order-button' bindtap='appointment' id="{{info.work_id}}" data-index="{{info.index}}">立即预约</button>
+  </view>
+</view>
+

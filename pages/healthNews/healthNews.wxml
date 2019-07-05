@@ -1,16 +1,16 @@
 <!--pages/healthNews/healthNews.wxml-->
 <view class="container">
-  <view class='topTabSwiper'>
+  <scroll-view class='topTabSwiper' scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
     
       <!--当前项的id等于item项的id，那个就是当前状态-->
       <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-      <view wx:for="{{list}}" wx-key="index" class="tab {{currentData == index ? 'tabBorer' : ''}}" bindtap="checkCurrent" data-index="{{index}}" data-id="{{item.id}}" data-current = "{{index}}" >
+      <view wx:for="{{list}}" wx-key="index" class="tab {{currentData == index ? 'tabBorer' : ''}}" bindtap="switchNav" data-index="{{index}}" data-id="{{item.id}}" data-current = "{{index}}" >
           {{item.category_name}}
         </view>
     
-  </view>
+  </scroll-view>
 
-  <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
+  <scroll-view current="{{currentData}}" class='swiper' duration="300" bindchange="switchTab" scroll-top="{{scrollTop}}" scroll-y="true" >
     <view wx:for="{{list}}" wx:key="index" class='tab-item {{currentData == index ? "swiper_con" : ""}} hot-recommend'>
       <view wx:if="{{item.list_article.data.length > 0}}">
         <view wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' bindtap='articleInfo' id="{{children.id}}">
@@ -25,5 +25,5 @@
       </view> 
       <view wx:else class="empty-box">暂无数据</view>
     </view>
-  </view>
+  </scroll-view>
 </view>

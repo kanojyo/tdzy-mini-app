@@ -40,6 +40,7 @@
 		},
 		"miniprogram": {
 			"current": 2,
+
 			"list": [
 				{
 					"id": 0,
@@ -53,9 +54,9 @@
 					"name": "news",
 					"pathName": "pages/healthNews/healthNews",
 					"query": "id=1"
-        },
-        {
-          "id": 3,
+				},
+				{
+					"id": 3,
 					"name": "user",
 					"pathName": "pages/user/user",
 					"query": "",
@@ -80,6 +81,27 @@
 					"name": "就诊人信息",
 					"pathName": "pages/user/info/info",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "遮罩层",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地图",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "bind",
+					"pathName": "pages/doctor/bind/index",
+					"query": "id=1",
 					"scene": null
 				}
 			]

@@ -3,7 +3,7 @@
   <view class="atticle_title">{{article_info.article_title}}</view>
   <view class="article_time">2019-04-20 18:31:22</view>
   <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
-  <view class="middle-box">
+  <!-- <view class="middle-box">
     <view class="star-box" bindtap="star" id="{{article_info.id}}">
       <view class="iconfont icon-wujiaoxing icon" wx:if = "{{article_info.is_collect == 2}}" mode="widthFix"></view>
       <view class="iconfont shouchang icon" wx:if = "{{article_info.is_collect == 1}}" mode="widthFix"></view>
@@ -18,5 +18,5 @@
   </view>
   <view class="buttom-btn">
     我要咨询
-  </view>
+  </view> -->
 </view>
