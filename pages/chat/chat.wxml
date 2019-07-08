@@ -1,2 +1,1 @@
-<!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<button open-type="contact" bindcontact="handleContact">11111</button>
