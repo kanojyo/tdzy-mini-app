@@ -1,0 +1,172 @@
+/* pages/doctor/order/index.wxss */
+@import "../../../pages/index/index.wxss";
+
+.content > view {
+  display: inline-block;
+}
+
+.content {
+  position: relative;
+  padding-top: 20rpx;
+}
+.avatar {
+ position: absolute;
+ top: 30rpx;
+}
+
+.order-tips {
+  width: 100%;
+  font-size: 24rpx;
+  padding: 20rpx;
+  background-color: #F2F2F2;
+}
+.main{overflow-x: hidden;}
+.intro {
+  margin-bottom: 0;
+}
+
+.order-rule {
+  width: 160rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 24rpx;
+  position: absolute;
+  right: 2%;
+  border-radius: 60rpx;
+  color: red;
+  background-color: #fff;
+  border : 1px solid #ccc;
+}
+
+.order-list {
+  background-color: #fff;
+  width: 100%;
+  padding-top: 20rpx;
+}
+
+.order-content {
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+  padding: 2% 0 20rpx 2%;
+}
+
+.order-day {
+  font-size: 32rpx;
+}
+
+.order-time {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.order-time-box, .order-price {
+  float: left;
+}
+
+.order-price {
+  font-size: 30rpx;
+  color: #0000FF;
+}
+.order-btn {
+  float: right;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius: 30rpx;
+  margin-right: 4%;
+}
+
+.success {
+  background-color: #00CC66;
+}
+
+.fail {
+  background-color: #999999;
+}
+
+.show{   
+  display: block;  
+  }  
+/*隐藏整个conts */  
+.hide{   
+  display: none;  
+} 
+
+/* 遮罩层 */
+.model-box {
+  width:100%;   
+  height:100%;   
+  top:0;   
+  background:rgba(0,0,0,0.5);   
+  overflow: hidden;   
+  /*要显示在wrap的上面 */   
+  z-index: 1;   
+  position: fixed;
+}
+
+.tip-box {
+  position: fixed;
+  width: 90%;
+  bottom: 0;
+  background-color: #fff;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.left image {
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 50%;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+}
+
+.model-box .content > view, .check-order-time > view {
+  float:left;
+}
+
+.right {
+  padding-left: 20rpx;
+  font-size: 30rpx !important;
+}
+
+.order-userinfo {
+  clear: both;
+}
+
+.order-userinfo .name {
+  float:left;
+}
+
+.order-userinfo .mobile {
+  float:right;
+  margin-left: 40rpx;
+}
+
+.order-button {
+  clear: both;
+  display: block;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  font-size: 30rpx;
+  background-color: red;
+  color:#fff;
+  width: 85%;margin-left: 7.5%;
+  border-radius: 40rpx;
+}
+
+.tip-top .title {
+  float: left;
+}
+
+.tip-top .close {
+  float: right;
+}
+
+.check-order-time {
+  border-bottom: 2rpx solid black;
+}

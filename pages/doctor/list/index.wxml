@@ -1,0 +1,24 @@
+<!--pages/doctor/list.wxml-->
+<view class='intro doctor-recommend'>
+  <view class="content">
+    <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
+      <view class="item-avatar">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="text">力荐</view>
+      </view>
+      <view class="item-content">
+        <view class="item-name">
+          <view>
+            <text class="name">{{item.name}}</text>
+            <text class="position">{{item.position}}</text>
+          </view>
+          <button class="btn" bindtap="order" id="{{item.id}}">立即预约</button>
+        </view>
+        <text class="item-desc">{{item.brief}}</text>
+        <view class="item-label">
+          <view class="label" wx:for="{{item.label}}" wx:key="index">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

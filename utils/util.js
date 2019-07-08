@@ -40,8 +40,9 @@ function getRequest(model) {
       }
     })
   }
-  
+
 }
+
 function getBaseUrl() {
   return baseUrl;
 }

@@ -11,11 +11,6 @@ Page({
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHide: false,
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
     indicatorDots: true,
     autoplay: true,
     circular: true,
@@ -29,7 +24,6 @@ Page({
     }
   },
   bindGetUserInfo: function(e)  {
-    console.log(e)
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       var that = this;
@@ -126,6 +120,7 @@ Page({
     }
   },
   getIndex(){
+    var that = this; 
     wx.request({
       url: baseUrl + '/v1/medical_info/index',
       method: 'GET',
@@ -135,7 +130,16 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success(res) {
-        console.log(res)
+        //console.log(res.data.data)
+        var arr = res.data.data;
+        console.log(arr)
+        that.setData({
+          imgUrls: arr.banner,
+          officeList: arr.list_office,
+          hospital: arr.hospital,
+          doctorList: arr.list_doctor,
+          article: arr.list_hot_article
+        })
 
       }
     })
@@ -145,6 +149,58 @@ Page({
   all_news: function () {
     wx.switchTab({
       url: '/pages/healthNews/healthNews',
+    })
+  },
+  //文章详情
+  acticle_info: function (e) {
+    var article_id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/articleInfo/index?id=' + article_id
+    })
+  },
+  //跳转医生列表
+  doctor_list: function() {
+    wx.navigateTo({
+      url: '/pages/doctor/list/index'
+    })
+  },
+  //首页预约医生按钮
+  order: function (e) {
+    var doctor_id = e.currentTarget.id;
+    
+    //检测用户是否绑定信息
+    wx.request({
+      url: baseUrl + '/v1/appointment/user_info_perfect',
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+      },
+      success(res) {
+        if (!res.data.data.status) {
+          wx.navigateTo({
+            url: '/pages/doctor/bind/index?id=' + doctor_id
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/doctor/order/index?id=' + doctor_id,
+          })
+        }
+      }
+    })
+  },
+  //跳转科室介绍
+  officeInfo: function (e) {
+    var office_url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: "/pages/office/introduce?office_url=" + office_url
+    })
+  },
+  //医院导航
+  hospitalLocation: function() {
+    wx.navigateTo({
+      url: "/pages/map/map"
     })
   }
 })

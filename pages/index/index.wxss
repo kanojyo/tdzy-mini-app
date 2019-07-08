@@ -118,6 +118,10 @@
   border-radius: 50%;
   margin-bottom: 10rpx;
 }
+.doctor-recommend .content .item-avatar{
+  width: 130rpx;
+}
+
 .doctor-recommend .content .item-avatar .text{
   height: 36rpx;
   width: 118rpx;
@@ -134,7 +138,7 @@
 }
 .doctor-recommend .content .item-content{
   padding-left: 20rpx;
-  width: 100%;
+  width: 80%;
 }
 .doctor-recommend .content .item-content .name{
   font-size: 34rpx;
@@ -202,7 +206,7 @@
   display: block;
   margin-top: 16rpx;
   display: -webkit-box;
-  -webkit-line-clamp: 3;/* 只显示三行文字 */
+  -webkit-line-clamp: 2;/* 只显示三行文字 */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;/* 多余部分点代替 */
