@@ -1,1 +1,4 @@
 /* pages/chat/chat.wxss */
+.btn{
+  width: 100%;
+}
