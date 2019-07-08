@@ -9,6 +9,7 @@
   font-size: 30rpx;
   padding: 20rpx 0 20rpx 40rpx;
   border-radius: 30rpx;
+  width:74%;
 }
 .search .btn{
   position: absolute;
