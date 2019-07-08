@@ -8,6 +8,7 @@ var session_key = '';
 
 Page({
   data: {
+<<<<<<< HEAD
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHide: false,
@@ -16,6 +17,8 @@ Page({
       'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
       'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
     ],
+=======
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
     indicatorDots: true,
     autoplay: true,
     circular: true,
@@ -80,8 +83,15 @@ Page({
   },
   onLoad: function () {
     var that = this;
+<<<<<<< HEAD
     // 查看是否授权
     wx.getSetting({
+=======
+    getRequest({
+      url: '/v1/medical_info/index',
+      param: '',
+      method: 'GET',
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
           // wx.showTabBar();
@@ -144,7 +154,10 @@ Page({
       }
     })
   },
+<<<<<<< HEAD
   
+=======
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
   //查看更多新闻推荐
   all_news: function () {
     wx.switchTab({

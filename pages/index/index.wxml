@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<<<<<<< HEAD
   <view wx:if="{{isHide}}" class="shouquan">
     <view wx:if="{{canIUse}}">
       <view class='header'>
@@ -12,6 +13,19 @@
       <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
         授权登录
       </button>
+=======
+  <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.img}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="office">
+    <view class="office-item" wx:for="{{officeList}}" wx:key="index">
+      <image class="icon" src="{{item.office_img}}"></image>
+      <text>{{item.name}}</text>
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
     </view>
     <view wx:else>请升级微信版本</view>
   </view>
@@ -39,12 +53,20 @@
       </view>
       <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
     </view>
+<<<<<<< HEAD
     <view class='intro doctor-recommend'>
       <view class="title">
         <view class="hospital">名医推荐</view>
         <view class="more">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
+=======
+    <view class="content" >
+      <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
+        <view class="item-avatar">
+          <image class="avatar" src="{{item.avatar}}"></image>
+          <view class="text">力荐</view>
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
         </view>
       </view>
       <view class="content">
@@ -69,12 +91,28 @@
         </view>
       </view>
     </view>
+<<<<<<< HEAD
     <view class='intro hot-recommend'>
       <view class="title">
         <view class="hospital">热门推荐</view>
         <view class="more" bindtap="all_news">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
+=======
+  </view>
+  <view class='intro hot-recommend'>
+    <view class="title">
+      <view class="hospital">热门推荐</view>
+      <view class="more" bindtap="all_news">
+        <text>更多</text>
+        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
+      </view>
+    </view>
+    <view class="content">
+      <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.article_cover}}"></image>
+>>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
         </view>
       </view>
       <view class="content">
