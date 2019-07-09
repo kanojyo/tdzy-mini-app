@@ -1,54 +1,38 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+const util = require('../../utils/util');
 Page({
-  data: {
-    longitude: 116.4965075,
-    latitude: 40.006103,
-    speed: 0,
-    accuracy: 0
-  },
-  //事件处理函数
-  bindViewTap: function () {
+  formSubmit: function (e) {
+    var fromId = e.detail.formId;
+    var name = "泰斗中医院";
+    var mobile = 13545383720;
+    var doctor_name = "我叫零零一";
 
-  },
-  onLoad: function () {
-    var that = this
-    wx.showLoading({
-      title: "定位中",
-      mask: true
-    })
-    wx.getLocation({
-      type: 'gcj02',
-      altitude: true,//高精度定位
-      //定位成功，更新定位结果
-      success: function (res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var speed = res.speed
-        var accuracy = res.accuracy
-
-        that.setData({
-          longitude: longitude,
-          latitude: latitude,
-          speed: speed,
-          accuracy: accuracy
-        })
+    wx.request({
+      url: util.getBaseUrl() + '/v1/test_form',
+      method: 'POST',
+      data: { form_id: fromId, name: name, doctor_name: doctor_name, mobile: mobile },
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
-      //定位失败回调
-      fail: function () {
-        wx.showToast({
-          title: "定位失败",
-          icon: "none"
-        })
-      },
-
-      complete: function () {
-        //隐藏定位中信息进度
-        wx.hideLoading()
+      success(res) {
+        if (res.data.code == 200) {
+          wx.showModal({
+            title: '提示',
+            content: "成功",
+            showCancel: false,
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.data.message,
+            showCancel: false,
+          })
+        }
       }
-
     })
   },
+  formReset: function () {
+    console.log('form发生了reset事件')
+  }
 })

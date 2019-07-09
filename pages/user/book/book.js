@@ -11,7 +11,9 @@ Page({
     id:0,
     list1: [],//未就诊
     list2:[],//已就诊
-    list3:[],//已取消
+    list3:[],//已取消,
+    form_id: "",//表单ID
+    page:"pages/user/book/book"//跳转回小程序个人中心我的预约页面
   },
   //获取当前滑块的index
   bindchange: function (e) {
@@ -77,7 +79,9 @@ Page({
     wx.request({
       url: utils.getBaseUrl()+'/v1/appointment/cancel_appointment',
       data:{
-        appointment_id: that.data.id
+        appointment_id: that.data.id,
+        form_id: that.data.form_id,
+        page: that.data.page
       },
       method: 'POST',
       header: {
@@ -106,24 +110,24 @@ Page({
       }
     });
   },
-  openConfirm: function (e) {
-    var that =this;
-    that.setData({
-      id: e.currentTarget.id
-    })
-    wx.showModal({
-      title: '提示',
-      content: '是否取消预约',
-      success(res) {
-        if (res.confirm) {
-          //用户点击确定
-          that.cancel();
-        } else if (res.cancel) {
-          //用户点击取消
-        }
-      }
-    })
-  },
+  // openConfirm: function (e) {
+  //   var that =this;
+  //   that.setData({
+  //     id: e.currentTarget.id
+  //   })
+  //   wx.showModal({
+  //     title: '提示',
+  //     content: '是否取消预约',
+  //     success(res) {
+  //       if (res.confirm) {
+  //         //用户点击确定
+  //         that.cancel();
+  //       } else if (res.cancel) {
+  //         //用户点击取消
+  //       }
+  //     }
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -180,5 +184,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  formSubmit: function (e) { 
+    var page = 'pages/user/book/book';
+    var form_id = e.detail.formId;
+    var that = this;
+    that.setData({
+      id: e.currentTarget.id,
+      form_id: form_id,
+    })
+    wx.showModal({
+      title: '提示',
+      content: '是否取消预约',
+      success(res) {
+        if (res.confirm) {
+          //用户点击确定
+          that.cancel();
+        } else if (res.cancel) {
+          //用户点击取消
+        }
+      }
+    })
   }
 })

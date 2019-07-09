@@ -75,3 +75,7 @@
   color: red;
   font-size: 25rpx;
 }
+
+.dis {
+  background-color: #C9C9C9 !important;
+}

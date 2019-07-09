@@ -59,7 +59,8 @@
                 <text class="name">{{item.name}}</text>
                 <text class="position">{{item.position}}</text>
               </view>
-              <button class="btn" bindtap="order" id="{{item.id}}">立即预约</button>
+              <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
+              <button class="btn fail" wx:else>不可预约</button>
             </view>
             <text class="item-desc">{{item.brief}}</text>
             <view class="item-label">

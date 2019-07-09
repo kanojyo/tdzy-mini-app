@@ -40,7 +40,9 @@
               <text>{{item.mobile}}</text>
             </view>
             <view class="btn">
-              <button id="{{item.id}}"  bindtap="openConfirm">取消预约</button>
+              <form bindsubmit="formSubmit" report-submit="true" id="{{item.id}}">
+                <button form-type="submit">取消预约</button>
+              </form>
             </view>
 
           </view>

@@ -1,4 +1,5 @@
 // pages/user/user.js
+let utils = require('../../utils/util.js');
 import { getRequest } from '../../utils/util.js';
 Page({
 
@@ -172,5 +173,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  formSubmit: function (e) {
+    var page = 'pages/user/sign/sign';
+    var form_id = e.detail.formId;
+    wx.request({
+      url: utils.getBaseUrl() + '/v1/sign/sign_up',
+      method: 'POST',
+      data:{
+        page: page,
+        form_id: form_id
+      },
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+      },
+      success(res) {
+        
+        wx.navigateTo({
+          url: 'sign/sign',
+        })
+       
+      }
+    })
+    
   }
 })

@@ -146,12 +146,44 @@ Page({
     })
   },
   appointment: function (e) {
+    
+  },
+  show: function (e) {
+    this.setData({ flag: false })
+    var index = e.currentTarget.dataset.index;
+    var that = this;
+    that.data.info.order_time = that.data.work[index].order_time;
+    that.data.info.week_day = that.data.work[index].week_day;
+    that.data.info.time_slot = that.data.work[index].time_slot;
+    that.data.info.work_id = that.data.work[index].id;
+    that.data.info.index = index;
+    getRequest({
+      url: '/v1/sign/my_info',
+      method: 'GET',
+      success(res) {
+        that.setData({
+          userinfo: res.data
+        })
+      }
+    })
+
+    that.setData({
+      info: that.data.info
+    })
+  },
+  // 当遮罩层与conts区域出现时，执行hide,flag变为true，遮罩层与conts区域再次被隐藏
+  hide: function () {
+    this.setData({ flag: true })
+  },
+  formSubmit: function (e) { 
+    var page = 'pages/user/book/book';
+    var form_id = e.detail.formId;
     var id = e.currentTarget.id;
     var status = e.currentTarget.dataset.status
     var index = e.currentTarget.dataset.index;
     var that = this;
     var nums = that.data.work[index].order_use_num;
-
+    
     if (status == 2) {
       wx.showModal({
         title: '提示',
@@ -171,7 +203,7 @@ Page({
       wx.request({
         url: util.getBaseUrl() + '/v1/appointment/create_appointment',
         method: 'POST',
-        data: {work_id: id},
+        data: { work_id: id, page: page, form_id: form_id },
         header: {
           'Content-Type': 'application/json',
           'device': wx.getStorageSync('device'),
@@ -209,34 +241,7 @@ Page({
           }
         }
       })
-      
-    }
-  },
-  show: function (e) {
-    this.setData({ flag: false })
-    var index = e.currentTarget.dataset.index;
-    var that = this;
-    that.data.info.order_time = that.data.work[index].order_time;
-    that.data.info.week_day = that.data.work[index].week_day;
-    that.data.info.time_slot = that.data.work[index].time_slot;
-    that.data.info.work_id = that.data.work[index].id;
-    that.data.info.index = index;
-    getRequest({
-      url: '/v1/sign/my_info',
-      method: 'GET',
-      success(res) {
-        that.setData({
-          userinfo: res.data
-        })
-      }
-    })
 
-    that.setData({
-      info: that.data.info
-    })
-  },
-  // 当遮罩层与conts区域出现时，执行hide,flag变为true，遮罩层与conts区域再次被隐藏
-  hide: function () {
-    this.setData({ flag: true })
+    }
   }
 })

@@ -42,7 +42,7 @@ Page({
     var that = this;
     getRequest({
       url: '/v1/sign/sign_up',
-      method: 'GET',
+      method: 'POST',
       success(res) {
         console.log(res)
         that.setData({

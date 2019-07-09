@@ -71,7 +71,9 @@
         </view>
       </view>
     </view>
-    <button class='order-button' bindtap='appointment' id="{{info.work_id}}" data-index="{{info.index}}">立即预约</button>
+    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" id="{{info.work_id}}" data-index="{{info.index}}">
+      <button class='order-button'  form-type="submit">立即预约</button>
+    </form>
   </view>
 </view>
 

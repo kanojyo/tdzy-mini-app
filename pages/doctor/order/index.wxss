@@ -131,7 +131,12 @@
 
 .right {
   padding-left: 20rpx;
-  font-size: 30rpx !important;
+  font-size: 26rpx;
+  display: inline-block;
+}
+
+.left {
+  display: inline-block;
 }
 
 .order-userinfo {

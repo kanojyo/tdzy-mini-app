@@ -211,3 +211,7 @@
   overflow: hidden;
   text-overflow: ellipsis;/* 多余部分点代替 */
 }
+
+.fail {
+  background-color: #666 !important;
+}
