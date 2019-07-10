@@ -79,3 +79,8 @@
 .dis {
   background-color: #C9C9C9 !important;
 }
+
+.radio {
+  opacity: 0 !important;
+  height: 0;
+}

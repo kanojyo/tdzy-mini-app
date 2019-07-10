@@ -73,6 +73,7 @@ page{
   border-radius: 10rpx;
   position: relative;
   width: 70%;
+  overflow-x: hidden;
 }
 .right .centens .text::before{
   content: '';

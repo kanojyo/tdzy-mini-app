@@ -1,5 +1,29 @@
 import { getRequest } from '../../utils/util.js';
 var WxParse = require('../../wxParse/wxParse.js');
+const getFormatTime = (number, format) => {
+
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+
+  var date = new Date(number * 1000);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i in returnArr) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+}
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
 Page({
   /**
    * 页面的初始数据
@@ -7,7 +31,11 @@ Page({
   data: {
     
   },
-
+  //我要咨询
+  handleContact(e) {
+    console.log(e.path)
+    console.log(e.query)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,6 +51,7 @@ Page({
         console.log(res)
         var info = res.data;
         WxParse.wxParse('info', 'html', info.article_content, that, 0);
+        res.data.created_at = getFormatTime(res.data.created_at, 'Y-M-D h:m:s');
         that.setData({
           article_info: res.data
         })

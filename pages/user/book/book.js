@@ -13,7 +13,7 @@ Page({
     list2:[],//已就诊
     list3:[],//已取消,
     form_id: "",//表单ID
-    page:"pages/user/book/book"//跳转回小程序个人中心我的预约页面
+    page:"pages/index/index"//跳转回小程序个人中心我的预约页面
   },
   //获取当前滑块的index
   bindchange: function (e) {

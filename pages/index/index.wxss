@@ -43,6 +43,43 @@
   height: 400rpx;
 }
 .banner .slide-image{width: 100%;}
+
+.top-tip {
+  width: 100%;
+  height: 230rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.top-tip .tip-info {
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 230rpx;
+}
+
+
+
+.top-tip .tip-info .tip-info-img {
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+}
+
+
+.top-tip .tip-info .tip-info-title {
+  margin-left: 20rpx;
+  display: inline-block;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.space {
+  width: 10%;
+  display: inline-block;
+}
+
 .office{
   width: 100%;
   height: 190rpx;
@@ -102,8 +139,8 @@
   font-size: 24rpx;
 }
 .intro .title .more image{
-  width: 41rpx;
-  height: 43rpx;
+  width: 26rpx;
+  height: 26rpx;
   margin-left: 10rpx;
 }
 .intro>image{width: 100%;}
@@ -119,7 +156,8 @@
   margin-bottom: 10rpx;
 }
 .doctor-recommend .content .item-avatar{
-  width: 130rpx;
+  width: 134rpx;
+ 
 }
 
 .doctor-recommend .content .item-avatar .text{
@@ -138,7 +176,7 @@
 }
 .doctor-recommend .content .item-content{
   padding-left: 20rpx;
-  width: 80%;
+  width: 78%;
 }
 .doctor-recommend .content .item-content .name{
   font-size: 34rpx;
@@ -159,12 +197,20 @@
 .doctor-recommend .content .item-content .item-desc{
   font-size: 26rpx;
   color:#666;
+  display: block;
+  margin-top: 16rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;/* 只显示三行文字 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;/* 多余部分点代替 */
+  height: 78rpx;
 }
 .doctor-recommend .content .item-content .item-label{
   display: flex;
-  font-size: 24rpx;
+  font-size: 22rpx;
   color:#d2b576;
-  margin-top: 24rpx;
+  margin-top: 6rpx;
 }
 .doctor-recommend .content .item-content .item-label .label{
   border:1rpx solid #d2b576;

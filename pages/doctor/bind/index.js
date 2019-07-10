@@ -14,19 +14,54 @@ Page({
     maxTextLen: 20,
     // 默认长度
     textLen: 0,
-    getWords(e) {
-      let page = this;
-      // 设置最大字符串长度(为-1时,则不限制)
-      let maxTextLen = page.data.maxTextLen;
-      // 文本长度
-      let textLen = e.detail.value.length;
-
-      page.setData({
-        maxTextLen: maxTextLen,
-        textLen: textLen
-      });
-    },
-    
+    sex: "",
+    name:"",
+    mobile: "",
+  },
+  getWords(e) {
+    let page = this;
+    // 设置最大字符串长度(为-1时,则不限制)
+    let maxTextLen = page.data.maxTextLen;
+    // 文本长度
+    let textLen = e.detail.value.length;
+    console.log(e)
+    page.setData({
+      maxTextLen: maxTextLen,
+      textLen: textLen
+    });
+  },
+  getName: function(event) {
+    var name = event.detail.value;
+    var that = this;
+    if (name) {
+      that.setData({
+        name: name,
+      })
+    } else {
+      that.setData({
+        name: "",
+      })
+    }
+  },
+  getMobile: function (event) {
+    var mobile = event.detail.value;
+    var that = this;
+    if (/^1[34578]\d{9}$/.test(mobile)) {
+      that.setData({
+        mobile: mobile,
+      })
+    } else {
+      that.setData({
+        mobile: "",
+      })
+    }
+  },
+  item_change: function (e) {
+    var that = this;
+    var sex = e.detail.value;
+    that.setData({
+      sex: sex
+    })
   },
   formSubmit: function (e) {
     var that = this;

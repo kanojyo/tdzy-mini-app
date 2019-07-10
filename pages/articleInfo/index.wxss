@@ -1,19 +1,19 @@
 /* pages/articleInfo/index.wxss */
 .container {
-  display: flex;
-  padding: 2%;
-  
+  padding-left: 2%;
+  overflow-x: hidden;
 }
-
 .article_title {
-  font-size: .36rem;
+  
+  width: 96%;
+  font-size: 40rpx ;
   font-weight: bold;
-  margin-bottom: .15rem;
+  margin-bottom: 10rpx;
 }
 
 .article_time {
-  width: 100%;
-  padding-left: 2%;
+  width: 96%;
+  
   color: #666;
 } 
 
@@ -58,5 +58,14 @@
 
 button {
   line-height: normal;
+}
+
+.star-box .icon{
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.share-box .icon {
+  padding: 8rpx 20.5rpx;
 }
 

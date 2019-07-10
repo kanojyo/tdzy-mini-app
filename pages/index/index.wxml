@@ -23,6 +23,15 @@
         </swiper-item>
       </block>
     </swiper>
+    <view class="top-tip">
+      <view class="tip-info">
+          <image bindtap="GotoAuth" src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/myAuthenticity%403x.png" class="tip-info-img"></image>
+          <text class="tip-info-title" bindtap="GotoAuth">真伪查询</text>
+          <view class='space'></view>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/HospitalNavigation@2x.png" bindtap='hospitalLocation' class="tip-info-img"></image>
+          <text bindtap='hospitalLocation' class="tip-info-title">医院导航</text>
+      </view>
+    </view>
     <view class="office">
       <view class="office-item" wx:for="{{officeList}}" wx:key="index" bindtap="officeInfo" data-url="{{item.office_url}}">
         <image class="icon" src="{{item.office_img}}"></image>
@@ -32,10 +41,6 @@
     <view class='intro'>
       <view class="title">
         <view class="hospital">泰斗中医院</view>
-        <view class="more" bindtap='hospitalLocation'>
-          <text>医院导航</text>
-          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/HospitalNavigation@2x.png"></image>
-        </view>
       </view>
       <image src="{{hospital.img}}"></image>
     </view>

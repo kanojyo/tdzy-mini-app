@@ -23,6 +23,11 @@ Page({
       path: '/index/index?id=123'
     }
   },
+  GotoAuth() {
+    wx.navigateTo({
+      url: '/pages/user/authenticity/authenticity',
+    })
+  },
   bindGetUserInfo: function(e)  {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮

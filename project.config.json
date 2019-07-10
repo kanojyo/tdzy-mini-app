@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": 0,
@@ -108,6 +108,13 @@
 					"name": "我的预约",
 					"pathName": "pages/user/book/book",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "文章",
+					"pathName": "pages/articleInfo/index",
+					"query": "id=396",
 					"scene": null
 				}
 			]

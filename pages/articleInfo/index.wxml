@@ -1,10 +1,10 @@
-<import src="/wxParse/wxParse.wxml"/>
 <view class="container">
-  <view class="atticle_title">{{article_info.article_title}}</view>
-  <view class="article_time">2019-04-20 18:31:22</view>
+  <view class="article_title">{{article_info.article_title}}</view>
+  <view class="article_time">{{article_info.created_at}}</view>
+  <import src="/wxParse/wxParse.wxml"/>
   <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
   <view class="middle-box">
-    <view class="star-box" bindtap="star" id="{{article_info.id}}">
+    <view class="star-box test" bindtap="star" id="{{article_info.id}}">
       <view class="iconfont icon-wujiaoxing icon" wx:if = "{{article_info.is_collect == 2}}" mode="widthFix"></view>
       <view class="iconfont shouchang icon" wx:if = "{{article_info.is_collect == 1}}" mode="widthFix"></view>
       <view class="nums">{{article_info.article_collection}}</view>
@@ -16,7 +16,7 @@
       <view class="nums">{{article_info.article_share}}</view>
     </view>
   </view>
-  <view class="buttom-btn">
+  <button class="buttom-btn" open-type="contact" bindcontact="handleContact">
     我要咨询
-  </view>
+  </button>
 </view>
