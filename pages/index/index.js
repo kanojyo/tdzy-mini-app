@@ -28,6 +28,28 @@ Page({
       url: '/pages/user/authenticity/authenticity',
     })
   },
+  formSubmit: function (e) {
+    var page = 'pages/index/index';
+    var form_id = e.detail.formId;
+    wx.request({
+      url: utils.getBaseUrl() + '/v1/sign/sign_up',
+      method: 'POST',
+      data: {
+        page: page,
+        form_id: form_id
+      },
+      header: {
+        'Content-Type': 'application/json',
+        'device': wx.getStorageSync('device'),
+        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+      },
+      success(res) {
+        wx.navigateTo({
+          url: '/pages/user/sign/sign',
+        })
+      }
+    })
+  },
   bindGetUserInfo: function(e)  {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮

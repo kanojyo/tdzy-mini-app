@@ -28,7 +28,7 @@
         <view class="picker age-list" wx:if="{{user_age}}">
           {{user_age}}
         </view>
-        <view class="picker age-list" wx:else>
+        <view class="picker age-list no-age" wx:else>
           请选择您的年龄（必填）
         </view>
       </picker>

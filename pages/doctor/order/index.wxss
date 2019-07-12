@@ -33,10 +33,13 @@
   font-size: 24rpx;
   position: absolute;
   right: 2%;
-  border-radius: 60rpx;
   color: red;
   background-color: #fff;
   border : 1px solid #ccc;
+  border-top-left-radius: 60rpx;
+  border-bottom-left-radius: 60rpx;
+  border-top-right-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
 }
 
 .order-list {
@@ -81,7 +84,7 @@
 }
 
 .success {
-  background-color: #00CC66;
+  background-color: #d1b574;
 }
 
 .fail {

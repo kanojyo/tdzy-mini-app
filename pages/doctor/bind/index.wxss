@@ -59,13 +59,14 @@
   line-height: 100rpx;
   top: 0;
   font-size: 25rpx;
-  
+  text-align: right;
 }
 
 .age-list {
   height: 100rpx !important;
   line-height: 100rpx;
   border :0 ;
+  text-align: right;
 }
 
 .bottom-tip {
@@ -83,4 +84,8 @@
 .radio {
   opacity: 0 !important;
   height: 0;
+}
+
+.no-age {
+  color: #808080;
 }

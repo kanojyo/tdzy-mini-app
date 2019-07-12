@@ -20,7 +20,7 @@
   <view class="nav">
     <view class="nav-item" bindtap="GotoBook">
       <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/myorder%402x.png"></image>
+        <image src="../../images/myorder@2x.png"></image>
         <text>我的预约</text>
       </view>
       <view class='arrow'>
@@ -46,6 +46,9 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
+    
+  </view>
+  <view class="nav">
     <view class="nav-item" bindtap="GotoMessage">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
@@ -56,8 +59,6 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
-  </view>
-  <view class="nav">
     <view class="nav-item" bindtap="GotoFeedBack">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/advise%402x.png"></image>

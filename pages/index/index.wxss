@@ -143,10 +143,10 @@
   height: 26rpx;
   margin-left: 10rpx;
 }
-.intro>image{width: 100%;}
+.intro>image{width: 100%;display:block;}
 .doctor-recommend .content .item{
   border-top:1rpx solid #efefef;
-  padding: 50rpx 30rpx 30rpx 30rpx;
+  padding: 50rpx 30rpx 40rpx 30rpx;
   display: flex;
 }
 .doctor-recommend .content .avatar{
@@ -205,12 +205,13 @@
   overflow: hidden;
   text-overflow: ellipsis;/* 多余部分点代替 */
   height: 78rpx;
+  width: 400rpx;
 }
 .doctor-recommend .content .item-content .item-label{
   display: flex;
   font-size: 22rpx;
   color:#d2b576;
-  margin-top: 6rpx;
+  margin-top: 5rpx;
 }
 .doctor-recommend .content .item-content .item-label .label{
   border:1rpx solid #d2b576;
@@ -260,4 +261,13 @@
 
 .fail {
   background-color: #666 !important;
+}
+
+.qiandao{
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  position: fixed;
+  right:40rpx;
+  top:30%;
 }
