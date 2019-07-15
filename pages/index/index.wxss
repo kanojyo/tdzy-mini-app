@@ -169,7 +169,7 @@
   width: 114rpx;
   text-align: center;
   background: url('https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/recommend@2x.png');
-  background-size: contain;
+  background-size: cover;
   color:#fff;
   font-size: 22rpx;
 }
@@ -264,7 +264,7 @@
 }
 
 .fail {
-  background-color: #666 !important;
+  background-color: #CCCCCC !important;
 }
 
 .qiandao{
@@ -274,4 +274,5 @@
   position: fixed;
   right:40rpx;
   top:30%;
+  z-index: 1000;
 }

@@ -16,6 +16,11 @@
     <view wx:else>请升级微信版本</view>
   </view>
   <view wx:else class="main">
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
+    <button class="sign" form-type="submit">
+      <image class="qiandao" src="../../images/qiandao.png"></image>
+    </button>
+  </form>
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
@@ -54,21 +59,21 @@
       </view>
       <view class="content">
         <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
-          <view class="item-avatar">
+          <view class="item-avatar" bindtap="doctorInfo" id="{{item.id}}">
             <image class="avatar" src="{{item.avatar}}"></image>
             <view class="text">力荐</view>
           </view>
           <view class="item-content">
             <view class="item-name">
               <view>
-                <text class="name">{{item.name}}</text>
-                <text class="position">{{item.position}}</text>
+                <text class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</text>
+                <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
               </view>
               <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
               <button class="btn fail" wx:else>不可预约</button>
             </view>
-            <text class="item-desc">{{item.brief}}</text>
-            <view class="item-label">
+            <text class="item-desc" bindtap="doctorInfo" id="{{item.id}}">{{item.brief}}</text>
+            <view class="item-label" bindtap="doctorInfo" id="{{item.id}}">
               <view class="label" wx:for="{{item.label}}" wx:key="index">{{item}}</view>
             </view>
           </view>
@@ -97,8 +102,3 @@
     </view>
   </view>
 </view>
-<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
-  <button class="sign" form-type="submit">
-    <image class="qiandao" src="../../images/qiandao.png"></image>
-  </button>
-</form>

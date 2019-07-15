@@ -235,5 +235,12 @@ Page({
     wx.navigateTo({
       url: "/pages/hospital/index"
     })
+  },
+  //跳转医生详情
+  doctorInfo: function(e) {
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: "/pages/doctor/info/index?doctor_id=" + id,
+    })
   }
 })

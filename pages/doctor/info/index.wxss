@@ -1,0 +1,15 @@
+/* pages/doctor/info/index.wxss */
+.buttom-btn {
+  margin-left: 2%;
+  width: 96%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #d2b576;
+  text-align: center;
+  position: fixed;
+  border-radius: 60rpx;
+  bottom: 20rpx;
+  margin-top: 30rpx;
+}
