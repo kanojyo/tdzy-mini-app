@@ -1,8 +1,17 @@
 /* pages/healthNews/healthNews.wxss */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
 .topTabSwiper{
   width: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .tab{
   width: 25%;

@@ -1,38 +1,20 @@
 const util = require('../../utils/util');
 Page({
-  formSubmit: function (e) {
-    var fromId = e.detail.formId;
-    var name = "泰斗中医院";
-    var mobile = 13545383720;
-    var doctor_name = "我叫零零一";
-
-    wx.request({
-      url: util.getBaseUrl() + '/v1/test_form',
-      method: 'POST',
-      data: { form_id: fromId, name: name, doctor_name: doctor_name, mobile: mobile },
-      header: {
-        'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
-      },
-      success(res) {
-        if (res.data.code == 200) {
-          wx.showModal({
-            title: '提示',
-            content: "成功",
-            showCancel: false,
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: res.data.message,
-            showCancel: false,
-          })
-        }
-      }
-    })
+  data: {
+    images: [
+      "https://apitest.wuhanlst.com:8013/media/20190420259e4e5ecb373f4235ae6452ecfbafc6",
+      "https://apitest.wuhanlst.com:8013/media/20190420bebd4f49ccde3efbf6737f379bdd22f3",
+      "https://apitest.wuhanlst.com:8013/media/201904200354e01778c5560924d4f26aea0443f0",
+      "https://apitest.wuhanlst.com:8013/media/20190420b5042c9b1b3b140dc567151b5c63b1e8",
+      "https://apitest.wuhanlst.com:8013/media/20190420f34da278ad83c759143aadcad5e25755"
+    ],
   },
-  formReset: function () {
-    console.log('form发生了reset事件')
+  imgYu: function (event) {
+    var imgList = event.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+      current: this.data.images[0], // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
   }
 })

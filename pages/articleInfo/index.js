@@ -107,26 +107,29 @@ Page({
    */
   onShareAppMessage: function (res) {
     var that = this;
+
+    var nums = that.data.article_info.article_share;
+    console.log(nums)
+    that.data.article_info.article_share = nums + 1;
+    that.data.article_info.is_share = 1;
+    that.setData({
+      article_info: that.data.article_info
+    })
     
+    getRequest({
+      url: '/v1/information/share_article?article_id=' + that.data.article_info.id,
+      param: '',
+      method: 'GET',
+      success: function (result) {
+
+      }
+    })
     return {
       title: that.data.article_info.article_title,
       desc: that.data.article_info.article_description,
       path: that.data.article_info.article_url,
       success: function(res) {
-        var nums = that.data.article_info.article_share;
-        that.data.article_info.article_share = nums + 1;
-        that.data.article_info.is_share = 1;
-        that.setData({
-          article_info: that.data.article_info
-        })
-        getRequest({
-          url: '/v1/information/share_article?article_id=' + that.data.article_info.id,
-          param: '',
-          method: 'GET',
-          success: function (result) {
         
-          }
-        })
       }
     }
   },

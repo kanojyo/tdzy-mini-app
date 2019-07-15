@@ -46,12 +46,14 @@
   background-color: #fff;
   width: 100%;
   padding-top: 20rpx;
+  overflow-x: hidden;
 }
 
 .order-content {
   width: 100%;
   border-bottom: 2rpx solid #ccc;
-  padding: 2% 0 20rpx 2%;
+  padding: 3% 0 20rpx 2%;
+  overflow-x: hidden;
 }
 
 .order-day {
@@ -69,7 +71,8 @@
 
 .order-price {
   font-size: 30rpx;
-  color: #0000FF;
+  color: red;
+  margin-left: 10rpx;
 }
 .order-btn {
   float: right;

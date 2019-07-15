@@ -17,12 +17,12 @@ Page({
   onLoad: function (options) {
     var that = this;
     getRequest({
-      url: '/v1/medical_info/index',
+      url: '/v1/medical_info/recommend_doctor',
       method: 'GET',
       success(res) {
         var arr = res.data;
         that.setData({
-          doctorList: arr.list_doctor
+          doctorList: arr.data
         })
       }
     })

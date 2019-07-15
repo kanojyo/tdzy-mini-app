@@ -16,7 +16,8 @@
       <view class="nums">{{article_info.article_share}}</view>
     </view>
   </view>
-  <button class="buttom-btn" open-type="contact" bindcontact="handleContact">
+  
+</view>
+<button class="buttom-btn" open-type="contact" bindcontact="handleContact">
     我要咨询
   </button>
-</view>

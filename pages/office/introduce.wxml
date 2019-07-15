@@ -1,1 +1,4 @@
-<web-view src="https://tdxcx.wuhanlst.com/info/417.html"></web-view>
+<view class="container">
+  <import src="../../wxParse/wxParse.wxml"/>
+  <template is="wxParse" data="{{wxParseData:office.nodes}}"/>
+</view>

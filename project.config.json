@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 12,
 			"list": [
 				{
 					"id": 0,
@@ -115,6 +115,20 @@
 					"name": "文章",
 					"pathName": "pages/articleInfo/index",
 					"query": "id=396",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "医院",
+					"pathName": "pages/hospital/index",
+					"query": "id=396",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "科室",
+					"pathName": "pages/office/introduce",
+					"query": "office_id=2",
 					"scene": null
 				}
 			]

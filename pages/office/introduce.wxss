@@ -1,1 +1,2 @@
 /* pages/office/introduce.wxss */
+@import "../../wxParse/wxParse.wxss";

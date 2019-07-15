@@ -1,4 +1,7 @@
 // pages/office/introduce.js
+import { getRequest } from '../../utils/util.js';
+var WxParse = require('../../wxParse/wxParse.js');
+
 Page({
 
   /**
@@ -13,9 +16,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var url = options.office_url;
-    that.setData({
-      url: url
+    var office_id = options.office_id;
+    getRequest({
+      url: '/v1/medical_info/office_brief?office_id=' + office_id,
+      method: 'GET',
+      success(res) {
+        var info = res.data;
+        
+        that.setData({
+          office: WxParse.wxParse('office', 'html', info.brief, that, 0),
+        })
+      }
     })
   },
 

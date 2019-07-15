@@ -143,7 +143,11 @@
   height: 26rpx;
   margin-left: 10rpx;
 }
-.intro>image{width: 100%;display:block;}
+.intro>image{
+  width: 100%;
+  display:block;
+  height: 300rpx;
+}
 .doctor-recommend .content .item{
   border-top:1rpx solid #efefef;
   padding: 50rpx 30rpx 40rpx 30rpx;
@@ -162,7 +166,7 @@
 
 .doctor-recommend .content .item-avatar .text{
   height: 36rpx;
-  width: 118rpx;
+  width: 114rpx;
   text-align: center;
   background: url('https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/recommend@2x.png');
   background-size: contain;
