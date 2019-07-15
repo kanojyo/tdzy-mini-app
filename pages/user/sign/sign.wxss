@@ -5,7 +5,7 @@ page{
 }
 .info{
   width: 690rpx;
-  padding: 0 30rpx;
+  padding: 30rpx 30rpx;
   display: flex;
   justify-content: space-between;
   font-size: 30rpx;
@@ -37,7 +37,7 @@ page{
   color:#333;
   font-size: 30rpx;
   margin-top:10rpx;
-  position: relative
+  position: relative;
 }
 .userInfo .text .jifen::after{
   content: '';
@@ -68,13 +68,85 @@ page{
   padding: 20rpx 30rpx;
   background: #fff;
 }
-.sign .text{
+.sign>.text{
   text-align: center;
   font-size: 30rpx;
+  height: 90rpx;
   color:#000;
 }
 .sign .text .red{
   color:#ff0000;
+}
+.sign .tab{
+  border-top:2rpx dashed #efefef;
+  /* height: 60rpx; */
+  /* margin: 0 30rpx; */
+}
+.sign .tab .tab-ul{
+  width: 100%;
+  display: flex;
+  height: 60rpx;
+  justify-content:space-between;
+  margin-bottom: 40rpx;
+}
+.sign .tab .tab-ul .tab-item{
+  /* flex: 1; */
+  position: relative;
+  width: 62rpx;
+}
+.sign .tab .tab-ul .tab-item .score{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  height: 92rpx;
+  position: absolute;
+  top:-61rpx;
+}
+.sign .tab-item .score image{
+  width: 62rpx;
+}
+.sign .tab-item .score .img_10{
+  height: 62rpx;
+  margin-top:30rpx;
+}
+.sign .tab-item .score .img_40{
+  height: 92rpx;
+}
+.sign .tab-item .date{
+  font-size: 22rpx;
+  margin-top: 36rpx;
+}
+.sign .tab .underline{
+  /* width: 92%; */
+  margin: 0 40rpx;
+  height: 2rpx;
+  background: #bfbfbf;
+}
+.sign .tab .line{
+  /* border-top:2rpx solid #bfbfbf; */
+  height: 48rpx;
+  justify-content:space-between;
+  position: relative;
+  width: 96%;
+  margin:0 2%;
+}
+.sign .tab .line .tab-item{
+  width: 27rpx;
+  
+}
+.sign .tab .line .tab-item .bot{
+  position: absolute;
+  height: 48rpx;
+  top:-25rpx;
+  z-index: 100;
+}
+.sign .tab-item .score .gouxuan{
+  height: 48rpx;
+  width: 48rpx;
+}
+.sign .tab-item .score .yuan{
+  height: 27rpx;
+  width: 27rpx;
 }
 .hot{
   width: 690rpx;

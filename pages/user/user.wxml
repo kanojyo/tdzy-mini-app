@@ -6,16 +6,16 @@
         <image src="{{userInfo.avatarUrl}}"></image>
         <view class="text">
           <view class="nickname">{{userInfo.nickName}}</view>
-          <view class="num">{{telephone}}</view>
         </view>
       </view>
       <view class="right">
-      <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
-        <button class="sign" form-type="submit">我的签到</button>
-      </form>
+        <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
+          <button class="sign" form-type="submit">签到</button>
+        </form>
       </view>
     </view>
-    <view wx:else></view>
+    <view wx:else>
+    </view>
   </view>
   <view class="nav">
     <view class="nav-item" bindtap="GotoBook">
@@ -46,9 +46,6 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
-    
-  </view>
-  <view class="nav">
     <view class="nav-item" bindtap="GotoMessage">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
@@ -59,6 +56,17 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
+  </view>
+  <view class="nav">
+    <button class="nav-item" open-type="contact" bindcontact="handleContact">
+      <view class="txt">
+        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
+        <text>在线问诊</text>
+      </view>
+      <view class='arrow'>
+        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+      </view>
+    </button>
     <view class="nav-item" bindtap="GotoFeedBack">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/advise%402x.png"></image>

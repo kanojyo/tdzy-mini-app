@@ -10,6 +10,7 @@ Page({
     modelShow: false, //遮罩层状态
     is_first: 0, //是否本日首次点击
     tomorrow_score: 0, //明日签到获取的积分
+    signInfo:[],
     hotList: [],
     height: 0, //遮罩层的高度
     score: 10,
@@ -48,6 +49,7 @@ Page({
         that.setData({
           userInfo: res.data.user,
           hotList: res.data.hot_list,
+          signInfo: res.data.sign_info,
           is_first: res.data.click_info.is_first
         });
         if (res.data.click_info.is_first === 1) {
