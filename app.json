@@ -24,7 +24,8 @@
     "pages/test/test",
     "custom-tab-bar/index",
     "pages/map/map",
-    "pages/hospital/index"
+    "pages/hospital/index",
+    "pages/doctor/info/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,12 +48,6 @@
         "text": "健康科普",
         "iconPath": "images/morenPolularScience@3x_1.png",
         "selectedIconPath": "images/morenPolularScience@3x_2.png"
-      },
-      {
-        "pagePath": "pages/chat/chat",
-        "text": "在线问诊",
-        "iconPath": "images/Interrogation_1@3x.png",
-        "selectedIconPath": "images/Interrogation_2@3x.png"
       },
       {
         "pagePath": "pages/user/user",

@@ -1,5 +1,4 @@
-<view class='view'>
-  <map style="width: 100%;height: {{height}}px;"  class='map' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
-    
+<!-- <view class='view' wx:if="{{mapshow}}">
+  <map style="width: 100%;height: {{height}}px;"  class='map' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" show-location >
   </map>
-</view>
+</view> -->

@@ -1,12 +1,12 @@
 /* pages/articleInfo/index.wxss */
 .container {
-  padding-left: 2%;
+  
   overflow-x: hidden;
   margin-bottom: 30rpx;
 }
 .article_title {
   
-  width: 96%;
+  width: 100%;
   font-size: 40rpx ;
   font-weight: bold;
   margin-bottom: 10rpx;

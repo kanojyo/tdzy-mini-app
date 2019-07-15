@@ -2,10 +2,11 @@
   <view class="main">
     <view class='intro doctor-recommend'>
       <view class="content">
-          <view class="item-avatar">
+          <view class="item-avatar" style="margin-left:2%;">
             <image class="avatar" src="{{doctor.avatar}}"></image>
+            <view class="text">力荐</view>
           </view>
-          <view class="item-content">
+          <view class="item-content" style="width:76%;">
             <view class="item-name">
               <view>
                 <text class="name" style="color:black;">{{doctor.name}}</text>

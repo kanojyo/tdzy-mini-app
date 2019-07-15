@@ -71,7 +71,7 @@
 
 .order-price {
   font-size: 30rpx;
-  color: red;
+  color: #DD583C;
   margin-left: 10rpx;
 }
 .order-btn {
@@ -91,7 +91,8 @@
 }
 
 .fail {
-  background-color: #999999;
+  background-color: #CCCCCC;
+  
 }
 
 .show{   

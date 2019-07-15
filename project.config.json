@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 12,
+			"current": 13,
 			"list": [
 				{
 					"id": 0,
@@ -129,6 +129,13 @@
 					"name": "科室",
 					"pathName": "pages/office/introduce",
 					"query": "office_id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "医生列表",
+					"pathName": "pages/doctor/list/index",
+					"query": "",
 					"scene": null
 				}
 			]
