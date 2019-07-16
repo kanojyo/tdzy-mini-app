@@ -52,12 +52,16 @@ page{
   right: 0;
   top:36rpx;
 }
+/* .right image{
+  width: 33rpx;
+  height: 30rpx;
+} */
 .right .sign{
-  /* border-top-right-radius: 0 !important;
+  border-top-right-radius: 0 !important;
   border-top-left-radius: 35rpx;
   border-bottom-left-radius: 35rpx;
   border-bottom-right-radius: 0;
-  border-color: #d38b24; */
+  border-color: #d38b24;
   color:#fff;
   font-size: 28rpx;
   padding-left: 80rpx;
@@ -125,4 +129,7 @@ page{
   text-align: center;
   line-height: 44rpx;
   font-size: 20rpx;
+}
+button::after {
+  border: none;
 }

@@ -39,3 +39,7 @@
   overflow: hidden;
   text-overflow: ellipsis;/* 多余部分点代替 */
 }
+.nodata{
+  margin-top:50rpx;
+  font-size: 30rpx;
+}

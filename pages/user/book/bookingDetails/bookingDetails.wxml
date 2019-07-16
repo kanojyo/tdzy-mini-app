@@ -1,0 +1,27 @@
+<!--pages/user/book/bookingDetails/bookingDetails.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="date">{{info.order_time}}</view>
+    <view class="time" wx:if="{{info.time_slot == 1}}">上午（8:00-12:00）</view>
+    <view class="time" wx:if="{{info.time_slot == 2}}">下午（14:00-18:00）</view>
+  </view>
+  <view class="info">
+    <view class="text">预约编号：{{info.appointment_code}}</view>
+    <view class="text">就诊专家：{{info.doctor_name}}</view>
+    <view class="text">就诊科室：{{info.office}}</view>
+    <view class="text">挂号费用：¥{{info.order_money}}</view>
+  </view>
+  <view class="info">
+    <view class="text" wx:if="{{info.status == 2}}">确认就诊时间：{{info.handle_at}}</view>
+    <view class="text" wx:if="{{info.status == 1}}">就诊状态：未就诊</view>
+    <view class="text" wx:if="{{info.status == 2}}">就诊状态：已就诊</view>
+    <view class="text" wx:if="{{info.status == 3}}">就诊状态：已取消</view>
+    <view class="text" wx:if="{{info.status == 4}}">就诊状态：已失效</view>
+    <view class="text">就诊人：{{info.name}}</view>
+    <view class="text">手机号码：{{info.mobile}}</view>
+  </view>
+  <view class="bot">
+    <view class="text">下单时间：{{info.created_at}}</view>
+    <view class="text" wx:if="{{info.status == 3}}">取消预约时间：{{info.handle_at}}</view>
+  </view>
+</view>

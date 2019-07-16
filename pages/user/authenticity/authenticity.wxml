@@ -1,7 +1,7 @@
 <!--pages/user/authenticity/authenticity.wxml-->
 <view class="container">
   <view class="search">
-    <input placeholder="请输入需要验证的微信号" bindinput="updateValue" data-name="input" value="{{wechat}}" auto-focus/>
+    <input placeholder="请输入需要验证的微信号" bindinput="updateValue" data-name="input" value="{{wechat}}" />
     <button class="btn" bindtap="check"></button>
   </view>
   <view class="content">
@@ -22,7 +22,10 @@
       <view class="text">{{intro_txt}}</view>
     </view>
     <view class="address declare">
-      <view wx:for="{{addressData}}" wx:key="index" class="text">{{item.text}}</view>
+      <!-- <view wx:for="{{addressData}}" wx:key="index" class="text">{{item.text}}</view> -->
+      <view  class="text">地址：湖北省武汉市洪山区雄楚大街428号</view>
+      <view  class="text" bindtap="call">电话：027-85555789</view>
+      <view  class="text">官网：http://www.whtdzyy.com/</view>
     </view>
   </view>
 </view>

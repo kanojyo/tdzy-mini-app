@@ -24,7 +24,8 @@
     "pages/test/test",
     "custom-tab-bar/index",
     "pages/map/map",
-    "pages/hospital/index"
+    "pages/hospital/index",
+    "pages/user/book/bookingDetails/bookingDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",
