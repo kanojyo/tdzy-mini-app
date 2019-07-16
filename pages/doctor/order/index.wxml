@@ -2,31 +2,28 @@
   <view class="main">
     <view class='intro doctor-recommend'>
       <view class="content">
-          <view class="item-avatar" style="margin-left:2%;">
-            <image class="avatar" src="{{doctor.avatar}}"></image>
-            <view class="text">力荐</view>
-          </view>
-          <view class="item-content" style="width:76%;">
-            <view class="item-name">
-              <view>
-                <text class="name" style="color:black;">{{doctor.name}}</text>
-                <text class="position">{{doctor.position}}</text>
-              </view>
-              <view class="order-rule" bindtap="order_role">预约规则</view>
+        <view class="item-avatar" style="margin-left:2%;">
+          <image class="avatar" src="{{doctor.avatar}}"></image>
+          <view class="text">力荐</view>
+        </view>
+        <view class="item-content" style="width:76%;">
+          <view class="item-name">
+            <view>
+              <text class="name" style="color:black;">{{doctor.name}}</text>
+              <text class="position">{{doctor.position}}</text>
             </view>
-            <text class="item-desc">擅长: {{doctor.brief}}</text>
-            <view class="item-label">
-              <view class="label" wx:for="{{doctor.label}}" wx:key="index">{{item}}</view>
-            </view>
+            <view class="order-rule" bindtap="order_role">预约规则</view>
           </view>
+          <text class="item-desc">擅长: {{doctor.brief}}</text>
+          <view class="item-label">
+            <view class="label" wx:for="{{doctor.label}}" wx:key="index">{{item}}</view>
+          </view>
+        </view>
       </view>
     </view>
-    <view class="order-tips">
-      若当日预约号已挂满，请您到医院窗口挂号
-    </view>
-    
   </view>
 </view>
+<view class="order-tips">若当日预约号已挂满，请您到医院窗口挂号</view>
 <view class="order-list">
   <view class="order-content" wx:for="{{work}}" wx:key="index">
     <view class="order-time-box">
@@ -52,8 +49,10 @@
         <icon type="clear" size="25" />
       </view>
     </view>
-    <view class="content">
-      <view class='left'><image src="{{doctor.avatar}}"></image></view>
+    <view class="content1">
+      <view class='left'>
+        <image src="{{doctor.avatar}}"></image>
+      </view>
       <view class='right'>
         <view>医师：{{doctor.name}}</view>
         <view>就诊科室：{{doctor.office}}</view>

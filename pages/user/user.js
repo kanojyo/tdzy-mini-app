@@ -12,6 +12,18 @@ Page({
     newFeedBack:false,
     newMessage:0,
   },
+  //关于我们
+  GotoAbout() {
+    wx.navigateTo({
+      url: 'about/index',
+    })
+  },
+  //帮助中心
+  GotoHelp() {
+    wx.navigateTo({
+      url: 'help/index',
+    })
+  },
   //跳转我的签到
   GotoInfo(){
     wx.navigateTo({

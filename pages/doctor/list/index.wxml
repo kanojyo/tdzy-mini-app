@@ -1,25 +1,25 @@
 <!--pages/doctor/list.wxml-->
 <view class='intro doctor-recommend' scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
   <view class="content">
-      <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
-        <view class="item-avatar" bindtap="doctorInfo" id="{{item.id}}">
-          <image class="avatar" src="{{item.avatar}}"></image>
-          <view class="text">力荐</view>
+    <view class="item" wx:for="{{doctorList}}" wx:key="index">
+      <view class="item-avatar" bindtap="doctorInfo" id="{{item.id}}">
+        <image class="avatar" src="{{item.avatar}}"></image>
+        <view class="text">力荐</view>
+      </view>
+      <view class="item-content">
+        <view class="item-name" >
+          <view>
+            <text class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</text>
+            <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
+          </view>
+          <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
+          <button class="btn fail" wx:else>不可预约</button>
         </view>
-        <view class="item-content">
-          <view class="item-name" >
-            <view>
-              <text class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</text>
-              <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
-            </view>
-            <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
-            <button class="btn fail" wx:else>不可预约</button>
-          </view>
-          <text class="item-desc" bindtap="doctorInfo" id="{{item.id}}">{{item.brief}}</text>
-          <view class="item-label" bindtap="doctorInfo" id="{{item.id}}">
-            <view class="label" wx:for="{{item.label}}" wx:key="index">{{item}}</view>
-          </view>
+        <text class="item-desc" bindtap="doctorInfo" id="{{item.id}}">{{item.brief}}</text>
+        <view class="item-label" bindtap="doctorInfo" id="{{item.id}}">
+          <view class="label" wx:for="{{item.label}}" wx:key="index">{{item}}</view>
         </view>
       </view>
     </view>
+  </view>
 </view>

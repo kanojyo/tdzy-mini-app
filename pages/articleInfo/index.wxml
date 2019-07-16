@@ -5,19 +5,27 @@
   <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
   <view class="middle-box">
     <view class="star-box test" bindtap="star" id="{{article_info.id}}">
-      <view class="iconfont icon-wujiaoxing icon" wx:if = "{{article_info.is_collect == 2}}" mode="widthFix"></view>
-      <view class="iconfont shouchang icon" wx:if = "{{article_info.is_collect == 1}}" mode="widthFix"></view>
-      <view class="nums">{{article_info.article_collection}}</view>
+      <view wx:if = "{{article_info.is_collect == 2}}" mode="widthFix">
+        <image src="../../images/collection_1@3x.png" class="image"></image>
+      </view>
+      <view class="image" wx:if = "{{article_info.is_collect == 1}}" mode="widthFix">
+        <image src="../../images/collection@3x.png" class="image"></image>
+      </view>
+      <!-- <view class="nums">{{article_info.article_collection}}</view> -->
     </view>
 
     <view class="share-box">
-      <button class="iconfont fenxiang icon" wx:if = "{{article_info.is_share == 2}}" open-type="share"></button>
-      <button class="iconfont fenxiang-success icon" wx:if = "{{article_info.is_share == 1}}" open-type="share"></button>
-      <view class="nums">{{article_info.article_share}}</view>
+      <button wx:if = "{{article_info.is_share == 2}}" open-type="share">
+        <image src="../../images/share@3x.png" class="image"></image>
+      </button>
+      <button wx:if = "{{article_info.is_share == 1}}" open-type="share">
+        <image src="../../images/share@3x.png" class="image"></image>
+      </button>
+      <!-- <view class="nums">{{article_info.article_share}}</view> -->
     </view>
   </view>
   
 </view>
 <button class="buttom-btn" open-type="contact" bindcontact="handleContact">
-    我要咨询
-  </button>
+  我要咨询
+</button>

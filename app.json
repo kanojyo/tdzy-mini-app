@@ -25,7 +25,9 @@
     "custom-tab-bar/index",
     "pages/map/map",
     "pages/hospital/index",
-    "pages/doctor/info/index"
+    "pages/doctor/info/index",
+    "pages/user/about/index",
+    "pages/user/help/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

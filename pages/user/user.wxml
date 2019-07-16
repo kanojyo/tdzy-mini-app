@@ -77,7 +77,7 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item" bindtap="GotoHelp">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/help%402x.png"></image>
         <text>帮助中心</text>
@@ -86,7 +86,7 @@
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
       </view>
     </view>
-    <view class="nav-item">
+    <view class="nav-item" bindtap="GotoAbout">
       <view class="txt">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/Aboutus%402x.png"></image>
         <text>关于我们</text>

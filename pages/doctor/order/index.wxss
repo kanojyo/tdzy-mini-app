@@ -7,18 +7,32 @@
 
 .content {
   position: relative;
-  padding-top: 20rpx;
+  padding-top: 30rpx;
+  width: 100%;
 }
 .avatar {
  position: absolute;
  top: 30rpx;
 }
 
+.text {
+  margin-left: 8rpx;
+}
 .order-tips {
   width: 100%;
   font-size: 24rpx;
   padding: 20rpx;
   background-color: #F2F2F2;
+  margin-top: 30rpx;
+  clear: both;
+  display: block;
+  position: static;
+}
+
+.space {
+  height: 30rpx;
+  width: 100%;
+  background-color: #fff;
 }
 .main{overflow-x: hidden;}
 .intro {
@@ -132,7 +146,10 @@
   margin-top: 10rpx;
 }
 
-.model-box .content > view, .check-order-time > view {
+.content1 {
+  clear: both;
+}
+.model-box .content1 > view, .check-order-time > view {
   float:left;
 }
 
@@ -144,6 +161,7 @@
 
 .left {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .order-userinfo {

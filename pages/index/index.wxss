@@ -46,9 +46,10 @@
 
 .top-tip {
   width: 100%;
-  height: 230rpx;
+  height: 250rpx;
   background-color: #fff;
   margin-bottom: 20rpx;
+  overflow:hidden;
 }
 
 .top-tip .tip-info {
@@ -59,7 +60,37 @@
   height: 230rpx;
 }
 
+.leader-box {
+  width: 33%;
+  text-align: center;
+  border-right: 2rpx solid #ededed;
+  height: 250rpx;
+  display: inline-block; /*主要是这个属性*/
+  padding-top: 40rpx;
+}
 
+.top-tip > .leader-box:last-child{
+  border: 0;
+}
+.leader-box image {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+}
+.leader-box .leader-title{
+  margin-top: 20rpx;
+  font-weight: blod;
+  vertical-align: middle;
+  font-size: 36rpx;
+}
+
+.leader-box button {
+  position: static;
+  padding: 0;
+  line-height: 	normal;
+  background-color: #fff;
+}
 
 .top-tip .tip-info .tip-info-img {
   width: 100rpx;
@@ -161,9 +192,10 @@
 }
 .doctor-recommend .content .item-avatar{
   width: 134rpx;
- 
 }
-
+.text {
+  margin-left: 8rpx;
+}
 .doctor-recommend .content .item-avatar .text{
   height: 36rpx;
   width: 114rpx;
@@ -273,6 +305,6 @@
   height: 150rpx;
   position: fixed;
   right:40rpx;
-  top:30%;
+  bottom:80rpx;
   z-index: 1000;
 }

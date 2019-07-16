@@ -1,6 +1,5 @@
 /**app.wxss**/
 @import "/wxParse/wxParse.wxss"; 
-@import "/lib/icon/iconfont.wxss"; 
 @import "weui.wxss";
 
 .container {

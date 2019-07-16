@@ -31,7 +31,8 @@
 .swiper .swiper_con{
   display: block;
   width: 100%;
-  padding: 20rpx 0;
+  padding-top:10rpx;
+  padding-bottom: 10rpx;
 }
 .hot-recommend .item{
   padding: 20rpx 30rpx 0 30rpx;
@@ -39,6 +40,11 @@
   border-top:1rpx solid #efefef;
   display: flex;
 }
+
+.hot-recommend .item:first-child {
+  border: none;
+}
+
 .hot-recommend .item .item-img{
   width: 224rpx;
   height: 134rpx;

@@ -25,7 +25,7 @@
 }
 
 .star-box, .share-box {
-  border:1rpx solid #666;
+  /* border:1rpx solid #666; */
   border-radius: 5rpx;
   display: inline-block;
   
@@ -71,5 +71,21 @@ button {
 
 .share-box .icon {
   padding: 8rpx 20.5rpx;
+}
+
+.image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.share-box button {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0;
+  position: static;
+}
+
+button:hover {
+  background-color:transparent;
 }
 

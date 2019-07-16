@@ -17,6 +17,11 @@ Page({
     interval: 5000,
     duration: 1000,
   },
+  //我要咨询
+  handleContact(e) {
+    console.log(e.path)
+    console.log(e.query)
+  },
   onShareAppMessage: function () {
     return {
       title: '泰斗医聊',

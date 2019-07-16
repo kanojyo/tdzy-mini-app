@@ -29,12 +29,30 @@
       </block>
     </swiper>
     <view class="top-tip">
-      <view class="tip-info">
+      <!-- <view class="tip-info">
           <image bindtap="GotoAuth" src="../../images/myAuthenticity@3x.png" class="tip-info-img"  mode='aspectFill'></image>
           <text class="tip-info-title" bindtap="GotoAuth">真伪查询</text>
           <view class='space'></view>
           <image src="../../images/HospitalNavigation@3x.png" bindtap='hospitalLocation' class="tip-info-img"  mode='aspectFill'></image>
           <text bindtap='hospitalLocation' class="tip-info-title">医院导航</text>
+      </view> -->
+      <view class="leader-box" bindtap="GotoAuth">
+        <button>
+          <image src="../../images/chaxun@3x.png"></image>
+          <view class="leader-title">真伪查询</view>
+        </button>
+      </view>
+      <view class="leader-box" bindtap="hospitalLocation">
+        <button>
+          <image src="../../images/daohang@3x.png"></image>
+          <view class="leader-title">医院导航</view>
+        </button>
+      </view>
+      <view class="leader-box">
+        <button open-type="contact" bindcontact="handleContact">
+          <image src="../../images/zxixun@3x.png"></image>
+          <view class="leader-title">在线咨询</view>
+        </button>
       </view>
     </view>
     <view class="office">
