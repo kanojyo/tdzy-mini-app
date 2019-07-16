@@ -110,7 +110,8 @@ Page({
       success(res){
         // console.log(res)
         that.setData({
-          telephone: res.data.mobile
+          // telephone: res.data.mobile,
+          userInfo: res.data,
         })
       }
     })
@@ -121,16 +122,17 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    wx.getUserInfo({
-      success: function (res) {
-        var data = JSON.parse(res.rawData)
-        // console.log(data)
-        that.setData({
-          userInfo: data
-        })
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     console.log(res)
+    //     var data = JSON.parse(res.rawData)
+    //     // console.log(data)
+    //     that.setData({
+    //       userInfo: data
+    //     })
 
-      }
-    });
+    //   }
+    // });
     this.check();
     //获取基本资料
     this.getInfo();

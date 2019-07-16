@@ -95,6 +95,13 @@ page{
   background-size: 40%;
 }
 .list3 .item .item-content .text{
-  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/shixiaoSeal%402x.png') right top no-repeat;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/yiquxiao%402x.png') right top no-repeat;
   background-size: 40%;
+}
+.nodata{
+  background: #fff;
+  text-align:center;
+  width: 100%;
+  padding-top: 50rpx;
+  font-size: 30rpx;
 }

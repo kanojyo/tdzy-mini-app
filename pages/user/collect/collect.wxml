@@ -11,5 +11,5 @@
         </view>
       </view>
   </view>
-  <view wx:else>暂无收藏</view>
+  <view class="nodata" wx:else>暂无收藏</view>
 </view>

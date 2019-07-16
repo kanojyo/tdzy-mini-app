@@ -15,7 +15,7 @@
   <view class="sign">
     <view class="text">您已连续签到<text class="red">{{userInfo.sign_day}}</text>天，获得<text class="red">{{userInfo.continue_sum_score}}</text>积分
     </view>
-    <view class="tab">
+    <view class="tab" wx:if="{{signInfo}}">
       <view class="tab-ul">
         <view class="tab-item" wx:for="{{signInfo}}" wx:key="index">
           <view class="score" wx:if="{{item.is_sign == 1}}">
@@ -30,11 +30,11 @@
           <view class="date" wx:else>{{item.day}}</view>
         </view>
       </view>
-      <view class="underline"></view>
+      <!-- <view class="underline"></view> -->
       <view class="tab-ul line">
         <view class="tab-item" wx:for="{{signInfo}}" wx:key="index">
           <view class="score bot" wx:if="{{item.is_sign == 1}}">
-            <image class="gouxuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/gouxuan%403x.png"></image>
+            <image class="gouxuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/gouxuan%403x(2).png"></image>
           </view>
           <view class="score bot" wx:else>
             <image class="yuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/yuan%403x.png"></image>

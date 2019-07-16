@@ -3,9 +3,9 @@
   <view class="user-info">
     <view class="info" wx:if="{{userInfo}}">
       <view class="left" bindtap='GotoInfo'>
-        <image src="{{userInfo.avatarUrl}}"></image>
+        <image src="{{userInfo.avatarurl}}"></image>
         <view class="text">
-          <view class="nickname">{{userInfo.nickName}}</view>
+          <view class="nickname">{{userInfo.nickname}}</view>
         </view>
       </view>
       <view class="right">
@@ -60,7 +60,7 @@
   <view class="nav">
     <button class="nav-item" open-type="contact" bindcontact="handleContact">
       <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/Interrogation%402x.png"></image>
         <text>在线问诊</text>
       </view>
       <view class='arrow'>

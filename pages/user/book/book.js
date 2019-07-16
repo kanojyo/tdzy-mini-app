@@ -31,6 +31,13 @@ Page({
       that.setData({
         currentData: e.target.dataset.current
       })
+    };
+    if (e.target.dataset.current == 0){
+      that.getList1();
+    } else if (e.target.dataset.current == 1){
+      that.getList2();
+    } else if (e.target.dataset.current == 2){
+      that.getList3();
     }
   },
   //未就诊
@@ -90,14 +97,19 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success: function (res) {
-        // console.log(res);
-        if(res.code ===200){
+        // console.log(res.data.message);
+        console.log(res);
+        console.log(res.data.code);
+        if (res.data.code == 200){
           wx.showToast({
-            title: '取消成功',
+            title: '取消预约成功',
             icon: 'success',
             duration: 2000
-          })
+          });
+          that.getList1();//未就诊数据重新请求
+          that.getList3();//已取消数据重新请求
         }else{
+          console.log(res.data.message)
           wx.showToast({
             title: res.data.message,
             icon: 'none',
@@ -110,24 +122,13 @@ Page({
       }
     });
   },
-  // openConfirm: function (e) {
-  //   var that =this;
-  //   that.setData({
-  //     id: e.currentTarget.id
-  //   })
-  //   wx.showModal({
-  //     title: '提示',
-  //     content: '是否取消预约',
-  //     success(res) {
-  //       if (res.confirm) {
-  //         //用户点击确定
-  //         that.cancel();
-  //       } else if (res.cancel) {
-  //         //用户点击取消
-  //       }
-  //     }
-  //   })
-  // },
+  //跳转预约详情 
+  getDetail(e){
+    wx.navigateTo({
+      url: 'bookingDetails/bookingDetails?id=' + e.currentTarget.dataset.id,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

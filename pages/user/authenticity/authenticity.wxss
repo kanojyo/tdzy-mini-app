@@ -50,3 +50,6 @@
 .content .query .result .red{
   color:#d02424;
 }
+.address .text{
+  margin: 10rpx 0;
+}

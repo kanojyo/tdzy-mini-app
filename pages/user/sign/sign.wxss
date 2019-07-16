@@ -79,6 +79,7 @@ page{
 }
 .sign .tab{
   border-top:2rpx dashed #efefef;
+  margin-top:10rpx;
   /* height: 60rpx; */
   /* margin: 0 30rpx; */
 }
@@ -123,7 +124,7 @@ page{
   background: #bfbfbf;
 }
 .sign .tab .line{
-  /* border-top:2rpx solid #bfbfbf; */
+  border-top:2rpx solid #bfbfbf;
   height: 48rpx;
   justify-content:space-between;
   position: relative;
