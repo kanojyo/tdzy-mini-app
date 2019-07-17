@@ -47,9 +47,9 @@
   font-size: 24rpx;
   position: absolute;
   right: 2%;
-  color: red;
+  color: #d1b574;
   background-color: #fff;
-  border : 1px solid #ccc;
+  border : 1px solid #d1b574;
   border-top-left-radius: 60rpx;
   border-bottom-left-radius: 60rpx;
   border-top-right-radius: 15rpx;
@@ -127,6 +127,7 @@
   /*要显示在wrap的上面 */   
   z-index: 1;   
   position: fixed;
+  color: #4d4d4d;
 }
 
 .tip-box {
@@ -148,6 +149,7 @@
 
 .content1 {
   clear: both;
+  margin-bottom: 20rpx;
 }
 .model-box .content1 > view, .check-order-time > view {
   float:left;
@@ -157,6 +159,7 @@
   padding-left: 20rpx;
   font-size: 26rpx;
   display: inline-block;
+  margin-bottom: 30rpx;
 }
 
 .left {
@@ -181,11 +184,10 @@
   clear: both;
   display: block;
   margin-top: 40rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 40rpx !important;
   font-size: 30rpx;
-  background-color: red;
+  background-color: #d1b574;
   color:#fff;
-  width: 85%;margin-left: 7.5%;
   border-radius: 40rpx;
 }
 
@@ -197,6 +199,8 @@
   float: right;
 }
 
-.check-order-time {
-  border-bottom: 2rpx solid black;
+.order-userinfo {
+ border-top: 2rpx solid #ededed;
+ padding-top: 20rpx;
 }
+

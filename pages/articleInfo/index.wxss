@@ -52,7 +52,7 @@
   line-height: 80rpx;
   font-size: 30rpx;
   color: #fff;
-  background-color: #d2b576;
+  background-color: #d2b576 !important;
   text-align: center;
   position: fixed;
   border-radius: 60rpx;
@@ -83,6 +83,7 @@ button {
   height: 60rpx;
   padding: 0;
   position: static;
+  background-color: #fff !important;
 }
 
 button:hover {

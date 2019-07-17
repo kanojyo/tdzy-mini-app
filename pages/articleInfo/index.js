@@ -48,7 +48,6 @@ Page({
       param: '',
       method: 'GET',
       success: function (res) {
-        console.log(res)
         var info = res.data;
         WxParse.wxParse('info', 'html', info.article_content, that, 0);
         res.data.created_at = getFormatTime(res.data.created_at, 'Y-M-D h:m:s');

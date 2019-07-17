@@ -1,4 +1,5 @@
-<view class="container">
-  <import src="../../wxParse/wxParse.wxml"/>
-  <template is="wxParse" data="{{wxParseData:office.nodes}}"/>
+<view>
+  <image wx:for="{{images}}" wk:key="index" src="{{item}}" mode='widthFix'></image>
 </view>
+
+<button class="buttom-btn" open-type="contact" bindcontact="handleContact">我要咨询</button>

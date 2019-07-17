@@ -7,7 +7,7 @@
 .top-inner{
   height: 150rpx;
   width: 630rpx;
-  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Backgroundimage%402x.png') 30rpx top no-repeat;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Backgroundimage%402x.png') left top no-repeat;
   background-size: contain;
   padding-top: 40rpx;
   padding-left: 60rpx;

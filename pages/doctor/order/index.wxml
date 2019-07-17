@@ -64,6 +64,7 @@
             <view wx:if="{{info.time_slot == 1}}">上午08：00-12：00</view>
             <view wx:else>下午14：00-18：00</view>
           </view>
+          
         </view>
         <view class='order-userinfo' style='clear:both;'>
           <view class='name'>预约人：{{userinfo.name}}</view>

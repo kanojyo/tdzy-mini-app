@@ -13,3 +13,9 @@
   bottom: 20rpx;
   margin-top: 30rpx;
 }
+
+image {
+  width: 100% !important;
+  display: block;
+  max-width:100%;
+}

@@ -10,7 +10,7 @@
         <view class="item-name" >
           <view>
             <text class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</text>
-            <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
+            <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.keshi}}  {{item.position}}</text>
           </view>
           <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
           <button class="btn fail" wx:else>不可预约</button>

@@ -17,17 +17,19 @@ Page({
   onLoad: function (options) {
     var that = this;
     var office_id = options.office_id;
+    var that = this;
     getRequest({
       url: '/v1/medical_info/office_brief?office_id=' + office_id,
       method: 'GET',
       success(res) {
-        var info = res.data;
-        
+        wx.setNavigationBarTitle({
+          title: res.data.name
+        });
         that.setData({
-          office: WxParse.wxParse('office', 'html', info.brief, that, 0),
+          images: res.data.brief
         })
       }
-    })
+    });
   },
 
   /**

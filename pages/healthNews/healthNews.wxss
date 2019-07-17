@@ -19,6 +19,8 @@
   text-align: center;
   font-size: 30rpx;
   color:#666;
+  height: 90rpx;
+  line-height: 90rpx;
 }
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}

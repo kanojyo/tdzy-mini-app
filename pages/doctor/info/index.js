@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info: {}
+    
   },
 
   /**
@@ -15,10 +15,20 @@ Page({
    */
   onLoad: function (options) {
     var id = options.doctor_id;
-    wx.setNavigationBarTitle({
-      title: "郭真医生"//页面标题为路由参数
-    })
-    console.log(id)
+    var that = this;
+    getRequest({
+      url: '/v1/medical_info/doctor_brief?doctor_id=' + id,
+      method: 'GET',
+      success(res) {
+        wx.setNavigationBarTitle({
+          title: res.data.name + "医生"
+        });
+        that.setData({
+          images: res.data.brief,
+          id:id
+        })
+      }
+    });
   },
 
   /**

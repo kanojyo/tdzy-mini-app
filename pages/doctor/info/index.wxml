@@ -1,2 +1,5 @@
 <!--pages/doctor/info/index.wxml-->
-<button class="buttom-btn" bindtap="orderDoctor" id="18">立即预约</button>
+<view>
+  <image wx:for="{{images}}" wk:key="index" src="{{item}}" mode='widthFix'></image>
+</view>
+<button class="buttom-btn" bindtap="orderDoctor" id="{{id}}">立即预约</button>

@@ -61,11 +61,10 @@
 }
 
 .leader-box {
-  width: 33%;
+  width: 33.33%;
   text-align: center;
-  border-right: 2rpx solid #ededed;
   height: 250rpx;
-  display: inline-block; /*主要是这个属性*/
+  float: left;
   padding-top: 40rpx;
 }
 
@@ -81,15 +80,17 @@
 .leader-box .leader-title{
   margin-top: 20rpx;
   font-weight: blod;
-  vertical-align: middle;
+  
   font-size: 36rpx;
 }
 
 .leader-box button {
-  position: static;
   padding: 0;
-  line-height: 	normal;
+  /* padding-top: 10rpx; */
   background-color: #fff;
+}
+.leader-box button::after{
+  border:none;
 }
 
 .top-tip .tip-info .tip-info-img {
@@ -132,7 +133,7 @@
   margin:0 auto;
 }
 .office-item text{
-  padding-top: 20rpx;
+  padding-top: 30rpx;
   color:#666;
   font-size: 24rpx;
 }
@@ -253,6 +254,7 @@
   border:1rpx solid #d2b576;
   border-radius: 4rpx;
   padding: 0 8rpx;
+  margin-right: 30rpx;
 }
 .doctor-recommend .content .item-content .item-label .label+.label{
   margin-left: 10rpx;

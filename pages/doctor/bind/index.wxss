@@ -1,11 +1,17 @@
 /* pages/doctor/bind.wxss */
+page {
+  background: #EDEDED;
+}
+.main {
+  background-color: #fff;
+}
 .bind-userinfo {
-  background-color: red;
+  background-color: #d1b574;
   color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 60rpx;
+  margin-top: 50rpx;
 }
 
 .hospital-title {
@@ -13,7 +19,7 @@
   padding-top: 100rpx;
   text-align: center;
   font-weight: bold;
-  font-size: 40rpx;
+  font-size: 36rpx;
 }
 
 .tips {
@@ -25,13 +31,14 @@
 }
 
 .img {
-  width: 120rpx;
-  height: 120rpx;  
+  width: 80rpx;
+  height: 80rpx;  
 }
 
 .sex {
   width: 100%;
   text-align: center;
+  margin-top: 30rpx;
 }
 
 .radio {
@@ -44,27 +51,46 @@
 }
 
 .form-input{
-  width: 80%;
-  margin-left: 10%;
-  height: 100rpx;
-  line-height: 100rpx;
-  border-bottom: 4rpx solid #ccc;
+  width: 100%;
+  padding-left: 5%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #EDEDED;
   position: relative;
 }
-.form-input input, .form-input .select-box{
-  width: 70%;
+.right {
+  width: 20rpx;
+  height: 20rpx;
+  display: inline-block;
   position: absolute;
-  right: 0;
-  height: 100rpx;
-  line-height: 100rpx;
+  right: 10%;
+  top:30rpx;
+}
+
+.active {
+  color: black !important;
+}
+.label {
+  font-size: 30rpx;
+}
+.sex-label {
+  color: #C9C9C9;
+}
+.form-input input, .form-input .select-box{
+  width: 100%;
+  position: absolute;
+  right:10%;
+  padding-right: 5%;
+  height: 80rpx;
+  line-height: 80rpx;
   top: 0;
   font-size: 25rpx;
   text-align: right;
 }
 
 .age-list {
-  height: 100rpx !important;
-  line-height: 100rpx;
+  height: 80rpx !important;
+  line-height: 80rpx;
   border :0 ;
   text-align: right;
 }
@@ -73,7 +99,7 @@
   width: 100%;
   text-align: center;
   margin-top: 30rpx;
-  color: red;
+  color: #F5993A;
   font-size: 25rpx;
 }
 

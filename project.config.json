@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 17,
 			"list": [
 				{
 					"id": 0,
@@ -157,6 +157,13 @@
 					"name": "关于我们",
 					"pathName": "pages/user/about/index",
 					"query": "id=60",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "医生详情",
+					"pathName": "pages/doctor/info/index",
+					"query": "doctor_id=18",
 					"scene": null
 				}
 			]
