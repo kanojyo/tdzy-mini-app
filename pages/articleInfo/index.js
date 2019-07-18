@@ -24,6 +24,13 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
+const getCurrentPageUrl = () => {
+  var pages = getCurrentPages() //获取加载的页面
+  var currentPage = pages[pages.length - 1] //获取当前页面的对象
+  var url = currentPage.route //当前页面url
+  return url
+}
 Page({
   /**
    * 页面的初始数据
@@ -123,10 +130,11 @@ Page({
 
       }
     })
+    var url = that.data.article_info.article_url;
     return {
       title: that.data.article_info.article_title,
       desc: that.data.article_info.article_description,
-      path: that.data.article_info.article_url,
+      path: "/pages/test/test?path=" + url,
       success: function(res) {
         
       }

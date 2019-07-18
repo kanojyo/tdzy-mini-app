@@ -1,17 +1,17 @@
 
-  <map style="width: 100%;height: {{height}}px;"  id='map' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" show-location>
+  <map style="width: 100%;height: {{height}}px;"  id='map' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" >
     <cover-view class="map-bottom">
       <cover-view class='logo-box' bindtap='codeg'>
         <cover-image src='../../images/LOGO.png' class='logo'></cover-image>
       </cover-view>
       <cover-view class='info-box'>
         <cover-view class="name">武汉市泰斗中医院</cover-view>
-        <cover-view class="address name">
+        <cover-view class="address">
           <cover-image src="../../images/address@2x.png" class="map-image"></cover-image>
           <cover-view class="ml10">武汉市洪山区雄楚大街 428 号</cover-view>
         </cover-view>
 
-        <cover-view class="address" catchtap='freeTell'>
+        <cover-view class="connact" catchtap='freeTell'>
           <cover-image src="../../images/Telephone@3x.png" class="map-image"></cover-image>
           <cover-view class="phone ml10">027-85555789</cover-view>
         </cover-view>

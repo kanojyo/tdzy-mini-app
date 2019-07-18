@@ -1,7 +1,8 @@
-<view class='arrow'></view>
+<!-- <view class='arrow'></view>
 <view class="list-dImg">
   <image mode='widthFix' src="{{images[0]}}" bindtap="imgYu" data-list="{{images}}"></image>
   <view wx:if="{{images}}" wx:for="{{images}}">
     <image bindtap="imgYu" data-list="{{images}}" data-src="{{dImg}}" wx:for-item="dImg" mode='widthFix'></image>
   </view>
-</view>
+</view> -->
+<web-view src="{{link}}"></web-view>

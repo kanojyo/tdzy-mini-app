@@ -16,5 +16,14 @@ Page({
       current: this.data.images[0], // 当前显示图片的http链接
       urls: imgList // 需要预览的图片http链接列表
     })
+  },
+  onLoad: function(option) {
+    console.log(option)
+    var that = this;
+    var url = option.path;
+    console.log(url)
+    that.setData({
+      link: url
+    })
   }
 })
