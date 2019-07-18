@@ -86,11 +86,11 @@ page{
   top:10rpx;
 }
 .bot{
-  width: 100%;
-  /* margin:0 30rpx; */
+  width: 690rpx;
+  margin:0 30rpx;
   position: fixed;
   left:0;
-  bottom:0rpx;
+  bottom:10rpx;
 }
 .btn1 button{
   background: #d1b574;
