@@ -1,7 +1,7 @@
 <!--pages/user/message/message.wxml-->
 <view class="container">
   <view class="message">
-    <view class="item" wx:for="{{messageList}}" wx:key="index" data-url="{{item.url}}" data-id="{{item.id}}">
+    <view class="item" wx:for="{{messageList}}" wx:key="index" data-url="{{item.url}}" data-id="{{item.id}}" bindtap='goTo'>
       <view class="title">
         <text class="new" wx:if="{{item.read_status==2}}">[新消息]</text>
         <text>{{item.title}}</text>
