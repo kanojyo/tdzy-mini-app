@@ -7,7 +7,7 @@
 .top-inner{
   height: 150rpx;
   width: 630rpx;
-  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Backgroundimage%402x.png') 30rpx top no-repeat;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Backgroundimage%402x.png') left top no-repeat;
   background-size: contain;
   padding-top: 40rpx;
   padding-left: 60rpx;
@@ -37,7 +37,7 @@
 .tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}
 .swiper{
   width: 690rpx;
-  padding: 20rpx 30rpx;
+  padding: 10rpx 30rpx;
 }
 .swiper .tab-item{
   display: none;
@@ -79,16 +79,25 @@
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/shixiaoSeal%402x.png') right top no-repeat;
   background-size: 30%;
 }
-
+.exchage-item .text.state1 .title{
+  color:#333;
+}
+.exchage-item .text.state1 .bot .code{
+  color:#d1b574;
+}
+.exchage-item .text.state1 .time{
+  color:#666;
+}
 .exchage-item .text .title{
   font-size: 30rpx;
-  color: #333;
+  color: #666;
 }
 .exchage-item .bot{
   font-size: 26rpx;
+  color:#999;
 }
 .exchage-item .bot .time{
-  
+  font-size: 24rpx;
 }
 .score-item .title{
   display: flex;

@@ -50,8 +50,13 @@ Page({
                 wx.showToast({
                   title: '兑换成功',
                   icon: 'success',
-                  duration: 2000
-                })
+                  duration: 1000
+                });
+                setTimeout(()=>{
+                  wx.redirectTo({
+                    url: '../score/score'
+                  })
+                },1000)
               }
             }
           })

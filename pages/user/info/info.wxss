@@ -22,3 +22,11 @@
   height: 80rpx;
   width: 80rpx;
 }
+.item .label{
+  font-size: 30rpx;
+  color:#333;
+}
+.item .txt{
+  font-size: 28rpx;
+  color:#666;
+}

@@ -91,7 +91,6 @@ Page({
         })
       }
     })
-
   },
 
   /**
@@ -147,7 +146,71 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var that = this;
+    if (that.data.currentData == 0) {
+      var page = that.data.scoreParmas.page_index + 1;
+      var status = true;
+      if (status) {
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(() => {
+          wx.hideLoading();
+          var parmas = that.data.scoreParmas;
+          getRequest({
+            url: '/v1/sign/score_list?page_index=' + page + '&page_size=' + parmas.page_size,
+            method: 'get',
+            success(res) {
+              status = false;
+              if (res.data.data.length > 0) {
+                that.data.scoreList = that.data.scoreList.concat(res.data.data);
+                that.setData({
+                  scoreList: that.data.scoreList
+                });
+              } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
+                status = false;
+              };
+            }
+          })
+        }, 1000)
+      }
+    } else if (that.data.currentData == 1){
+      var page = that.data.exchangeParmas.page_index+1;
+      var status = true;
+      if (status){
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(()=> {
+          wx.hideLoading();
+          var parmas = that.data.exchangeParmas;
+          getRequest({
+            url: '/v1/sign/exchange_list?page_index=' + page + '&page_size=' + parmas.page_size,
+            method: 'get',
+            success(res) {
+              status = false;
+              if(res.data.data.length > 0){
+                that.data.exchageList = that.data.exchageList.concat(res.data.data);
+                that.setData({
+                  exchageList: that.data.exchageList
+                });
+              } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
+              };
+            }
+          })
+        },1000)
+      }
+    }
   },
 
   /**

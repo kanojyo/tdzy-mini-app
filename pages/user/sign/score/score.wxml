@@ -50,12 +50,12 @@
           <view class="title ">{{item.goods_name}}</view>
           <view class="bot">
             <view class="code">{{item.exchange_code}}</view>
-            <view>有效时间：</view>
-            <view class="time">{{item.start_time}}-{{item.end_time}}</view>
+            <view class="time">有效时间：</view>
+            <view class="time" wx:if="{{item.status == 1}}">截止至 {{item.end_time}}</view>
+            <view class="time" wx:else>兑换时间起-{{item.end_time}}</view>
           </view>
         </view>
       </view>
     </view>
   </view>
-  
 </view>

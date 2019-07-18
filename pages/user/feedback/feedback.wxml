@@ -10,7 +10,7 @@
           <!-- <view class="time"></view> -->
           <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
           <view class="pull-left" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}"></image>
+            <image src="{{item.img.url}}" mode="aspectFit"></image>
           </view>
         </view>
       </view>
@@ -22,7 +22,7 @@
           <!-- <view class="time"></view> -->
           <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
           <view class="pull-right" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}"></image>
+            <image src="{{item.img.url}}" mode="aspectFit"></image>
           </view>
         </view>
       </view>
