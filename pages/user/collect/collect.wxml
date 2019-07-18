@@ -1,7 +1,7 @@
 <!--pages/user/collect/collect.wxml-->
 <view class="container">
   <view wx:if="{{list.length}}" class="content">
-    <view class="item" wx:for="{{list}}" wx:key="index">
+    <view class="item" wx:for="{{list}}" wx:key="index" id="{{item.id}}" bindtap="acticle_info">
         <view class="item-img">
           <image src="{{item.cover}}"></image>
         </view>

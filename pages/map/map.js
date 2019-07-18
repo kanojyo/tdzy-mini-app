@@ -4,22 +4,69 @@ const app = getApp()
 
 Page({
   data: {
+    phone: "027-85555789",
     longitude: 114.3646580000,
     latitude: 30.5078120000,
     speed: 0,
     accuracy: 0,
-    mapshow: true
+    markers: [
+      {
+        id: 0
+        , iconPath: "../../images/position.png"
+        , longitude: 114.3646580000
+        , latitude: 30.5078120000
+        , width: 40
+        , height: 40
+      }
+    ]
   },
   //事件处理函数
   bindViewTap: function () {
 
   },
   onLoad: function () {
-    var that = this
-    var pages = getCurrentPages();
-    var currPage = pages[pages.length - 1];   //当前页面
-    var prevPage = pages[pages.length - 2];  //上一个页面
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          height: res.windowHeight
+        })
+      },
+    })
     
+    
+  },
+  onShow: function () {
+    
+  },
+  onUnload: function () {
+    wx.navigateBack({
+      delta: 2
+    })
+  },
+  onHide: function () {
+    wx.navigateBack({
+      delta: 2
+    })
+  },
+  freeTell: function () {
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '是否要联系泰斗中医院',
+      success(res) {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: that.data.phone,
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+  },
+  gps: function () {
+    var that = this
     wx.showLoading({
       title: "定位中",
       mask: true
@@ -36,12 +83,10 @@ Page({
       altitude: true,//高精度定位
       //定位成功，更新定位结果
       success: function (res) {
-        console.log(res)
         var latitude = res.latitude
         var longitude = res.longitude
         var speed = res.speed
         var accuracy = res.accuracy
-        
 
         wx.openLocation({//​使用微信内置地图查看位置。
           latitude: that.data.latitude,//要去的纬度-地址
@@ -55,10 +100,18 @@ Page({
           latitude: latitude,
           speed: speed,
           accuracy: accuracy,
-          
+          markers: [
+            {
+              id: 0
+              , iconPath: "../../images/position.png"
+              , longitude: 114.3646580000
+              , latitude: 30.5078120000
+              , width: 40
+              , height: 40
+            }
+          ]
         })
 
-        
       },
       //定位失败回调
       fail: function () {
@@ -73,19 +126,6 @@ Page({
         wx.hideLoading()
       }
 
-    })
-  },
-  onShow: function () {
-    
-  },
-  onUnload: function () {
-    wx.navigateBack({
-      delta: 2
-    })
-  },
-  onHide: function () {
-    wx.navigateBack({
-      delta: 2
     })
   }
 })

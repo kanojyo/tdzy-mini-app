@@ -186,25 +186,23 @@
   display: flex;
 }
 .doctor-recommend .content .avatar{
-  height: 130rpx;
-  width: 130rpx;
+  height: 140rpx;
+  width: 140rpx;
   border-radius: 50%;
   margin-bottom: 10rpx;
 }
 .doctor-recommend .content .item-avatar{
   width: 134rpx;
 }
-.text {
-  margin-left: 8rpx;
-}
 .doctor-recommend .content .item-avatar .text{
   height: 36rpx;
-  width: 114rpx;
+  width: 120rpx;
   text-align: center;
   background: url('https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/recommend@2x.png');
   background-size: cover;
   color:#fff;
   font-size: 22rpx;
+  margin-left: 10rpx;
 }
 .doctor-recommend .content .item-content .item-name{
   
@@ -222,7 +220,7 @@
 .doctor-recommend .content .item-content .position{
   font-size: 26rpx;
   color:#666;
-  padding-left: 10rpx;
+  padding-left: 30rpx;
 }
 .doctor-recommend .content .item-content .btn{
   font-size: 22rpx;
@@ -254,7 +252,7 @@
   border:1rpx solid #d2b576;
   border-radius: 4rpx;
   padding: 0 8rpx;
-  margin-right: 30rpx;
+  margin-right: 20rpx;
 }
 .doctor-recommend .content .item-content .item-label .label+.label{
   margin-left: 10rpx;
@@ -303,8 +301,8 @@
 
 .qiandao{
   display: block;
-  width: 150rpx;
-  height: 150rpx;
+  width: 110rpx;
+  height: 110rpx;
   position: fixed;
   right:40rpx;
   bottom:80rpx;

@@ -1,4 +1,4 @@
-
+<view class='arrow'></view>
 <view class="list-dImg">
   <image mode='widthFix' src="{{images[0]}}" bindtap="imgYu" data-list="{{images}}"></image>
   <view wx:if="{{images}}" wx:for="{{images}}">

@@ -1,5 +1,55 @@
 /* pages/map/map.wxss */
-.map {
+.map-bottom {
+  position:fixed;
+  bottom:0;
+  background-color: #fff;
+  padding: 40rpx 20rpx;
   width: 100%;
-  
+  font-size: 28rpx;
+}
+
+
+.map-bottom > cover-view {
+  display: block;
+  padding-bottom: 40rpx;
+}
+.logo {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.logo-box, .info-box {
+  float: left;
+}
+
+.info-box {
+  margin-left: 40rpx;
+  vertical-align: middle;
+}
+
+.name {
+  margin-bottom: 15rpx;
+}
+.map-image {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+}
+
+.address cover-image, .address cover-view {
+  display: inline-block;
+}
+
+.phone {
+  color: #d1b574;
+}
+
+.ml10 {
+  margin-left: 5rpx;
+}
+
+.daohang {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 40rpx;
 }

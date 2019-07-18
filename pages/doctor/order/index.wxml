@@ -10,6 +10,7 @@
           <view class="item-name">
             <view>
               <text class="name" style="color:black;">{{doctor.name}}</text>
+              <text class="position">{{doctor.office}}</text>
               <text class="position">{{doctor.position}}</text>
             </view>
             <view class="order-rule" bindtap="order_role">预约规则</view>

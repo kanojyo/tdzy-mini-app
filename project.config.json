@@ -39,12 +39,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "test",
-					"pathName": "pages/doctor/order/index",
+					"pathName": "pages/test/test",
 					"query": "id=1",
 					"scene": null
 				},

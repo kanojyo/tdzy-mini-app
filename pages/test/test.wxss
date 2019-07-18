@@ -4,3 +4,14 @@
   height: 300rpx;
   display: block
 }
+
+.arrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  position: absolute;
+  right: 20px;
+  transform: rotate(45deg);
+   top:20px;
+}

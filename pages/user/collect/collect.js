@@ -80,5 +80,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //文章详情
+  acticle_info: function (e) {
+    var article_id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/articleInfo/index?id=' + article_id
+    })
   }
 })
