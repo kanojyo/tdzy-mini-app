@@ -25,10 +25,20 @@ Page({
     })
   },
   goTo(e){
-    // console.log(e.currentTarget.dataset.url)
-    wx.navigateTo({
-      url: 'messageDetail/messageDetail?url=' + e.currentTarget.dataset.url,
+    console.log(e.currentTarget.dataset.id)
+    getRequest({
+      url: '/v1/message/read_system_msg?msg_system_id=' + e.currentTarget.dataset.id ,
+      method: 'GET',
+      success(res) {
+        console.log(res)
+        if (res.data.status == 1){
+          wx.navigateTo({
+            url: 'messageDetail/messageDetail?url=' + e.currentTarget.dataset.url,
+          })
+        }
+      }
     })
+    
   },
 
   /**
