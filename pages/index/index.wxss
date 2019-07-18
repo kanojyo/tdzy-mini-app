@@ -246,7 +246,7 @@
   display: flex;
   font-size: 22rpx;
   color:#d2b576;
-  margin-top: 5rpx;
+  margin-top: 14rpx;
 }
 .doctor-recommend .content .item-content .item-label .label{
   border:1rpx solid #d2b576;

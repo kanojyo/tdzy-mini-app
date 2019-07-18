@@ -67,10 +67,10 @@ Page({
   },
   gps: function () {
     var that = this
-    wx.showLoading({
-      title: "定位中",
-      mask: true
-    });
+    // wx.showLoading({
+    //   title: "定位中",
+    //   mask: true
+    // });
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -116,14 +116,14 @@ Page({
       //定位失败回调
       fail: function () {
         wx.showToast({
-          title: "定位失败",
+          title: "定位失败,请开启定位权限",
           icon: "none"
         })
       },
 
       complete: function () {
         //隐藏定位中信息进度
-        wx.hideLoading()
+        //wx.hideLoading()
       }
 
     })
