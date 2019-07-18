@@ -1,7 +1,10 @@
 /* pages/user/feedback/upload/upload.wxss */
+page{
+  background: #ededed;
+}
 .content{
   width: 90%;
-  padding: 0 30rpx;
+  padding: 10rpx 30rpx;
 }
 .text textarea{
   width: 95%;
@@ -9,6 +12,7 @@
   border-radius: 5rpx;
   font-size: 30rpx;
   padding: 10rpx 20rpx;
+  background: #fff
 }
 .btn{
   position: fixed;
@@ -17,7 +21,11 @@
   width: 100%;
 }
 .btn button{
-  background: #F04844;
+  background: #d1b574;
   color:#fff;
 }
 .page__bd{width: 100%}
+.weui-uploader__title{
+  font-size: 28rpx;
+  color:#333;
+}

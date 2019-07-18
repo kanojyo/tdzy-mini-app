@@ -51,5 +51,19 @@
   color:#d02424;
 }
 .address .text{
-  margin: 10rpx 0;
+  margin: 12rpx 0;
+  padding-left: 60rpx;
+}
+.address .site{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/address%402x.png') left top no-repeat;
+  background-size: contain;
+}
+.address .phone{
+  color:#d7c058;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/Telephone%402x.png') left top no-repeat;
+  background-size: contain;
+}
+.address .web{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/guanwang%402x.png') left top no-repeat;
+  background-size: contain;
 }

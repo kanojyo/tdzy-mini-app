@@ -69,9 +69,9 @@
 					"scene": null
 				},
 				{
-					"id": 2,
+					"id": 4,
 					"name": "签到",
-					"pathName": "pages/user/sign/sign",
+					"pathName": "pages/user/feedback/feedback",
 					"query": "",
 					"scene": null
 				},

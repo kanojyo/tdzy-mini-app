@@ -6,7 +6,7 @@ page{
   font-size: 26rpx;
   padding: 0 30rpx;
   margin-top: 30rpx;
-  padding-bottom: 100rpx;
+  padding-bottom: 120rpx;
   width: 92%;
 }
 .chatList .item{
@@ -27,7 +27,7 @@ page{
   height: 80rpx;
   border-radius: 50%;
 }
-.left .centens{width:500rpx;}
+.left .centens{max-width:500rpx;}
 .left .centens .text{
   display: block;
   background: #fff;
@@ -65,7 +65,7 @@ page{
 .right .centens{
   display: flex;
   flex-direction: row-reverse;
-  width: 500rpx;
+  max-width: 500rpx;
 }
 .right .centens .text{
   background: #fff;
@@ -73,7 +73,6 @@ page{
   border-radius: 10rpx;
   position: relative;
   width: 70%;
-  overflow-x: hidden;
 }
 .right .centens .text::before{
   content: '';
@@ -88,17 +87,19 @@ page{
 }
 .bot{
   width: 100%;
+  /* margin:0 30rpx; */
   position: fixed;
   left:0;
-  bottom:0;
+  bottom:0rpx;
 }
 .btn1 button{
-  background: #F04844;
+  background: #d1b574;
   color:#fff;
 }
 .btn2 button{
-  background: #F04844;
+  background: #d1b574;
   color:#fff;
+  
 }
 .btn3{
   display: flex;
@@ -106,10 +107,11 @@ page{
 .btn3 button{
   flex:1;
   border-radius: 0;
+  background: #d1b574;
 }
 .btn3 button+button{
-  background: #999;
-  color:#fff;
+  background: #ffff;
+  color:#333;
 }
 .pull-left{
   width: 320rpx;
