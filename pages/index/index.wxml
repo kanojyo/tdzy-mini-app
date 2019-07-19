@@ -45,13 +45,13 @@
       <view class="leader-box" bindtap="hospitalLocation">
         
           <image src="../../images/daohang@3x.png"></image>
-          <view class="leader-title">医院导航</view>
+          <view class="leader-title" >医院导航</view>
         
       </view>
       <view class="leader-box" open-type="contact" bindcontact="handleContact">
-        <button open-type="contact" bindcontact="handleContact">
+        <button open-type="contact" bindcontact="handleContact" class="zixun">
           <image src="../../images/zxixun@3x.png"></image>
-          <view class="leader-title" style='margin:0;'>在线咨询</view>
+          <view class="leader-title">在线咨询</view>
         </button>
       </view>
     </view>

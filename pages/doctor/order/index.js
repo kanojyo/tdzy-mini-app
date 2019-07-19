@@ -33,7 +33,8 @@ Page({
    */
   data: {
     flag: true,
-    info: {}
+    info: {},
+    status: true
   },
   showBox: function (e) {
     // 用that取代this，防止不必要的情况发生
@@ -200,6 +201,9 @@ Page({
         content: '当前医生已暂停预约,不可预约挂号',
       })
     } else {
+      that.setData({
+        status: false
+      })
       wx.request({
         url: util.getBaseUrl() + '/v1/appointment/create_appointment',
         method: 'POST',
@@ -239,6 +243,10 @@ Page({
               content: res.data.message,
             })
           }
+
+          that.setData({
+            status: true
+          })
         }
       })
 

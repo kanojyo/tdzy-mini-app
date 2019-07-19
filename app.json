@@ -28,7 +28,8 @@
     "pages/doctor/info/index",
     "pages/user/about/index",
     "pages/user/help/index",
-    "pages/user/book/bookingDetails/bookingDetails"
+    "pages/user/book/bookingDetails/bookingDetails",
+    "pages/link/link"
   ],
   "window": {
     "backgroundTextStyle": "light",

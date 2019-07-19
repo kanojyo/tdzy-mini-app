@@ -50,6 +50,7 @@
   background-color: #fff;
   margin-bottom: 20rpx;
   overflow:hidden;
+  font-size: 28rpx;
 }
 
 .top-tip .tip-info {
@@ -81,16 +82,23 @@
   margin-top: 20rpx;
   font-weight: blod;
   
-  font-size: 36rpx;
+  font-size: 32rpx;
 }
 
 .leader-box button {
   padding: 0;
   /* padding-top: 10rpx; */
   background-color: #fff;
+  height: 170rpx;
 }
 .leader-box button::after{
   border:none;
+}
+
+.zixun view{
+  position: absolute;
+  top: 86rpx;
+  left:60rpx;
 }
 
 .top-tip .tip-info .tip-info-img {

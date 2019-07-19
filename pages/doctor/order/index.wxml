@@ -35,7 +35,7 @@
     <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
     <view class="order-price" wx:else>免费</view>
     <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已经预约</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已预约</view>
     <view class="order-btn fail" wx:elif="{{item.status == 3}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">约满</view>
     <view class="order-btn fail" wx:elif="{{item.status == 4}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">暂停预约</view>
   </view>
@@ -74,7 +74,8 @@
       </view>
     </view>
     <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" id="{{info.work_id}}" data-index="{{info.index}}">
-      <button class='order-button'  form-type="submit" hover-stay-time="1000">立即预约</button>
+      <button class='order-button'  form-type="submit" hover-stay-time="1000" wx:if="{{status == true}}">立即预约</button>
+      <button class='order-button' hover-stay-time="1000" wx:else disabled="true">立即预约</button>
     </form>
   </view>
 </view>
