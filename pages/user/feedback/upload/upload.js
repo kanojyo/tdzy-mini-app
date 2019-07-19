@@ -25,6 +25,7 @@ Page({
         // that.setData({
         //   files: that.data.files.concat(res.tempFilePaths)
         // });
+        console.log(res)
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
           url: utils.getBaseUrl()+'/v1/uploads', //仅为示例，非真实的接口地址
