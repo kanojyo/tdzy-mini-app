@@ -122,17 +122,6 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    // wx.getUserInfo({
-    //   success: function (res) {
-    //     console.log(res)
-    //     var data = JSON.parse(res.rawData)
-    //     // console.log(data)
-    //     that.setData({
-    //       userInfo: data
-    //     })
-
-    //   }
-    // });
     this.check();
     //获取基本资料
     this.getInfo();
@@ -144,7 +133,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

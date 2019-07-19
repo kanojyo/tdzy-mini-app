@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    state: 3,
+    state: '',
     chatList: [],
   },
   //获取意见反馈列表
@@ -16,7 +16,6 @@ Page({
       url: '/v1/feedback/index',
       method: 'GET',
       success(res) {
-        console.log(res)
         that.setData({
           state: res.data.state,
           chatList:res.data.list
@@ -101,5 +100,8 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  imageLoad(e){
+    console.log(e)
   }
 })

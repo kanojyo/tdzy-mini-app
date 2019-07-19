@@ -17,7 +17,6 @@ Page({
       url: '/v1/message/sys_msg_list?page_index=' + that.data.page_index + '&page_size=' + that.data.page_size,
       method: 'GET',
       success(res) {
-        console.log(res)
         that.setData({
           messageList: res.data.data,
         })
@@ -30,7 +29,6 @@ Page({
       url: '/v1/message/read_system_msg?msg_system_id=' + e.currentTarget.dataset.id ,
       method: 'GET',
       success(res) {
-        console.log(res)
         if (res.data.status == 1){
           wx.navigateTo({
             url: 'messageDetail/messageDetail?url=' + e.currentTarget.dataset.url,
