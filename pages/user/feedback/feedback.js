@@ -101,5 +101,10 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+  onUnload: function () {
+    wx.navigateBack({
+      delta: 2
+    })
+  },
 })
