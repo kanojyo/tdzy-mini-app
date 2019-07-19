@@ -101,7 +101,9 @@ Page({
   onShareAppMessage: function() {
 
   },
-  imageLoad(e){
-    console.log(e)
-  }
+  onUnload: function () {
+    wx.navigateBack({
+      delta: 2
+    })
+  },
 })

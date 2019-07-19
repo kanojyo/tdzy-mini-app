@@ -33,8 +33,25 @@ Page({
         })
       },
     })
-    
-    
+  },
+  openConfirm: function () {
+    wx.showModal({
+      content: '检测到您没打开泰斗医疗定位权限，是否去设置打开？',
+      confirmText: "确认",
+      cancelText: "取消",
+      success: function (res) {
+        console.log(res);
+        //点击“确认”时打开设置页面
+        if (res.confirm) {
+          console.log('用户点击确认')
+          wx.openSetting({
+            success: (res) => { }
+          })
+        } else {
+          console.log('用户点击取消')
+        }
+      }
+    });
   },
   onShow: function () {
     
@@ -115,10 +132,7 @@ Page({
       },
       //定位失败回调
       fail: function () {
-        wx.showToast({
-          title: "定位失败,请开启定位权限",
-          icon: "none"
-        })
+        that.openConfirm()
       },
 
       complete: function () {
