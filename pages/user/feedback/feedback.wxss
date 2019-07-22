@@ -108,7 +108,7 @@ page{
   border-radius: 0;
   background: #d1b574;
 }
-.btn3 button+button{
+.btn3 .close{
   background: #ffff;
   color:#333;
 }

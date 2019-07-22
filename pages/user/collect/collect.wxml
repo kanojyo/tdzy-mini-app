@@ -11,5 +11,8 @@
         </view>
       </view>
   </view>
-  <view class="nodata" wx:else>暂无收藏</view>
+  <view class="nodata" wx:else>
+    <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+    <text>空空如也</text>
+  </view>
 </view>

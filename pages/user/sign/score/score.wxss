@@ -1,6 +1,6 @@
 /* pages/user/sign/score/score.wxss */
 .top{
-  padding:20rpx 30rpx;
+  padding:20rpx 30rpx 0 30rpx;
   background: #f1f1f1;
   
 }
@@ -149,4 +149,20 @@
 }
 .list-item .right .score .black{
   color:#333;
+}
+.noData{
+  padding-top: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  background: #fff;
+}
+.noData image{
+  width: 494rpx;
+}
+.noData text{
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color:#666;
 }

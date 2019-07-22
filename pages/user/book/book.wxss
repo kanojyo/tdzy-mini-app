@@ -99,9 +99,18 @@ page{
   background-size: 40%;
 }
 .nodata{
-  background: #fff;
-  text-align:center;
+  padding-top: 100rpx;
   width: 100%;
-  padding-top: 50rpx;
-  font-size: 30rpx;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  background: #fff;
+}
+.nodata image{
+  width: 494rpx;
+}
+.nodata text{
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color:#666;
 }

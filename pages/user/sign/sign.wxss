@@ -195,7 +195,7 @@ page{
   color:#333;
 }
 .hot .content .item .text .bot .left{
-  padding-left: 30rpx;
+  padding-left: 40rpx;
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/_jinbi-2%402x.png') left 10rpx no-repeat;
   background-size: 24%;
 }

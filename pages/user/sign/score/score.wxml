@@ -12,49 +12,63 @@
   </view>
   <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
     <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} score'>
-      <view class="score-item" wx:for="{{scoreList}}" wx:key="index">
-        <view class="title" wx:if="{{month == item.month}}">
-          <view class="month">本月</view>
-          <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
-        </view>
-        <view class="title"  wx:else>
-          <view class="month">{{item.month}}</view>
-          <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
-        </view>
-        <view class="list" >
-          <view class="list-item" wx:for="{{item.list}}"  wx:for-item="it" wx:key="index">
-            <view class="left {{it.type ==1? 'sign' : 'exchage'}}">
-              <view>{{it.remark}}</view>
-              <view>{{it.date_time}}</view>
-            </view>
-            <view class="right">
-              <view class="score">
-                <text wx:if="{{it.type==1}}">+{{it.change_score}}</text>
-                <text class="black" wx:else>-{{it.change_score}}</text>
+      <view wx:if="{{scoreList.length}}">
+        <view class="score-item" wx:for="{{scoreList}}" wx:key="index">
+          <view class="title" wx:if="{{month == item.month}}">
+            <view class="month">本月</view>
+            <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
+          </view>
+          <view class="title"  wx:else>
+            <view class="month">{{item.month}}</view>
+            <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
+          </view>
+          <view class="list" >
+            <view class="list-item" wx:for="{{item.list}}"  wx:for-item="it" wx:key="index">
+              <view class="left {{it.type ==1? 'sign' : 'exchage'}}">
+                <view>{{it.remark}}</view>
+                <view>{{it.date_time}}</view>
               </view>
-              <view class="bot">
-                剩余积分：{{it.score}}
+              <view class="right">
+                <view class="score">
+                  <text wx:if="{{it.type==1}}">+{{it.change_score}}</text>
+                  <text class="black" wx:else>-{{it.change_score}}</text>
+                </view>
+                <view class="bot">
+                  剩余积分：{{it.score}}
+                </view>
               </view>
             </view>
           </view>
         </view>
       </view>
+      <view class="noData" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
+      
     </view>
     <view class='tab-item {{currentData == 1 ? "swiper_con" : ""}} exchage'>
-      <view class="exchage-item" wx:for="{{exchageList}}" wx:key="item">
-        <view class="pic">
-          <image src="{{item.pic_url}}"></image>
-        </view>
-        <view class="text state{{item.status}}">
-          <view class="title ">{{item.goods_name}}</view>
-          <view class="bot">
-            <view class="code">编号：{{item.exchange_code}}</view>
-            <view class="time">有效时间：</view>
-            <view class="time" wx:if="{{item.status == 1}}">截止至 {{item.end_time}}</view>
-            <view class="time" wx:else>兑换时间起-{{item.end_time}}</view>
+      <view wx:if="{{exchageList.length}}">
+        <view class="exchage-item" wx:for="{{exchageList}}" wx:key="item">
+          <view class="pic">
+            <image src="{{item.pic_url}}"></image>
+          </view>
+          <view class="text state{{item.status}}">
+            <view class="title ">{{item.goods_name}}</view>
+            <view class="bot">
+              <view class="code">编号：{{item.exchange_code}}</view>
+              <view class="time">有效时间：</view>
+              <view class="time" wx:if="{{item.status == 1}}">截止至 {{item.end_time}}</view>
+              <view class="time" wx:else>兑换时间起-{{item.end_time}}</view>
+            </view>
           </view>
         </view>
       </view>
+      <view class="noData" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
+      
     </view>
   </view>
 </view>

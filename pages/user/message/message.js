@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dataStatus:false,
     messageList: [],
     page_index: 1,
     page_size: 20,
@@ -19,6 +20,7 @@ Page({
       success(res) {
         that.setData({
           messageList: res.data.data,
+          dataStatus:true,
         })
       }
     })

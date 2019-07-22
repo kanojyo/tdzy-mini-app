@@ -48,7 +48,10 @@
           </view>
         </view>
       </view>
-      <view class="nodata" wx:else>暂无数据</view>
+      <view class="nodata" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
     </view>
     <view class='tab-item {{currentData == 1 ? "swiper_con" : ""}} list list2'>
       <view wx:if="{{list2.length}}">
@@ -85,7 +88,10 @@
           </view>
         </view>
       </view>
-      <view class="nodata" wx:else>暂无数据</view>
+      <view class="nodata" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
     </view>
     <view class='tab-item {{currentData == 2 ? "swiper_con" : ""}} list list3'>
       <view wx:if="{{list3.length}}">
@@ -123,7 +129,10 @@
           </view>
         </view>
       </view>
-      <view class="nodata" wx:else>暂无数据</view>
+      <view class="nodata" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
     </view>
   </view>
 </view>
