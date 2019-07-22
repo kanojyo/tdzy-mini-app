@@ -65,7 +65,6 @@ Page({
         that.setData({
           scoreList: res.data.data
         })
-        console.log(that.data.scoreList)
       }
     })
   },
