@@ -36,7 +36,7 @@ Page({
   },
   openConfirm: function () {
     wx.showModal({
-      content: '检测到您没打开泰斗医疗定位权限，是否去设置打开？',
+      content: '检测到您没打开泰斗医聊天定位权限，是否去设置打开？',
       confirmText: "确认",
       cancelText: "取消",
       success: function (res) {

@@ -204,3 +204,11 @@
  padding-top: 20rpx;
 }
 
+.empty-order {
+  width: 100%;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  color:#777777;
+}
+

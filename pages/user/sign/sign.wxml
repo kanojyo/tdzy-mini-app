@@ -45,7 +45,7 @@
     <!-- <view class="text" wx:else>您已获得<text></text>积分</view> -->
   </view>
   <view class="hot">
-    <view class="title">热门推荐</view>
+    <view class="title">热门兑换</view>
     <view class="content">
       <view class="item" wx:for="{{hotList}}" wx:key="item">
         <view class="img">

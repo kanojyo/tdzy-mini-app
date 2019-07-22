@@ -26,6 +26,6 @@
   </view>
   
 </view>
-<button class="buttom-btn" open-type="contact" bindcontact="handleContact">
+<!-- <button class="buttom-btn" open-type="contact" bindcontact="handleContact">
   我要咨询
-</button>
+</button> -->

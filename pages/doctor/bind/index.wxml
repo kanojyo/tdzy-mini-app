@@ -19,7 +19,7 @@
     </radio-group>
     <view class="form-input">
       <label class="label">姓名</label>
-      <input type="text" placeholder="请填写真实姓名,方便预约挂号（必填）" name="name" bindinput="getWords" maxlength='{{maxTextLen}}' bindblur="getName"/>
+      <input type="text" placeholder="请填写真实姓名,方便预约挂号（必填）" name="name" bindinput="getWords" maxlength='{{maxTextLen}}' bindblur="getName" adjust-position="true" />
       <image src="/images/u945.png" class="right"></image>
     </view>
 
@@ -35,17 +35,28 @@
         </view>
       </picker>
     </view>
-    <view class="form-input" style="border:0;">
+    <view class="form-input" style="border:0;" bindtap="showModal">
       <label class="label">手机号</label>
-      <input type="number" placeholder="请输入您的手机号（必填）" name="mobile" bindblur="getMobile" />
+      <input type="number" placeholder="请输入您的手机号（必填）" name="mobile" disabled="true" value="{{mobile}}"/>
       <image src="/images/u945.png" class="right"></image>
     </view>
+
+    <view class="bottom-tip">为医护人员能够准确核实您的信息,请您认真填写</view>
+    <button class="bind-userinfo dis" wx:if="{{sex == ''}}">保存</button>
+    <button class="bind-userinfo dis" wx:elif="{{name == ''}}">保存</button>
+    <button class="bind-userinfo dis" wx:elif="{{user_age == ''}}">保存</button>
+    <button class="bind-userinfo dis" wx:elif="{{mobile == ''}}">保存</button>
+    <button class="bind-userinfo" form-type="submit" wx:else>保存</button>
   </form>
 </view>
-
-<view class="bottom-tip">为医护人员能够准确核实您的信息,请您认真填写</view>
-<button class="bind-userinfo dis" wx:if="{{sex == ''}}">保存</button>
-<button class="bind-userinfo dis" wx:elif="{{name == ''}}">保存</button>
-<button class="bind-userinfo dis" wx:elif="{{user_age == ''}}">保存</button>
-<button class="bind-userinfo dis" wx:elif="{{mobile == ''}}">保存</button>
-<button class="bind-userinfo" form-type="submit" wx:else>保存</button>
+<view class="input-modal" wx:if="{{status}}">
+  <view class="hide-input">
+    <view class="operate">
+      <view class="cancle" bindtap="hideModal">取消</view>
+      <view class="submit" bindtap="submitModal">确定</view>
+    </view>
+    <view class="input-content">
+      <input class="content" type="text" bindblur="getMobile" value="{{mobile}}"/>
+    </view>
+  </view>
+</view>

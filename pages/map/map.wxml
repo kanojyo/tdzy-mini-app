@@ -13,7 +13,7 @@
 
         <cover-view class="connact" catchtap='freeTell'>
           <cover-image src="../../images/Telephone@3x.png" class="map-image"></cover-image>
-          <cover-view class="phone ml10">027-85555789</cover-view>
+          <cover-view class="phone ml10" style="color:#d1b574;">027-85555789</cover-view>
         </cover-view>
       </cover-view>
       <cover-view bindtap='gps'>

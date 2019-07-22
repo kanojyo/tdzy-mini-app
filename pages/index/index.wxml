@@ -24,7 +24,7 @@
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' />
+          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' bindtap="imageUrl" data-url="{{item.url}}"/>
         </swiper-item>
       </block>
     </swiper>
@@ -51,7 +51,7 @@
       <view class="leader-box" open-type="contact" bindcontact="handleContact">
         <button open-type="contact" bindcontact="handleContact" class="zixun">
           <image src="../../images/zxixun@3x.png"></image>
-          <view class="leader-title">在线咨询</view>
+          <view class="leader-title">在线问诊</view>
         </button>
       </view>
     </view>
@@ -110,7 +110,7 @@
       <view class="content">
         <view class="item" wx:for="{{article}}" wx:key="index" wx:if="{{index < 20}}" id="{{item.id}}" bindtap="acticle_info">
           <view class="item-img">
-            <image src="{{item.article_cover}}"  mode='aspectFill'></image>
+            <image src="{{item.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
           </view>
           <view class="item-text">
             <text class="title">{{item.article_title}}</text>

@@ -17,6 +17,7 @@ Page({
       url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
       method:'GET',
       success(res){
+        res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
         that.setData({
           goods:res.data
         })

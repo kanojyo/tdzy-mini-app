@@ -29,7 +29,8 @@
     "pages/user/about/index",
     "pages/user/help/index",
     "pages/user/book/bookingDetails/bookingDetails",
-    "pages/link/link"
+    "pages/link/link",
+    "pages/banner/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

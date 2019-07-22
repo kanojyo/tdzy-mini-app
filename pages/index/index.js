@@ -17,6 +17,13 @@ Page({
     interval: 5000,
     duration: 1000,
   },
+  //轮播图点击跳转
+  imageUrl: function (e) {
+    var url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url: "/pages/banner/index?url=" + url,
+    })
+  },
   //我要咨询
   handleContact(e) {
     console.log(e.path)
@@ -105,6 +112,7 @@ Page({
     }
   },
   onLoad: function () {
+    //wx.hideTabBar({});
     var that = this;
     // 查看是否授权
     wx.getSetting({

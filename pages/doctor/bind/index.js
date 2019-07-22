@@ -17,6 +17,22 @@ Page({
     sex: "",
     name:"",
     mobile: "",
+    status: false
+  },
+  showModal: function() {
+    this.setData({
+      status:true
+    })
+  },
+  hideModal: function() {
+    this.setData({
+      status: false
+    })
+  },
+  submitModal: function() {
+    this.setData({
+      status: false
+    })
   },
   getWords(e) {
     let page = this;
@@ -64,6 +80,7 @@ Page({
     })
   },
   formSubmit: function (e) {
+    console.log(e)
     var that = this;
     var doctor_id = that.data.doctor_id;
     var age = that.data.user_age;

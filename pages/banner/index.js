@@ -1,36 +1,21 @@
-// pages/doctor/info/index.js
-import { getRequest } from '../../../utils/util.js';
-
+// pages/banner/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var id = options.doctor_id;
-    console.log(id)
-    var that = this;
-    getRequest({
-      url: '/v1/medical_info/doctor_brief?doctor_id=' + id,
-      method: 'GET',
-      success(res) {
-        wx.setNavigationBarTitle({
-          title: res.data.name + "医生"
-        });
-        that.setData({
-          images: res.data.brief,
-          scheduling_status: res.data.scheduling_status,
-          id:id,
-        })
-      }
-    });
+    var url = options.url;
+    this.setData({
+      url: url
+    })
   },
 
   /**
@@ -80,12 +65,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  //跳转预约页面
-  orderDoctor: function (e) {
-    var id = e.currentTarget.id;
-    wx.navigateTo({
-      url: "/pages/doctor/order/index?id=" + id,
-    })
   }
 })

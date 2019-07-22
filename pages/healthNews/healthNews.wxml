@@ -15,7 +15,7 @@
       <view wx:if="{{item.list_article.data.length > 0}}">
         <view wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' bindtap='articleInfo' id="{{children.id}}">
           <view class="item-img">
-            <image src="{{children.article_cover}}"  mode='aspectFill'></image>
+            <image src="{{item.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
           </view>
           <view class="item-text">
             <text class="title">{{children.article_title}}</text>

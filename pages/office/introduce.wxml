@@ -2,4 +2,4 @@
   <image wx:for="{{images}}" wk:key="index" src="{{item}}" mode='widthFix'></image>
 </view>
 
-<button class="buttom-btn" open-type="contact" bindcontact="handleContact">我要咨询</button>
+<!-- <button class="buttom-btn" open-type="contact" bindcontact="handleContact">我要咨询</button> -->

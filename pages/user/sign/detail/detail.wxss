@@ -64,6 +64,7 @@ page{
 .intro .text{
   font-size: 26rpx;
   color:#666;
+  white-space: pre-wrap;
 }
 .btn{
   margin-top: 100rpx;
