@@ -49,6 +49,10 @@
     <view class="content">
       <view class="item" wx:for="{{hotList}}" wx:key="item">
         <view class="img">
+          <image src="{{item.pic_url}}" data-id="{{item.id}}" bindtap='exchange'></image>
+        </view>
+        <view class="text">
+          <view class="title" data-id="{{item.id}}" bindtap='exchange'>{{item.goods_name}}</view>
           <image src="{{item.pic_url}}"></image>
         </view>
         <view class="text">
