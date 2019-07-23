@@ -44,7 +44,6 @@ Page({
       url: '/v1/sign/sign_up',
       method: 'POST',
       success(res) {
-        // console.log(res)
         that.setData({
           userInfo: res.data.user,
           hotList: res.data.hot_list,

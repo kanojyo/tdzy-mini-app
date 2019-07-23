@@ -53,6 +53,10 @@
         </view>
         <view class="text">
           <view class="title" data-id="{{item.id}}" bindtap='exchange'>{{item.goods_name}}</view>
+          <image src="{{item.pic_url}}"></image>
+        </view>
+        <view class="text">
+          <view class="title">{{item.goods_name}}</view>
           <view class="bot">
             <view class="left">
               <view class="now_score">{{item.now_score}}积分</view>
