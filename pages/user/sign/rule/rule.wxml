@@ -1,0 +1,24 @@
+<!--pages/user/sign/rule/rule.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="item">
+      <view class="question">如何获取积分？</view>
+      <view class="title">1.签到领积分：</view>
+      <view class="text">
+        用户可以每日登录，到我的--每日签到模块，自动签到，如连续签到第可7、14、21、28天等，获得额外奖励。
+      </view>
+    </view>
+    <view class="item">
+      <view class="question">如何查看我的积分？</view>
+      <view class="text">
+        在我的--每日签到页面，即可查看我的积分，并在该页面下方即可查看到积分可兑换商品。
+      </view>
+    </view>
+    <view class="item">
+      <view class="question">如何使用积分？</view>
+      <view class="text">
+        在我的--每日签到页面，兑换专区即可使用积分，兑换艾灸、针灸等诊疗机会，未来还可兑换各种商品。
+      </view>
+    </view>
+  </view>
+</view>

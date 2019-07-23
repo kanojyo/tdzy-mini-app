@@ -1,0 +1,26 @@
+<view class="content">
+  <view class="image-box">
+    <view class="image-title">
+      <image src="../../images/photo@3x.png"></image>
+      <text>泰斗中医院环境</text>
+    </view>
+    <view class="list-img">
+      <view class="first-img">
+        <image mode='widthFix' src="{{images[0]}}" bindtap="imgYu" data-list="{{images}}" ></image>
+      </view>
+      
+      <view wx:if="{{images}}" wx:for="{{images}}" wk:key="index" class="list">
+        <image bindtap="imgYu" data-list="{{images}}" data-src="{{dImg}}" wx:for-item="dImg" mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class="tips">
+    <view>地址：湖北省武汉市雄楚大街 428 号</view>
+    <view>电话：027-85555789</view>
+    <view>网址：http://www.whtdzyy.com</view>
+  </view>
+
+  <button class="chat" open-type="contact" bindcontact="handleContact">我要咨询</button>
+</view>
+
+

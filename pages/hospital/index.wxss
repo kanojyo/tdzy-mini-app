@@ -1,0 +1,61 @@
+/* pages/hospital/index.wxss */
+.content {
+  margin-left: 3%;
+  width: 94%;
+  overflow-x: hidden;
+}
+.list {
+  display: none;
+}
+.image-title {
+  height: 70rpx;
+  vertical-align: middle;
+  
+  display: table-cell;
+}
+.image-title image {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+
+.image-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.list-img image{
+  width: 100%;
+  display: block;
+  overflow-x: hidden;
+}
+
+.first-img {
+  border: 6rpx solid #d1b574;
+  padding: 4rpx;
+  overflow-x: hidden;
+  border-radius: 6rpx;
+}
+
+.first-img image {
+  overflow-x: hidden;
+  width: 100%;
+  display: block;
+  height: 300rpx;
+}
+
+.tips {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #848484;
+}
+
+.chat {
+  background-color: #d1b574;
+  color: #fff;
+  position: fixed;
+  bottom: 20rpx;
+  left:3%;
+  width: 94%;
+  border-radius: 60rpx;
+}

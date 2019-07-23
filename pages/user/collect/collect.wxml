@@ -1,0 +1,18 @@
+<!--pages/user/collect/collect.wxml-->
+<view class="container">
+  <view wx:if="{{list.length}}" class="content">
+    <view class="item" wx:for="{{list}}" wx:key="index">
+        <view class="item-img">
+          <image src="{{item.cover}}"></image>
+        </view>
+        <view class="item-text">
+          <text class="title">{{item.title}}</text>
+          <text class="desc">{{item.description}}</text>
+        </view>
+      </view>
+  </view>
+  <view class="nodata" wx:else>
+    <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+    <text>空空如也</text>
+  </view>
+</view>

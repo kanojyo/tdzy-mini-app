@@ -1,0 +1,78 @@
+<view class="container">
+  <view class="info">
+    <view class="userInfo">
+      <view class="avatar">
+        <image src="{{userInfo.avatarurl}}"></image>
+      </view>
+      <view class="text">
+        <view class="nickName">{{userInfo.nickname}}</view>
+        <view class="jifen" bindtap='GotoScore'>我的积分</view>
+        <view class="score">{{userInfo.score}}</view>
+      </view>
+    </view>
+    <view class="rules" bindtap='GotoRules'>规则</view>
+  </view>
+  <view class="sign">
+    <view class="text">您已连续签到<text class="red">{{userInfo.sign_day}}</text>天，获得<text class="red">{{userInfo.continue_sum_score}}</text>积分
+    </view>
+    <view class="tab" wx:if="{{signInfo}}">
+      <view class="tab-ul">
+        <view class="tab-item" wx:for="{{signInfo}}" wx:key="index">
+          <view class="score" wx:if="{{item.is_sign == 1}}">
+            <image class="img_10"  wx:if="{{item.score == 10}}" src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Goldcoin%402x.png"></image>
+            <image class="img_40"  wx:if="{{item.score == 40}}" src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/hg_Goldcoin%402x.png"></image>
+          </view>
+          <view class="score" wx:else>
+            <image class="img_10"  wx:if="{{item.score == 10}}" src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/wxh_Goldcoin2%402x.png"></image>
+            <image class="img_40"  wx:if="{{item.score == 40}}" src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/hg_gold-coin%402x.png"></image>
+          </view>
+          <view class="date" wx:if="{{index ==0}}">今天</view>
+          <view class="date" wx:else>{{item.day}}</view>
+        </view>
+      </view>
+      <!-- <view class="underline"></view> -->
+      <view class="tab-ul line">
+        <view class="tab-item" wx:for="{{signInfo}}" wx:key="index">
+          <view class="score bot" wx:if="{{item.is_sign == 1}}">
+            <image class="gouxuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/gouxuan%403x(2).png"></image>
+          </view>
+          <view class="score bot" wx:else>
+            <image class="yuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/yuan%403x.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="text" wx:else>您已获得<text></text>积分</view> -->
+  </view>
+  <view class="hot">
+    <view class="title">热门推荐</view>
+    <view class="content">
+      <view class="item" wx:for="{{hotList}}" wx:key="item">
+        <view class="img">
+          <image src="{{item.pic_url}}" data-id="{{item.id}}" bindtap='exchange'></image>
+        </view>
+        <view class="text">
+          <view class="title" data-id="{{item.id}}" bindtap='exchange'>{{item.goods_name}}</view>
+          <view class="bot">
+            <view class="left">
+              <view class="now_score">{{item.now_score}}积分</view>
+              <view class="orgin">{{item.original_score}}积分</view>
+            </view>
+            <view class="right">
+              <button class="btn1" wx:if="{{item.goods_status === 1 }}" data-id="{{item.id}}" bindtap='exchange'>立即兑换</button>
+              <button class="btn2" wx:if="{{item.goods_status === 3 }}" data-id="{{item.id}}" bindtap='exchange'>暂停兑换</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shade" style="height:{{height}}rpx;" wx:if="{{modelShow}}">
+    <view class="bg">
+      <view class="title">恭喜您获得</view>
+      <view class="score">{{score}}积分</view>
+      <view class="text">明天签到可领{{tomorrow_score}}积分</view>
+      <button class="btn" bindtap='modelHide'>确认</button>
+    </view>
+  </view>
+</view>

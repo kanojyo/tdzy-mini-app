@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-<<<<<<< HEAD
   <view wx:if="{{isHide}}" class="shouquan">
     <view wx:if="{{canIUse}}">
       <view class='header'>
@@ -13,64 +12,48 @@
       <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
         授权登录
       </button>
-=======
-  <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-    <block wx:for="{{imgUrls}}" wx:key="index">
-      <swiper-item>
-        <image src="{{item.img}}" class="slide-image"/>
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class="office">
-    <view class="office-item" wx:for="{{officeList}}" wx:key="index">
-      <image class="icon" src="{{item.office_img}}"></image>
-      <text>{{item.name}}</text>
->>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
     </view>
     <view wx:else>请升级微信版本</view>
   </view>
-  <view class="main" wx:else>
+  <view wx:else class="main">
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" />
+          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' />
         </swiper-item>
       </block>
     </swiper>
-    <view class="office">
-      <view class="office-item" wx:for="{{officeList}}" wx:key="index">
-        <image class="icon" src="{{item.img}}"></image>
-        <text>{{item.text}}</text>
+    <view class="top-tip">
+      <view class="tip-info">
+          <image bindtap="GotoAuth" src="../../images/myAuthenticity@3x.png" class="tip-info-img"  mode='aspectFill'></image>
+          <text class="tip-info-title" bindtap="GotoAuth">真伪查询</text>
+          <view class='space'></view>
+          <image src="../../images/HospitalNavigation@3x.png" bindtap='hospitalLocation' class="tip-info-img"  mode='aspectFill'></image>
+          <text bindtap='hospitalLocation' class="tip-info-title">医院导航</text>
       </view>
     </view>
-    <view class='intro'>
+    <view class="office">
+      <view class="office-item" wx:for="{{officeList}}" wx:key="index" bindtap="officeInfo" data-id="{{item.id}}">
+        <image class="icon" src="{{item.office_img}}"  mode='aspectFill'></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class='intro' bindtap='goHospital'>
       <view class="title">
         <view class="hospital">泰斗中医院</view>
-        <view class="more">
-          <text>医院导航</text>
-          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/HospitalNavigation@2x.png"></image>
-        </view>
       </view>
-      <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640"></image>
+      <image src="{{hospital.img}}" mode='aspectFill'></image>
     </view>
-<<<<<<< HEAD
     <view class='intro doctor-recommend'>
       <view class="title">
         <view class="hospital">名医推荐</view>
-        <view class="more">
+        <view class="more" bindtap="doctor_list">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
-=======
-    <view class="content" >
-      <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
-        <view class="item-avatar">
-          <image class="avatar" src="{{item.avatar}}"></image>
-          <view class="text">力荐</view>
->>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
         </view>
       </view>
       <view class="content">
-        <view class="item" wx:for="{{doctorList}}" wx:key="index">
+        <view class="item" wx:for="{{doctorList}}" wx:key="index" wx:if="{{index < 5}}">
           <view class="item-avatar">
             <image class="avatar" src="{{item.avatar}}"></image>
             <view class="text">力荐</view>
@@ -81,7 +64,8 @@
                 <text class="name">{{item.name}}</text>
                 <text class="position">{{item.position}}</text>
               </view>
-              <button class="btn">立即预约</button>
+              <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
+              <button class="btn fail" wx:else>不可预约</button>
             </view>
             <text class="item-desc">{{item.brief}}</text>
             <view class="item-label">
@@ -91,37 +75,30 @@
         </view>
       </view>
     </view>
-<<<<<<< HEAD
     <view class='intro hot-recommend'>
       <view class="title">
         <view class="hospital">热门推荐</view>
         <view class="more" bindtap="all_news">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
-=======
-  </view>
-  <view class='intro hot-recommend'>
-    <view class="title">
-      <view class="hospital">热门推荐</view>
-      <view class="more" bindtap="all_news">
-        <text>更多</text>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
-      </view>
-    </view>
-    <view class="content">
-      <view class="item" wx:for="{{article}}" wx:key="index">
-        <view class="item-img">
-          <image src="{{item.article_cover}}"></image>
->>>>>>> 796e704d533e1f846580e0ae4bc15e9d6efa79d0
         </view>
       </view>
       <view class="content">
-        <view class="item" wx:for="{{article}}" wx:key="index">
+        <view class="item" wx:for="{{article}}" wx:key="index" wx:if="{{index < 20}}" id="{{item.id}}" bindtap="acticle_info">
           <view class="item-img">
-            <image src="{{item.article_cover}}"></image>
+            <image src="{{item.article_cover}}"  mode='aspectFill'></image>
+          </view>
+          <view class="item-text">
+            <text class="title">{{item.article_title}}</text>
+            <text class="desc">{{item.article_description}}</text>
           </view>
         </view>
       </view>
     </view>
   </view>
 </view>
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
+  <button class="sign" form-type="submit">
+    <image class="qiandao" src="../../images/qiandao.png"></image>
+  </button>
+</form>

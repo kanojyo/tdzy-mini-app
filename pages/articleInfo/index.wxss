@@ -1,0 +1,75 @@
+/* pages/articleInfo/index.wxss */
+.container {
+  padding-left: 2%;
+  overflow-x: hidden;
+  margin-bottom: 30rpx;
+}
+.article_title {
+  
+  width: 96%;
+  font-size: 40rpx ;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.article_time {
+  width: 96%;
+  
+  color: #666;
+} 
+
+.middle-box {
+  padding: 40rpx 0;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.star-box, .share-box {
+  border:1rpx solid #666;
+  border-radius: 5rpx;
+  display: inline-block;
+  
+}
+.share-box {
+  margin-left: 60rpx;
+}
+.icon{
+  padding:  5rpx 20rpx;
+  font-size: 40rpx;
+}
+
+.nums {
+  font-size: 20rpx;
+  text-align: center;
+  background-color: #00CCFF;
+  border-color: #00CCFF;
+}
+
+.buttom-btn {
+  margin-left: 2%;
+  width: 96%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #d2b576;
+  text-align: center;
+  position: fixed;
+  border-radius: 60rpx;
+  bottom: 20rpx;
+  margin-top: 30rpx;
+}
+
+button {
+  line-height: normal;
+}
+
+.star-box .icon{
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.share-box .icon {
+  padding: 8rpx 20.5rpx;
+}
+

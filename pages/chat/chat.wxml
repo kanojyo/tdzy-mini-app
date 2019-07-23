@@ -1,2 +1,3 @@
-<!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<view class="container">
+  <button class="btn" open-type="contact" bindcontact="handleContact">开启聊天</button>
+</view>

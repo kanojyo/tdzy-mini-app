@@ -1,0 +1,91 @@
+/* pages/doctor/bind.wxss */
+.bind-userinfo {
+  background-color: red;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hospital-title {
+  width: 100%;
+  padding-top: 100rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.tips {
+  width: 100%;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  text-align: center;
+  font-size: 25rpx;
+}
+
+.img {
+  width: 120rpx;
+  height: 120rpx;  
+}
+
+.sex {
+  width: 100%;
+  text-align: center;
+}
+
+.radio {
+  display: block;
+}
+
+.sex label {
+  display: inline-block;
+  padding: 25rpx 50rpx;
+}
+
+.form-input{
+  width: 80%;
+  margin-left: 10%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 4rpx solid #ccc;
+  position: relative;
+}
+.form-input input, .form-input .select-box{
+  width: 70%;
+  position: absolute;
+  right: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  top: 0;
+  font-size: 25rpx;
+  text-align: right;
+}
+
+.age-list {
+  height: 100rpx !important;
+  line-height: 100rpx;
+  border :0 ;
+  text-align: right;
+}
+
+.bottom-tip {
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  color: red;
+  font-size: 25rpx;
+}
+
+.dis {
+  background-color: #C9C9C9 !important;
+}
+
+.radio {
+  opacity: 0 !important;
+  height: 0;
+}
+
+.no-age {
+  color: #808080;
+}

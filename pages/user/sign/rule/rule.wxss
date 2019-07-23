@@ -1,0 +1,21 @@
+/* pages/user/sign/rule/rule.wxss */
+.content{
+  width: 92%;
+  padding: 20rpx 30rpx;
+}
+.content .item{
+  margin-bottom: 30rpx;
+}
+.content .question{
+  font-size: 32rpx;
+  color:#000;
+  margin-bottom: 20rpx;
+}
+.content .title{
+  font-size: 28rpx;
+  color:#000;
+}
+.content .text{
+  font-size: 28rpx;
+  color:#333;
+}

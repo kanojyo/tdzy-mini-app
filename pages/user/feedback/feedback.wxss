@@ -1,0 +1,128 @@
+/* pages/user/feedback/feedback.wxss */
+page{
+  background-color: #ededed;
+}
+.chatList{
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+  padding-bottom: 120rpx;
+  width: 92%;
+}
+.chatList .item{
+  margin-bottom: 40rpx;
+}
+.chatList .left{
+  display: flex;
+  width: 100%;
+}
+.left .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  
+}
+.left .avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.left .centens{max-width:500rpx;}
+.left .centens .text{
+  display: block;
+  background: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  position: relative;
+  width: 70%;
+}
+.left .centens .text::before{
+  content: '';
+  position: absolute;
+  width:0;
+  height:0;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-right:8px solid #fff;
+  left: -14rpx;
+  top:10rpx;
+}
+.chatList .right{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.right .avatar{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+  
+}
+.right .avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.right .centens{
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 500rpx;
+}
+.right .centens .text{
+  background: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+  position: relative;
+  width: 70%;
+}
+.right .centens .text::before{
+  content: '';
+  position: absolute;
+  width:0;
+  height:0;
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+  border-left:8px solid #fff;
+  right: -14rpx;
+  top:10rpx;
+}
+.bot{
+  width: 690rpx;
+  margin:0 30rpx;
+  position: fixed;
+  left:0;
+  bottom:10rpx;
+}
+.btn1 button{
+  background: #d1b574;
+  color:#fff;
+}
+.btn2 button{
+  background: #d1b574;
+  color:#fff;
+}
+.btn3{
+  display: flex;
+}
+.btn3 button{
+  flex:1;
+  border-radius: 0;
+  background: #d1b574;
+}
+.btn3 .close{
+  background: #ffff;
+  color:#333;
+}
+.pull-left{
+  width: 320rpx;
+  min-height: 240rpx;
+}
+.pull-left image{
+  width: 320rpx;
+  min-height: 240rpx;
+}
+.pull-right{
+  max-width: 320rpx;
+}
+.pull-right image{
+  max-width: 320rpx;
+}

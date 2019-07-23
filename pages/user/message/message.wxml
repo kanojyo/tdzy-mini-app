@@ -1,0 +1,25 @@
+<!--pages/user/message/message.wxml-->
+<view class="container">
+  <view class="message">
+    <view wx:if="{{messageList.length}}">
+      <view class="item" wx:for="{{messageList}}" wx:key="index" data-url="{{item.url}}" data-id="{{item.id}}" bindtap='goTo'>
+        <view class="title">
+          <text class="new" wx:if="{{item.read_status==2}}">[新消息]</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="time">
+          <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+          <text>{{filter.formatDate(item.created_at)}}</text>
+        </view>
+        <view class="img">
+          <image src="{{item.img}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="noData" wx:else>
+      <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+      <text>空空如也</text>
+    </view>
+    
+  </view>
+</view>

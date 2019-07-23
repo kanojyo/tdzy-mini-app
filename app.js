@@ -1,6 +1,6 @@
 //app.js
 let utils = require('utils/util.js');
-import { postRequest, getRequest } from 'utils/util.js';
+import { getRequest } from 'utils/util.js';
 App({
   data:{
     modal:false

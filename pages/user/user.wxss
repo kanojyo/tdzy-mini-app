@@ -9,34 +9,64 @@ page{
   margin-bottom: 20rpx;
 }
 .user-info .info{
+  height: 400rpx;
   display: flex;
   justify-content: space-between;
-  padding: 20rpx 30rpx 20rpx 30rpx;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/background%402x.png') center center no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .left{
+  width: 100%;
   display: flex;
+  text-align: center;
+  margin-top:90rpx;
+  flex-direction:column;
+  align-items:center;
 }
+/* .left>.img{
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 50%;
+} */
 .left>image{
   height: 120rpx;
   width: 120rpx;
+  border-radius: 50%;
+  border:4rpx solid #e1d2b3;
 }
 .left .text{
-  margin-left: 20rpx;
-  color:#333;
-  padding-top: 20rpx;
+  color:#fff;
+  padding-top: 24rpx;
+  font-size: 28rpx;
 }
 .left .text .nickname{
-  margin-bottom: 20rpx;
+  margin-bottom: 5rpx;
   font-size: 34rpx;
 }
 .left .text .num{
   font-size: 30rpx;
 }
+.right{
+  position: absolute;
+  right: 0;
+  top:36rpx;
+}
+/* .right image{
+  width: 33rpx;
+  height: 30rpx;
+} */
 .right .sign{
-  border-radius: 8rpx;
-  background: #fff;
-  margin-top: 20rpx;
-  font-size: 30rpx;
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 35rpx;
+  border-bottom-left-radius: 35rpx;
+  border-bottom-right-radius: 0;
+  border-color: #d38b24;
+  color:#fff;
+  font-size: 28rpx;
+  padding-left: 80rpx;
+  background: #d38b24 url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/qiandao%402x.png') 35rpx 20rpx no-repeat;
+  background-size: 20%;
 }
 .nav{
   width: 100%;
@@ -51,22 +81,55 @@ page{
   height: 80rpx;
   line-height: 80rpx;
 }
-.nav-item .txt{
+.nav .nav-item .txt{
   display: flex;
 }
-.nav-item .txt text{
+.nav .nav-item .txt text{
   display: block;
   font-size: 30rpx;
   color:#333;
 }
-.nav-item .txt>image{
+.nav .nav-item .txt>image{
   width: 42rpx;
   height: 44rpx;
   padding-top: 18rpx;
   margin-right: 20rpx;
 }
-.nav-item .arrow>image{
+.nav .nav-item .arrow>image{
   width: 15rpx;
   height: 26rpx;
-  padding-top: 22rpx;
+}
+.nav .arrow{
+  display: flex;
+  align-items: center;
+}
+.nav button{
+  background-color: #fff;
+  height: auto;
+  border-radius: 0rpx;
+  /* border-color:#fff; */
+}
+.btn{
+  width: 100%;
+}
+.redStar{
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  background: #F04844;
+  margin-right: 20rpx;
+}
+.newMessage{
+  height: 44rpx;
+  width: 44rpx;
+  border-radius: 50%;
+  background: #F04844;
+  margin-right: 20rpx;
+  color:#fff;
+  text-align: center;
+  line-height: 44rpx;
+  font-size: 20rpx;
+}
+button::after {
+  border: none;
 }

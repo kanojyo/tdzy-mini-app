@@ -1,0 +1,69 @@
+/* pages/user/authenticity/authenticity.wxss */
+.search{
+  width: 80%;
+  position: relative;
+  margin-top: 40rpx;
+}
+.search input{
+  border:1px solid #d1b574;
+  font-size: 30rpx;
+  padding: 20rpx 0 20rpx 40rpx;
+  border-radius: 30rpx;
+  width:74%;
+}
+.search .btn{
+  position: absolute;
+  top:0;
+  right: 0;
+  background:#d1b574 url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/query%402x.png') center center no-repeat;
+  background-size: 35%;
+  height: 100%;
+  width: 140rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.content{
+  width: 100%;
+}
+.content .declare{
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  border-bottom:1px solid #efefef;
+}
+.content .title{
+  font-size: 36rpx;
+  color:#333;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.content .declare .text{
+  font-size: 26rpx;
+}
+.content .query .result{
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}
+.content .query .result .yellow{
+  color:#d1b574;
+}
+.content .query .result .red{
+  color:#d02424;
+}
+.address .text{
+  margin: 12rpx 0;
+  padding-left: 60rpx;
+}
+.address .site{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/address%402x.png') left top no-repeat;
+  background-size: contain;
+}
+.address .phone{
+  color:#d7c058;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/Telephone%402x.png') left top no-repeat;
+  background-size: contain;
+}
+.address .web{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/index/guanwang%402x.png') left top no-repeat;
+  background-size: contain;
+}
