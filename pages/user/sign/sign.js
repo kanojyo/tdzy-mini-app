@@ -20,7 +20,6 @@ Page({
     let that = this;
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
         let clientHeight = res.windowHeight;
         let clientWidth = res.windowWidth;
         let ratio = 750 / clientWidth;
@@ -45,7 +44,6 @@ Page({
       url: '/v1/sign/sign_up',
       method: 'POST',
       success(res) {
-        console.log(res)
         that.setData({
           userInfo: res.data.user,
           hotList: res.data.hot_list,
@@ -87,7 +85,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this;
     //获取我的签到页面的数据
     this.getData();
     this.getHeight();
@@ -104,7 +101,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**

@@ -45,8 +45,6 @@ Page({
               'Authorization': 'Bearer ' + wx.getStorageSync('token')
             },
             success(res){
-              console.log(res)
-              console.log(res.data.code);
               if(res.data.code ===200){
                 wx.showToast({
                   title: '兑换成功',
@@ -58,6 +56,17 @@ Page({
                     url: '../score/score'
                   })
                 },1000)
+              }else if(res.data.code == 400){
+                wx.showToast({
+                  title: res.data.message,
+                  icon: 'none',
+                  duration: 500
+                });
+                setTimeout(() => {
+                  wx.redirectTo({
+                    url: '../../sign/sign'
+                  })
+                }, 1500)
               }
             }
           })
