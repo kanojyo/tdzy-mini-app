@@ -110,11 +110,11 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    this.check();
+    that.check();
     //获取基本资料
-    this.getInfo();
+    that.getInfo();
     //是否消息中心有新消息
-    this.hasMessage();
+    that.hasMessage();
   },
 
   /**
