@@ -1,5 +1,25 @@
 /* pages/doctor/order/index.wxss */
 @import "../../../pages/index/index.wxss";
+page {
+  background: #EDEDED;
+}
+.empty-order {
+  margin-top: 300rpx;
+}
+
+.empty-order image {
+  width: 120rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.empty-order view {
+  font-size: 36rpx;
+  color: #666666;
+  height: 80rpx;
+  line-height: 80rpx;
+}
 
 .content > view {
   display: inline-block;
@@ -9,6 +29,7 @@
   position: relative;
   padding-top: 30rpx;
   width: 100%;
+  padding-bottom: 30rpx;
 }
 .avatar {
  position: absolute;
@@ -23,7 +44,6 @@
   font-size: 24rpx;
   padding: 20rpx;
   background-color: #F2F2F2;
-  margin-top: 30rpx;
   clear: both;
   display: block;
   position: static;

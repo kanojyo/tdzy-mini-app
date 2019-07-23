@@ -19,7 +19,7 @@
     </radio-group>
     <view class="form-input">
       <label class="label">姓名</label>
-      <input type="text" placeholder="请填写真实姓名,方便预约挂号（必填）" name="name" bindinput="getWords" maxlength='{{maxTextLen}}' bindblur="getName" adjust-position="true" />
+      <input type="text" placeholder="请填写真实姓名,方便预约挂号（必填）" name="name" bindinput="getWords" maxlength='{{maxTextLen}}' bindblur="getName" adjust-position="true" value="{{name}}" />
       <image src="/images/u945.png" class="right"></image>
     </view>
 
@@ -56,7 +56,7 @@
       <view class="submit" bindtap="submitModal">确定</view>
     </view>
     <view class="input-content">
-      <input class="content" type="text" bindblur="getMobile" value="{{mobile}}"/>
+      <input class="content" type="number" bindblur="getMobile" value="{{mobile}}"/>
     </view>
   </view>
 </view>

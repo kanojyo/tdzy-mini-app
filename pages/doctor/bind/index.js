@@ -17,7 +17,8 @@ Page({
     sex: "",
     name:"",
     mobile: "",
-    status: false
+    status: false,
+    page:""
   },
   showModal: function() {
     this.setData({
@@ -80,13 +81,13 @@ Page({
     })
   },
   formSubmit: function (e) {
-    console.log(e)
     var that = this;
     var doctor_id = that.data.doctor_id;
     var age = that.data.user_age;
     var name = e.detail.value.name;
     var sex = e.detail.value.sex;
     var mobile = e.detail.value.mobile;
+    var page = that.data.page
     if (!sex) {
       wx.showModal({
         title: '提示',
@@ -122,11 +123,25 @@ Page({
           'Authorization': 'Bearer ' + wx.getStorageSync('token')
         },
         success(res) {
+          
           if (res.data.code == 200) {
             //绑定个人信息成功跳转医生预约页面
-            wx.navigateTo({
-              url: '/pages/doctor/order/index?id=' + doctor_id,
-            })
+            if (page == 'user') {
+              wx.switchTab({
+                url: '/pages/user/user'
+              })
+            }
+            else if (page == 'order') {
+              wx.redirectTo({
+                url: '/pages/doctor/order/index?id=' + doctor_id,
+              })
+            }
+            else if (page == 'doctorinfo') {
+              wx.redirectTo({
+                url: '/pages/doctor/order/index?id=' + doctor_id,
+              })
+            }
+            
           } else {
             wx.showModal({
               title: '提示',
@@ -147,7 +162,8 @@ Page({
     })
 
     var that = this;
-    var doctor_id = options.id    
+    var doctor_id = options.id
+    var page = options.page    
     var age = [];
     for (let i = 1; i <= 100; i++) {
       age.push(i)
@@ -155,6 +171,7 @@ Page({
     that.setData({
       age:age,
       doctor_id: doctor_id,
+      page: page
     })
   },
 

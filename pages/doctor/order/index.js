@@ -34,7 +34,8 @@ Page({
   data: {
     flag: true,
     info: {},
-    status: true
+    status: true,
+    state: 0
   },
   showBox: function (e) {
     // 用that取代this，防止不必要的情况发生
@@ -146,13 +147,12 @@ Page({
       url: '/pages/doctor/orderRole/orderRole',
     })
   },
-  appointment: function (e) {
-    
-  },
+  
   show: function (e) {
     this.setData({ flag: false })
     var index = e.currentTarget.dataset.index;
     var that = this;
+    var state = e.currentTarget.dataset.status;
     that.data.info.order_time = that.data.work[index].order_time;
     that.data.info.week_day = that.data.work[index].week_day;
     that.data.info.time_slot = that.data.work[index].time_slot;
@@ -163,7 +163,8 @@ Page({
       method: 'GET',
       success(res) {
         that.setData({
-          userinfo: res.data
+          userinfo: res.data,
+          state: state
         })
       }
     })
@@ -177,30 +178,31 @@ Page({
     this.setData({ flag: true })
   },
   formSubmit: function (e) { 
-    var page = 'pages/user/book/book';
+    var that = this;
+    var page = 'pages/user/book/bookingDetails/bookingDetails';
     var form_id = e.detail.formId;
     var id = e.currentTarget.id;
-    var status = e.currentTarget.dataset.status
+    var state = that.data.state
     var index = e.currentTarget.dataset.index;
-    var that = this;
     var nums = that.data.work[index].order_use_num;
     
-    if (status == 2) {
+    if (state == 2) {
       wx.showModal({
         title: '提示',
         content: '当前日期，此医生已经预约挂号，不能重复预约',
       })
-    } else if (status == 3) {
+    } else if (state == 3) {
       wx.showModal({
         title: '提示',
-        content: '当前日期，此医生挂号已满，请您重新选择日期或到其他医生挂号  ',
+        content: '您的预约已达到限定次数，不可再重复预约挂号',
       })
-    } else if (status == 4) {
+    } else if (state == 4) {
       wx.showModal({
         title: '提示',
         content: '当前医生已暂停预约,不可预约挂号',
       })
-    } else {
+    } 
+    else {
       that.setData({
         status: false
       })
@@ -214,7 +216,6 @@ Page({
           'Authorization': 'Bearer ' + wx.getStorageSync('token')
         },
         success(res) {
-          console.log(res.data)
           if (res.data.code == 200) {
             that.data.work[index].order_use_num = (nums + 1);
             that.data.work[index].status = 2;

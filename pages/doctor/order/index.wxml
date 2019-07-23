@@ -24,7 +24,7 @@
     </view>
   </view>
 </view>
-<view class="order-tips">若当日预约号已挂满，请您到医院窗口挂号</view>
+<view class="order-tips" wx:if="{{work.length > 0}}">若当日预约号已挂满，请您到医院窗口挂号</view>
 <view class="order-list" wx:if="{{work.length > 0}}">
   <view class="order-content" wx:for="{{work}}" wx:key="index">
     <view class="order-time-box">
@@ -35,13 +35,14 @@
     <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
     <view class="order-price" wx:else>免费</view>
     <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已预约</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 3}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">约满</view>
-    <view class="order-btn fail" wx:elif="{{item.status == 4}}" bindtap="appointment" id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">暂停预约</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已预约</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 3}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">约满</view>
+    <view class="order-btn fail" wx:elif="{{item.status == 4}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">暂停预约</view>
   </view>
 </view>
 <view class="empty-order" wx:else>
-  暂无排班
+  <image src="../../../images/zanwu@3x.png"></image>
+  <view>当前医生暂无排班</view>
 </view>
 
 

@@ -48,9 +48,9 @@
 }
 .banner{
   width: 100%;
-  height: 400rpx;
+  height: 480rpx;
 }
-.banner .slide-image{width: 100%;}
+.banner .slide-image{width: 100%;height: 480rpx;}
 
 .top-tip {
   width: 100%;

@@ -15,7 +15,6 @@ Page({
    */
   onLoad: function (options) {
     var id = options.doctor_id;
-    console.log(id)
     var that = this;
     getRequest({
       url: '/v1/medical_info/doctor_brief?doctor_id=' + id,
@@ -83,9 +82,35 @@ Page({
   },
   //跳转预约页面
   orderDoctor: function (e) {
-    var id = e.currentTarget.id;
-    wx.navigateTo({
-      url: "/pages/doctor/order/index?id=" + id,
+    var doctor_id = e.currentTarget.id;
+
+    getRequest({
+      url: '/v1/appointment/user_info_perfect',
+      method: 'GET',
+      success(res) {
+        if (!res.data.status) {
+          wx.showModal({
+            //title: '完善就诊人信息后才可以预约哦',
+            showCancel: false,
+            confirmText: "立即前往",
+            confirmColor: "#d1b574",
+            content: '完善就诊人信息后才可以预约哦',
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/doctor/bind/index?id=' + doctor_id + "&page=doctorinfo",
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/doctor/order/index?id=' + doctor_id,
+          })
+        }
+      }
     })
   }
 })

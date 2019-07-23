@@ -132,9 +132,23 @@ Page({
       method: 'GET',
       success(res) {
         if (!res.data.status) {
-           wx.navigateTo({
-             url: '/pages/doctor/bind/index?id=' + doctor_id
-           })
+          wx.showModal({
+            //title: '完善就诊人信息后才可以预约哦',
+            showCancel: false,
+            confirmText: "立即前往",
+            confirmColor: "#d1b574",
+            content: '完善就诊人信息后才可以预约哦',
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/doctor/bind/index?id=' + doctor_id + "&page=order"
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+           
          } else {
            wx.navigateTo({
              url: '/pages/doctor/order/index?id=' + doctor_id,

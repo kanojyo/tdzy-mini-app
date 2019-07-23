@@ -15,7 +15,7 @@
       <view wx:if="{{item.list_article.data.length > 0}}">
         <view wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' bindtap='articleInfo' id="{{children.id}}">
           <view class="item-img">
-            <image src="{{item.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
+            <image src="{{children.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
           </view>
           <view class="item-text">
             <text class="title">{{children.article_title}}</text>
@@ -23,7 +23,10 @@
           </view>
         </view>
       </view> 
-      <view wx:else class="empty-box">暂无数据</view>
+      <view class="nodata" wx:else>
+        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+        <text>空空如也</text>
+      </view>
     </view>
   </scroll-view>
 </view>

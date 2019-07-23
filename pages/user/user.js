@@ -26,8 +26,21 @@ Page({
   },
   //跳转我的签到
   GotoInfo(){
-    wx.navigateTo({
-      url: 'info/info',
+
+    getRequest({
+      url: '/v1/appointment/user_info_perfect',
+      method: 'GET',
+      success(res) {
+        if (!res.data.status) {
+          wx.navigateTo({
+            url: '/pages/doctor/bind/index?id=0' + "&page=user",
+          })
+        } else {
+          wx.navigateTo({
+            url: 'info/info',
+          })
+        }
+      }
     })
   },
   //跳转我的签到
@@ -122,11 +135,11 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    this.check();
+    that.check();
     //获取基本资料
-    this.getInfo();
+    that.getInfo();
     //是否消息中心有新消息
-    this.hasMessage();
+    that.hasMessage();
   },
 
   /**
@@ -140,7 +153,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**
