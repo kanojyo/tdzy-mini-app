@@ -107,10 +107,11 @@ page{
   flex:1;
   border-radius: 0;
   background: #d1b574;
+  color:#fff;
 }
 .btn3 .close{
   background: #ffff;
-  color:#333;
+  color:#999;
 }
 .pull-left{
   width: 320rpx;

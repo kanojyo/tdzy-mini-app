@@ -25,7 +25,9 @@ var formatDate = function (timestamp, option) {
   if (option == 'notime') {  //不需要时间
     return year + '-' + month + '-' + day;
   }
-
+  if (option == 'nosecond'){//不需要秒数
+    return year + '-' + month + '-' + day + ' ' + hour() + ':' + minute()
+  }
   return year + '-' + month + '-' + day + ' ' + hour() + ':' + minute() + ":" + second();
 }
 

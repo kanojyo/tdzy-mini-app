@@ -35,9 +35,10 @@ page{
   align-items: flex-end;
 }
 .bot .score{
+  width: 250rpx;
   padding-left: 30rpx;
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/_jinbi-2%402x.png') left 10rpx no-repeat;
-  background-size: 25%;
+  background-size: 10%;
 }
 .bot .score .now_score{
   font-size: 32rpx;

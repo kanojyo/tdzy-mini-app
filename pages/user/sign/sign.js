@@ -8,7 +8,6 @@ Page({
   data: {
     userInfo: {},
     modelShow: false, //遮罩层状态
-    is_first: 0, //是否本日首次点击
     tomorrow_score: 0, //明日签到获取的积分
     signInfo:[],
     hotList: [],
@@ -48,12 +47,20 @@ Page({
           userInfo: res.data.user,
           hotList: res.data.hot_list,
           signInfo: res.data.sign_info,
-          is_first: res.data.click_info.is_first
         });
-        if (res.data.click_info.is_first === 1) {
+      }
+    })
+  },
+  getSign(){
+    var that = this;
+    getRequest({
+      url:'/v1/sign/today_sign_info',
+      method:'GET',
+      success(res){
+        if (res.data.sign_mark == 1){
           that.setData({
-            tomorrow_score: res.data.click_info.tomorrow_score,
-            score: res.data.click_info.today_score,
+            tomorrow_score: res.data.tomorrow_score,
+            score: res.data.today_score,
             modelShow: true,
           })
         }

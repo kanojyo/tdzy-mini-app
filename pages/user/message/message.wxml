@@ -9,7 +9,7 @@
         </view>
         <view class="time">
           <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
-          <text>{{filter.formatDate(item.created_at)}}</text>
+          <text>{{filter.formatDate(item.created_at,'nosecond')}}</text>
         </view>
         <view class="img">
           <image src="{{item.img}}"></image>

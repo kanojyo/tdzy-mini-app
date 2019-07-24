@@ -206,7 +206,6 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success(res) {
-        
         wx.navigateTo({
           url: 'sign/sign',
         })
