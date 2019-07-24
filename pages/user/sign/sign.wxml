@@ -52,15 +52,11 @@
           <image src="{{item.pic_url}}" data-id="{{item.id}}" bindtap='exchange'></image>
         </view>
         <view class="text">
-          <view class="title" data-id="{{item.id}}" bindtap='exchange'>{{item.goods_name}}</view>
-          <image src="{{item.pic_url}}"></image>
-        </view>
-        <view class="text">
           <view class="title">{{item.goods_name}}</view>
           <view class="bot">
             <view class="left">
-              <view class="now_score">{{item.now_score}}积分</view>
-              <view class="orgin">{{item.original_score}}积分</view>
+              <view class="now_score">{{item.now_score}}</view>
+              <view class="orgin">{{item.original_score}}</view>
             </view>
             <view class="right">
               <button class="btn1" wx:if="{{item.goods_status === 1 }}" data-id="{{item.id}}" bindtap='exchange'>立即兑换</button>

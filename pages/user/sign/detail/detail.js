@@ -29,6 +29,7 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确定要兑此积分商品？',
+      confirmColor: '#d1b574',
       success(res) {
         if (res.confirm) {
           console.log('用户点击确定');
@@ -45,16 +46,20 @@ Page({
             },
             success(res){
               if(res.data.code ===200){
-                wx.showToast({
+                wx.showModal({
                   title: '兑换成功',
-                  icon: 'success',
-                  duration: 1000
-                });
-                setTimeout(()=>{
-                  wx.redirectTo({
-                    url: '../score/score'
-                  })
-                },1000)
+                  content: '可在我的--签到--我的积分查看',
+                  showCancel:false,
+                  confirmText:'立即前往',
+                  confirmColor: '#d1b574',
+                  success(res) {
+                    if (res.confirm) {
+                      wx.redirectTo({
+                        url: '../score/score'
+                      })
+                    }
+                  }
+                })
               }else if(res.data.code == 400){
                 wx.showToast({
                   title: res.data.message,

@@ -8,6 +8,12 @@ Page({
   data: {
     state: '',
     chatList: [],
+    height:'',
+  },
+  getHeight(){
+    var Height = wx.getSystemInfoSync().screenHeight;
+    console.log(Height);
+    console.log(wx.getSystemInfoSync());
   },
   //获取意见反馈列表
   getList() {
@@ -51,6 +57,7 @@ Page({
    */
   onLoad: function(options) {
     this.getList();
+    this.getHeight();
   },
 
   /**

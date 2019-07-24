@@ -75,10 +75,12 @@
 .exchage-item .text.state2{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Used%402x.png') right top no-repeat;
   background-size: 30%;
+  color:#999;
 }
 .exchage-item .text.state3{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/shixiaoSeal%402x.png') right top no-repeat;
   background-size: 30%;
+  color:#999;
 }
 .exchage-item .text.state1 .title{
   color:#333;
@@ -88,10 +90,6 @@
 }
 .exchage-item .text.state1 .time{
   color:#666;
-}
-.exchage-item .text .title{
-  font-size: 30rpx;
-  color: #666;
 }
 .exchage-item .bot{
   font-size: 26rpx;

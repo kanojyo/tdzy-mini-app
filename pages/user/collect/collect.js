@@ -87,9 +87,10 @@ Page({
           success(res) {
             status = false;
             if (res.data.data.length > 0){
-              that.list = that.list.concat(res.data.data);
+              var data =[];
+              data = that.data.list.concat(res.data.data);
               that.setData({
-                list: that.list,
+                list: data,
                 page_index: page,
                 maxPage: res.data.max_page
               })

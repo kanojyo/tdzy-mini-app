@@ -102,9 +102,10 @@ Page({
           success(res) {
             status = false;
             if (res.data.data.length > 0) {
-              that.messageList = that.messageList.concat(res.data.data);
+              var data=[];
+              data = that.data.messageList.concat(res.data.data);
               that.setData({
-                list: that.messageList,
+                messageList: data,
                 page_index: page,
               })
             } else {
