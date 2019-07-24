@@ -24,7 +24,8 @@
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' bindtap="imageUrl" data-url="{{item.url}}"/>
+          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' wx:if="{{item.url == ''}}"></image>
+          <image src="{{item.img}}" class="slide-image"  mode='aspectFill' bindtap="imageUrl" data-url="{{item.url}}" wx:else/>
         </swiper-item>
       </block>
     </swiper>
@@ -101,7 +102,7 @@
     </view>
     <view class='intro hot-recommend'>
       <view class="title">
-        <view class="hospital">热门推荐</view>
+        <view class="hospital">热文推荐</view>
         <view class="more" bindtap="all_news">
           <text>更多</text>
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>

@@ -252,5 +252,25 @@ Page({
       })
 
     }
+  },
+  tips: function(e) {
+    var status = e.currentTarget.dataset.status;
+
+    if (status == 2) {
+      wx.showModal({
+        title: '提示',
+        content: '当前日期，此医生已经预约挂号，不能重复预约',
+      })
+    } else if (status == 3) {
+      wx.showModal({
+        title: '提示',
+        content: '您的预约已达到限定次数，不可再重复预约挂号',
+      })
+    } else if (status == 4) {
+      wx.showModal({
+        title: '提示',
+        content: '当前医生已暂停预约,不可预约挂号',
+      })
+    } 
   }
 })
