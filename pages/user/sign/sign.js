@@ -94,6 +94,7 @@ Page({
   onLoad: function (options) {
     //获取我的签到页面的数据
     this.getData();
+    this.getSign();
     this.getHeight();
   },
 
