@@ -46,9 +46,20 @@ function getRequest(model) {
 function getBaseUrl() {
   return baseUrl;
 }
+function buttonClicked(self) {
+  self.setData({
+    buttonClicked: true
+  })
+  setTimeout(function () {
+    self.setData({
+      buttonClicked: false
+    })
+  }, 500)
+}
 
 module.exports = {
   formatTime: formatTime,
   getRequest: getRequest,
-  getBaseUrl: getBaseUrl
+  getBaseUrl: getBaseUrl,
+  buttonClicked: buttonClicked
 }

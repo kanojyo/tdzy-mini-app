@@ -1,6 +1,10 @@
 <!--pages/user/feedback/feedback.wxml-->
-<view class="container">
-  <view class="chatList" >
+<view id="container">
+  <view class="top" wx:if="{{status}}">问题已关闭</view>  
+  <scroll-view class="chatList" >
+    
+    <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
+    <view class="time">{{filter.formatDate(time,'nosecond')}}</view>
     <view class="item" wx:for="{{chatList}}" wx:key="item">
       <view class="left" wx:if="{{item.type===2}}">
         <view class="avatar">
@@ -10,7 +14,7 @@
           <!-- <view class="time"></view> -->
           <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
           <view class="pull-left" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true"></image>
+            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
           </view>
         </view>
       </view>
@@ -22,14 +26,14 @@
           <!-- <view class="time"></view> -->
           <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
           <view class="pull-right" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true"></image>
+            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
           </view>
         </view>
       </view>
     </view>
-
-  </view>
-  <view class="bot">
+    <view class=""></view>
+  </scroll-view>
+  <view class="bot" wx:if="{{!status}}">
     <view wx:if="{{state ===1}}" class="btn1">
       <button bindtap='gotoUpload'>提问</button>
     </view>
