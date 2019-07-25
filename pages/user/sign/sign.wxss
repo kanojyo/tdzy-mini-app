@@ -176,11 +176,11 @@ page{
   border-bottom:1rpx solid #efefef;
 }
 .hot .content .item .img{
-  width:340rpx;
+  width:300rpx;
   height: 180rpx;
 }
 .hot .content .item .img image{
-  width:340rpx;
+  width:300rpx;
   height: 180rpx;
 }
 .hot .content .item .text{
@@ -195,7 +195,7 @@ page{
   color:#333;
 }
 .hot .content .item .text .bot .left{
-  width: 140rpx;
+  width: 160rpx;
   padding-left: 40rpx;
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/_jinbi-2%402x.png') left 10rpx no-repeat;
   background-size: 16%;

@@ -5,7 +5,7 @@
       <view class="question">如何获取积分？</view>
       <view class="title">1.签到领积分：</view>
       <view class="text">
-        用户可以每日登录，到我的--每日签到模块，自动签到，如连续签到第可7、14、21、28天等，获得额外奖励。
+        用户可以每日登录，到我的--每日签到模块，自动签到，如连续签到第7、14、21、28天等，获得额外奖励。
       </view>
     </view>
     <view class="item">

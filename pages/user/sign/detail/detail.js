@@ -65,13 +65,13 @@ Page({
                 wx.showToast({
                   title: res.data.message,
                   icon: 'none',
-                  duration: 500
+                  duration: 1500
                 });
-                setTimeout(() => {
-                  wx.redirectTo({
-                    url: '../../sign/sign'
-                  })
-                }, 1500)
+                // setTimeout(() => {
+                //   wx.redirectTo({
+                //     url: '../../sign/sign'
+                //   })
+                // }, 1500)
               }
             }
           })
