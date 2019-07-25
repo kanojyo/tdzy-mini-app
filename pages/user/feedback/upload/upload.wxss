@@ -6,13 +6,23 @@ page{
   width: 90%;
   padding: 10rpx 30rpx;
 }
+.text{
+  position: relative;
+}
 .text textarea{
   width: 95%;
   border:1rpx solid #ededed;
   border-radius: 5rpx;
   font-size: 30rpx;
-  padding: 10rpx 20rpx;
-  background: #fff
+  padding: 10rpx 20rpx 40rpx 20rpx;
+  background: #fff;
+}
+.text .num{
+  position: absolute;
+  font-size: 22rpx;
+  color:#999;
+  bottom:10rpx;
+  right: 0;
 }
 .btn{
   position: fixed;

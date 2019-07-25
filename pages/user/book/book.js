@@ -44,7 +44,7 @@ Page({
   getList1(){
     var that =this;
     getRequest({
-      url: '/v1/my_appointment/list?status=1',
+      url: '/v1/my_appointment/list?status=1,4',
       method: 'get',
       success: function (res) {
         // console.log(res)

@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 14,
 			"list": [
 				{
 					"id": 0,
@@ -136,6 +136,13 @@
 					"name": "预约详情",
 					"pathName": "pages/user/book/bookingDetails/bookingDetails",
 					"query": "id=60",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "意见反馈",
+					"pathName": "pages/user/feedback/feedback",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -1,5 +1,5 @@
 // pages/user/feedback/feedback.js
-import {getRequest} from '../../../utils/util.js';
+import { getRequest} from '../../../utils/util.js';
 Page({
 
   /**
@@ -9,11 +9,19 @@ Page({
     state: '',
     chatList: [],
     height:'',
+    time:'',
+    status:false,
+    buttonClicked: false
   },
-  getHeight(){
-    var Height = wx.getSystemInfoSync().screenHeight;
-    console.log(Height);
-    console.log(wx.getSystemInfoSync());
+  // 获取容器高度，使页面滚动到容器底部
+  pageScrollToBottom() {
+    var query = wx.createSelectorQuery().in(this);
+    query.select('.chatList').boundingClientRect((rect)=> {
+      // 使页面滚动到底部
+      wx.pageScrollTo({
+        scrollTop: 10000,
+      })
+    }).exec()
   },
   //获取意见反馈列表
   getList() {
@@ -24,32 +32,53 @@ Page({
       success(res) {
         that.setData({
           state: res.data.state,
-          chatList:res.data.list
+          chatList:res.data.list,
+          time: res.data.list[0].created_at
         })
       }
     })
   },
   //提问、追问
   gotoUpload() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: 'upload/upload',
     })
   },
   //关闭
   close(){
+    var that = this;
     getRequest({
       url:'/v1/feedback/end',
       method:'GET',
       success(res){
         console.log(res.code)
         if (res.code ===200){
-          //返回上一页
-          wx.navigateBack({
-            delta: 1
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
           })
+          setTimeout(()=>{
+            that.setData({
+              status: true,
+            })
+          },2000)
+          
+          //返回上一页
+          // wx.navigateBack({
+          //   delta: 1
+          // })
         }
         
       }
+    })
+  },
+  //预览;
+  previewImg(e){
+    console.log(e.currentTarget.dataset.url)
+    wx.previewImage({
+      current: e.currentTarget.dataset.url, // 当前显示图片的http链接
+      urls: [e.currentTarget.dataset.url]
     })
   },
   /**
@@ -57,7 +86,7 @@ Page({
    */
   onLoad: function(options) {
     this.getList();
-    this.getHeight();
+    // this.pageScrollToBottom();
   },
 
   /**
@@ -108,6 +137,11 @@ Page({
   onShareAppMessage: function() {
 
   },
+  // onUnload: function () {
+  //   wx.navigateBack({
+  //     delta: 2
+  //   })
+  // },
   imageLoad(e){
     console.log(e)
   }

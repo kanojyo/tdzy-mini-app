@@ -2,7 +2,8 @@
 <view class="container">
   <view class="content">
     <view class="text">
-      <textarea placeholder="请输入您的详细问题，我们将尽快为您解决" maxlength="300" bindinput="updateValue" data-name="textarea" value="{{describe}}"></textarea>
+      <textarea placeholder="请输入您的详细问题，我们将尽快为您解决" maxlength="300"  bindinput="updateValue" data-name="textarea" value="{{describe}}"></textarea>
+      <view class="num">{{num}}/300</view>  
     </view>
   </view>
   <view class="page__bd">
@@ -11,7 +12,7 @@
                 <view class="weui-cell__bd">
                     <view class="weui-uploader">
                         <view class="weui-uploader__hd">
-                            <view class="weui-uploader__title">添加图片 (最多3张)</view>
+                            <view class="weui-uploader__title">添加图片 (选填，最多3张)</view>
                             <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
                         </view>
                         <view class="weui-uploader__bd">

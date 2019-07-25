@@ -10,6 +10,7 @@ Page({
     files: [],
     describe:'',
     url:[],
+    num:0,
   },
   //选择图片
   chooseImage: function (e) {
@@ -26,12 +27,16 @@ Page({
         //   files: that.data.files.concat(res.tempFilePaths)
         // });
         console.log(res)
-        const tempFilePaths = res.tempFilePaths
+        const tempFilePaths = res.tempFilePaths;
+        wx.showLoading({
+          title: '加载中',
+        })
         wx.uploadFile({
           url: utils.getBaseUrl()+'/v1/uploads', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           success(res) {
+            wx.hideLoading()
             let imgData = JSON.parse(res.data);
             let imgUrl = imgData.data.url;
             //上传图片的数组
@@ -57,7 +62,8 @@ Page({
   updateValue(e){
     var that =this;
     that.setData({
-      describe: e.detail.value
+      describe: e.detail.value,
+      num: e.detail.value.length
     })
   },
   //提交反馈
