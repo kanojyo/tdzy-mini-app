@@ -32,6 +32,10 @@ page{
 .userInfo .text .nickName{
   color:#000;
   font-size: 32rpx;
+  width: 380rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .userInfo .text .jifen{
   color:#333;
@@ -47,7 +51,7 @@ page{
   border-top:6px solid transparent;
   border-bottom:6px solid transparent;
   border-left:6px solid #d1b574;
-  right: -20rpx;
+  left: 130rpx;
   top:12rpx;
   
 }
