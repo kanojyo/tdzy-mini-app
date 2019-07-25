@@ -77,7 +77,7 @@ page{
 }
 .user .info{
   height: 100%;
-  width: 380rpx;
+  width: 70%;
 }
 .user .info text{
   height: 100%;
