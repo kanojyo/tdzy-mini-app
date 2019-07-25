@@ -12,7 +12,6 @@
     <view class="text">挂号费用：¥{{info.order_money}}</view>
   </view>
   <view class="info">
-    <view class="text" wx:if="{{info.status == 2}}">确认就诊时间：{{info.handle_at}}</view>
     <view class="text" wx:if="{{info.status == 1}}">就诊状态：未就诊</view>
     <view class="text" wx:if="{{info.status == 2}}">就诊状态：已就诊</view>
     <view class="text" wx:if="{{info.status == 3}}">就诊状态：已取消</view>
@@ -22,6 +21,7 @@
   </view>
   <view class="bot">
     <view class="text">下单时间：{{info.created_at}}</view>
+    <view class="text" wx:if="{{info.status == 2}}">确认就诊时间：{{info.handle_at}}</view>
     <view class="text" wx:if="{{info.status == 3}}">取消预约时间：{{info.handle_at}}</view>
   </view>
 </view>
