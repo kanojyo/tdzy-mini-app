@@ -194,7 +194,7 @@ Page({
     } else if (state == 3) {
       wx.showModal({
         title: '提示',
-        content: '您的预约已达到限定次数，不可再重复预约挂号',
+        content: '当前日期，此医生挂号已满，请您重新选择日期或到其他医生挂号',
       })
     } else if (state == 4) {
       wx.showModal({
@@ -264,7 +264,7 @@ Page({
     } else if (status == 3) {
       wx.showModal({
         title: '提示',
-        content: '您的预约已达到限定次数，不可再重复预约挂号',
+        content: '当前日期，此医生挂号已满，请您重新选择日期或到其他医生挂号',
       })
     } else if (status == 4) {
       wx.showModal({

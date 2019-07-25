@@ -18,11 +18,17 @@ Page({
     name:"",
     mobile: "",
     status: false,
+    nameStatus:false,
     page:""
   },
   showModal: function() {
     this.setData({
       status:true
+    })
+  },
+  showNameModal: function() {
+    this.setData({
+      nameStatus: true
     })
   },
   hideModal: function() {
@@ -33,6 +39,16 @@ Page({
   submitModal: function() {
     this.setData({
       status: false
+    })
+  },
+  hideNameModal: function () {
+    this.setData({
+      nameStatus: false
+    })
+  },
+  submitNameModal: function () {
+    this.setData({
+      nameStatus: false
     })
   },
   getWords(e) {
