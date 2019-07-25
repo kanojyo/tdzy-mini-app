@@ -79,6 +79,13 @@ Page({
         that.setData({
           article_info: res.data
         })
+      },
+      fail: function() {
+        wx.showToast({
+          title: '亲，您的网络异常，快去检查一下吧',
+          //icon: 'success',
+          duration: 2000
+        });
       }
     })
     

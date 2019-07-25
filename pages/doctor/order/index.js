@@ -189,17 +189,47 @@ Page({
     if (state == 2) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前日期，此医生已经预约挂号，不能重复预约',
+        success: function (res) {
+          if (res.confirm) {
+
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } else if (state == 3) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前日期，此医生挂号已满，请您重新选择日期或到其他医生挂号',
+        success: function (res) {
+          if (res.confirm) {
+
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } else if (state == 4) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前医生已暂停预约,不可预约挂号',
+        success: function (res) {
+          if (res.confirm) {
+
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } 
     else {
@@ -227,6 +257,7 @@ Page({
               title: '预约挂号成功',
               showCancel: false,
               confirmText: "立即前往",
+              confirmColor:"#d1b574",
               content: '可在我的--我的预约查看',
               success: function (res) {
                 if (res.confirm) {
@@ -241,7 +272,17 @@ Page({
           } else {
             wx.showModal({
               title: '提示',
+              showCancel: false,
+              confirmText: "知道了",
+              confirmColor: "#d1b574",
               content: res.data.message,
+              success: function (res) {
+                if (res.confirm) {
+
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
             })
           }
 
@@ -259,17 +300,47 @@ Page({
     if (status == 2) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前日期，此医生已经预约挂号，不能重复预约',
+        success: function (res) {
+          if (res.confirm) {
+           
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } else if (status == 3) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前日期，此医生挂号已满，请您重新选择日期或到其他医生挂号',
+        success: function (res) {
+          if (res.confirm) {
+            
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } else if (status == 4) {
       wx.showModal({
         title: '提示',
+        showCancel: false,
+        confirmText: "知道了",
+        confirmColor: "#d1b574",
         content: '当前医生已暂停预约,不可预约挂号',
+        success: function (res) {
+          if (res.confirm) {
+            
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
       })
     } 
   }

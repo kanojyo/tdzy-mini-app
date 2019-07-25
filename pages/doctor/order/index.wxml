@@ -72,8 +72,8 @@
           
         </view>
         <view class='order-userinfo' style='clear:both;'>
-          <view class='name'>预约人：{{userinfo.name}}</view>
-          <view class='mobile'>电话：{{userinfo.mobile}}</view>
+          <text class='name'>预约人:{{userinfo.name}}</text>
+          <text class='mobile'>电话:{{userinfo.mobile}}</text>
         </view>
       </view>
     </view>

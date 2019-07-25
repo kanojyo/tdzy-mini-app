@@ -157,6 +157,7 @@ page {
   background-color: #fff;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 30rpx;
 }
 
 .left image {
@@ -180,6 +181,7 @@ page {
   font-size: 26rpx;
   display: inline-block;
   margin-bottom: 30rpx;
+  width: 500rpx;
 }
 
 .left {
@@ -192,12 +194,13 @@ page {
 }
 
 .order-userinfo .name {
-  float:left;
+  /* float:left; */
 }
 
 .order-userinfo .mobile {
-  float:right;
-  margin-left: 40rpx;
+  /* float:right; */
+  text-align: right !important;
+  padding-left: 28rpx;
 }
 
 .order-button {

@@ -75,10 +75,11 @@ page{
 }
 .user .info{
   height: 100%;
+  width: 70%;
 }
 .user .info text{
   height: 100%;
-  line-height: 70rpx;
+  line-height: 22rpx;
   margin-right: 20rpx;
 }
 .user .btn button{
