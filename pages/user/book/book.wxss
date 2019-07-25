@@ -85,7 +85,7 @@ page{
   margin-right: 20rpx;
 }
 .user .btn button{
-  font-size: 30rpx;
+  font-size: 26rpx;
 }
 
 
