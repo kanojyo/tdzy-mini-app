@@ -89,8 +89,12 @@ page{
 }
 
 
-.list1 .item .item-content .text{
+.list1 .item .item-content .text.state1{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/weiSeal%402x.png') right top no-repeat;
+  background-size: 40%;
+}
+.list1 .item .item-content .text.state4{
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/shixiaoSeal%402x.png') right top no-repeat;
   background-size: 40%;
 }
 .list2 .item .item-content .text{

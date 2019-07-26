@@ -68,6 +68,13 @@
   justify-content: space-between;
   width: 100%;
 }
+.exchage-item .text .title{
+  width: 300rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+}
 .exchage-item .text.state1{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/notused%402x.png') right top no-repeat;
   background-size: 30%;
@@ -127,14 +134,22 @@
 }
 .list-item .left{
   padding-left: 80rpx;
+  padding-top: 10rpx;
+  width: 60%;
 }
 .list-item .left.sign{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/Signin%402x.png') left 10rpx no-repeat;
-  background-size: 22%;
+  background-size: 12%;
 }
 .list-item .left.exchage{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/expenditure%402x.png') left 10rpx no-repeat;
-  background-size: 22%;
+  background-size: 12%;
+}
+.list-item .left view{
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .list-item .right{
   display: flex;

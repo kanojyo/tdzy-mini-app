@@ -91,6 +91,10 @@ Page({
           that.setData({
             newFeedBack:true,
           })
+        } else if (res.data.data === 2){
+          that.setData({
+            newFeedBack: false,
+          })
         }
       }
     })

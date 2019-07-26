@@ -195,8 +195,12 @@ page{
   width: 100%;
 }
 .hot .content .item .text .title{
+  width: 370rpx;
   font-size: 30rpx;
   color:#333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .hot .content .item .text .bot .left{
   width: 160rpx;
