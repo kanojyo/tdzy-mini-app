@@ -25,5 +25,6 @@
     <button class="btn2"  wx:if="{{goods.exchange_status ==2}}">积分不足</button>
     <button class="btn2"  wx:if="{{goods.exchange_status ==3}}">兑换已满</button>
     <button class="btn2"  wx:if="{{goods.exchange_status ==4}}">暂停兑换</button>
+    <button class="btn1"  wx:if="{{goods.exchange_status ==5}}" bindtap="exchange">兑换</button>
   </view>
 </view>

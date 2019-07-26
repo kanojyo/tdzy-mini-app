@@ -32,7 +32,6 @@ Page({
   //点击切换，滑块index赋值
   checkCurrent: function (e) {
     const that = this;
-    // console.log(e,2222)
     if (that.data.currentData === e.target.dataset.current) {
       return false;
     } else {
@@ -146,6 +145,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this;
+    //积分明细
     if (that.data.currentData == 0) {
       var page = that.data.scoreParmas.page_index + 1;
       var status = true;
@@ -162,9 +162,27 @@ Page({
             success(res) {
               status = false;
               if (res.data.data.length > 0) {
-                that.data.scoreList = that.data.scoreList.concat(res.data.data);
+                //取原数组的最后一项last
+                var last = that.data.scoreList.pop();
+                //取下拉加载的数据的第一项first
+                var first = res.data.data.shift();
+                //判断last和first数据是不是同一个年份、月份之中;
+                if (last.year == first.year && last.month == first.month){
+                  last.list=last.list.concat(first.list)
+                }else{
+                  last = last.concat(first);
+                }
+                if (that.data.scoreList){
+                  that.data.scoreList = that.data.scoreList.concat(last)
+                }else{
+                  that.data.scoreList = last;
+                }
+                if (that.data.data){
+                  that.data.scoreList = that.data.scoreList.concat(that.data.data)
+                }
+                that.data.scoreParmas.page_index = page;
                 that.setData({
-                  scoreList: that.data.scoreList
+                  scoreList: that.data.scoreList,
                 });
               } else {
                 wx.showToast({
@@ -195,6 +213,7 @@ Page({
               status = false;
               if(res.data.data.length > 0){
                 that.data.exchageList = that.data.exchageList.concat(res.data.data);
+                that.data.exchangeParmas.page_index = page;
                 that.setData({
                   exchageList: that.data.exchageList
                 });

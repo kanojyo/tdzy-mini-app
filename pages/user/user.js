@@ -66,6 +66,10 @@ Page({
           that.setData({
             newFeedBack:true,
           })
+        } else if (res.data.data === 2){
+          that.setData({
+            newFeedBack: false,
+          })
         }
       }
     })
@@ -128,7 +132,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onload();
+    this.onLoad();
   },
 
   /**
