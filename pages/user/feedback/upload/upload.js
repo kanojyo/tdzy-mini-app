@@ -30,6 +30,7 @@ Page({
         const tempFilePaths = res.tempFilePaths;
         wx.showLoading({
           title: '加载中',
+          mask:true,
         })
         wx.uploadFile({
           url: utils.getBaseUrl()+'/v1/uploads', //仅为示例，非真实的接口地址
@@ -48,7 +49,6 @@ Page({
             setTimeout(()=>{
               wx.hideLoading()
             },500)
-            
           }
         })
       }

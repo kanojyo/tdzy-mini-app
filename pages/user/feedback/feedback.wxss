@@ -123,12 +123,11 @@ page{
 }
 .btn3 button{
   flex:1;
-  border-radius: 0;
   background: #d1b574;
   color:#fff;
 }
-.btn3 .close{
-  background: #ffff;
+.btn3 button.close{
+  background: #fff;
   color:#999;
 }
 .pull-left{
