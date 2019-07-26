@@ -28,6 +28,10 @@ page{
 .pro .text .title{
   font-size: 30rpx;
   color:#333;
+  width: 330rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .bot{
   display: flex;

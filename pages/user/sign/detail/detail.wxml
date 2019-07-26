@@ -17,8 +17,7 @@
   </view>
   <view class="intro">
     <view class="title">商品使用规则：</view>
-    <view class="text">{{goods.goods_rules}}</view>
-    
+    <text class="text">{{goods.goods_rules}}</text>
   </view>
   <view class="btn">
     <button class="btn1" bindtap="exchange" wx:if="{{goods.exchange_status ==1}}">兑换</button>
