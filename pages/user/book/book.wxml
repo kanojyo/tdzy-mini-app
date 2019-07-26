@@ -17,7 +17,7 @@
             <view class="avatar">
               <image src="{{item.doctor_avatar}}"></image>
             </view>
-            <view class="text" data-id="{{item.id}}" catchtap="getDetail">
+            <view class="text state{{item.status}}" data-id="{{item.id}}" catchtap="getDetail">
               <view class="doctor_name">医师：{{item.doctor_name}}</view>
               <view class="office">就诊科室：{{item.office}}</view>
               <view class="cost">费用：¥{{item.order_money}}</view>
@@ -39,12 +39,11 @@
               <text>{{item.user_name}}</text>
               <text>{{item.mobile}}</text>
             </view>
-            <view class="btn">
+            <view class="btn" wx:if="{{item.status == 1}}">
               <form bindsubmit="formSubmit" report-submit="true" id="{{item.id}}">
                 <button form-type="submit">取消预约</button>
               </form>
             </view>
-
           </view>
         </view>
       </view>
