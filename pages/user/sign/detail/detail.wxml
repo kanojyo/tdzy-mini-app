@@ -17,8 +17,7 @@
   </view>
   <view class="intro">
     <view class="title">商品使用规则：</view>
-    <view class="text">1.本兑换商品只限于线下医院使用；</view>
-    <view class="text">2.有效期7天。</view>
+    <text class="text">{{goods.goods_rules}}</text>
   </view>
   <view class="btn">
     <button class="btn1" bindtap="exchange" wx:if="{{goods.exchange_status ==1}}">兑换</button>
