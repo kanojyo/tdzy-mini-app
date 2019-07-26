@@ -85,7 +85,7 @@
   color:#999;
 }
 .exchage-item .text.state3{
-  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/shixiaoSeal%402x.png') right top no-repeat;
+  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/yishixiao%402x.png') right top no-repeat;
   background-size: 30%;
   color:#999;
 }
