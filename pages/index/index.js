@@ -16,6 +16,11 @@ Page({
     circular: true,
     interval: 5000,
     duration: 1000,
+    navScrollLeft: 0,
+    scrollTop: 0,
+    scrollHeight: 0,
+    page: 1,
+    article: []
   },
   //轮播图点击跳转
   imageUrl: function (e) {
@@ -268,5 +273,57 @@ Page({
     wx.navigateTo({
       url: "/pages/doctor/info/index?doctor_id=" + id,
     })
+  },
+  //下拉加载新闻
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    var status = true;
+    
+    if (status) {
+      wx.showLoading({
+        title: '拼命加载中',
+      });
+      setTimeout(function () {
+        wx.hideLoading();
+        wx.request({
+          url: baseUrl + '/v1/medical_info/hot_article?page_index=' + page + "&page_size=20",
+          method: 'GET',
+          header: {
+            'Content-Type': 'application/json',
+            'device': wx.getStorageSync('device'),
+            'Authorization': 'Bearer ' + wx.getStorageSync('token')
+          },
+          success(res) {
+            status = false;
+            if (res.data.data.data.length > 0) {
+              that.data.article = that.data.article.concat(res.data.data.data);
+              if (res.data.data.data.length < 19) {
+                that.setData({
+                  bottomTitle: true,
+                  title: '-- 我是有底线的 --',
+                })
+              } else {
+                status = true;
+              }
+
+            } else {
+              wx.showToast({
+                title: '没有更多内容了',
+                icon: 'none',
+                duration: 2000
+              })
+              status = false;
+            }
+            
+            that.data.page = that.data.page + 1;
+            that.setData({
+              article: that.data.article
+            });
+          }
+        })
+      }, 2000);
+    }
+    
   }
 })
