@@ -108,8 +108,8 @@
           <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/index/morearrow@2x.png"></image>
         </view>
       </view>
-      <view class="content">
-        <view class="item" wx:for="{{article}}" wx:key="index" wx:if="{{index < 20}}" id="{{item.id}}" bindtap="acticle_info">
+      <view class="content" scroll-top="{{scrollTop}}" scroll-y="true">
+        <view class="item" wx:for="{{article}}" wx:key="index" id="{{item.id}}" bindtap="acticle_info">
           <view class="item-img">
             <image src="{{item.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
           </view>

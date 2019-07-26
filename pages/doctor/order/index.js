@@ -222,7 +222,7 @@ Page({
         showCancel: false,
         confirmText: "知道了",
         confirmColor: "#d1b574",
-        content: '当前医生已暂停预约,不可预约挂号',
+        content: '当前日期，此医生已暂停预约,不可预约挂号',
         success: function (res) {
           if (res.confirm) {
 
@@ -287,7 +287,8 @@ Page({
           }
 
           that.setData({
-            status: true
+            status: true,
+            flag: true
           })
         }
       })
@@ -333,7 +334,7 @@ Page({
         showCancel: false,
         confirmText: "知道了",
         confirmColor: "#d1b574",
-        content: '当前医生已暂停预约,不可预约挂号',
+        content: '当前日期，此医生已暂停预约,不可预约挂号',
         success: function (res) {
           if (res.confirm) {
             
