@@ -33,7 +33,7 @@ Page({
       confirmColor: '#d1b574',
       success(res) {
         if (res.confirm) {
-          console.log('用户点击确定');
+          // console.log('用户点击确定');
           wx.request({
             url: utils.getBaseUrl() +'/v1/sign/exchange',
             method:'POST',
@@ -76,7 +76,7 @@ Page({
             }
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          // console.log('用户点击取消')
         }
       }
     })

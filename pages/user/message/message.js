@@ -26,7 +26,6 @@ Page({
     })
   },
   goTo(e){
-    console.log(e.currentTarget.dataset.id)
     getRequest({
       url: '/v1/message/read_system_msg?msg_system_id=' + e.currentTarget.dataset.id ,
       method: 'GET',

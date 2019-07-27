@@ -24,7 +24,6 @@ Page({
   //获取当前滑块的index
   bindchange: function (e) {
     const that = this;
-    // console.log(e,111)
     that.setData({
       currentData: e.detail.current
     })
@@ -83,7 +82,6 @@ Page({
       url: '/v1/sign/exchange_list?page_index=' + parmas.page_index + '&page_size=' + parmas.page_size,
       method: 'get',
       success(res) {
-        // console.log(res)
         that.setData({
           exchageList: res.data.data
         })

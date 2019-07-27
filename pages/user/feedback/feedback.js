@@ -51,7 +51,6 @@ Page({
       url:'/v1/feedback/end',
       method:'GET',
       success(res){
-        console.log(res.code)
         if (res.code ===200){
           wx.showToast({
             title: '成功',
@@ -75,7 +74,6 @@ Page({
   },
   //预览;
   previewImg(e){
-    console.log(e.currentTarget.dataset.url)
     wx.previewImage({
       current: e.currentTarget.dataset.url, // 当前显示图片的http链接
       urls: [e.currentTarget.dataset.url]
@@ -143,6 +141,5 @@ Page({
   //   })
   // },
   imageLoad(e){
-    console.log(e)
   }
 })

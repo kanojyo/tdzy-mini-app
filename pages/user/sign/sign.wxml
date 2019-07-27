@@ -57,7 +57,7 @@
             <view class="bot">
               <view class="left">
                 <view class="now_score">{{item.now_score}}</view>
-                <view class="orgin">{{item.original_score}}积分</view>
+                <view class="orgin" wx:if="{{item.original_score>item.now_score}}">{{item.original_score}}积分</view>
               </view>
               <view class="right">
                 <button class="btn1" wx:if="{{item.goods_status === 1 }}" data-id="{{item.id}}" bindtap='exchange'>立即兑换</button>

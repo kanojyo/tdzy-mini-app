@@ -125,7 +125,6 @@ Page({
       url:'/v1/sign/my_info',
       method:'get',
       success(res){
-        // console.log(res)
         that.setData({
           // telephone: res.data.mobile,
           userInfo: res.data,

@@ -43,7 +43,6 @@ Page({
         url: '/v1/verify/check_wechat?weixin=' + that.data.wechat,
         method: 'GET',
         success(res) {
-          console.log(res);
           if (res.code === 200) {
             if (res.data.status === 1) {
               wx.showModal({
@@ -52,7 +51,7 @@ Page({
                 showCancel: false,
                 success(res) {
                   if (res.confirm) {
-                    console.log('用户点击确定')
+                    // console.log('用户点击确定')
                   }
                 }
               })
@@ -63,7 +62,7 @@ Page({
                 showCancel: false,
                 success(res) {
                   if (res.confirm) {
-                    console.log('用户点击确定')
+                    // console.log('用户点击确定')
                   }
                 }
               })

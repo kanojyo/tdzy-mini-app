@@ -21,7 +21,6 @@ Page({
       param: '',
       method: 'GET',
       success: function (res) {
-        console.log(res)
         that.setData({
           url: res.data.AboutUrl
         })

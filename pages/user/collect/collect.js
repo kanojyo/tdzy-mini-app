@@ -17,7 +17,6 @@ Page({
       url: '/v1/collection/index?page_index=' + that.data.page_index + '?page_size=' + that.data.page_size ,
       method:'GET',
       success(res){
-        console.log(res)
         that.setData({
           list:res.data.data,
           maxPage: res.data.max_page
