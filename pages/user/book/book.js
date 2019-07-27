@@ -12,6 +12,18 @@ Page({
     list1: [],//未就诊
     list2:[],//已就诊
     list3:[],//已取消,
+    list1Parmas:{
+      page_index:1,
+      page_size:20
+    },
+    list2Parmas:{
+      page_index:1,
+      page_size:20
+    },
+    list3Parmas:{
+      page_index:1,
+      page_size:20
+    },
     form_id: "",//表单ID
     page:"pages/index/index"//跳转回小程序个人中心我的预约页面
   },
@@ -44,12 +56,12 @@ Page({
   getList1(){
     var that =this;
     getRequest({
-      url: '/v1/my_appointment/list?status=1,4',
+      url: '/v1/my_appointment/list?status=1,4&page_index=' + that.data.list1Parmas.page_index +'&page_size=20',
       method: 'get',
       success: function (res) {
         // console.log(res)
         that.setData({
-          list1:res.data,
+          list1:res.data.data,
         })
       }
     });
@@ -58,11 +70,11 @@ Page({
   getList2(){
     var that = this;
     getRequest({
-      url: '/v1/my_appointment/list?status=2',
+      url: '/v1/my_appointment/list?status=2&page_index=' + that.data.list2Parmas.page_index +'&page_size=20',
       method: 'get',
       success: function (res) {
         that.setData({
-          list2: res.data,
+          list2: res.data.data,
         })
       }
     });
@@ -71,11 +83,11 @@ Page({
   getList3(){
     var that = this;
     getRequest({
-      url:'/v1/my_appointment/list?status=3',
+      url: '/v1/my_appointment/list?status=3&page_index=' + that.data.list3Parmas.page_index + '&page_size=20',
       method:'get',
       success:function(res){
         that.setData({
-          list3: res.data,
+          list3: res.data.data,
         })
       }
     });
@@ -177,7 +189,103 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var that = this;
+    if (that.data.currentData == 0){
+      var page = that.data.list1Parmas.page_index + 1;
+      var status = true;
+      if (status) {
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(() => {
+          wx.hideLoading();
+          getRequest({
+            url: '/v1/my_appointment/list?status=1,4&page_index=' + page + '&page_size=20',
+            method: 'GET',
+            success(res) {
+              status = false;
+              if (res.data.data.length > 0) {
+                that.data.list1Parmas.page_index = page;
+                that.data.list1 = that.data.list1.concat(res.data.data);
+                that.setData({
+                  list1: that.data.list1,
+                })
+              } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }
+            }
+          })
+        }, 1000)
+      }
+    } 
+    else if (that.data.currentData == 1) {
+      var page = that.data.list2Parmas.page_index + 1;
+      var status = true;
+      if (status) {
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(() => {
+          wx.hideLoading();
+          getRequest({
+            url: '/v1/my_appointment/list?status=2&page_index=' + page + '&page_size=20',
+            method: 'GET',
+            success(res) {
+              status = false;
+              if (res.data.data.length > 0) {
+                that.data.list2Parmas.page_index = page;
+                that.data.list2 = that.data.list2.concat(res.data.data);
+                that.setData({
+                  list2: that.data.list2,
+                })
+              } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }
+            }
+          })
+        }, 1000)
+      }
+    } 
+    else if (that.data.currentData == 2) {
+      var page = that.data.list3Parmas.page_index + 1;
+      var status = true;
+      if (status) {
+        wx.showLoading({
+          title: '拼命加载中',
+        });
+        setTimeout(() => {
+          wx.hideLoading();
+          getRequest({
+            url: '/v1/my_appointment/list?status=3&page_index=' + page + '&page_size=20',
+            method: 'GET',
+            success(res) {
+              status = false;
+              if (res.data.data.length > 0) {
+                that.data.list3Parmas.page_index = page;
+                that.data.list3 = that.data.list3.concat(res.data.data);
+                that.setData({
+                  list3: that.data.list3,
+                })
+              } else {
+                wx.showToast({
+                  title: '没有更多内容了',
+                  icon: 'none',
+                  duration: 2000
+                })
+              }
+            }
+          })
+        }, 1000)
+      }
+    }
   },
 
   /**
