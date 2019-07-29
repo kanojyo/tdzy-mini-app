@@ -20,7 +20,8 @@ Page({
     scrollTop: 0,
     scrollHeight: 0,
     page: 1,
-    article: []
+    article: [],
+    height:0,
   },
   //轮播图点击跳转
   imageUrl: function (e) {
@@ -33,6 +34,23 @@ Page({
   handleContact(e) {
     console.log(e.path)
     console.log(e.query)
+  },
+  //动态设置遮罩层的高度
+  getHeight() {
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res)
+        let clientHeight = res.screenHeight;
+        let clientWidth = res.screenWidth;
+        let ratio = 750 / clientWidth;
+        let height = clientHeight * ratio;
+        console.log(height)
+        that.setData({
+          height: height
+        });
+      }
+    });
   },
   onShareAppMessage: function () {
     return {
@@ -96,7 +114,6 @@ Page({
           })
         }
       });
-      that.getIndex();
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -114,43 +131,10 @@ Page({
     }
   },
   onLoad: function () {
-    //wx.hideTabBar({});
     var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          // wx.showTabBar();
-          wx.getUserInfo({
-            success: function (res) {
-              // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
-              wx.request({
-                url: baseUrl + '/v1/get_user_info',
-                data: {
-                  session: wx.getStorageSync('session_key'),
-                  encryptData: res.encryptedData,
-                  iv: res.iv,
-                },
-                method: 'POST',
-                header: {
-                  'Content-Type': 'application/json',
-                  'device': wx.getStorageSync('device'),
-                },
-                success(e) {
-                }
-              })
-            }
-          });
-        } else {
-          // 用户没有授权
-          // 改变 isHide 的值，显示授权页面
-          wx.hideTabBar();
-          that.setData({
-            isHide: true
-          });
-        }
-      }
-    });
+    that.getHeight();
+    that.getIndex();
+    that.shouquan();
 
   },
   onReady(){

@@ -28,9 +28,8 @@
                   <text>{{filter.formatDate(item.order_time,'notime')}}</text>
                   <text class="week">{{item.week_day}}</text>
                 </view>
-                <view class="time_slot" wx:if="{{item.time_slot}}==1">上午08:00-12:00</view>
+                <view class="time_slot" wx:if="{{item.time_slot==1}}">上午08:00-12:00</view>
                 <view class="time_slot" wx:else>下午14:00-18:00</view>
-
               </view>
             </view>
           </view>

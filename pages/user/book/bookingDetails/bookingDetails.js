@@ -1,3 +1,4 @@
+
 // pages/user/book/bookingDetails/bookingDetails.js
 let utils = require('../../../../utils/util.js');
 import { getRequest } from '../../../../utils/util.js';
@@ -7,11 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: '',
-    info: [],
+    id:'',
+    info:[],
   },
   //获取页面数据
-  getData() {
+  getData(){
     var that = this;
     getRequest({
       url: '/v1/appointment/appointment_info?appointment_id=' + that.data.id,
@@ -29,7 +30,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id:options.id
     })
     that.getData();
   },

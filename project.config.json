@@ -20,6 +20,7 @@
 			"outputPath": ""
 		},
 		"enhance": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",

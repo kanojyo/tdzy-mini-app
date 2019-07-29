@@ -4,7 +4,7 @@
   <scroll-view class="chatList" >
     
     <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
-    <view class="time">{{filter.formatDate(time,'nosecond')}}</view>
+    <view class="time" wx:if="{{time}}">{{filter.formatDate(time,'nosecond')}}</view>
     <view class="item" wx:for="{{chatList}}" wx:key="item">
       <view class="left" wx:if="{{item.type===2}}">
         <view class="avatar">
