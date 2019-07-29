@@ -24,7 +24,6 @@ Page({
   //获取当前滑块的index
   bindchange: function (e) {
     const that = this;
-    // console.log(e,111)
     that.setData({
       currentData: e.detail.current
     })

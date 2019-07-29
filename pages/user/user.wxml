@@ -1,98 +1,115 @@
 <!--pages/user/user.wxml-->
 <view class="container">
-  <view class="user-info">
-    <view class="info" wx:if="{{userInfo}}">
-      <view class="left" bindtap='GotoInfo'>
-        <image src="{{userInfo.avatarurl}}"></image>
-        <view class="text">
-          <view class="nickname">{{userInfo.nickname}}</view>
+  <view wx:if="{{isHide}}" class="shouquan" style="height:{{height}}rpx;" catchtouchmove='ture'>
+    <view class="bg"  wx:if="{{canIUse}}" style="margin-top:{{(height-450)/2}}rpx;">
+      <view class='header'>
+        <image src='https://taidou.oss-cn-hangzhou.aliyuncs.com/assets/icon.png'></image>
+      </view>
+      <view class='content'>
+        <view>欢迎来到泰斗医聊小程序</view>
+        <text>需要你授权登录才可继续操作</text>
+      </view>
+      <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+      </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+  </view>
+  <view class="user">
+    <view class="user-info">
+      <view class="info" wx:if="{{userInfo}}">
+        <view class="left" bindtap='GotoInfo'>
+          <image src="{{userInfo.avatarurl}}"></image>
+          <view class="text">
+            <view class="nickname">{{userInfo.nickname}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
+            <button class="sign" form-type="submit">签到</button>
+          </form>
         </view>
       </view>
-      <view class="right">
-        <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
-          <button class="sign" form-type="submit">签到</button>
-        </form>
+      <view wx:else>
       </view>
     </view>
-    <view wx:else>
-    </view>
-  </view>
-  <view class="nav">
-    <view class="nav-item" bindtap="GotoBook">
-      <view class="txt">
-        <image src="../../images/myorder@2x.png"></image>
-        <text>我的预约</text>
+    <view class="nav">
+      <view class="nav-item" bindtap="GotoBook">
+        <view class="txt">
+          <image src="../../images/myorder@2x.png"></image>
+          <text>我的预约</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
+        
       </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+      <view class="nav-item" bindtap="GotoCollect">
+        <view class="txt">
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/mycollection%402x.png"></image>
+          <text>我的收藏</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
-      
-    </view>
-    <view class="nav-item" bindtap="GotoCollect">
-      <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/mycollection%402x.png"></image>
-        <text>我的收藏</text>
+      <view class="nav-item" bindtap="GotoAuth">
+        <view class="txt" >
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/myAuthenticity%402x.png"></image>
+          <text>真伪查询</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
-      </view>
-    </view>
-    <view class="nav-item" bindtap="GotoAuth">
-      <view class="txt" >
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/myAuthenticity%402x.png"></image>
-        <text>真伪查询</text>
-      </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
-      </view>
-    </view>
-    <view class="nav-item" bindtap="GotoMessage">
-      <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
-        <text>消息中心</text>
-      </view>
-      <view class='arrow'>
-        <view class="newMessage" wx:if="{{newMessage!==0}}">{{newMessage}}</view>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+      <view class="nav-item" bindtap="GotoMessage">
+        <view class="txt">
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
+          <text>消息中心</text>
+        </view>
+        <view class='arrow'>
+          <view class="newMessage" wx:if="{{newMessage!==0}}">{{newMessage}}</view>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
     </view>
-  </view>
-  <view class="nav">
-    <button class="nav-item" open-type="contact" bindcontact="handleContact">
-      <view class="txt">
-        <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/Interrogation%402x.png"></image>
-        <text>在线问诊</text>
+    <view class="nav">
+      <button class="nav-item" open-type="contact" bindcontact="handleContact">
+        <view class="txt">
+          <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/Interrogation%402x.png"></image>
+          <text>在线问诊</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
+      </button>
+      <view class="nav-item" bindtap="GotoFeedBack">
+        <view class="txt">
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/advise%402x.png"></image>
+          <text>意见反馈</text>
+        </view>
+        <view class='arrow'>
+          <view class="redStar" wx:if="{{newFeedBack}}"></view>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+      <view class="nav-item">
+        <view class="txt">
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/help%402x.png"></image>
+          <text>帮助中心</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
-    </button>
-    <view class="nav-item" bindtap="GotoFeedBack">
-      <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/advise%402x.png"></image>
-        <text>意见反馈</text>
-      </view>
-      <view class='arrow'>
-        <view class="redStar" wx:if="{{newFeedBack}}"></view>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
-      </view>
-    </view>
-    <view class="nav-item">
-      <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/help%402x.png"></image>
-        <text>帮助中心</text>
-      </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
-      </view>
-    </view>
-    <view class="nav-item">
-      <view class="txt">
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/Aboutus%402x.png"></image>
-        <text>关于我们</text>
-      </view>
-      <view class='arrow'>
-        <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+      <view class="nav-item">
+        <view class="txt">
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/Aboutus%402x.png"></image>
+          <text>关于我们</text>
+        </view>
+        <view class='arrow'>
+          <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/arrow_list%402x.png"></image>
+        </view>
       </view>
     </view>
   </view>

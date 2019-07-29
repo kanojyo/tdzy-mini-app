@@ -18,7 +18,7 @@ Page({
     addressData:[
       { "text": "地址：湖北省武汉市洪山区雄楚大街428号 " },
       { "text": "电话：027-85555789" },
-      { "text": "官网：http://www.whtdzyy.com/" },
+      { "text": "官网：www.whtdzyy.com" },
     ]
   },
   //双向绑定input的值
@@ -43,7 +43,6 @@ Page({
         url: '/v1/verify/check_wechat?weixin=' + that.data.wechat,
         method: 'GET',
         success(res) {
-          console.log(res);
           if (res.code === 200) {
             if (res.data.status === 1) {
               wx.showModal({
@@ -52,7 +51,7 @@ Page({
                 showCancel: false,
                 success(res) {
                   if (res.confirm) {
-                    console.log('用户点击确定')
+                    // console.log('用户点击确定')
                   }
                 }
               })
@@ -63,7 +62,7 @@ Page({
                 showCancel: false,
                 success(res) {
                   if (res.confirm) {
-                    console.log('用户点击确定')
+                    // console.log('用户点击确定')
                   }
                 }
               })

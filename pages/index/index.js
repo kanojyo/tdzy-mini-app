@@ -16,6 +16,24 @@ Page({
     circular: true,
     interval: 5000,
     duration: 1000,
+    height:0,
+  },
+  //动态设置遮罩层的高度
+  getHeight() {
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res)
+        let clientHeight = res.screenHeight;
+        let clientWidth = res.screenWidth;
+        let ratio = 750 / clientWidth;
+        let height = clientHeight * ratio;
+        console.log(height)
+        that.setData({
+          height: height
+        });
+      }
+    });
   },
   onShareAppMessage: function () {
     return {
@@ -82,7 +100,6 @@ Page({
           })
         }
       });
-      that.getIndex();
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -99,11 +116,12 @@ Page({
       });
     }
   },
-  onLoad: function () {
+  shouquan(){
     var that = this;
     // 查看是否授权
     wx.getSetting({
       success: function (res) {
+        // console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // wx.showTabBar();
           wx.getUserInfo({
@@ -137,6 +155,12 @@ Page({
         }
       }
     });
+  },
+  onLoad: function () {
+    var that = this;
+    that.getHeight();
+    that.getIndex();
+    that.shouquan();
 
   },
   onReady(){
@@ -157,9 +181,7 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success(res) {
-        //console.log(res.data.data)
         var arr = res.data.data;
-        console.log(arr)
         that.setData({
           imgUrls: arr.banner,
           officeList: arr.list_office,

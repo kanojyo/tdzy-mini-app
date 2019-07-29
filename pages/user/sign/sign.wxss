@@ -259,7 +259,7 @@ page{
   z-index:1000;
 }
 .bg .title{
-  padding-top: 300rpx;
+  padding-top: 310rpx;
   font-size: 40rpx;
   color:#000;
 }

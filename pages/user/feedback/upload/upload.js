@@ -26,7 +26,6 @@ Page({
         // that.setData({
         //   files: that.data.files.concat(res.tempFilePaths)
         // });
-        console.log(res)
         const tempFilePaths = res.tempFilePaths;
         wx.showLoading({
           title: '加载中',
@@ -85,7 +84,6 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success(res){
-        console.log(res)
         if(res.data.code==200){
           wx.redirectTo({
             url:'../feedback'

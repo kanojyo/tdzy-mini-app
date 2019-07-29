@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <view wx:if="{{isHide}}" class="shouquan">
-    <view wx:if="{{canIUse}}">
+  <view wx:if="{{isHide}}" class="shouquan" style="height:{{height}}rpx;" catchtouchmove='ture'>
+    <view class="bg"  wx:if="{{canIUse}}" style="margin-top:{{(height-450)/2}}rpx;">
       <view class='header'>
         <image src='https://taidou.oss-cn-hangzhou.aliyuncs.com/assets/icon.png'></image>
       </view>
@@ -15,7 +15,7 @@
     </view>
     <view wx:else>请升级微信版本</view>
   </view>
-  <view wx:else class="main">
+  <view  class="main">
     <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>

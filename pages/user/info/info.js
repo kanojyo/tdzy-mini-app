@@ -14,11 +14,9 @@ Page({
       url: '/v1/sign/my_info',
       method: 'get',
       success(res) {
-        console.log(res)
         that.setData({
           info: res.data
         })
-        console.log(that.data.info)
       }
     })
   },

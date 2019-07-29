@@ -59,7 +59,6 @@ Page({
       url: '/v1/my_appointment/list?status=1,4&page_index=' + that.data.list1Parmas.page_index +'&page_size=20',
       method: 'get',
       success: function (res) {
-        // console.log(res)
         that.setData({
           list1:res.data.data,
         })
@@ -109,9 +108,6 @@ Page({
         'Authorization': 'Bearer ' + wx.getStorageSync('token')
       },
       success: function (res) {
-        // console.log(res.data.message);
-        console.log(res);
-        console.log(res.data.code);
         if (res.data.code == 200){
           wx.showToast({
             title: '取消预约成功',
@@ -121,7 +117,6 @@ Page({
           that.getList1();//未就诊数据重新请求
           that.getList3();//已取消数据重新请求
         }else{
-          console.log(res.data.message)
           wx.showToast({
             title: res.data.message,
             icon: 'none',

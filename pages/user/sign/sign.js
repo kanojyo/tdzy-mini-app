@@ -81,9 +81,7 @@ Page({
   },
   //立即兑换
   exchange(e) {
-    // console.log(e);
     let id = e.currentTarget.dataset.id;
-    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: 'detail/detail?id=' + id,
     })
@@ -109,7 +107,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+    this.getData();
   },
 
   /**

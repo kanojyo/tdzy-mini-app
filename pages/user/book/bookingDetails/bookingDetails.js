@@ -17,7 +17,6 @@ Page({
       url: '/v1/appointment/appointment_info?appointment_id=' + that.data.id,
       method: 'get',
       success: function (res) {
-        console.log(res)
         that.setData({
           info: res.data,
         })
@@ -28,7 +27,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     var that = this;
     that.setData({
       id:options.id
