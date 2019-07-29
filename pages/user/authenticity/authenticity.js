@@ -18,7 +18,7 @@ Page({
     addressData:[
       { "text": "地址：湖北省武汉市洪山区雄楚大街428号 " },
       { "text": "电话：027-85555789" },
-      { "text": "官网：http://www.whtdzyy.com/" },
+      { "text": "官网：www.whtdzyy.com" },
     ]
   },
   //双向绑定input的值

@@ -10,6 +10,7 @@ Page({
     page_index:1,
     page_size:20,
     maxPage:0,
+    dataStatus: true,
   },
   getList(){
     var that =this;
@@ -21,6 +22,15 @@ Page({
           list:res.data.data,
           maxPage: res.data.max_page
         })
+        if (res.data.data.length > 0) {
+          that.setData({
+            dataStatus: true,
+          })
+        } else {
+          that.setData({
+            dataStatus: false,
+          })
+        }
       }
     })
   },

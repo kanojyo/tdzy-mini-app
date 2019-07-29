@@ -2,6 +2,55 @@
 page{
   background-color: #ededed;
 }
+.shouquan{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index:1000;
+}
+.shouquan .bg{
+  width: 540rpx;
+  height: 410rpx;
+  margin:0 auto;
+  padding-top:40rpx; 
+  background: #fff;
+  border-radius: 10rpx;
+}
+.header {
+  text-align: center;
+  width: 100%;
+  height: 125rpx;
+}
+.header image {
+  width: 125rpx;
+  height: 125rpx;
+}
+.shouquan .content {
+  padding-top: 25rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+.shouquan .content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 15rpx;
+  font-size: 26rpx;
+}
+ 
+.bottom {
+  margin-top: 40rpx;
+  border-radius: 39rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  width: 320rpx;
+  font-size: 36rpx;
+  background: #d1b574 !important;
+}
+.user{
+  width: 100%;
+}
 .user-info{
   width: 100%;
   background: #fff;

@@ -33,7 +33,7 @@ Page({
         that.setData({
           state: res.data.state,
           chatList:res.data.list,
-          time: res.data.list[0].created_at
+          time: res.data.time,
         })
       }
     })
