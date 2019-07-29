@@ -32,21 +32,26 @@ Page({
     });
   },
   bindGetUserInfo: function (e) {
+    var that = this;
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      var that = this;
       // 获取到用户的信息了，打印到控制台上看下
-      console.log("用户的信息如下：");
-      console.log(e.detail.userInfo);
+      // console.log("用户的信息如下：");
+      // console.log(e.detail.userInfo);
       //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
       that.setData({
         isHide: false
       });
       wx.showTabBar();
+      that.check();
+      //获取基本资料
+      that.getInfo();
+      //是否消息中心有新消息
+      that.hasMessage();
       wx.getUserInfo({
         success: function (res) {
           wx.request({
-            url: baseUrl + '/v1/get_user_info',
+            url: utils.getBaseUrl() + '/v1/get_user_info',
             data: {
               session: wx.getStorageSync('session_key'),
               encryptData: res.encryptedData,
@@ -63,6 +68,7 @@ Page({
           })
         }
       });
+      
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -91,7 +97,7 @@ Page({
             success: function (res) {
               // 用户已经授权过,不需要显示授权页面,所以不需要改变 isHide 的值
               wx.request({
-                url: baseUrl + '/v1/get_user_info',
+                url: utils.getBaseUrl() + '/v1/get_user_info',
                 data: {
                   session: wx.getStorageSync('session_key'),
                   encryptData: res.encryptedData,
