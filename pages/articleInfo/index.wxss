@@ -14,7 +14,6 @@
 
 .article_time {
   width: 96%;
-  
   color: #666;
 } 
 
@@ -76,17 +75,26 @@ button {
 .image {
   width: 60rpx;
   height: 60rpx;
+  display: block;
 }
 
 .share-box button {
-  width: 60rpx;
-  height: 60rpx;
+  width: 60rpx !important;
+  height: 60rpx !important;
   padding: 0;
-  position: static;
   background-color: #fff !important;
+  border: none;
 }
 
 button:hover {
-  background-color:transparent;
+  background-color:#fff;
 }
 
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+  border-radius:0;
+}

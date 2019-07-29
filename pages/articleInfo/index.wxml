@@ -3,7 +3,7 @@
   <view class="article_time">{{article_info.created_at}}</view>
   <import src="/wxParse/wxParse.wxml"/>
   <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
-  <view class="middle-box">
+  <view class="middle-box" style='clear:both;'>
     <view class="star-box test" bindtap="star" id="{{article_info.id}}">
       <view wx:if = "{{article_info.is_collect == 2}}" mode="widthFix">
         <image src="../../images/collection@3x.png" class="image"></image>

@@ -57,7 +57,6 @@ Page({
     let maxTextLen = page.data.maxTextLen;
     // 文本长度
     let textLen = e.detail.value.length;
-    console.log(e)
     page.setData({
       maxTextLen: maxTextLen,
       textLen: textLen
@@ -241,11 +240,9 @@ Page({
   },
   bindChange: function (e) {
     const val = e.detail.value
-    console.log(this.data.age)
     this.setData({
       user_age: this.data.age[val[0]],
     })
-    console.log(this)
   },
   bindPickerChange: function (e) {
     var that = this;

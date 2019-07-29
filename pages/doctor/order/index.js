@@ -197,7 +197,6 @@ Page({
           if (res.confirm) {
 
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })
@@ -212,7 +211,6 @@ Page({
           if (res.confirm) {
 
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })
@@ -227,7 +225,6 @@ Page({
           if (res.confirm) {
 
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })
@@ -265,7 +262,6 @@ Page({
                     url: '/pages/user/book/book',
                   })
                 } else if (res.cancel) {
-                  console.log('用户点击取消')
                 }
               }
             })
@@ -280,7 +276,6 @@ Page({
                 if (res.confirm) {
 
                 } else if (res.cancel) {
-                  console.log('用户点击取消')
                 }
               }
             })
@@ -309,7 +304,6 @@ Page({
           if (res.confirm) {
            
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })
@@ -324,7 +318,6 @@ Page({
           if (res.confirm) {
             
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })
@@ -339,7 +332,6 @@ Page({
           if (res.confirm) {
             
           } else if (res.cancel) {
-            console.log('用户点击取消')
           }
         }
       })

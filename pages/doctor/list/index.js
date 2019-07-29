@@ -144,7 +144,6 @@ Page({
                   url: '/pages/doctor/bind/index?id=' + doctor_id + "&page=order"
                 })
               } else if (res.cancel) {
-                console.log('用户点击取消')
               }
             }
           })

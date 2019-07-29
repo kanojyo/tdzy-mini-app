@@ -101,7 +101,7 @@ Page({
                   url: '/pages/doctor/bind/index?id=' + doctor_id + "&page=doctorinfo",
                 })
               } else if (res.cancel) {
-                console.log('用户点击取消')
+                
               }
             }
           })

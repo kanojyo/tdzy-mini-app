@@ -138,9 +138,7 @@ Page({
    */
   onShareAppMessage: function (res) {
     var that = this;
-
     var nums = that.data.article_info.article_share;
-    console.log(nums)
     that.data.article_info.article_share = nums + 1;
     that.data.article_info.is_share = 1;
     that.setData({

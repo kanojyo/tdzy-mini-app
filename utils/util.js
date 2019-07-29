@@ -15,10 +15,10 @@ const formatNumber = n => {
 }
 
 const baseUrl = "https://tdxcx.wuhanlst.com";
-const device = wx.getStorageSync('device') ||'';
-const token = wx.getStorageSync('token') || '';
 
 function getRequest(model) {
+  var device = wx.getStorageSync('device') || '';
+  var token = wx.getStorageSync('token') || '';
   if (device !== '' && token !== '') {
     wx.request({
       url: baseUrl + model.url,
@@ -39,6 +39,8 @@ function getRequest(model) {
         })
       }
     })
+  } else {
+    console.log("授权错误");
   }
 
 }

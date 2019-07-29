@@ -27,7 +27,6 @@ Page({
       url: '/v1/information/list_category',
       method: 'GET',
       success(res) {
-        console.log(res)
         that.setData({
           list: res.data,
           
@@ -75,7 +74,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(1)
   },
 
   /**
@@ -139,7 +137,6 @@ Page({
   //获取当前滑块的index
   bindchange: function (e) {
     const that = this;
-    // console.log(e,111)
     that.setData({
       currentData: e.detail.current
     })
