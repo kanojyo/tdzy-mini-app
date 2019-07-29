@@ -1,3 +1,4 @@
+let app = require('../app.js');
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -16,32 +17,34 @@ const formatNumber = n => {
 
 const baseUrl = "https://tdxcx.wuhanlst.com";
 
+
 function getRequest(model) {
   var device = wx.getStorageSync('device') || '';
   var token = wx.getStorageSync('token') || '';
-  if (device !== '' && token !== '') {
-    wx.request({
-      url: baseUrl + model.url,
-      data: model.param,
-      header: {
-        'Content-Type': 'application/json',
-        'device': device,
-        'Authorization': 'Bearer ' + token
-      },
-      method: model.method,
-      success: function (res) {
-        model.success(res.data)
-      },
-      fail: function (res) {
-        wx.showModal({
-          title: res,
-          showCancel: false
-        })
-      }
-    })
-  } else {
-    console.log("授权错误");
-  }
+
+  if (device == '' || token == '') {
+    app.onLaunch();
+  } 
+  
+  wx.request({
+    url: baseUrl + model.url,
+    data: model.param,
+    header: {
+      'Content-Type': 'application/json',
+      'device': device,
+      'Authorization': 'Bearer ' + token
+    },
+    method: model.method,
+    success: function (res) {
+      model.success(res.data)
+    },
+    fail: function (res) {
+      wx.showModal({
+        title: res,
+        showCancel: false
+      })
+    }
+  })
 
 }
 
