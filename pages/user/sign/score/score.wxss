@@ -131,6 +131,7 @@
   border-top:1rpx solid #efefef;
   padding: 10rpx 0;
   font-size: 24rpx;
+  color:#333;
 }
 .list-item .left{
   padding-left: 80rpx;

@@ -4,29 +4,35 @@
   <scroll-view class="chatList" >
     
     <wxs src='../../../filter/filter.wxs' module='filter'></wxs>
-    <view class="time" wx:if="{{time}}">{{filter.formatDate(time,'nosecond')}}</view>
+    <!-- <view class="time" wx:if="{{time}}">{{filter.formatDate(time,'nosecond')}}</view> -->
     <view class="item" wx:for="{{chatList}}" wx:key="item">
       <view class="left" wx:if="{{item.type===2}}">
-        <view class="avatar">
-          <image src="{{item.avatar}}" lazy-load="true"></image>
-        </view>
-        <view class="centens">
-          <!-- <view class="time"></view> -->
-          <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
-          <view class="pull-left" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
+        <view class="time">{{filter.formatDate(item.created_at,'nosecond')}}</view>
+        <view class="content">
+          <view class="avatar">
+            <image src="{{item.avatar}}" lazy-load="true"></image>
+          </view>
+          <view class="centens">
+            <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
+            <view class="pull-left" wx:if="{{item.msg_type===2}}">
+              <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
+            </view>
           </view>
         </view>
+        
       </view>
       <view class="right" wx:if="{{item.type===1}}">
-        <view class="avatar">
-          <image src="{{item.avatar}}" lazy-load="true"></image>
-        </view>
-        <view class="centens">
-          <!-- <view class="time"></view> -->
-          <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
-          <view class="pull-right" wx:if="{{item.msg_type===2}}">
-            <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
+        <view class="time">{{filter.formatDate(item.created_at,'nosecond')}}</view>
+        <view class="content">
+          <view class="avatar">
+            <image src="{{item.avatar}}" lazy-load="true"></image>
+          </view>
+          <view class="centens">
+            <!-- <view class="time"></view> -->
+            <view class="text" wx:if="{{item.msg_type===1}}">{{item.text}}</view>
+            <view class="pull-right" wx:if="{{item.msg_type===2}}">
+              <image src="{{item.img.url}}" mode="widthFix" lazy-load="true" data-url="{{item.img.url}}" bindtap="previewImg"></image>
+            </view>
           </view>
         </view>
       </view>

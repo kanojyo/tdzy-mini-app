@@ -1,6 +1,6 @@
 /* pages/user/user.wxss */
 page{
-  background-color: #ededed;
+  background-color: #f2f2f2;
 }
 .shouquan{
   width: 100%;

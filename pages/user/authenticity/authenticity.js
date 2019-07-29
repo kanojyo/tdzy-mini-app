@@ -36,6 +36,8 @@ Page({
         title: '提示',
         content: '您输入的微信号为空',
         showCancel: false,
+        confirmColor: '#d1b574',
+        confirmText:'知道了'
       })
       return;
     }else{
@@ -49,6 +51,8 @@ Page({
                 title: '提示',
                 content: '此微信号是武汉泰斗中医院所有, 请您放心使用',
                 showCancel: false,
+                confirmColor: '#d1b574',
+                confirmText: '知道了',
                 success(res) {
                   if (res.confirm) {
                     // console.log('用户点击确定')
@@ -60,6 +64,8 @@ Page({
                 title: '提示',
                 content: '此微信号是非武汉泰斗中医院所有,谨防上当受骗',
                 showCancel: false,
+                confirmColor: '#d1b574',
+                confirmText: '知道了',
                 success(res) {
                   if (res.confirm) {
                     // console.log('用户点击确定')
