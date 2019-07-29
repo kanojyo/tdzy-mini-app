@@ -71,6 +71,10 @@ Page({
   //提交反馈
   submit(){
     var that =this;
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    })
     wx.request({
       url: utils.getBaseUrl() +'/v1/feedback/add',
       data:{
@@ -85,10 +89,12 @@ Page({
       },
       success(res){
         if(res.data.code==200){
+          wx.hideLoading()
           wx.redirectTo({
             url:'../feedback'
           })
         }else{
+          wx.hideLoading()
           wx.showToast({
             title: res.data.message,
             icon: 'none',

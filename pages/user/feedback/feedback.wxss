@@ -1,6 +1,6 @@
 /* pages/user/feedback/feedback.wxss */
 page{
-  background-color: #ededed;
+  background-color: #f2f2f2;
 }
 .chatList{
   font-size: 30rpx;
@@ -31,8 +31,10 @@ page{
   margin-bottom: 40rpx;
 }
 .chatList .left{
-  display: flex;
   width: 100%;
+}
+.chatList .left .content{
+  display: flex;
 }
 .left .avatar{
   width: 80rpx;
@@ -45,14 +47,13 @@ page{
   height: 80rpx;
   border-radius: 50%;
 }
-.left .centens{max-width:500rpx;}
 .left .centens .text{
   display: block;
   background: #fff;
   padding: 10rpx 30rpx;
   border-radius: 10rpx;
   position: relative;
-  width: 70%;
+  max-width: 400rpx;
 }
 .left .centens .text::before{
   content: '';
@@ -65,9 +66,9 @@ page{
   left: -14rpx;
   top:10rpx;
 }
-.chatList .right{
+.chatList .right .content{
   display: flex;
-  flex-direction: row-reverse;
+   flex-direction: row-reverse;
 }
 .right .avatar{
   width: 80rpx;
@@ -83,14 +84,13 @@ page{
 .right .centens{
   display: flex;
   flex-direction: row-reverse;
-  max-width: 500rpx;
 }
 .right .centens .text{
-  background: #fff;
+  background: #96ec6f;
   padding: 10rpx 30rpx;
   border-radius: 10rpx;
   position: relative;
-  width: 70%;
+  max-width: 400rpx;
 }
 .right .centens .text::before{
   content: '';
@@ -99,16 +99,17 @@ page{
   height:0;
   border-top:8px solid transparent;
   border-bottom:8px solid transparent;
-  border-left:8px solid #fff;
+  border-left:8px solid #96ec6f;
   right: -14rpx;
   top:10rpx;
 }
 .bot{
   width: 690rpx;
-  margin:0 30rpx;
+  padding:0 30rpx 10rpx 30rpx;
   position: fixed;
   left:0;
-  bottom:10rpx;
+  bottom:0;
+  background:#f2f2f2;
 }
 .btn1 button{
   background: #d1b574;

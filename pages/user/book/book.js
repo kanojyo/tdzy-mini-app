@@ -299,7 +299,8 @@ Page({
     })
     wx.showModal({
       title: '提示',
-      content: '是否取消预约',
+      content: '是否要取消当前日期预约挂号？',
+      confirmColor: '#d1b574',
       success(res) {
         if (res.confirm) {
           //用户点击确定
