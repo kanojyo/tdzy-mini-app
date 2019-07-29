@@ -140,13 +140,13 @@ Page({
                   'device': wx.getStorageSync('device'),
                 },
                 success(e) {
-                  // console.log(e)
                 }
               })
             }
           });
         } else {
           // 用户没有授权
+          
           // 改变 isHide 的值，显示授权页面
           wx.hideTabBar();
           that.setData({
