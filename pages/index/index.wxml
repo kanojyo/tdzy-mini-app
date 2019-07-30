@@ -16,7 +16,7 @@
     <view wx:else>请升级微信版本</view>
   </view>
   <view  class="main">
-    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" >
+    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" wx:if="{{!isHide}}">
       <button class="sign" form-type="submit">
         <image class="qiandao" src="../../images/qiandao.png"></image>
       </button>
@@ -85,9 +85,12 @@
           <view class="item-content">
             <view class="item-name">
               <view>
-                <text class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</text>
-                <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.keshi}}</text>
-                <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
+                <view class="name" bindtap="doctorInfo" id="{{item.id}}">{{item.name}}</view>
+                <view class='dt-introcude'>
+                  <text class="position" bindtap="doctorInfo" id="{{item.id}}" style='padding:0;'>{{item.keshi}}</text>
+                  <text class="position" bindtap="doctorInfo" id="{{item.id}}">{{item.position}}</text>
+                </view>
+                
               </view>
               <button class="btn" bindtap="order" id="{{item.id}}" wx:if="{{item.work == 1}}">立即预约</button>
               <button class="btn fail" wx:else>不可预约</button>

@@ -246,7 +246,7 @@
   font-size: 34rpx;
   color:#333;
 }
-.doctor-recommend .content .item-content .position{
+.doctor-recommend .content .item-content .dt-introcude .position{
   font-size: 26rpx;
   color:#666;
   padding-left: 30rpx;
@@ -257,6 +257,8 @@
   background: #dd5335;
   border-radius: 8rpx;
   margin:0;
+  height: 60rpx;
+  line-break: 60rpx;
 }
 .doctor-recommend .content .item-content .item-desc{
   font-size: 26rpx;
@@ -270,6 +272,15 @@
   text-overflow: ellipsis;/* 多余部分点代替 */
   height: 78rpx;
   width: 400rpx;
+}
+
+.dt-introcude {
+  -webkit-line-clamp: 1;/* 只显示三行文字 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;/* 多余部分点代替 */
+  width: 380rpx;
+  white-space: nowrap;
 }
 .doctor-recommend .content .item-content .item-label{
   display: flex;

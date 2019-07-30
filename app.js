@@ -1,9 +1,9 @@
 //app.js
-// let utils = require('utils/util.js');
-// import { getRequest } from 'utils/util.js';
+let utils = require('utils/util.js');
+import { getRequest } from 'utils/util.js';
 App({
-  data:{
-    modal:false
+  data: {
+    modal: false
   },
   onLaunch: function () {
     // 展示本地存储能力
@@ -11,21 +11,21 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    const baseUrl ="https://tdxcx.wuhanlst.com";
-    var device ='';
-    var token='';
-    var session_key='';
+    const baseUrl = "https://tdxcx.wuhanlst.com";
+    var device = '';
+    var token = '';
+    var session_key = '';
     var that = this;
     //获取设备号
     wx.request({
-      url: baseUrl +'/v1/device',
+      url: baseUrl + '/v1/device',
       header: {
         'Content-Type': 'application/json'
       },
-      method:'GET',
-      dataType:'json',
-      success(res){
-        device=res.data.data.device;
+      method: 'GET',
+      dataType: 'json',
+      success(res) {
+        device = res.data.data.device;
         //将设备号储存起来
         wx.setStorageSync('device', device)
       }
@@ -46,7 +46,7 @@ App({
               'Content-Type': 'application/json',
               'device': wx.getStorageSync('device'),
             },
-            success(e){
+            success(e) {
               token = e.data.data.token;
               session_key = e.data.data.session_key;
               token = e.data.data.token;

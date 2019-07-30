@@ -21,7 +21,7 @@ Page({
     scrollHeight: 0,
     page: 1,
     article: [],
-    height:0,
+    height: 0,
   },
   //轮播图点击跳转
   imageUrl: function (e) {
@@ -85,7 +85,7 @@ Page({
       }
     })
   },
-  bindGetUserInfo: function(e)  {
+  bindGetUserInfo: function (e) {
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       var that = this;
@@ -110,6 +110,7 @@ Page({
               'device': wx.getStorageSync('device'),
             },
             success(e) {
+              that.getIndex();
             }
           })
         }
@@ -130,7 +131,7 @@ Page({
       });
     }
   },
-  shouquan(){
+  shouquan() {
     var that = this;
     // 查看是否授权
     wx.getSetting({
@@ -176,15 +177,15 @@ Page({
     that.shouquan();
 
   },
-  onReady(){
+  onReady() {
   },
   onShow() {
     if (wx.getStorageSync('token') && wx.getStorageSync('device')) {
       this.getIndex();
     }
   },
-  getIndex(){
-    var that = this; 
+  getIndex() {
+    var that = this;
     wx.request({
       url: baseUrl + '/v1/medical_info/index',
       method: 'GET',
@@ -206,7 +207,7 @@ Page({
       }
     })
   },
-  
+
   //查看更多新闻推荐
   all_news: function () {
     wx.switchTab({
@@ -221,7 +222,7 @@ Page({
     })
   },
   //跳转医生列表
-  doctor_list: function() {
+  doctor_list: function () {
     wx.navigateTo({
       url: '/pages/doctor/list/index'
     })
@@ -229,7 +230,7 @@ Page({
   //首页预约医生按钮
   order: function (e) {
     var doctor_id = e.currentTarget.id;
-    
+
     //检测用户是否绑定信息
     wx.request({
       url: baseUrl + '/v1/appointment/user_info_perfect',
@@ -272,19 +273,19 @@ Page({
     })
   },
   //医院导航
-  hospitalLocation: function() {
+  hospitalLocation: function () {
     wx.navigateTo({
       url: "/pages/map/map"
     })
   },
   //跳转医院详情
-  goHospital: function() {
+  goHospital: function () {
     wx.navigateTo({
       url: "/pages/hospital/index"
     })
   },
   //跳转医生详情
-  doctorInfo: function(e) {
+  doctorInfo: function (e) {
     var id = e.currentTarget.id;
     wx.navigateTo({
       url: "/pages/doctor/info/index?doctor_id=" + id,
@@ -295,7 +296,7 @@ Page({
     var that = this;
     var page = that.data.page + 1;
     var status = true;
-    
+
     if (status) {
       wx.showLoading({
         title: '拼命加载中',
@@ -331,7 +332,7 @@ Page({
               })
               status = false;
             }
-            
+
             that.data.page = that.data.page + 1;
             that.setData({
               article: that.data.article
@@ -340,6 +341,6 @@ Page({
         })
       }, 2000);
     }
-    
+
   }
 })

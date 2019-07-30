@@ -1,4 +1,4 @@
-let app = require('../app.js');
+const app = getApp();
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -19,12 +19,54 @@ const baseUrl = "https://tdxcx.wuhanlst.com";
 
 
 function getRequest(model) {
+  var that = this;
   var device = wx.getStorageSync('device') || '';
   var token = wx.getStorageSync('token') || '';
+  console.log(token)
+  if (device == '') {
+    wx.request({
+      url: baseUrl + '/v1/device',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      method: 'GET',
+      dataType: 'json',
+      success(res) {
+        device = res.data.data.device;
+        //将设备号储存起来
+        wx.setStorageSync('device', device)
+      }
+    });
+  }
 
-  if (device == '' || token == '') {
-    app.onLaunch();
-  } 
+  if (token == '') {
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // console.log(res)
+        if (res.code) {
+          wx.request({
+            url: baseUrl + '/v1/login',
+            data: {
+              code: res.code
+            },
+            header: {
+              'Content-Type': 'application/json',
+              'device': wx.getStorageSync('device'),
+            },
+            success(e) {
+              token = e.data.data.token;
+              session_key = e.data.data.session_key;
+              token = e.data.data.token;
+              //将token储存起来
+              wx.setStorageSync('token', token)
+              wx.setStorageSync('session_key', session_key)
+            }
+          })
+        }
+      }
+    })
+  }
   
   wx.request({
     url: baseUrl + model.url,

@@ -1,4 +1,8 @@
 /* pages/healthNews/healthNews.wxss */
+page {
+  background-color: #f2f2f2;
+}
+
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -7,6 +11,7 @@
 .container {
   width: 100%;
   overflow-x: hidden;
+  background-color: #fff;
 }
 .topTabSwiper{
   width: 100%;
@@ -21,6 +26,8 @@
   color:#666;
   height: 90rpx;
   line-height: 90rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}

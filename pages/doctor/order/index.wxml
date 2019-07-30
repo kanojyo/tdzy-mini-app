@@ -1,4 +1,4 @@
- <view class="container"> 
+<view class="container"> 
   <view class="main">
     <view class='intro doctor-recommend'>
       <view class="content">
@@ -9,9 +9,11 @@
         <view class="item-content" style="width:76%;">
           <view class="item-name">
             <view>
-              <text class="name" style="color:black;">{{doctor.name}}</text>
-              <text class="position">{{doctor.office}}</text>
-              <text class="position">{{doctor.position}}</text>
+              <view class="name" style="color:black;">{{doctor.name}}</view>
+              <view class='dt-introcude'>
+                <text class="position" style='padding:0;'>{{doctor.office}}</text>
+                <text class="position">{{doctor.position}}</text>
+              </view>
             </view>
             <view class="order-rule" bindtap="order_role">预约规则</view>
           </view>

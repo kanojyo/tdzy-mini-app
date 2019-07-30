@@ -1,6 +1,6 @@
 /* pages/doctor/bind.wxss */
 page {
-  background: #EDEDED;
+  background: #f2f2f2;
 }
 .main {
   height: 100%;
