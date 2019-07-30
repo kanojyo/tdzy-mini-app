@@ -9,6 +9,7 @@ Page({
   data: {
     currentData: 0,
     id:0,
+    dataStaus: true,
     list1: [],//未就诊
     list2:[],//已就诊
     list3:[],//已取消,
@@ -61,7 +62,12 @@ Page({
       success: function (res) {
         that.setData({
           list1:res.data.data,
-        })
+        });
+        if (that.data.list1.length == 0){
+          that.setData({
+            dataStaus:false,
+          })
+        }
       }
     });
   },

@@ -113,7 +113,7 @@
           <view class="item-img">
             <image src="{{item.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
           </view>
-          <view class="item-text">
+          <view class="item-text"> 
             <text class="title">{{item.article_title}}</text>
             <text class="desc">{{item.article_description}}</text>
           </view>

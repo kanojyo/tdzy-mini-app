@@ -18,6 +18,7 @@ Page({
       page_index: 1,
       page_size: 20
     },
+    dataStatus:true,
     scoreList: [],
     exchageList: []
   },
@@ -63,6 +64,11 @@ Page({
         that.setData({
           scoreList: res.data.data
         })
+        if (that.data.scoreList.length == 0){
+          that.setData({
+            dataStatus:false
+          })
+        }
       }
     })
   },
