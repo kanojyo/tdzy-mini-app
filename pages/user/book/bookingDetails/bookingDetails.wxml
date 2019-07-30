@@ -23,5 +23,6 @@
     <view class="text">下单时间：{{info.created_at}}</view>
     <view class="text" wx:if="{{info.status == 2}}">确认就诊时间：{{info.handle_at}}</view>
     <view class="text" wx:if="{{info.status == 3}}">取消预约时间：{{info.handle_at}}</view>
+    <view class="text" wx:if="{{info.status == 4}}">失效时间：{{info.handle_at}}</view>
   </view>
 </view>

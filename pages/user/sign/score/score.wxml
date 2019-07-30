@@ -12,7 +12,7 @@
   </view>
   <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
     <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} score'>
-      <view wx:if="{{scoreList.length}}">
+      <view wx:if="{{dataStatus}}">
         <view class="score-item" wx:for="{{scoreList}}" wx:key="index">
           <view class="title" wx:if="{{month == item.month}}">
             <view class="month">本月</view>

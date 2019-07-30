@@ -7,7 +7,7 @@
   </view>
   <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
     <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} list list1'>
-      <view wx:if="{{list1.length}}">
+      <view wx:if="{{dataStaus}}">
         <view class="item" wx:for="{{list1}}" wx:key="index" >
           <view class="title">
             <text>预约编号</text>
