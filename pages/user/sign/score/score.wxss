@@ -31,7 +31,7 @@ page{
 .topTabSwiper{
   display: flex;
   width: 690rpx;
-  padding: 20rpx 30rpx;
+  padding: 0rpx 30rpx;
 }
 .tab{
   flex:1;
@@ -43,17 +43,20 @@ page{
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 4rpx solid #d2b576; color:#d1b574;}
 .swiper{
-  width: 690rpx;
-  padding: 10rpx 30rpx;
+  width: 750rpx;
+  padding: 0;
   background: #fff;
 }
 .swiper .tab-item{
   display: none;
+  width: 100%;
 }
 .swiper .swiper_con{
   display: block;
   width: 100%;
-  padding: 20rpx 0;
+}
+.swiper .swiper_con>view{
+  padding: 0rpx 30rpx;
 }
 .exchage-item{
   display: flex;
@@ -177,7 +180,8 @@ page{
   display: flex;
   flex-direction:column;
   align-items:center;
-  background: #fff;
+  background: #f2f2f2;
+  padding: 20rpx 0 !important;
 }
 .noData image{
   width: 494rpx;
