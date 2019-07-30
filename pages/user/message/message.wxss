@@ -1,6 +1,6 @@
 /* pages/user/message/message.wxss */
 page{
-  background: #ededed;
+  background: #f2f2f2;
 }
 .message{
   padding: 20rpx 20rpx;

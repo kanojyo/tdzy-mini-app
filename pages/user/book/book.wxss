@@ -1,9 +1,9 @@
 /* pages/user/book/book.wxss */
 .container{
-  background-color: #ededed;
+  background-color: #f2f2f2;
 }
 page{
-    background-color: #FFFFFF;
+    background-color: #f2f2f2;
 }
 .topTabSwiper{
   display: flex;
@@ -111,7 +111,7 @@ page{
   display: flex;
   flex-direction:column;
   align-items:center;
-  background: #fff;
+  background: #f2f2f2;
 }
 .nodata image{
   width: 494rpx;

@@ -47,30 +47,37 @@ Page({
   //关闭
   close(){
     var that = this;
-    getRequest({
-      url:'/v1/feedback/end',
-      method:'GET',
-      success(res){
-        if (res.code ===200){
-          wx.showToast({
-            title: '成功',
-            icon: 'success',
-            duration: 2000
+    wx.showModal({
+      title: '提示',
+      content: '是否要关闭？',
+      confirmColor: '#d1b574',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          getRequest({
+            url: '/v1/feedback/end',
+            method: 'GET',
+            success(res) {
+              if (res.code === 200) {
+                wx.showToast({
+                  title: '成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+                setTimeout(() => {
+                  that.setData({
+                    status: true,
+                  })
+                }, 2000)
+              }
+            }
           })
-          setTimeout(()=>{
-            that.setData({
-              status: true,
-            })
-          },2000)
-          
-          //返回上一页
-          // wx.navigateBack({
-          //   delta: 1
-          // })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
         }
-        
       }
     })
+    
   },
   //预览;
   previewImg(e){
