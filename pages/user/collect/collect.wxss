@@ -2,6 +2,9 @@
 page{
   background: #f2f2f2;
 }
+.container{
+  background: #fff;
+}
 .content{
   border-bottom:1rpx solid #efefef;
 }
