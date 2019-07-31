@@ -77,6 +77,9 @@ page{
   padding-left: 120rpx;
   border-top:1rpx solid #f7f7f7;
 }
+.user.state4{
+  color:#999;
+}
 .user .info{
   height: 100%;
   width: 70%;
@@ -89,8 +92,6 @@ page{
 .user .btn button{
   font-size: 26rpx;
 }
-
-
 .list1 .item .item-content .text.state1{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/weiSeal%402x.png') right top no-repeat;
   background-size: 40%;
@@ -107,7 +108,7 @@ page{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/yiquxiao%402x.png') right top no-repeat;
   background-size: 40%;
 }
-.list2 .item .item-content .text, .list3 .item .item-content .text{
+.list1 .item .item-content .state4, .list2 .item .item-content .text, .list3 .item .item-content .text{
   color:#999;
 }
 .list2 .item .user, .list3 .item .user{

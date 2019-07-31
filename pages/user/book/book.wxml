@@ -6,7 +6,7 @@
     <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>已取消</view>
   </view>
   <view current="{{currentData}}" class='swiper' duration="300" bindchange="bindchange">
-    <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} list list1'>
+    <view class='tab-item {{currentData == 0 ? "swiper_con" : ""}} list list1 '>
       <view wx:if="{{dataStaus}}">
         <view class="item" wx:for="{{list1}}" wx:key="index" >
           <view class="title">
@@ -33,7 +33,7 @@
               </view>
             </view>
           </view>
-          <view class="user">
+          <view class="user state{{item.status}}">
             <view class="info">
               <text>{{item.user_name}}</text>
               <text>{{item.mobile}}</text>

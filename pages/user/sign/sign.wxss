@@ -132,8 +132,7 @@ page{
   height: 48rpx;
   justify-content:space-between;
   position: relative;
-  width: 96%;
-  margin:0 2%;
+  width: 100%;
 }
 .sign .tab .line .tab-item{
   width: 27rpx;
@@ -146,8 +145,8 @@ page{
   z-index: 100;
 }
 .sign .tab-item .score .gouxuan{
-  height: 48rpx;
-  width: 48rpx;
+  height: 34rpx;
+  width: 34rpx;
 }
 .sign .tab-item .score .yuan{
   height: 27rpx;
@@ -231,10 +230,14 @@ page{
 .hot .content .item .text .bot .right .btn1{
   background: #d1b574;
   color:#fff;
+  height: 46rpx;
+  line-height: 46rpx;
 }
 .hot .content .item .text .bot .right .btn2{
   background: #bfbfbf;
   color:#fff;
+  height: 46rpx;
+  line-height: 46rpx;
 }
 .shade{
   position: absolute;
