@@ -6,6 +6,7 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -18,18 +19,17 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"enhance": true
 		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.0",
 	"appid": "wxc93dec008423c252",
 	"projectname": "tdzy-chat",
+	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -46,7 +46,6 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -125,7 +124,7 @@
 					"id": 10,
 					"name": "文章",
 					"pathName": "pages/articleInfo/index",
-					"query": "id=357",
+					"query": "id=584",
 					"scene": null
 				},
 				{

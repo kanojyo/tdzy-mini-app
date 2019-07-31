@@ -23,7 +23,7 @@
           </view>
         </view>
       </view> 
-      <view class="nodata" wx:else>
+      <view class="nodata" style="padding-top:{{(height+90)/2}}rpx;" wx:else>
         <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
         <text>空空如也</text>
       </view>

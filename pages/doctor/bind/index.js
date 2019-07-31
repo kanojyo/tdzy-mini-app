@@ -67,7 +67,7 @@ Page({
     var that = this;
     if (name) {
       that.setData({
-        name: name,
+        name: name.trim(),
       })
     } else {
       that.setData({

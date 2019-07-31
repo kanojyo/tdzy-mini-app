@@ -11,11 +11,10 @@
  */
 
 .wxParse{
-    margin: 0 5px;
     font-family: Helvetica,sans-serif;
     font-size: 28rpx;
     color: #666;
-    line-height: 1.8;
+    line-height: 1;
 }
 view{
     word-break:break-all;
@@ -24,7 +23,8 @@ view{
 .wxParse-inline{
     display: inline;
     margin: 0;
-    padding: 0;
+    font-size: 28rpx;
+    color: #666666;
 }
 /*//标题 */
 .wxParse-div{margin: 0;padding: 0;}

@@ -92,6 +92,7 @@ Page({
    */
   onLoad: function (options) {
     //获取我的签到页面的数据
+    wx.hideShareMenu();
     this.getSign();
     this.getData();
     this.getHeight();

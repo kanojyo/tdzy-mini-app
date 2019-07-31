@@ -2,7 +2,7 @@
   <view class="article_title">{{article_info.article_title}}</view>
   <view class="article_time">{{article_info.created_at}}</view>
   <import src="/wxParse/wxParse.wxml"/>
-  <template is="wxParse" data="{{wxParseData:info.nodes}}"/>
+  <template is="wxParse" data="{{wxParseData:info.nodes}}" style="text-align:justify;" />
   <view class="middle-box" style='clear:both;'>
     <view class="star-box test" bindtap="star" id="{{article_info.id}}">
       <view wx:if = "{{article_info.is_collect == 2}}" mode="widthFix">

@@ -249,7 +249,11 @@
 .doctor-recommend .content .item-content .dt-introcude .position{
   font-size: 26rpx;
   color:#666;
+  width: 150rpx;
+  display: inline-block;
+  overflow: hidden;
   padding-left: 30rpx;
+  text-overflow: ellipsis;/* 多余部分点代替 */
 }
 .doctor-recommend .content .item-content .btn{
   font-size: 22rpx;
@@ -264,7 +268,6 @@
   font-size: 26rpx;
   color:#666;
   display: block;
-  margin-top: 16rpx;
   display: -webkit-box;
   -webkit-line-clamp: 2;/* 只显示三行文字 */
   -webkit-box-orient: vertical;

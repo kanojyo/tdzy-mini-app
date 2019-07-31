@@ -11,7 +11,8 @@ Page({
     navScrollLeft: 0,
     scrollTop: 0,
     scrollHeight: 0,
-    list: []
+    list: [],
+    height: 0
   },
 
   /**
@@ -34,14 +35,13 @@ Page({
       }
     });
 
-    wx.getUserInfo({
-      success: res => {
-        app.globalData.userInfo = res.userInfo
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    wx.getSystemInfo({
+      success: function(res) {
+        console.log(res.windowHeight)
+        that.setData({
+          height: res.windowHeight
         })
-      }
+      },
     })
   },
 
