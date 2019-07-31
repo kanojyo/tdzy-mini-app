@@ -114,8 +114,8 @@ page{
   color:#fff;
   font-size: 28rpx;
   padding-left: 80rpx;
-  background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/qiandao%402x.png') 35rpx 20rpx no-repeat / 20%,
-              url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/qiandaobjt%403x.png') left top no-repeat / cover;
+  background:#d38b24 url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/qiandao%402x.png') 35rpx 20rpx no-repeat;
+  background-size:20%;
 }
 .nav{
   width: 100%;
