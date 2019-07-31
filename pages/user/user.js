@@ -44,6 +44,7 @@ Page({
         isHide: false
       });
       wx.showTabBar();
+      console.log('授权后')
       that.check();
       //获取基本资料
       that.getInfo();
@@ -64,7 +65,7 @@ Page({
               'device': wx.getStorageSync('device'),
             },
             success(e) {
-              console.log(e)
+              // console.log(e)
             }
           })
         }
@@ -235,10 +236,12 @@ Page({
   },
   getInfo(){
     var that =this;
+    console.log('info')
     getRequest({
       url:'/v1/sign/my_info',
       method:'get',
       success(res){
+        console.log('infoSuccess')
         that.setData({
           // telephone: res.data.mobile,
           userInfo: res.data,
@@ -252,13 +255,30 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    that.getHeight();
-    that.shouquan();
-    that.check();
-    //获取基本资料
-    that.getInfo();
-    //是否消息中心有新消息
-    that.hasMessage();
+    if (app.globalData.token && app.globalData.token != '') {
+        that.check();
+        //获取基本资料
+        that.getInfo();
+        //是否消息中心有新消息
+        that.hasMessage();
+        that.getHeight();
+        that.shouquan();
+    } else {
+      //由于请求是网络请求，可能会在Page.onLoad后才返回
+      　　　//所以加入callback 防止这种情况
+      app.tokenCallback = token => {
+        if (token != '') {
+          　　//执行操作。。
+          that.check();
+          //获取基本资料
+          that.getInfo();
+          //是否消息中心有新消息
+          that.hasMessage();
+          that.getHeight();
+          that.shouquan();
+        }
+      }
+    }
   },
 
   /**

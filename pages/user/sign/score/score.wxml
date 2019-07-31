@@ -25,8 +25,8 @@
           <view class="list" >
             <view class="list-item" wx:for="{{item.list}}"  wx:for-item="it" wx:key="index">
               <view class="left {{it.type ==1? 'sign' : 'exchage'}}">
-                <view>{{it.remark}}</view>
-                <view >{{it.date_time}}</view>
+                <view class="text">{{it.remark}}</view>
+                <view class="time">{{it.date_time}}</view>
               </view>
               <view class="right">
                 <view class="score">

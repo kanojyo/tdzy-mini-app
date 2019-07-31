@@ -32,7 +32,7 @@ page{
 .list .item{
   padding: 20rpx 30rpx 0 30rpx;
   height: auto;
-  border-top:1rpx solid #efefef;
+  /* border-top:1rpx solid #efefef; */
   background: #fff;
   margin-bottom: 10rpx;
 }
@@ -52,13 +52,15 @@ page{
 .item-content .avatar{
   width: 100rpx;
   height: 100rpx;
+  
 }
 .item-content .avatar image{
   width: 100rpx;
   height: 100rpx;
+  border-radius: 50%;
 }
 .item-content .text{
-  width: 80%;
+  width: 100%;
   margin-left: 20rpx;
   font-size: 30rpx;
   color:#333;
@@ -104,6 +106,12 @@ page{
 .list3 .item .item-content .text{
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/yiquxiao%402x.png') right top no-repeat;
   background-size: 40%;
+}
+.list2 .item .item-content .text, .list3 .item .item-content .text{
+  color:#999;
+}
+.list2 .item .user, .list3 .item .user{
+  color:#999;
 }
 .nodata{
   padding-top: 100rpx;
