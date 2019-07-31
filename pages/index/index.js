@@ -40,12 +40,10 @@ Page({
     let that = this;
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
         let clientHeight = res.screenHeight;
         let clientWidth = res.screenWidth;
         let ratio = 750 / clientWidth;
         let height = clientHeight * ratio;
-        console.log(height)
         that.setData({
           height: height
         });
@@ -171,11 +169,24 @@ Page({
     });
   },
   onLoad: function () {
+    console.log('onload')
     var that = this;
-    that.getHeight();
-    that.getIndex();
-    that.shouquan();
-
+    if (app.globalData.token && app.globalData.token != '') {
+      that.getHeight();
+      that.getIndex();
+      that.shouquan();
+    }else{
+      //由于请求是网络请求，可能会在Page.onLoad后才返回
+　　　//所以加入callback 防止这种情况
+      app.tokenCallback = token => {
+      　　if (token != '') {
+　　　　　　　//执行操作。。
+            that.getHeight();
+            that.getIndex();
+            that.shouquan();
+　　　　　　}
+　　　　}
+    }
   },
   onReady() {
   },
@@ -184,8 +195,9 @@ Page({
       this.getIndex();
     }
   },
-  getIndex() {
-    var that = this;
+  getIndex(){
+    var that = this; 
+    console.log('index')
     wx.request({
       url: baseUrl + '/v1/medical_info/index',
       method: 'GET',
@@ -196,6 +208,7 @@ Page({
       },
       success(res) {
         var arr = res.data.data;
+        console.log('indexSuccess')
         that.setData({
           imgUrls: arr.banner,
           officeList: arr.list_office,
