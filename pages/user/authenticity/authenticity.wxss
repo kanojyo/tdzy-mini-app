@@ -8,8 +8,8 @@
   border:1rpx solid #d1b574;
   font-size: 34rpx;
   color:#999;
-  padding: 12rpx 0 12rpx 40rpx;
-  border-radius: 30rpx;
+  padding: 13rpx 0 13rpx 34rpx;
+  border-radius: 40rpx;
   width:650rpx;
 }
 .search .btn{
@@ -44,6 +44,7 @@
 }
 .content .declare .text{
   font-size: 26rpx;
+  text-align:justify;
 }
 .content .query .result{
   font-size: 26rpx;

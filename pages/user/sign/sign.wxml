@@ -35,7 +35,7 @@
         <view class="tab-ul line">
           <view class="tab-item" wx:for="{{signInfo}}" wx:key="index">
             <view class="score bot" wx:if="{{item.is_sign == 1}}">
-              <image class="gouxuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/gouxuan%403x(2).png"></image>
+              <image class="gouxuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/gouxuan%403x(4).png"></image>
             </view>
             <view class="score bot" wx:else>
               <image class="yuan"  src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/yuan%403x.png"></image>
