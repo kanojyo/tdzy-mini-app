@@ -11,7 +11,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     console.log('onlaunch')
-    const baseUrl ="https://tdxcx.wuhanlst.com";
+    const baseUrl = utils.getBaseUrl();
     var device ='';
     var token='';
     var session_key='';
@@ -63,9 +63,21 @@ App({
               if (that.tokenCallback) {
                 that.tokenCallback(token);
               }
-              console.log(option)
+              console.log(option);
+              var url1 = '/'+option.path;
+              var url2 = '';
+              for (var key in option.query) {
+                if (option.query[key]) {
+                  url2 += key + '=' + option.query[key] + '&';
+                }
+              }
+
+              if (url2 != '') {
+                url1 += '?' + url2.slice(0, url2.length - 1)
+              }
+              console.log(url1)
               wx.reLaunch({
-                url: '/'+option.path,
+                url: url1,
               })
             }
           })

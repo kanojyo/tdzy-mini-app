@@ -3,7 +3,7 @@
 let utils = require('../../utils/util.js');
 import { getRequest } from '../../utils/util.js';
 const app = getApp();
-const baseUrl = "https://tdxcx.wuhanlst.com";
+const baseUrl = utils.getBaseUrl();
 var session_key = '';
 
 Page({
@@ -193,6 +193,12 @@ Page({
   onShow() {
     if (wx.getStorageSync('token') && wx.getStorageSync('device')) {
       this.getIndex();
+    }
+  },
+  onShareAppMessage(){
+    return {
+      title: '泰斗医聊首页',
+      path: '/pages/index/index'
     }
   },
   getIndex(){

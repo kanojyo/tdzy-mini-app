@@ -65,7 +65,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideShareMenu();
+    console.log(getCurrentPageUrlWithArgs())
     var id = options.id;
     var that = this;
     var article_info;
@@ -75,11 +75,14 @@ Page({
       method: 'GET',
       success: function (res) {
         var info = res.data;
-        WxParse.wxParse('info', 'html', info.article_content, that, 0);
-        res.data.created_at = getFormatTime(res.data.created_at, 'Y-M-D h:m:s');
-        that.setData({
-          article_info: res.data
-        })
+
+        if (info.article_content) {
+          WxParse.wxParse('info', 'html', info.article_content, that, 0);
+          res.data.created_at = getFormatTime(res.data.created_at, 'Y-M-D h:m:s');
+          that.setData({
+            article_info: res.data
+          })
+        }
       },
       fail: function() {
         wx.showToast({
