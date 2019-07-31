@@ -5,7 +5,7 @@ App({
   data:{
     modal:false
   },
-  onLaunch: function () {
+  onLaunch: function (option) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -63,6 +63,10 @@ App({
               if (that.tokenCallback) {
                 that.tokenCallback(token);
               }
+              console.log(option)
+              wx.reLaunch({
+                url: '/'+option.path,
+              })
             }
           })
         }
