@@ -31,6 +31,7 @@ Page({
   //验证微信号真伪
   check(){
     var that = this;
+    var reg =/[0-9a-zA-Z]{4,23}/;
     if (that.data.wechat == ''){
       wx.showModal({
         title: '提示',
@@ -38,6 +39,15 @@ Page({
         showCancel: false,
         confirmColor: '#d1b574',
         confirmText:'知道了'
+      })
+      return;
+    } else if (!reg.test(that.data.wechat)){
+      wx.showModal({
+        title: '提示',
+        content: '输入的微信号不符合格式',
+        showCancel: false,
+        confirmColor: '#d1b574',
+        confirmText: '知道了'
       })
       return;
     }else{

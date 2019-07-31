@@ -180,12 +180,12 @@ page{
   border-bottom:1rpx solid #efefef;
 }
 .hot .content .item .img{
-  width:300rpx;
-  height: 180rpx;
+  width:250rpx;
+  height: 184rpx;
 }
 .hot .content .item .img image{
-  width:300rpx;
-  height: 180rpx;
+  width:250rpx;
+  height: 184rpx;
 }
 .hot .content .item .text{
   padding-left: 20rpx;
@@ -223,9 +223,10 @@ page{
   width: 100%;
 }
 .hot .content .item .text .bot .right button{
-  font-size: 30rpx;
-  padding-left:15rpx; 
-  padding-right:15rpx; 
+  font-size: 24rpx;
+  padding-left:13rpx; 
+  padding-right:13rpx; 
+  border-radius: 4rpx;
 }
 .hot .content .item .text .bot .right .btn1{
   background: #d1b574;

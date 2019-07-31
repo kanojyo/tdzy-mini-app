@@ -11,12 +11,12 @@ page{
   width: 100%;
 }
 .pro .img{
-  height: 180rpx;
-  width: 340rpx;
+  height: 184rpx;
+  width: 250rpx;
 }
 .pro .img image{
-  height: 180rpx;
-  width: 340rpx;
+  height: 184rpx;
+  width: 250rpx;
 }
 .pro .text{
   padding-left: 20rpx;
@@ -28,7 +28,7 @@ page{
 .pro .text .title{
   font-size: 30rpx;
   color:#333;
-  width: 330rpx;
+  width: 400rpx;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
@@ -40,7 +40,7 @@ page{
 }
 .bot .score{
   width: 250rpx;
-  padding-left: 30rpx;
+  padding-left: 40rpx;
   background: url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/sign/_jinbi-2%402x.png') left 10rpx no-repeat;
   background-size: 10%;
 }

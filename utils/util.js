@@ -15,7 +15,7 @@ const formatNumber = n => {
 }
 
 const baseUrl = "https://tdxcx.wuhanlst.com";
-const device = wx.getStorageSync('device') ||'';
+const device = wx.getStorageSync('device') || '';
 const token = wx.getStorageSync('token') || '';
 
 function getRequest(model) {

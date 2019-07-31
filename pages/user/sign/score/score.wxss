@@ -162,6 +162,14 @@ page{
   text-overflow:ellipsis;
   white-space: nowrap;
 }
+.list-item .left .text{
+  font-size: 26rpx;
+  color:#333;
+}
+.list-item .left .time{
+  font-size: 22rpx;
+  color:#666;
+}
 .list-item .right{
   display: flex;
   flex-direction:column;
@@ -170,6 +178,10 @@ page{
 .list-item .right .score{
   color:#d1b574;
   font-size: 32rpx;
+}
+.list-item .right .bot{
+  font-size: 22rpx;
+  color:#666;
 }
 .list-item .right .score .black{
   color:#333;
