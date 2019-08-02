@@ -75,18 +75,19 @@ Page({
 
     var token = app.globalData.token;
     var device = app.globalData.device;
+    that.getData(id)
 
-    if (token != '' && device != '') {
-      that.getData(id)
-    } else {
-      app.getDevice.then(function (res) {
+    // if (token != '' && device != '') {
+    //   that.getData(id)
+    // } else {
+    //   app.getDevice.then(function (res) {
 
-      })
-      app.getToken.then(function (res) {
+    //   })
+    //   app.getToken.then(function (res) {
 
-      })
-      that.getData(id)
-    }
+    //   })
+    //   that.getData(id)
+    // }
   },
   getData: function (id) {
     console.log('testid')
@@ -106,12 +107,12 @@ Page({
         }
       },
       fail: function () {
-        app.getDevice.then(function (res) {
+        // app.getDevice.then(function (res) {
 
-        })
-        app.getToken.then(function (res) {
+        // })
+        // app.getToken.then(function (res) {
 
-        })
+        // })
       }
     })
   },

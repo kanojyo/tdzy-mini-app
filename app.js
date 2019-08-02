@@ -9,74 +9,88 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    console.log('onlaunch')
-  },
-  
-  getToken: function() {
-    console.log('gettoken')
-    let that = this;
-    return new Promise(function (resolve, reject) {
-      wx.checkSession({
-        success: function (res) { resolve(res); },
-        fail: function (res) {
-          wx.login({
-            success: res => {
-              // 发送 res.code 到后台换取 openId, sessionKey, unionId
-              console.log('login')
-              if (res.code) {
-                
-                wx.request({
-                  url: that.globalData.baseUrl + '/v1/login',
-                  data: {
-                    code: res.code
-                  },
-                  header: {
-                    'Content-Type': 'application/json',
-                    //'device': _this.globalData.device,
-                  },
-                  success(e) {
-                    console.log('loginSuccess')
-                    
-                    var token = e.data.data.token;
-                    console.log(token)
-                    that.globalData.token = token;
-                    that.globalData.session_key = e.data.data.session_key;
-                    //将token储存起来
-                    wx.setStorageSync('token', token)
-                    wx.setStorageSync('session_key', e.data.data.session_key)
-                    //由于这里是网络请求，可能会在 Page.onLoad 之后才返回
-                    // 所以此处加入 callback 以防止这种情况
-                    if (that.tokenCallback) {
-                      that.tokenCallback(token);
-                    }
-                    //console.log(option);
-                    // var url1 = '/' + option.path;
-                    // var url2 = '';
-                    // for (var key in option.query) {
-                    //   if (option.query[key]) {
-                    //     url2 += key + '=' + option.query[key] + '&';
-                    //   }
-                    // }
+    console.log('onlaunch');
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log('login')
+        if (res.code) {
+          wx.request({
+            url: that.globalData.baseUrl + '/v1/login',
+            data: {
+              code: res.code
+            },
+            header: {
+              'Content-Type': 'application/json',
+            },
+            success(e) {
+              console.log('loginSuccess')
 
-                    // if (url2 != '') {
-                    //   url1 += '?' + url2.slice(0, url2.length - 1)
-                    // }
-                    // console.log(url1)
-                    resolve(res);
-                    reject('error');
-                    // wx.reLaunch({
-                    //   url: url1,
-                    // })
-                  }
-                })
-               
+              var token = e.data.data.token;
+              console.log(token)
+              that.globalData.token = token;
+              that.globalData.session_key = e.data.data.session_key;
+              //将token储存起来
+              wx.setStorageSync('token', token)
+              wx.setStorageSync('session_key', e.data.data.session_key)
+              //由于这里是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (that.tokenCallback) {
+                that.tokenCallback(token);
               }
             }
           })
+
         }
-      })
+      }
     })
   },
+  
+  // getToken: function() {
+  //   console.log('gettoken')
+  //   let that = this;
+  //   return new Promise(function (resolve, reject) {
+  //     wx.checkSession({
+  //       success: function (res) { resolve(res); },
+  //       fail: function (res) {
+  //         wx.login({
+  //           success: res => {
+  //             // 发送 res.code 到后台换取 openId, sessionKey, unionId
+  //             console.log('login')
+  //             if (res.code) {
+  //               wx.request({
+  //                 url: that.globalData.baseUrl + '/v1/login',
+  //                 data: {
+  //                   code: res.code
+  //                 },
+  //                 header: {
+  //                   'Content-Type': 'application/json',
+  //                 },
+  //                 success(e) {
+  //                   console.log('loginSuccess')
+                    
+  //                   var token = e.data.data.token;
+  //                   console.log(token)
+  //                   that.globalData.token = token;
+  //                   that.globalData.session_key = e.data.data.session_key;
+  //                   //将token储存起来
+  //                   wx.setStorageSync('token', token)
+  //                   wx.setStorageSync('session_key', e.data.data.session_key)
+  //                   //由于这里是网络请求，可能会在 Page.onLoad 之后才返回
+  //                   // 所以此处加入 callback 以防止这种情况
+  //                   if (that.tokenCallback) {
+  //                     that.tokenCallback(token);
+  //                   }
+  //                 }
+  //               })
+               
+  //             }
+  //           }
+  //         })
+  //       }
+  //     })
+  //   })
+  // },
   globalData: {
     userInfo: null,
     token:'',

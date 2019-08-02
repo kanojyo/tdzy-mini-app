@@ -122,9 +122,9 @@
 				},
 				{
 					"id": 10,
-					"name": "文章",
-					"pathName": "pages/articleInfo/index",
-					"query": "id=584",
+					"name": "pages/healthNews/healthNews",
+					"pathName": "pages/healthNews/healthNews",
+					"query": "",
 					"scene": null
 				},
 				{

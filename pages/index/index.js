@@ -20,6 +20,10 @@ Page({
     scrollTop: 0,
     scrollHeight: 0,
     page: 1,
+    imgUrls:[],
+    officeList:[],
+    hospital:[],
+    doctorList:[],
     article: [],
     height: 0,
   },
@@ -171,22 +175,25 @@ Page({
   onLoad: function () {
     //console.log(app.globalData.token)
     var that = this;
-    if (app.globalData.token && app.globalData.token != '') {
-      that.getHeight();
-      that.getIndex();
-      that.shouquan();
-    }else{
-      //由于请求是网络请求，可能会在Page.onLoad后才返回
-　　　//所以加入callback 防止这种情况
-      app.tokenCallback = token => {
-      　　if (token != '') {
-　　　　　　　//执行操作。。
-            that.getHeight();
-            that.getIndex();
-            that.shouquan();
-　　　　　　}
-　　　　}
-    }
+    that.getHeight();
+    that.getIndex();
+    that.shouquan();
+//     if (app.globalData.token && app.globalData.token != '') {
+//       that.getHeight();
+//       that.getIndex();
+//       that.shouquan();
+//     }else{
+//       //由于请求是网络请求，可能会在Page.onLoad后才返回
+// 　　　//所以加入callback 防止这种情况
+//       app.tokenCallback = token => {
+//       　　if (token != '') {
+// 　　　　　　　//执行操作。。
+//             that.getHeight();
+//             that.getIndex();
+//             that.shouquan();
+// 　　　　　　}
+// 　　　　}
+//     }
   },
   onReady() {
   },
@@ -204,16 +211,11 @@ Page({
   getIndex(){
     var that = this; 
     console.log('index')
-    wx.request({
-      url: baseUrl + '/v1/medical_info/index',
+    getRequest({
+      url: '/v1/medical_info/index',
       method: 'GET',
-      header: {
-        'Content-Type': 'application/json',
-        'device': app.globalData.device,
-        'Authorization': 'Bearer ' + app.globalData.token
-      },
       success(res) {
-        var arr = res.data.data;
+        var arr = res.data;
         console.log('indexSuccess')
         that.setData({
           imgUrls: arr.banner,

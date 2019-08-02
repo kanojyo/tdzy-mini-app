@@ -18,15 +18,13 @@ const formatNumber = n => {
 const baseUrl = app.globalData.baseUrl;
 function getRequest(model) {
   var that = this;
-  //var device = app.globalData.device || '';
   var token = app.globalData.token || '';
-  if (token !== '') {
+  if (app.globalData.token && app.globalData.token != '') {
     wx.request({
       url: baseUrl + model.url,
       data: model.param,
       header: {
         'Content-Type': 'application/json',
-        //'device': device,
         'Authorization': 'Bearer ' + token
       },
       method: model.method,
@@ -41,7 +39,31 @@ function getRequest(model) {
       }
     })
   } else {
-    console.log('信息为空')
+    //由于请求是网络请求，可能会在Page.onLoad后才返回
+    　　　//所以加入callback 防止这种情况
+    app.tokenCallback = token => {
+      if (token != '') 
+      { //执行操作。。
+        wx.request({
+          url: baseUrl + model.url,
+          data: model.param,
+          header: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          method: model.method,
+          success: function (res) {
+            model.success(res.data)
+          },
+          fail: function (res) {
+            wx.showModal({
+              title: res,
+              showCancel: false
+            })
+          }
+        })
+      }
+    }
   }
 }
 
