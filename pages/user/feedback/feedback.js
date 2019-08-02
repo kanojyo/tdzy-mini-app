@@ -1,5 +1,6 @@
 // pages/user/feedback/feedback.js
 import { getRequest} from '../../../utils/util.js';
+const app = getApp();
 Page({
 
   /**

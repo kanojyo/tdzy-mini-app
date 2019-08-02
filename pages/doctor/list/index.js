@@ -1,7 +1,7 @@
 // pages/doctor/list.js
 
 import { getRequest } from '../../../utils/util.js';
-
+const app = getApp();
 Page({
 
   /**

@@ -85,7 +85,7 @@ Page({
       method:'POST',
       header: {
         'Content-Type': 'application/json',
-        'device': app.globalData.device,
+        //'device': app.globalData.device,
         'Authorization': 'Bearer ' + app.globalData.token
       },
       success(res){

@@ -1,6 +1,7 @@
 // pages/user/sign/detail/detail.js
 const utils = require('../../../../utils/util.js') ;
 import { getRequest } from '../../../../utils/util.js';
+const app = getApp();
 Page({
 
   /**

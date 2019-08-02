@@ -90,6 +90,7 @@ Page({
     // }
   },
   getData: function (id) {
+    var that = this;
     console.log('testid')
     getRequest({
       url: '/v1/information/detail?article_id=' + id,

@@ -1,4 +1,4 @@
-const Promise = require('utils/promise.js');
+
 App({
   data: {
     modal: false

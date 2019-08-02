@@ -134,7 +134,7 @@ Page({
         data: { gender: sex, name: name, age: age, mobile: mobile },
         header: {
           'Content-Type': 'application/json',
-          'device': app.globalData.device,
+          //'device': app.globalData.device,
           'Authorization': 'Bearer ' + app.globalData.token
         },
         success(res) {
