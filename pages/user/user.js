@@ -255,30 +255,13 @@ Page({
    */
   onLoad: function (options) {
     var that =this;
-    if (app.globalData.token && app.globalData.token != '') {
-        that.check();
-        //获取基本资料
-        that.getInfo();
-        //是否消息中心有新消息
-        that.hasMessage();
-        that.getHeight();
-        that.shouquan();
-    } else {
-      //由于请求是网络请求，可能会在Page.onLoad后才返回
-      　　　//所以加入callback 防止这种情况
-      app.tokenCallback = token => {
-        if (token != '') {
-          　　//执行操作。。
-          that.check();
-          //获取基本资料
-          that.getInfo();
-          //是否消息中心有新消息
-          that.hasMessage();
-          that.getHeight();
-          that.shouquan();
-        }
-      }
-    }
+    that.check();
+    //获取基本资料
+    that.getInfo();
+    //是否消息中心有新消息
+    that.hasMessage();
+    that.getHeight();
+    that.shouquan();
   },
 
   /**

@@ -27,7 +27,7 @@ App({
               console.log('loginSuccess')
 
               var token = e.data.data.token;
-              console.log(token)
+              // console.log(token)
               that.globalData.token = token;
               that.globalData.session_key = e.data.data.session_key;
               //将token储存起来
