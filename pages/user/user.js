@@ -62,7 +62,7 @@ Page({
             method: 'POST',
             header: {
               'Content-Type': 'application/json',
-              'device': wx.getStorageSync('device'),
+              'device': app.globalData.device,
             },
             success(e) {
               // console.log(e)
@@ -108,7 +108,7 @@ Page({
                 method: 'POST',
                 header: {
                   'Content-Type': 'application/json',
-                  'device': wx.getStorageSync('device'),
+                  'device': app.globalData.device,
                 },
                 success(e) {
                   // console.log(e)
@@ -343,8 +343,8 @@ Page({
       },
       header: {
         'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+        'device': app.globalData.device,
+        'Authorization': 'Bearer ' + app.globalData.token
       },
       success(res) {
         wx.navigateTo({

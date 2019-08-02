@@ -9,7 +9,7 @@
       <view class="bot">
         <view class="score">
           <view class="now_score">{{goods.now_score}}</view>
-          <view class="original_score">{{goods.original_score}}积分</view>
+          <view class="original_score" wx:if="{{goods.original_score > goods.now_score}}">{{goods.original_score}}积分</view>
         </view>
         <!-- <view class="me">我的积分{{goods.my_score}}</view> -->
       </view>

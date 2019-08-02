@@ -73,8 +73,8 @@ Page({
       },
       header: {
         'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+        'device': app.globalData.device,
+        'Authorization': 'Bearer ' + app.globalData.token
       },
       success(res) {
         wx.navigateTo({
@@ -98,14 +98,14 @@ Page({
           wx.request({
             url: baseUrl + '/v1/get_user_info',
             data: {
-              session: wx.getStorageSync('session_key'),
+              session: app.globalData.session_key,
               encryptData: res.encryptedData,
               iv: res.iv,
             },
             method: 'POST',
             header: {
               'Content-Type': 'application/json',
-              'device': wx.getStorageSync('device'),
+              'device': app.globalData.device,
             },
             success(e) {
               that.getIndex();
@@ -143,14 +143,14 @@ Page({
               wx.request({
                 url: baseUrl + '/v1/get_user_info',
                 data: {
-                  session: wx.getStorageSync('session_key'),
+                  session: app.globalData.session_key,
                   encryptData: res.encryptedData,
                   iv: res.iv,
                 },
                 method: 'POST',
                 header: {
                   'Content-Type': 'application/json',
-                  'device': wx.getStorageSync('device'),
+                  'device': app.globalData.device,
                 },
                 success(e) {
                 }
@@ -169,7 +169,7 @@ Page({
     });
   },
   onLoad: function () {
-    console.log('onload')
+    //console.log(app.globalData.token)
     var that = this;
     if (app.globalData.token && app.globalData.token != '') {
       that.getHeight();
@@ -191,7 +191,7 @@ Page({
   onReady() {
   },
   onShow() {
-    if (wx.getStorageSync('token') && wx.getStorageSync('device')) {
+    if (wx.getStorageSync('token') && app.globalData.device) {
       this.getIndex();
     }
   },
@@ -209,8 +209,8 @@ Page({
       method: 'GET',
       header: {
         'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+        'device': app.globalData.device,
+        'Authorization': 'Bearer ' + app.globalData.token
       },
       success(res) {
         var arr = res.data.data;
@@ -256,8 +256,8 @@ Page({
       method: 'GET',
       header: {
         'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+        'device': app.globalData.device,
+        'Authorization': 'Bearer ' + app.globalData.token
       },
       success(res) {
         if (!res.data.data.status) {
@@ -327,8 +327,8 @@ Page({
           method: 'GET',
           header: {
             'Content-Type': 'application/json',
-            'device': wx.getStorageSync('device'),
-            'Authorization': 'Bearer ' + wx.getStorageSync('token')
+            'device': app.globalData.device,
+            'Authorization': 'Bearer ' + app.globalData.token
           },
           success(res) {
             status = false;

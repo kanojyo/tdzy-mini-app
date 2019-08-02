@@ -1,6 +1,7 @@
 // pages/user/book/book.js
 let utils = require('../../../utils/util.js');
 import { getRequest } from '../../../utils/util.js';
+const app = getApp();
 Page({
 
   /**
@@ -110,8 +111,8 @@ Page({
       method: 'POST',
       header: {
         'Content-Type': 'application/json',
-        'device': wx.getStorageSync('device'),
-        'Authorization': 'Bearer ' + wx.getStorageSync('token')
+        'device': app.globalData.device,
+        'Authorization': 'Bearer ' + app.globalData.token
       },
       success: function (res) {
         if (res.data.code == 200){

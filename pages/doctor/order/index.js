@@ -1,6 +1,7 @@
 // pages/doctor/order/index.js
 const util = require('../../../utils/util');
 import { getRequest } from '../../../utils/util.js';
+const app = getApp();
 
 const getFormatTime = (number, format) => {
   
@@ -240,8 +241,8 @@ Page({
         data: { work_id: id, page: page, form_id: form_id },
         header: {
           'Content-Type': 'application/json',
-          'device': wx.getStorageSync('device'),
-          'Authorization': 'Bearer ' + wx.getStorageSync('token')
+          'device': app.globalData.device,
+          'Authorization': 'Bearer ' + app.globalData.token
         },
         success(res) {
           if (res.data.code == 200) {

@@ -23,21 +23,40 @@ Page({
       title: "健康科普"//页面标题为路由参数
     })
     var that = this;
+    var token = app.globalData.token;
+    console.log(token + 1111111111)
+    //console.log(device + 222222222222)
+    if (token != '' ) {
+      getRequest({
+        url: '/v1/information/list_category',
+        method: 'GET',
+        success(res) {
+          that.setData({
+            list: res.data,
 
-    getRequest({
-      url: '/v1/information/list_category',
-      method: 'GET',
-      success(res) {
-        that.setData({
-          list: res.data,
-          
-        })
-      }
-    });
+          })
+        }
+      });
+    } else {
+      app.getToken().then(function (res) {
+        console.log(111)
+        getRequest({
+          url: '/v1/information/list_category',
+          method: 'GET',
+          success(res) {
+            that.setData({
+              list: res.data,
+
+            })
+          }
+        });
+      })
+      
+    }
+    
 
     wx.getSystemInfo({
       success: function(res) {
-        console.log(res.windowHeight)
         that.setData({
           height: res.windowHeight
         })

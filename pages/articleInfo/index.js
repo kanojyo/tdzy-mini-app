@@ -49,6 +49,9 @@ const getCurrentPageUrlWithArgs = () => {
 
   return urlWithArgs
 }
+
+const app = getApp();
+
 Page({
   /**
    * 页面的初始数据
@@ -65,17 +68,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(getCurrentPageUrlWithArgs())
+    console.log('onload')
     var id = options.id;
     var that = this;
     var article_info;
+
+    var token = app.globalData.token;
+    var device = app.globalData.device;
+
+    if (token != '' && device != '') {
+      that.getData(id)
+    } else {
+      app.getDevice.then(function (res) {
+
+      })
+      app.getToken.then(function (res) {
+
+      })
+      that.getData(id)
+    }
+  },
+  getData: function (id) {
+    console.log('testid')
     getRequest({
       url: '/v1/information/detail?article_id=' + id,
       param: '',
       method: 'GET',
       success: function (res) {
         var info = res.data;
-
+        console.log('onload1111')
         if (info.article_content) {
           WxParse.wxParse('info', 'html', info.article_content, that, 0);
           res.data.created_at = getFormatTime(res.data.created_at, 'Y-M-D h:m:s');
@@ -84,17 +105,16 @@ Page({
           })
         }
       },
-      fail: function() {
-        wx.showToast({
-          title: '亲，您的网络异常，快去检查一下吧',
-          //icon: 'success',
-          duration: 2000
-        });
+      fail: function () {
+        app.getDevice.then(function (res) {
+
+        })
+        app.getToken.then(function (res) {
+
+        })
       }
     })
-    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

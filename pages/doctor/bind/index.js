@@ -1,7 +1,7 @@
 // pages/doctor/bind.js
 import { getRequest } from '../../../utils/util.js';
 const util = require('../../../utils/util');
-
+const app = getApp();
 Page({
 
   /**
@@ -134,8 +134,8 @@ Page({
         data: { gender: sex, name: name, age: age, mobile: mobile },
         header: {
           'Content-Type': 'application/json',
-          'device': wx.getStorageSync('device'),
-          'Authorization': 'Bearer ' + wx.getStorageSync('token')
+          'device': app.globalData.device,
+          'Authorization': 'Bearer ' + app.globalData.token
         },
         success(res) {
           

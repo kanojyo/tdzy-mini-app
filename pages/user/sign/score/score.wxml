@@ -19,7 +19,7 @@
             <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
           </view>
           <view class="title"  wx:else>
-            <view class="month">{{item.month}}</view>
+            <view class="month">{{item.month}}月</view>
             <view class="right">获取：<text class="red">{{item.gain}}</text> 使用：<text class="black">{{item.use}}</text></view>
           </view>
           <view class="list" >
@@ -59,7 +59,7 @@
               <view class="code">编号：{{item.exchange_code}}</view>
               <view class="time">有效时间：</view>
               <view class="time" wx:if="{{item.status == 1}}">截止至 {{item.end_time}}</view>
-              <view class="time" wx:else>兑换时间起-{{item.end_time}}</view>
+              <view class="time" wx:else>截止至 {{item.end_time}}</view>
             </view>
           </view>
         </view>

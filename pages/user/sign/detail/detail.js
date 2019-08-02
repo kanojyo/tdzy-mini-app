@@ -42,8 +42,8 @@ Page({
             },
             header: {
               'Content-Type': 'application/json',
-              'device': wx.getStorageSync('device'),
-              'Authorization': 'Bearer ' + wx.getStorageSync('token')
+              'device': app.globalData.device,
+              'Authorization': 'Bearer ' + app.globalData.token
             },
             success(res){
               if(res.data.code ===200){
