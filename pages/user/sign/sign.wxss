@@ -276,9 +276,10 @@ page{
   color:#333;
 }
 .bg .btn{
+  width:340rpx;
   font-size: 40rpx;
-  margin-top:20rpx;
-  padding: 0 130rpx;
+  margin:20rpx auto;
+  /* padding: 0 130rpx; */
   border-radius: 20rpx;
   background: #d1b574;
   color:#fff;
