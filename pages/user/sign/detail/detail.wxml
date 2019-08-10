@@ -40,11 +40,11 @@
   
   <view class='score-info'>
     <view >
-      <text class="score-now">1000</text>
-      <text class="score-old">2000</text>
+      <text class="score-now">{{goods.now_score}}</text>
+      <text class="score-old">{{goods.original_score}}</text>
     </view>
   </view>
-  <view class='title'>泰斗中医院针灸1次</view>
+  <view class='title'>{{goods.goods_name}}</view>
   <view class='my-score'>我的积分：20000</view>
 </view>
 
@@ -55,8 +55,8 @@
     <view class="content" hidden="{{menuTapCurrent!='0'}}">
       111
     </view>
-    <view class="content" hidden="{{menuTapCurrent!='1'}}">
-      {{goods.goods_rules}}
+    <view class="content" hidden="{{menuTapCurrent!='1'}}" style='white-space: pre-wrap;'>
+      <text>{{goods.goods_rules}}</text>
     </view>
   </view>
 

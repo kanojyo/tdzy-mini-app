@@ -72,7 +72,7 @@
   text-align: left;
   width: 100%;
   background-color: #fff;
-  padding-top: 70rpx;
+  padding-top: 50rpx;
   font-size: 26rpx;
   color:#666;
   padding-left: 30rpx;
