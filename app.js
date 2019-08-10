@@ -51,6 +51,6 @@ App({
     token:'',
     device:'',
     session_key:'',
-    baseUrl:"https://tdxcx.whtdzyy.com",
+    baseUrl:"https://tdxcx.wuhanlst.com",
   }
 })

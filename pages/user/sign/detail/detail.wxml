@@ -1,5 +1,5 @@
 <!--pages/user/sign/detail/detail.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="pro">
     <view class="img">
       <image src="{{goods.pic_url}}"></image>
@@ -11,7 +11,7 @@
           <view class="now_score">{{goods.now_score}}</view>
           <view class="original_score" wx:if="{{goods.original_score > goods.now_score}}">{{goods.original_score}}积分</view>
         </view>
-        <!-- <view class="me">我的积分{{goods.my_score}}</view> -->
+        <view class="me">我的积分{{goods.my_score}}</view>
       </view>
     </view>
   </view>
@@ -26,4 +26,40 @@
     <button class="btn2"  wx:if="{{goods.exchange_status ==4}}">暂停兑换</button>
     <button class="btn1"  wx:if="{{goods.exchange_status ==5}}" bindtap="exchange">兑换</button>
   </view>
+</view> -->
+<swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{img}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"  mode='aspectFill'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="good-info">
+  
+  <image src="../../../../images/gold.png"></image>
+  
+  <view class='score-info'>
+    <view >
+      <text class="score-now">1000</text>
+      <text class="score-old">2000</text>
+    </view>
+  </view>
+  <view class='title'>泰斗中医院针灸1次</view>
+  <view class='my-score'>我的积分：20000</view>
+</view>
+
+<view class="good-nav">
+  <view class='nav-header'>
+    <view data-current="0" class="title {{menuTapCurrent == 0 ? 'active' : ''}}" catchtap="menuTap">详情</view>
+    <view data-current="1" class="title {{menuTapCurrent == 1 ? 'active' : ''}}" catchtap="menuTap">说明</view>
+    <view class="content" hidden="{{menuTapCurrent!='0'}}">
+      111
+    </view>
+    <view class="content" hidden="{{menuTapCurrent!='1'}}">
+      {{goods.goods_rules}}
+    </view>
+  </view>
+
+  <!--内容，可以选择包一起，我是直接少包了一层-->
+    
 </view>

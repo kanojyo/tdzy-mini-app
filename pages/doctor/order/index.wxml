@@ -80,8 +80,8 @@
       </view>
     </view>
     <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true" id="{{info.work_id}}" data-index="{{info.index}}">
-      <button class='order-button'  form-type="submit" hover-stay-time="1000" wx:if="{{status == true}}">立即预约</button>
-      <button class='order-button' hover-stay-time="1000" wx:else disabled="true">立即预约</button>
+      <button class='order-button'  form-type="submit" hover-stay-time="1000" wx:if="{{status == true}}">立即支付</button>
+      <button class='order-button' hover-stay-time="1000" wx:else disabled="true">立即支付</button>
     </form>
   </view>
 </view>

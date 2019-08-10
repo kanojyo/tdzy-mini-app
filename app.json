@@ -22,7 +22,6 @@
     "pages/user/message/message",
     "pages/user/info/info",
     "pages/test/test",
-    "custom-tab-bar/index",
     "pages/map/map",
     "pages/hospital/index",
     "pages/doctor/info/index",
@@ -30,7 +29,9 @@
     "pages/user/help/index",
     "pages/user/book/bookingDetails/bookingDetails",
     "pages/link/link",
-    "pages/banner/index"
+    "pages/banner/index",
+    "pages/video/info/info",
+    "pages/video/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,6 +48,12 @@
         "text": "首页",
         "iconPath": "images/home_1@3x.png",
         "selectedIconPath": "images/home_2@3x.png"
+      },
+      {
+        "pagePath": "pages/video/list/list",
+        "text": "视频科普",
+        "iconPath": "images/mr_video@3x.png",
+        "selectedIconPath": "images/xz_video@3x.png"
       },
       {
         "pagePath": "pages/healthNews/healthNews",

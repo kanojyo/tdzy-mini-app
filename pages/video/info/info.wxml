@@ -1,0 +1,28 @@
+<!--pages/video/info/info.wxml-->
+<view class="main">
+  <view class="video-body">
+    <video class="video-info"  id="myVideo" src="{{info.src}}" controls></video>
+    <cover-view class="controls" style="display:{{tab_image}};">
+    <cover-image src="http://cswx-tdyl.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190722/20190722ecf1b8488a5d300595f23634fba9bfee.png" />
+    </cover-view>
+    <cover-view class="play" style="display:{{tab_image}};z-index:200;">
+    <cover-image bindtap="bindplay" src="../../../images/bofang@3x.png" style="width:106rpx;" />
+    </cover-view>
+  </view>
+  <view class="info">
+    <view class="title">{{info.title}}</view>
+    <view class="share">
+      <button open-type="share" class="share-box">
+        <image src="../../../images/share@3x.png" class="share-img"></image>
+        <view>分享</view>
+      </button>
+    </view>
+  </view>
+
+  <view wx:if="{{info.goods.length > 0}}" class="good-list"></view>
+  <view class="nodata" wx:else style="padding-top:{{height}}rpx">
+    <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+    <text>空空如也</text>
+  </view>
+</view>
+
