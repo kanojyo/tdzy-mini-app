@@ -30,6 +30,19 @@ Page({
       menuTapCurrent: current
     });
   },
+  getMyscore: function() {
+    var that = this;
+    getRequest({
+      url: '/v1/sign/sign_up',
+      method: 'POST',
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          myScore: res.data.user.score
+        })
+      }
+    })
+  },
   //获取热门兑换详情
   getGoods(){
     var that = this;
@@ -115,7 +128,7 @@ Page({
     })
     //获取详情
     this.getGoods();
-
+    that.getMyscore();
   },
 
   /**

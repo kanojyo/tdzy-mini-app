@@ -28,9 +28,9 @@
   </view>
 </view> -->
 <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-  <block wx:for="{{img}}" wx:key="index">
+  <block wx:for="{{goods.goods_loop}}" wx:key="index">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"  mode='aspectFill'></image>
+      <image src="{{item}}" class="slide-image"  mode='scaleToFill'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -45,7 +45,7 @@
     </view>
   </view>
   <view class='title'>{{goods.goods_name}}</view>
-  <view class='my-score'>我的积分：20000</view>
+  <view class='my-score'>我的积分：{{myScore}}</view>
 </view>
 
 <view class="good-nav">
@@ -53,13 +53,23 @@
     <view data-current="0" class="title {{menuTapCurrent == 0 ? 'active' : ''}}" catchtap="menuTap">详情</view>
     <view data-current="1" class="title {{menuTapCurrent == 1 ? 'active' : ''}}" catchtap="menuTap">说明</view>
     <view class="content" hidden="{{menuTapCurrent!='0'}}">
-      111
+      <image src="{{item}}" wx:for="{{goods.goods_details}}" wx:key="index"></image>
     </view>
     <view class="content" hidden="{{menuTapCurrent!='1'}}" style='white-space: pre-wrap;'>
       <text>{{goods.goods_rules}}</text>
     </view>
   </view>
-
-  <!--内容，可以选择包一起，我是直接少包了一层-->
-    
+</view>
+<view class="good-footer">
+  <view class="footer-share">
+    <image src="../../../../images/share@3x.png"></image>
+    <view>分享</view>
+  </view>
+  
+  <view class="btn1 exchange-btn" bindtap="exchange" wx:if="{{goods.exchange_status ==1}}">立即兑换</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==2}}">积分不足</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==3}}">兑换已满</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==4}}">暂停兑换</view>
+  <view class="btn1 exchange-btn"  wx:if="{{goods.exchange_status ==5}}" bindtap="exchange">立即兑换</view>
+  
 </view>
