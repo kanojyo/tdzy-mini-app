@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 21,
 			"list": [
 				{
 					"id": 0,
@@ -181,6 +181,27 @@
 					"name": "doctor",
 					"pathName": "pages/doctor/order/index",
 					"query": "id=18",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频详情",
+					"pathName": "pages/video/info/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频列表",
+					"pathName": "pages/video/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "兑换详情",
+					"pathName": "pages/user/sign/detail/detail",
+					"query": "id=25",
 					"scene": null
 				}
 			]

@@ -1,6 +1,130 @@
 /* pages/user/sign/detail/detail.wxss */
-page{
-  background: #f2f2f2;
+@import '../../../../common/css/common.wxss';
+
+.banner{
+  width: 100%;
+  height: 340rpx;
+}
+.banner .slide-image{width: 100%;height: 340rpx;}
+.good-info {
+  padding: 30rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.good-info image{
+  width: 38rpx;
+  height: 38rpx;
+  display: inline-block;
+}
+
+.score-info {
+  display: inline-block;
+  margin-left: 10rpx;
+
+}
+
+.score-now {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fd4f0a;
+}
+
+.score-old {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #888888;
+  margin-left: 10rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 48rpx;
+  color: #333333;
+}
+
+.my-score {
+  position: absolute;
+  right: 30rpx;
+  top:45rpx;
+  font-size: 24rpx;
+  color: #888888;
+}
+.good-nav {
+  margin-top: 10rpx;
+  background-color: #fff;
+  text-align: center;
+  height: 86rpx;
+  line-break: 86rpx;
+}
+
+.good-nav .title {
+  display: inline-block;
+  width: 230rpx;
+  font-size: 34rpx;
+}
+.active {
+  color: #d2b576;
+  border-bottom: 6rpx solid #d2b576;
+}
+.content {
+  text-align: left;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 50rpx;
+  font-size: 26rpx;
+  color:#666;
+  padding-left: 30rpx;
+  padding-bottom: 70rpx;
+}
+.content image {
+  display: block;
+  width: 100%;
+}
+.good-footer {
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+
+.footer-share {
+  width: 200rpx;
+  text-align: center;
+  vertical-align: middle;
+  height: 100rpx;
+  background-color: #fff;
+  padding-top: 12rpx;
+  display: inline-block;
+}
+
+.footer-share image {
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.footer-share view {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #666666;
+  vertical-align: middle;
+}
+
+.exchange-btn {
+  display: block;
+  text-align: center;
+  width: 550rpx;
+  overflow: hidden;
+  color: #fff;
+  background-color: #dd5335;
+  font-size: 36rpx;
+  float: right;
+  line-height: 100rpx;
 }
 .container{
   background: #fff;

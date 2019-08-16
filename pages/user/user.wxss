@@ -1,7 +1,57 @@
 /* pages/user/user.wxss */
-page{
+/* page{
   background-color: #f2f2f2;
+} */
+@import "../../common/css/common.wxss";
+/* 个人中心修改排版 */
+.header-box {
+  padding-top: 40rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
 }
+.header-box .header-box-title {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+  width: 100%;
+  text-align: left;
+  padding-left: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.header-box .header-box-nav {
+  height: 160rpx;
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header-box-nav image {
+  width: 42rpx;
+  height: 44rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-box-nav view {
+  font-size: 30rpx;
+  color: #333333;
+  margin-top: 10rpx;
+  vertical-align: middle;
+}
+.header-box-nav-btn {
+  height: 160rpx;
+  width: 100% !important;
+  display: inline-block;
+  line-height: normal;
+}
+
+
+
+
+button::after { border: none; }
+button { background-color: #fff; padding: 0;margin:0;}
 .shouquan{
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -55,7 +105,7 @@ page{
   width: 100%;
   background: #fff;
   /* height: 200rpx; */
-  margin-bottom: 20rpx;
+  /* margin-bottom: 20rpx; */
 }
 .user-info .info{
   height: 400rpx;

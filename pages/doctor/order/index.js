@@ -160,6 +160,7 @@ Page({
     that.data.info.time_slot = that.data.work[index].time_slot;
     that.data.info.work_id = that.data.work[index].id;
     that.data.info.index = index;
+    that.data.info.order_money = that.data.work[index].order_money;
     getRequest({
       url: '/v1/sign/my_info',
       method: 'GET',
@@ -170,7 +171,7 @@ Page({
         })
       }
     })
-
+    console.log(that.data.info)
     that.setData({
       info: that.data.info
     })
@@ -246,27 +247,69 @@ Page({
         },
         success(res) {
           if (res.data.code == 200) {
-            that.data.work[index].order_use_num = (nums + 1);
-            that.data.work[index].status = 2;
-            that.setData({
-              work: that.data.work
-            })
-
-            wx.showModal({
-              title: '预约挂号成功',
-              showCancel: false,
-              confirmText: "立即前往",
-              confirmColor:"#d1b574",
-              content: '可在我的--我的预约查看',
-              success: function (res) {
-                if (res.confirm) {
-                  wx.navigateTo({
-                    url: '/pages/user/book/book',
+            if (res.data.data.pay_sign) {
+              //走支付流程
+              wx.requestPayment({
+                timeStamp: res.data.data.time.toString(),
+                nonceStr: res.data.data.nonce_str,
+                package: "prepay_id=" + res.data.data.prepay_id ,
+                signType: 'MD5',
+                paySign: res.data.data.pay_sign,
+                success: function(res) {
+                  that.data.work[index].order_use_num = (nums + 1);
+                  that.data.work[index].status = 2;
+                  that.setData({
+                    work: that.data.work
                   })
-                } else if (res.cancel) {
+
+                  wx.showModal({
+                    title: '预约挂号成功',
+                    showCancel: false,
+                    confirmText: "立即前往",
+                    confirmColor: "#d1b574",
+                    content: '可在我的--我的预约查看',
+                    success: function (res) {
+                      if (res.confirm) {
+                        wx.navigateTo({
+                          url: '/pages/user/book/book',
+                        })
+                      } else if (res.cancel) {
+                      }
+                    }
+                  })
+                },
+                fail: function(res) {
+
+                },
+                complete: function(res) {
+
                 }
-              }
-            })
+              })
+            } else {
+              //不执行支付
+              that.data.work[index].order_use_num = (nums + 1);
+              that.data.work[index].status = 2;
+              that.setData({
+                work: that.data.work
+              })
+
+              wx.showModal({
+                title: '预约挂号成功',
+                showCancel: false,
+                confirmText: "立即前往",
+                confirmColor: "#d1b574",
+                content: '可在我的--我的预约查看',
+                success: function (res) {
+                  if (res.confirm) {
+                    wx.navigateTo({
+                      url: '/pages/user/book/book',
+                    })
+                  } else if (res.cancel) {
+                  }
+                }
+              })
+            }
+            
           } else {
             wx.showModal({
               title: '提示',

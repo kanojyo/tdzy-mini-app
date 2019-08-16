@@ -10,6 +10,38 @@ Page({
   data: {
     goods:[],
     id:0,
+    indicatorDots: true,
+    autoplay: true,
+    circular: true,
+    interval: 5000,
+    duration: 1000,
+    menuTapCurrent: 0,
+    img:[
+      "http://tdxcx.wuhanlst.com:8899/media/2019052861d6073b407668483e0b09b049e0dd38",
+      "http://tdxcx.wuhanlst.com:8899/media/2019052846bc23a69bf1c83da6d4a82f14531d9e",
+      "http://tdxcx.wuhanlst.com:8899/media/2019052878007161d3649dce7817cb020af0d0ec"
+    ]
+  },
+  // 点击按钮选项卡切换
+  menuTap: function (e) {
+    var current = e.currentTarget.dataset.current;//获取到绑定的数据
+    //改变menuTapCurrent的值为当前选中的menu所绑定的数据
+    this.setData({
+      menuTapCurrent: current
+    });
+  },
+  getMyscore: function() {
+    var that = this;
+    getRequest({
+      url: '/v1/sign/sign_up',
+      method: 'POST',
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          myScore: res.data.user.score
+        })
+      }
+    })
   },
   //获取热门兑换详情
   getGoods(){
@@ -19,6 +51,7 @@ Page({
       method:'GET',
       success(res){
         res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+        console.log(res.data)
         that.setData({
           goods:res.data
         })
@@ -95,7 +128,7 @@ Page({
     })
     //获取详情
     this.getGoods();
-
+    that.getMyscore();
   },
 
   /**

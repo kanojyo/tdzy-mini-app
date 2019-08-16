@@ -1,8 +1,7 @@
 /* pages/doctor/order/index.wxss */
 @import "../../../pages/index/index.wxss";
-page {
-  background: #f2f2f2;
-}
+@import "../../../common/css/common.wxss";
+
 .empty-order {
   margin-top: 300rpx;
 }
