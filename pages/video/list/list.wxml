@@ -1,11 +1,11 @@
 <!--pages/video/list/list.wxml-->
-<view class="video-list" wx:if="{{list.length > 0}}">
+<view class="video-list" wx:if="{{list.length > 0}}" scroll-top="{{scrollTop}}" scroll-y="true">
   <view class="video-info" wx:for="{{list}}" wx:key="index" bindtap="info" id="{{item.id}}">
     <view class="title">{{item.title}}</view>
     <view class="image">
-      <image src="{{item.cover}}"></image>
+      <image src="{{item.cover_img}}"></image>
       <image src="../../../images/bofang@3x.png" class="bofang"></image>
-      <text class="time {{item.time.length > 5 ? 'w140' : 'w100'}}">{{item.time}}</text>
+      <text class="time {{item.video_length.length > 5 ? 'w140' : 'w100'}}">{{item.video_length}}</text>
     </view>
     <view class="logo">
       <image src="../../../images/LOGO.png"></image>

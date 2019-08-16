@@ -1,13 +1,13 @@
 <!--pages/video/info/info.wxml-->
 <view class="main">
   <view class="video-body">
-    <video class="video-info"  id="myVideo" src="{{info.src}}" controls></video>
-    <cover-view class="controls" style="display:{{tab_image}};">
+    <video class="video-info"  id="myVideo" src="{{info.video}}" controls autoplay='true'></video>
+    <!-- <cover-view class="controls" style="display:{{tab_image}};">
     <cover-image src="http://cswx-tdyl.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190722/20190722ecf1b8488a5d300595f23634fba9bfee.png" />
     </cover-view>
     <cover-view class="play" style="display:{{tab_image}};z-index:200;">
     <cover-image bindtap="bindplay" src="../../../images/bofang@3x.png" style="width:106rpx;" />
-    </cover-view>
+    </cover-view> -->
   </view>
   <view class="info">
     <view class="title">{{info.title}}</view>

@@ -10,7 +10,7 @@
     
   </scroll-view>
 
-  <scroll-view current="{{currentData}}" class='swiper' duration="300" bindchange="switchTab" scroll-top="{{scrollTop}}" scroll-y="true" >
+  <scroll-view current="{{currentData}}" class='swiper' duration="300" bindchange="switchTab" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
     <view wx:for="{{list}}" wx:key="index" class='tab-item {{currentData == index ? "swiper_con" : ""}} hot-recommend'>
       <view wx:if="{{item.list_article.data.length > 0}}">
         <view wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' bindtap='articleInfo' id="{{children.id}}">

@@ -1,37 +1,32 @@
 // pages/video/list/list.js
+let utils = require('../../../utils/util.js');
+import { getRequest } from '../../../utils/util.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[
-      {
-        "id":1,
-        "title":"常见中药材讲解1",
-        "cover":"http://cswx-tdyl.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190722/20190722ecf1b8488a5d300595f23634fba9bfee.png",
-        "time":"00:35"
-      },
-      {
-        "id": 2,
-        "title": "222常见中药材讲解12",
-        "cover": "http://cswx-tdyl.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190722/20190722ecf1b8488a5d300595f23634fba9bfee.png",
-        "time": "12:35"
-      },
-      {
-        "id": 3,
-        "title": "333常见中药材讲解12",
-        "cover": "http://cswx-tdyl.oss-cn-hangzhou.aliyuncs.com/tdzy/file/20190722/20190722ecf1b8488a5d300595f23634fba9bfee.png",
-        "time": "00:12:35"
-      }
-    ]
+    scrollTop: 0,
+    page: 1,
+    pageSize: 20
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //
+    var that = this;
+    getRequest({
+      url: '/v1/video/list',
+      method: 'get',
+      success: function (res) {
+        that.setData({
+          list: res.data.data,
+        })
+      }
+    });
   },
 
   /**
@@ -73,7 +68,50 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    var status = true;
 
+    if (status) {
+      wx.showLoading({
+        title: '拼命加载中',
+      });
+      setTimeout(function () {
+        wx.hideLoading();
+        getRequest({
+          url: '/v1/video/list?page_index=' + page + "&page_size=" + that.data.pageSize,
+          method: 'get',
+          success: function (res) {
+            status = false;
+            if (res.data.data.length > 0) {
+              that.data.list = that.data.list.concat(res.data.data);
+              if (res.data.data.length < 19) {
+                that.setData({
+                  bottomTitle: true,
+                  title: '-- 我是有底线的 --',
+                })
+              } else {
+                status = true;
+              }
+
+            } else {
+              wx.showToast({
+                title: '没有更多内容了',
+                icon: 'none',
+                duration: 2000
+              })
+              status = false;
+            }
+
+            that.data.page = that.data.page + 1;
+            that.setData({
+              list: that.data.list
+            });
+          }
+        });
+        
+      }, 2000);
+    }
   },
 
   /**

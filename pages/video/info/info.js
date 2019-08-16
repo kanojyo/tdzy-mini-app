@@ -1,4 +1,6 @@
 // pages/video/info/info.js
+let utils = require('../../../utils/util.js');
+import { getRequest } from '../../../utils/util.js';
 Page({
 
   /**
@@ -19,6 +21,8 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var id  = options.id;
+    console.log(id)
     wx.getSystemInfo({
       success: function(res) {
         let clientHeight = res.windowHeight;
@@ -29,7 +33,17 @@ Page({
           height: (height - 542) / 4
         })
       },
-    })
+    });
+    getRequest({
+      url: '/v1/video/info?id=' + id,
+      method: 'get',
+      success: function (res) {
+        //console.log(res.data)
+        that.setData({
+          info: res.data,
+        })
+      }
+    });
   },
 
   /**
