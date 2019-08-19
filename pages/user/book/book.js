@@ -117,7 +117,7 @@ Page({
       success: function (res) {
         if (res.data.code == 200){
           wx.showToast({
-            title: '取消预约成功',
+            title: res.data.message,
             icon: 'success',
             duration: 2000
           });

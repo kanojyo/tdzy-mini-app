@@ -1,6 +1,8 @@
 /* pages/healthNews/healthNews.wxss */
 @import "../../common/css/common.wxss";
-
+page {
+  background-color: #f1f1f1;
+}
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -40,11 +42,16 @@
   display: block;
   width: 100%;
 }
+
+.hot-recommend {
+  background-color: #f1f1f1;
+}
 .hot-recommend .item{
   padding: 20rpx 30rpx 0 30rpx;
   height: 163rpx;
   border-top:1rpx solid #efefef;
   display: flex;
+  background-color: #fff;
 }
 
 .hot-recommend .item:first-child {

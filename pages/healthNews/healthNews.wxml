@@ -1,16 +1,16 @@
 <!--pages/healthNews/healthNews.wxml-->
 <view class="container">
-  <scroll-view class='topTabSwiper' scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+  <scroll-view class='topTabSwiper' scroll-x="true" scroll-left="{{scrollLeft}}">
     
       <!--当前项的id等于item项的id，那个就是当前状态-->
       <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-      <view wx:for="{{list}}" wx-key="index" class="tab {{currentData == index ? 'tabBorer' : ''}}" bindtap="switchNav" data-index="{{index}}" data-id="{{item.id}}" data-current = "{{index}}" >
+      <view wx:for="{{list}}" wx-key="index" class="tab {{currentTab == index ? 'tabBorer' : ''}}" bindtap="swichNav" data-index="{{index}}" data-id="{{item.id}}" data-current="{{index}}" >
           {{item.category_name}}
         </view>
     
   </scroll-view>
 
-  <scroll-view current="{{currentData}}" class='swiper' duration="300" bindchange="switchTab" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <!-- <scroll-view current="{{currentData}}" class='swiper' duration="300" bindchange="switchTab" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
     <view wx:for="{{list}}" wx:key="index" class='tab-item {{currentData == index ? "swiper_con" : ""}} hot-recommend'>
       <view wx:if="{{item.list_article.data.length > 0}}">
         <view wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' bindtap='articleInfo' id="{{children.id}}">
@@ -28,5 +28,28 @@
         <text>空空如也</text>
       </view>
     </view>
-  </scroll-view>
+  </scroll-view> -->
+  <swiper class="swiper" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight+90}}rpx">
+        <swiper-item wx:for="{{list}}" class="hot-recommend">
+            <scroll-view wx:if="{{item.list_article.data.length > 0}}" style="height:100%;" scroll-y="true">
+                <block wx:for="{{item.list_article.data}}" wx:for-item="children" wx:key="keys" class='item' id="{{children.id}}">
+                <view bindtap='articleInfo' class="item" id="{{children.id}}">
+                  <view class="item-img">
+                    <image src="{{children.article_cover}}"  mode='aspectFit' lazy-load='true'></image>
+                  </view>
+                  <view class="item-text">
+                    <text class="title">{{children.article_title}}</text>
+                    <text class="desc">{{children.article_description}}</text>
+                  </view>
+                </view>
+                </block>
+            </scroll-view>
+
+            <view class="nodata" style="padding-top:{{(height+90)/2}}rpx;" wx:else>
+              <image src="https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/kong%402x.png" mode="widthFix"></image>
+              <text>空空如也</text>
+            </view>
+        </swiper-item>
+    </swiper>
 </view>
