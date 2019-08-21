@@ -50,25 +50,29 @@
   </form>
 </view>
 <view class="input-modal" wx:if="{{status}}">
-  <view class="hide-input">
-    <view class="operate">
-      <view class="cancle" bindtap="hideModal">取消</view>
-      <view class="submit" bindtap="submitModal">确定</view>
+  <form bindsubmit="formSubmitMobile" bindreset="formReset">
+    <view class="hide-input">
+      <view class="operate">
+        <view class="cancle" bindtap="hideModal">取消</view>
+        <button class="submit" form-type="submit">确定</button>
+      </view>
+      <view class="input-content">
+        <input class="content" type="number" bindblur="getMobile" value="{{mobile1}}" name="mobile1"/>
+      </view>
     </view>
-    <view class="input-content">
-      <input class="content" type="number" bindblur="getMobile" value="{{mobile}}"/>
-    </view>
-  </view>
+  </form>
 </view>
 
-<view class="input-modal" wx:if="{{nameStatus}}">
-  <view class="hide-input">
-    <view class="operate">
-      <view class="cancle" bindtap="hideNameModal">取消</view>
-      <view class="submit" bindtap="submitNameModal">确定</view>
+<view class="input-modal-name" wx:if="{{nameStatus}}">
+  <form bindsubmit="formSubmitName" bindreset="formReset">
+    <view class="hide-input">
+      <view class="operate">
+        <view class="cancle" bindtap="hideNameModal">取消</view>
+        <button class="submit" form-type="submit">确定</button>
+      </view>
+      <view class="input-content">
+        <input class="content" type="text" maxlength='20' value="{{name1}}" name="name1"/>
+      </view>
     </view>
-    <view class="input-content">
-      <input class="content" type="text" bindblur="getMobile" value="{{mobile}}" bindinput="getWords" maxlength='{{maxTextLen}}' bindblur="getName" value="{{name}}"/>
-    </view>
-  </view>
+  </form>
 </view>

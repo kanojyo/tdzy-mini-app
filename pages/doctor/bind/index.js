@@ -37,9 +37,20 @@ Page({
     })
   },
   submitModal: function() {
+    var that = this;
     this.setData({
       status: false
-    })
+    });
+    var mobile = that.data.mobile;
+    if (/^1[34578]\d{9}$/.test(mobile)) {
+      
+    } else {
+      wx.showToast({
+        title: '手机号格式错误',
+        duration: 2000
+      })
+    }
+
   },
   hideNameModal: function () {
     this.setData({
@@ -85,7 +96,7 @@ Page({
     } else {
       that.setData({
         mobile: "",
-      })
+      });
     }
   },
   item_change: function (e) {
@@ -94,6 +105,47 @@ Page({
     that.setData({
       sex: sex
     })
+  },
+  formSubmitMobile: function(e) {
+    var that = this;
+    var mobile1 = e.detail.value.mobile1;
+    if (/^1[34578]\d{9}$/.test(mobile1)) {
+      that.setData({
+        mobile: mobile1,
+        mobile1: mobile1,
+      })
+      that.hideModal();
+    } else {
+      that.setData({
+        mobile: "",
+      });
+      that.hideModal();
+      wx.showToast({
+        title: '手机号格式错误',
+        duration: 2000
+      })
+    }
+  },
+  formSubmitName: function (e) {
+    var that = this;
+    var name1 = e.detail.value.name1;
+    if (name1 == '') {
+      wx.showToast({
+        title: '请输入姓名',
+        duration: 2000
+      });
+      that.setData({
+        name: '',
+        name1: ''
+      })
+    } else {
+      that.setData({
+        name: name1,
+        name1: name1,
+      })
+    }
+    
+    that.hideNameModal();
   },
   formSubmit: function (e) {
     var that = this;
