@@ -209,7 +209,7 @@ page{
 }
 .hot .content .item .text .bot .left .now_score{
   font-size: 32rpx;
-  color:#d1b574;
+  color:#fd4f0a;
 }
 .hot .content .item .text .bot .left .orgin{
   font-size: 24rpx;
