@@ -34,7 +34,7 @@
       <view class="order-time" wx:if="{{item.time_slot == 1}}">上午08：00-12：00</view>
       <view class="order-time" wx:else>下午14：00-18：00</view>
     </view>
-    <view class="order-price" wx:if="{{item.order_money > 0}}">{{item.order_money}}</view>
+    <view class="order-price" wx:if="{{item.order_money > 0}}">￥{{item.order_money}}</view>
     <view class="order-price" wx:else>免费</view>
     <view class="order-btn success" wx-if="{{item.status == 1}}" bindtap='show' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">预约{{item.order_max_num}} ({{item.order_use_num}})</view>
     <view class="order-btn fail" wx:elif="{{item.status == 2}}" bindtap='tips' id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">已预约</view>
@@ -63,7 +63,7 @@
       <view class='right'>
         <view>医师：{{doctor.name}}</view>
         <view>就诊科室：{{doctor.office}}</view>
-        <view wx:if="{{info.order_money > 0}}">预约费用：{{info.order_money}}</view><view wx:else>预约费用：免费</view>
+        <view wx:if="{{info.order_money > 0}}">预约费用：{{info.order_money}}</view><view wx:else>预约费用：￥0.00</view>
         <view class='check-order-time'>
           <view>就诊时间：</view>
           <view>

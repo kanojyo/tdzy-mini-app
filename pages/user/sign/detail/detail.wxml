@@ -52,10 +52,10 @@
   <view class='nav-header'>
     <view data-current="0" class="title {{menuTapCurrent == 0 ? 'active' : ''}}" catchtap="menuTap">详情</view>
     <view data-current="1" class="title {{menuTapCurrent == 1 ? 'active' : ''}}" catchtap="menuTap">说明</view>
-    <view class="content" hidden="{{menuTapCurrent!='0'}}">
-      <image src="{{item}}" wx:for="{{goods.goods_details}}" wx:key="index"></image>
+    <view class="content" hidden="{{menuTapCurrent!='0'}}" style="padding-left:0rpx;">
+      <image src="{{item}}" wx:for="{{goods.goods_details}}" wx:key="index" mode='widthFix'></image>
     </view>
-    <view class="content" hidden="{{menuTapCurrent!='1'}}" style='white-space: pre-wrap;'>
+    <view class="content" hidden="{{menuTapCurrent != 1}}" style='white-space: pre-wrap;'>
       <text>{{goods.goods_rules}}</text>
     </view>
   </view>

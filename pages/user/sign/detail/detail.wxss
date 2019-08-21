@@ -76,7 +76,7 @@
   font-size: 26rpx;
   color:#666;
   padding-left: 30rpx;
-  padding-bottom: 70rpx;
+  padding-bottom: 100rpx;
 }
 .content image {
   display: block;
@@ -88,10 +88,12 @@
   height: 100rpx;
   bottom: 0rpx;
   left: 0rpx;
+  z-index: 9999;
+  opacity: 1;
 }
 
 .footer-share {
-  width: 200rpx;
+  width: 25%;
   text-align: center;
   vertical-align: middle;
   height: 100rpx;
@@ -118,7 +120,7 @@
 .exchange-btn {
   display: block;
   text-align: center;
-  width: 550rpx;
+  width: 75%;
   overflow: hidden;
   color: #fff;
   background-color: #dd5335;
