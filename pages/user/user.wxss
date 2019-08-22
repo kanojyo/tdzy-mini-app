@@ -13,7 +13,7 @@
   font-size: 32rpx;
   color: #333333;
   font-weight: bold;
-  width: 100%;
+  width: 720rpx;
   text-align: left;
   padding-left: 30rpx;
   margin-bottom: 10rpx;
@@ -164,6 +164,7 @@ button { background-color: #fff; padding: 0;margin:0;}
   color:#fff;
   font-size: 28rpx;
   padding-left: 80rpx;
+  padding-right: 20rpx;
   background:#d38b24 url('https://taidouapp.oss-cn-hangzhou.aliyuncs.com/xiaochengxu/user/qiandao%402x.png') 35rpx 20rpx no-repeat;
   background-size:20%;
 }
