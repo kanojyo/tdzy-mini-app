@@ -41,25 +41,18 @@
 
 .video-info .image .time {
   position: absolute;
+  padding:5rpx 20rpx;
   bottom: 20rpx;
   right: 30rpx;
-  height: 32rpx;
-  line-height: 32rpx;
   font-size: 26rpx;
   background-color: #333333;
-  opacity: 0.24;
+  opacity: 0.5;
   color: #fff;
   text-align: center;
-  border-radius: 16rpx;
+  border-radius: 32rpx;
 }
 
-.w100 {
-  width: 100rpx;
-}
 
-.w140 {
-  width: 140rpx;
-}
 
 .video-info .logo {
   height: 62rpx;
@@ -70,6 +63,7 @@
   width: 62rpx;
   height: 62rpx;
   vertical-align: middle;
+  border-radius: 50%;
 }
 
 .logo text {

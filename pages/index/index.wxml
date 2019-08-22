@@ -56,12 +56,12 @@
         </button>
       </view>
     </view>
-    <view class="office">
+    <scroll-view scroll-x="true" class="office">
       <view class="office-item" wx:for="{{officeList}}" wx:key="index" bindtap="officeInfo" data-id="{{item.id}}">
         <image class="icon" src="{{item.office_img}}"  mode='aspectFill'></image>
         <text>{{item.name}}</text>
       </view>
-    </view>
+    </scroll-view>
     <view class='intro' bindtap='goHospital'>
       <view class="title">
         <view class="hospital">泰斗中医院</view>

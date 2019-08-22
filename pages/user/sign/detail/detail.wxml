@@ -27,13 +27,16 @@
     <button class="btn1"  wx:if="{{goods.exchange_status ==5}}" bindtap="exchange">兑换</button>
   </view>
 </view> -->
-<swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-  <block wx:for="{{goods.goods_loop}}" wx:key="index">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image"  mode='scaleToFill'></image>
-    </swiper-item>
-  </block>
-</swiper>
+<view class="swiperContainer">
+  <swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" bindchange="swiperChange">
+    <block wx:for="{{goods.goods_loop}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"  mode='scaleToFill' bindtap='previewImg' data-index='{{index}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="imageCount">{{current + 1}}/{{goods.goods_loop.length}}</view>
+</view>
 <view class="good-info">
   
   <image src="../../../../images/gold.png"></image>
@@ -41,7 +44,7 @@
   <view class='score-info'>
     <view >
       <text class="score-now">{{goods.now_score}}</text>
-      <text class="score-old">{{goods.original_score}}</text>
+      <text class="score-old" wx:if="{{goods.original_score > goods.now_score}}">{{goods.original_score}}</text>
     </view>
   </view>
   <view class='title'>{{goods.goods_name}}</view>
@@ -55,21 +58,21 @@
     <view class="content" hidden="{{menuTapCurrent!='0'}}" style="padding-left:0rpx;">
       <image src="{{item}}" wx:for="{{goods.goods_details}}" wx:key="index" mode='widthFix'></image>
     </view>
-    <view class="content" hidden="{{menuTapCurrent != 1}}" style='white-space: pre-wrap;'>
-      <text>{{goods.goods_rules}}</text>
+    <view class="content" hidden="{{menuTapCurrent != 1}}" style='padding-left:15rpx;word-wrap:break-word;'>
+      <text style='word-wrap:break-word;'>{{goods.goods_rules}}</text>
     </view>
   </view>
 </view>
 <view class="good-footer">
-  <view class="footer-share">
+  <button class="footer-share" open-type="share">
     <image src="../../../../images/share@3x.png"></image>
     <view>分享</view>
-  </view>
+  </button>
   
   <view class="btn1 exchange-btn" bindtap="exchange" wx:if="{{goods.exchange_status ==1}}">立即兑换</view>
-  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==2}}">积分不足</view>
-  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==3}}">兑换已满</view>
-  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==4}}">暂停兑换</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==2}}" style='background-color: #999;'>积分不足</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==3}}" style='background-color: #999;'>兑换已满</view>
+  <view class="btn2 exchange-btn"  wx:if="{{goods.exchange_status ==4}}" style='background-color: #999;'>暂停兑换</view>
   <view class="btn1 exchange-btn"  wx:if="{{goods.exchange_status ==5}}" bindtap="exchange">立即兑换</view>
   
 </view>

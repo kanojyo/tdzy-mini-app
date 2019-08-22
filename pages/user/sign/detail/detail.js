@@ -16,11 +16,15 @@ Page({
     interval: 5000,
     duration: 1000,
     menuTapCurrent: 0,
-    img:[
-      "http://tdxcx.wuhanlst.com:8899/media/2019052861d6073b407668483e0b09b049e0dd38",
-      "http://tdxcx.wuhanlst.com:8899/media/2019052846bc23a69bf1c83da6d4a82f14531d9e",
-      "http://tdxcx.wuhanlst.com:8899/media/2019052878007161d3649dce7817cb020af0d0ec"
-    ]
+    current:0
+  },
+  swiperChange: function (event) {
+    var that = this;
+    var current = event.detail.current;
+
+    that.setData({
+      current:current
+    })
   },
   // 点击按钮选项卡切换
   menuTap: function (e) {
@@ -121,7 +125,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.hideShareMenu();
+    //wx.hideShareMenu();
     var that = this;
     that.setData({
       id: options.id
@@ -178,5 +182,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  previewImg: function (e) {
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var imgArr = that.data.goods.goods_loop;
+    wx.previewImage({
+      current: imgArr[index],     //当前图片地址
+      urls: imgArr,               //所有要预览的图片的地址集合 数组形式
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   }
 })
