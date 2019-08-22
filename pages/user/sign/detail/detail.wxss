@@ -1,6 +1,19 @@
 /* pages/user/sign/detail/detail.wxss */
 @import '../../../../common/css/common.wxss';
 
+.swiperContainer{
+    position: relative;
+}
+.imageCount{
+    width: 80rpx;
+    color: #ffffff;
+    text-align: center;
+    font-size: 26rpx;
+    position: absolute;
+    right: 26rpx;
+    bottom:10rpx;
+}
+
 .banner{
   width: 100%;
   height: 340rpx;
