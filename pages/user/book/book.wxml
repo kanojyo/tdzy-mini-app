@@ -39,7 +39,7 @@
               <text>{{item.mobile}}</text>
             </view>
             <view class="btn" wx:if="{{item.status == 1}}">
-              <form bindsubmit="formSubmit" report-submit="true" id="{{item.id}}">
+              <form bindsubmit="formSubmit" report-submit="true" id="{{item.id}}" data-price="{{item.order_money}}">
                 <button form-type="submit">取消预约</button>
               </form>
             </view>

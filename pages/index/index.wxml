@@ -56,12 +56,35 @@
         </button>
       </view>
     </view>
-    <scroll-view scroll-x="true" class="office">
+    <!-- <scroll-view scroll-x="true" class="office">
       <view class="office-item" wx:for="{{officeList}}" wx:key="index" bindtap="officeInfo" data-id="{{item.id}}">
         <image class="icon" src="{{item.office_img}}"  mode='aspectFill'></image>
         <text>{{item.name}}</text>
       </view>
-    </scroll-view>
+    </scroll-view> -->
+    <view class='office-list'>
+      <view class='office-title'>
+        <view class='tese'>特色科室</view>
+      </view>
+      <view class="office-box {{showBox == true ? 'h188' : 'h376'}}" style="{{!flag ? 'height:auto;' : ''}}">
+        <view class='office-info' wx:for="{{officeList}}" wx:key="index" data-id="{{item.id}}" bindtap="officeInfo">
+          <image class="icon" src="{{item.office_img}}" mode='aspectFill'></image>
+          <text>{{item.name}}</text>
+        </view>
+        <!-- <view wx:if="{{officeList.length > 1 }}" hidden="{{flag}}">
+          <view wx:for="{{officeList}}" wx:key="index" wx:if="{{index > 0}}">
+            <view class='office-info' wx:for="{{officeList[index]}}" wx:key="index1" bindtap="officeInfo" data-id="{{item.id}}">
+              <image class="icon" src="{{item.office_img}}"  mode='aspectFill'></image>
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+        </view> -->
+      </view>
+      <view class='show-more' wx:if="{{showStatus}}">
+        <image src="../../images/jiantou@2x.png" wx:if="{{flag}}" bindtap='showMoreOffice'></image>
+        <image src="../../images/shangjiantou@3x.png" wx:else bindtap='hideMoreOffice'></image>
+      </view>
+    </view>
     <view class='intro' bindtap='goHospital'>
       <view class="title">
         <view class="hospital">泰斗中医院</view>

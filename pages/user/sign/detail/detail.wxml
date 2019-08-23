@@ -44,7 +44,7 @@
   <view class='score-info'>
     <view >
       <text class="score-now">{{goods.now_score}}</text>
-      <text class="score-old" wx:if="{{goods.original_score > goods.now_score}}">{{goods.original_score}}</text>
+      <text class="score-old" wx:if="{{goods.original_score > goods.now_score}}">{{goods.original_score}}积分</text>
     </view>
   </view>
   <view class='title'>{{goods.goods_name}}</view>
@@ -58,8 +58,8 @@
     <view class="content" hidden="{{menuTapCurrent!='0'}}" style="padding-left:0rpx;">
       <image src="{{item}}" wx:for="{{goods.goods_details}}" wx:key="index" mode='widthFix'></image>
     </view>
-    <view class="content" hidden="{{menuTapCurrent != 1}}" style='padding-left:15rpx;word-wrap:break-word;'>
-      <text style='word-wrap:break-word;'>{{goods.goods_rules}}</text>
+    <view class="content" hidden="{{menuTapCurrent != 1}}" style='padding-left:30rpx;padding-right:30rpx !important;text-align:justify;'>
+      <text style='line-height:20rpx;'>{{goods.goods_rules}}</text>
     </view>
   </view>
 </view>

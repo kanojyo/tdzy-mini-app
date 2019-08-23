@@ -27,6 +27,31 @@
   vertical-align: middle;
 }
 
+.msg-num {
+  height: 36rpx;
+  width: 36rpx;
+  border-radius: 50%;
+  color: #fff !important;
+  background-color: red;
+  line-height: 36rpx;
+  font-size: 22rpx !important;
+  margin-left: 110rpx;
+  transform:translateY(-140rpx);/**上移元素**/
+	-ms-transform:translateY(-140rpx);
+	-webkit-transform:translateY(-140rpx);
+}
+
+.report {
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  background-color: red;
+  margin-left: 120rpx;
+  transform:translateY(-140rpx);/**上移元素**/
+	-ms-transform:translateY(-140rpx);
+	-webkit-transform:translateY(-140rpx);
+}
+
 .header-box-nav image {
   width: 42rpx;
   height: 44rpx;
@@ -90,7 +115,7 @@ button { background-color: #fff; padding: 0;margin:0;}
 }
  
 .bottom {
-  margin-top: 40rpx;
+  margin: 40rpx auto;
   border-radius: 39rpx;
   height: 78rpx;
   line-height: 78rpx;

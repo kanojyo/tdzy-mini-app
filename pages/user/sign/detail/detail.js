@@ -1,6 +1,23 @@
 // pages/user/sign/detail/detail.js
 const utils = require('../../../../utils/util.js') ;
 import { getRequest } from '../../../../utils/util.js';
+
+const getCurrentPageUrlWithArgs = () => {
+  var pages = getCurrentPages() //获取加载的页面
+  var currentPage = pages[pages.length - 1] //获取当前页面的对象
+  var url = currentPage.route //当前页面url
+  var options = currentPage.options //如果要获取url中所带的参数可以查看options
+
+  //拼接url的参数
+  var urlWithArgs = url + '?'
+  for (var key in options) {
+    var value = options[key]
+    urlWithArgs += key + '=' + value + '&'
+  }
+  urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length - 1)
+
+  return urlWithArgs
+}
 const app = getApp();
 Page({
 
@@ -8,7 +25,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods:[],
+    goods: "",
     id:0,
     indicatorDots: true,
     autoplay: true,
@@ -48,19 +65,35 @@ Page({
     })
   },
   //获取热门兑换详情
-  getGoods(){
+  getGoods: function(id) {
     var that = this;
-    getRequest({
-      url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
-      method:'GET',
-      success(res){
-        res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+    var token = wx.getStorageSync('token');
+    wx.request({
+      url: utils.getBaseUrl() + '/v1/sign/hot_exchange_info?goods_id=' + id,
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+      success(res) {
+        //res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
         console.log(res.data)
-        that.setData({
-          goods:res.data
-        })
+      
+        that.data.goods =  res.data
+        
       }
     })
+    // getRequest({
+    //   url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
+    //   method:'GET',
+    //   success(res){
+    //     res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+    //     console.log(res.data)
+    //     that.setData({
+    //       goods:res.data
+    //     })
+    //   }
+    // })
   },
   //兑换
   exchange(){
@@ -126,13 +159,32 @@ Page({
    */
   onLoad: function (options) {
     //wx.hideShareMenu();
+    setTimeout(function() {
+      console.log(1)
+    }, 1000)
     var that = this;
-    that.setData({
-      id: options.id
-    })
+    var id = options.id
+    
     //获取详情
-    this.getGoods();
+    var token = wx.getStorageSync('token');
+    var goods = [];
+    wx.request({
+      url: utils.getBaseUrl() + '/v1/sign/hot_exchange_info?goods_id=' + id,
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+      success(res) {
+        console.log(res.data)
+        //res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+        that.data.goods = res.data
+        
+      }
+    })
+    console.log(that.data.goods + 'kkk')
     that.getMyscore();
+    
   },
 
   /**
@@ -181,7 +233,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return {
+      title: that.data.goods.goods_name,
+      desc: "",
+      path: getCurrentPageUrlWithArgs(),
+      success: function (res) {
 
+      }
+    }
   },
   previewImg: function (e) {
     var that = this;

@@ -1,4 +1,4 @@
-<view class="container"> 
+<view class="container" style='overflow-x: hidden !important;'> 
   <view class="main">
     <view class='intro doctor-recommend'>
       <view class="content">
@@ -25,10 +25,9 @@
       </view>
     </view>
   </view>
-</view>
-<view class="order-tips" wx:if="{{work.length > 0}}">若当日预约号已挂满，请您到医院窗口挂号</view>
-<view class="order-list" wx:if="{{work.length > 0}}">
-  <view class="order-content" wx:for="{{work}}" wx:key="index">
+  <view class="order-tips" wx:if="{{work.length > 0}}" style='overflow-x: hidden !important;'>若当日预约号已挂满，请您到医院窗口挂号</view>
+<view class="order-list" wx:if="{{work.length > 0}}" style='overflow-x: hidden !important;'>
+  <view class="order-content" wx:for="{{work}}" wx:key="index" style='overflow-x: hidden !important;'>
     <view class="order-time-box">
       <view class="order-day">{{item.order_time}} {{item.week_day}}</view> 
       <view class="order-time" wx:if="{{item.time_slot == 1}}">上午08：00-12：00</view>
@@ -48,7 +47,7 @@
 </view>
 
 
-<view class="model-box" hidden="{{flag}}">
+<view class="model-box" hidden="{{flag}}" style='overflow-x: hidden !important;'>
   <view class="tip-box">
     <view class='tip-top'>
       <view class='title'>请先确认以下信息</view>
@@ -63,7 +62,7 @@
       <view class='right'>
         <view>医师：{{doctor.name}}</view>
         <view>就诊科室：{{doctor.office}}</view>
-        <view wx:if="{{info.order_money > 0}}">预约费用：{{info.order_money}}</view><view wx:else>预约费用：￥0.00</view>
+        <view wx:if="{{info.order_money > 0}}">预约费用：￥{{info.order_money}}</view><view wx:else>预约费用：￥0</view>
         <view class='check-order-time'>
           <view>就诊时间：</view>
           <view>
@@ -85,4 +84,5 @@
       <button class='order-button' hover-stay-time="1000" wx:else disabled="true">立即支付</button>
     </form>
   </view>
+</view>
 </view>

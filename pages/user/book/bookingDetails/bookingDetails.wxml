@@ -11,9 +11,9 @@
     <view class="text">就诊科室：{{info.office}}</view>
     <view class="text">挂号费用：¥{{info.order_money}}</view>
     <view class="text" wx:if="{{info.order_money > 0}}">
-      <text wx:if="{{info.pay_status == 3}}">支付状态：支付成功 </text>
+      <text wx:if="{{info.pay_status == 3}}">支付状态：已支付 </text>
       <text wx:elif="{{info.pay_status == 7}}">支付状态：退款中 </text>
-      <text wx:elif="{{info.pay_status == 8}}">支付状态：退款成功 </text>
+      <text wx:elif="{{info.pay_status == 8}}">支付状态：已退款 </text>
     </view>
   </view>
   <view class="info">

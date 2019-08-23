@@ -18,7 +18,7 @@ const formatNumber = n => {
 const baseUrl = app.globalData.baseUrl;
 function getRequest(model) {
   var that = this;
-  var token = app.globalData.token || '';
+  var token = wx.getStorageSync('token') || '';
   if (app.globalData.token && app.globalData.token != '') {
     wx.request({
       url: baseUrl + model.url,

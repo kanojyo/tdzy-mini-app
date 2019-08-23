@@ -1,4 +1,37 @@
 /**index.wxss**/
+.office-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.h188 {
+  height: 188rpx;
+}
+
+.h376 {
+  height: 376rpx;
+}
+.office-list {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.office-list .office-title {
+  color: #333333;
+  font-size: 36rpx;
+  
+  height: 72rpx;
+  line-height: 72rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+  background-color: #fff;
+}
+.tese {
+  padding-left: 16rpx;
+  transform:translateX(30rpx);/**右移**/
+	-ms-transform:translateX(30rpx);
+	-webkit-transform:translateX(30rpx);
+}
 .test {
   position: fixed;
   width: 100%;
@@ -8,7 +41,9 @@
   background-color: yellow;
 }
 .container{
-  background-color: #ededed;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  padding-bottom: 30rpx;
 }
 .shouquan{
   width: 100%;
@@ -141,6 +176,48 @@
   display: inline-block;
 }
 
+.office-info {
+  width: 25%;
+  display: inline-block;
+  margin-top: 50rpx;
+  text-align: center;
+}
+.office-list {
+  position: relative;
+}
+.office-info image{
+  width: 78rpx;
+  height: 78rpx;
+  display: block;
+  margin: 0 auto;
+}
+.tese::after {
+  content: '';
+  position: absolute;
+  height: 36rpx;
+  width: 4rpx;
+  background-color:#e60012;
+  left: 0;
+  top: 19rpx;
+}
+.office-info text {
+  padding-top: 30rpx;
+  color:#666;
+  font-size: 24rpx;
+}
+
+
+.show-more {
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.show-more image {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin: 0 auto;
+}
 .office{
   width: 100%;
   height: 190rpx;

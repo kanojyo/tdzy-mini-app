@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dataStatus: true,
     scrollTop: 0,
     page: 1,
     pageSize: 20
@@ -22,9 +23,20 @@ Page({
       url: '/v1/video/list',
       method: 'get',
       success: function (res) {
-        for (let i = 0; i < res.data.data.length; i ++) {
-          res.data.data[i].video_length = that.getFormatTime(res.data.data[i].video_length);
+
+        if (res.data.data.length > 0) {
+          for (let i = 0; i < res.data.data.length; i++) {
+            res.data.data[i].video_length = that.getFormatTime(res.data.data[i].video_length);
+          }
+          that.setData({
+            dataStatus: true,
+          })
+        } else {
+          that.setData({
+            dataStatus: false,
+          })
         }
+        
         that.setData({
           list: res.data.data,
         })
@@ -136,6 +148,12 @@ Page({
     var h = Math.floor(result / 3600) < 10 ? '0' + Math.floor(result / 3600) : Math.floor(result / 3600);
     var m = Math.floor((result / 60 % 60)) < 10 ? '0' + Math.floor((result / 60 % 60)) : Math.floor((result / 60 % 60));
     var s = Math.floor((result % 60)) < 10 ? '0' + Math.floor((result % 60)) : Math.floor((result % 60));
-    return result = h + ":" + m + ":" + s;
+
+    if (parseInt(h) > 0) {
+      return result = h + ":" + m + ":" + s;
+    } else {
+      return result = m + ":" + s;
+    }
+    
   }
 })

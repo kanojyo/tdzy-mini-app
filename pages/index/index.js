@@ -178,27 +178,11 @@ Page({
     that.getHeight();
     that.getIndex();
     that.shouquan();
-//     if (app.globalData.token && app.globalData.token != '') {
-//       that.getHeight();
-//       that.getIndex();
-//       that.shouquan();
-//     }else{
-//       //由于请求是网络请求，可能会在Page.onLoad后才返回
-// 　　　//所以加入callback 防止这种情况
-//       app.tokenCallback = token => {
-//       　　if (token != '') {
-// 　　　　　　　//执行操作。。
-//             that.getHeight();
-//             that.getIndex();
-//             that.shouquan();
-// 　　　　　　}
-// 　　　　}
-//     }
   },
   onReady() {
   },
   onShow() {
-    if (wx.getStorageSync('token') && app.globalData.device) {
+    if (wx.getStorageSync('token')) {
       this.getIndex();
     }
   },
@@ -216,19 +200,72 @@ Page({
       method: 'GET',
       success(res) {
         var arr = res.data;
-        console.log('indexSuccess')
+        // var office = [];
+        // for (var i = 0; i < arr.list_office.length; i += 4 ) {
+        //   office.push(arr.list_office.slice(i, i + 4));
+        // }
+        
+        var flag = "";
+        var showBox = "";
+        var showStatus = true;
+        if (arr.list_office.length <= 4) {
+          flag = false;
+          showBox = true;
+          showStatus = false;
+        }
+        else if (arr.list_office.length > 4 && arr.list_office.length < 8) {
+          flag = true;
+          showBox = true;
+        }
+        else if (arr.list_office.length == 8) {
+          flag = false;
+          showBox = false;
+          showStatus = false;
+        } else {
+          flag = true;
+          showBox = false;
+        }
+        // var showStatus = "";
+
+        // if (office.length > 1) {
+        //   if (arr.list_office.length % 4 == 0) {
+        //     showStatus = false;
+        //     flag = false;
+        //   } else {
+        //     showStatus = true;
+        //     flag = true;
+        //   }
+        // } else {
+        //   showStatus = false;
+        //   flag = false;
+        // }
+         
         that.setData({
           imgUrls: arr.banner,
           officeList: arr.list_office,
           hospital: arr.hospital,
           doctorList: arr.list_doctor,
-          article: arr.list_hot_article
+          article: arr.list_hot_article,
+          flag: flag,
+          showBox: showBox,
+          showStatus: showStatus
         })
 
       }
     })
   },
-
+  showMoreOffice: function() {
+    var that = this;
+    that.setData({
+      flag: false
+    })
+  },
+  hideMoreOffice: function() {
+    var that = this;
+    that.setData({
+      flag: true
+    })
+  },
   //查看更多新闻推荐
   all_news: function () {
     wx.switchTab({

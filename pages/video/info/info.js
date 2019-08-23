@@ -1,18 +1,29 @@
 // pages/video/info/info.js
 let utils = require('../../../utils/util.js');
 import { getRequest } from '../../../utils/util.js';
+
+const getCurrentPageUrlWithArgs = () => {
+  var pages = getCurrentPages() //获取加载的页面
+  var currentPage = pages[pages.length - 1] //获取当前页面的对象
+  var url = currentPage.route //当前页面url
+  var options = currentPage.options //如果要获取url中所带的参数可以查看options
+
+  //拼接url的参数
+  var urlWithArgs = url + '?'
+  for (var key in options) {
+    var value = options[key]
+    urlWithArgs += key + '=' + value + '&'
+  }
+  urlWithArgs = urlWithArgs.substring(0, urlWithArgs.length - 1)
+
+  return urlWithArgs
+}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:{
-      src:"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",
-      title:"常见中药材讲解1",
-      goods:[
-      ]
-    },
     videoimage: "block" //默认显示封面
   },
 
@@ -22,7 +33,6 @@ Page({
   onLoad: function (options) {
     var that = this;
     var id  = options.id;
-    console.log(id)
     wx.getSystemInfo({
       success: function(res) {
         let clientHeight = res.windowHeight;
@@ -92,7 +102,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return {
+      title: that.data.info.title,
+      desc: "",
+      path: getCurrentPageUrlWithArgs(),
+      success: function (res) {
 
+      }
+    }
   },
   //点击播放按钮，封面图片隐藏,播放视频
   bindplay: function (e) {

@@ -1,5 +1,5 @@
 <!--pages/video/list/list.wxml-->
-<view class="video-list" wx:if="{{list.length > 0}}" scroll-top="{{scrollTop}}" scroll-y="true">
+<view class="video-list" wx:if="{{dataStatus}}" scroll-top="{{scrollTop}}" scroll-y="true">
   <view class="video-info" wx:for="{{list}}" wx:key="index" bindtap="info" id="{{item.id}}">
     <view class="title">{{item.title}}</view>
     <view class="image">

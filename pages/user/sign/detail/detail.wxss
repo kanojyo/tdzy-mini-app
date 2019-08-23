@@ -1,6 +1,8 @@
 /* pages/user/sign/detail/detail.wxss */
 @import '../../../../common/css/common.wxss';
-
+page {
+  background-color: #fff !important;
+}
 .swiperContainer{
     position: relative;
 }
@@ -48,6 +50,7 @@
   font-weight: bold;
   color: #888888;
   margin-left: 10rpx;
+  text-decoration:line-through;
 }
 
 .title {
@@ -70,6 +73,7 @@
   text-align: center;
   height: 86rpx;
   line-break: 86rpx;
+  border-top: 10rpx solid #f1f1f1;
 }
 
 .good-nav .title {
@@ -83,7 +87,6 @@
 }
 .content {
   text-align: left;
-  width: 100%;
   background-color: #fff;
   padding-top: 50rpx;
   font-size: 26rpx;
@@ -115,8 +118,15 @@
   display: inline-block;
   line-height: 1;
   border-radius: 0;
+  border-top: 1rpx solid #dedede;
 }
-
+/* .footer-share::after {
+  position: absolute;
+  height: 200rpx !important;
+  width: 2rpx;
+  background-color: #dedede;
+  margin-left: 80%;
+} */
 button::after{
   border: 0;
 }

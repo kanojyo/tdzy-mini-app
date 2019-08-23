@@ -198,10 +198,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 21,
 					"name": "兑换详情",
 					"pathName": "pages/user/sign/detail/detail",
-					"query": "id=25",
+					"query": "id=51",
 					"scene": null
 				}
 			]

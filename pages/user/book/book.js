@@ -115,19 +115,42 @@ Page({
         'Authorization': 'Bearer ' + app.globalData.token
       },
       success: function (res) {
-        if (res.data.code == 200){
-          wx.showToast({
-            title: res.data.message,
-            icon: 'success',
-            duration: 2000
-          });
+        if (res.data.code == 200) {
+          if (that.data.price <= 0 ) {
+
+            if (res.data.data.cancel_count <= 3) {
+              wx.showToast({
+                title: '预约已取消',
+                duration: 3000
+              })
+            } else {
+              wx.showModal({
+                title: '预约已取消',
+                showCancel: false,
+                confirmText: "知道了",
+                confirmColor: "#d1b574",
+                content: res.data.message,
+              })
+            }
+            
+          } else {
+            wx.showModal({
+              title: '预约已取消',
+              showCancel: false,
+              confirmText: "知道了",
+              confirmColor: "#d1b574",
+              content: res.data.message,
+            })
+          }
           that.getList1();//未就诊数据重新请求
           that.getList3();//已取消数据重新请求
         }else{
-          wx.showToast({
-            title: res.data.message,
-            icon: 'none',
-            duration: 2000
+          wx.showModal({
+            title: '',
+            showCancel: false,
+            confirmText: "知道了",
+            confirmColor: "#d1b574",
+            content: res.data.message,
           })
         }
       },
@@ -300,9 +323,11 @@ Page({
     var page = 'pages/user/book/book';
     var form_id = e.detail.formId;
     var that = this;
+    var price = e.currentTarget.dataset.price
     that.setData({
       id: e.currentTarget.id,
       form_id: form_id,
+      price: price
     })
     wx.showModal({
       title: '提示',

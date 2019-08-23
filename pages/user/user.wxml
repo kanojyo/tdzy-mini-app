@@ -126,6 +126,7 @@
       <view class='header-box-nav' bindtap="GotoMessage">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/MessageCenter%402x.png"></image>
         <view>消息中心</view>
+        <view class='msg-num' wx:if="{{newMessage!==0}}">{{newMessage}}</view>
       </view>
       
       <view class='header-box-nav'>
@@ -155,6 +156,7 @@
       <view class='header-box-nav' bindtap="GotoFeedBack">
         <image src="https://whmycs.oss-cn-hangzhou.aliyuncs.com/applet/user/advise%402x.png"></image>
         <view>意见反馈</view>
+        <view class='report' wx:if="{{newFeedBack}}"></view>
       </view>
     </view>
   </view>
