@@ -14,6 +14,7 @@
       <text wx:if="{{info.pay_status == 3}}">支付状态：已支付 </text>
       <text wx:elif="{{info.pay_status == 7}}">支付状态：退款中 </text>
       <text wx:elif="{{info.pay_status == 8}}">支付状态：已退款 </text>
+      <text wx:elif="{{info.pay_status == 9}}">支付状态：退款中 </text>
     </view>
   </view>
   <view class="info">

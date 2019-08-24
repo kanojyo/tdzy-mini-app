@@ -192,6 +192,15 @@ Page({
       path: '/pages/index/index'
     }
   },
+  substring: function (val, len) {
+    if (val.length == 0 || val == undefined) {
+      return false;
+    } else if (val.length > len) {
+      return val.substring(0, len) + "...";
+    } else {
+      return val;
+    }
+  },
   getIndex(){
     var that = this; 
     console.log('index')
@@ -201,9 +210,9 @@ Page({
       success(res) {
         var arr = res.data;
         // var office = [];
-        // for (var i = 0; i < arr.list_office.length; i += 4 ) {
-        //   office.push(arr.list_office.slice(i, i + 4));
-        // }
+        for (var i = 0; i < arr.list_office.length; i ++ ) {
+          arr.list_office[i].name = that.substring(arr.list_office[i].name, 6)
+        }
         
         var flag = "";
         var showBox = "";

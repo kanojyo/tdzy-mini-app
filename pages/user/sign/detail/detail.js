@@ -25,7 +25,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods: "",
+    goods:[],
     id:0,
     indicatorDots: true,
     autoplay: true,
@@ -65,35 +65,19 @@ Page({
     })
   },
   //获取热门兑换详情
-  getGoods: function(id) {
+  getGoods(){
     var that = this;
-    var token = wx.getStorageSync('token');
-    wx.request({
-      url: utils.getBaseUrl() + '/v1/sign/hot_exchange_info?goods_id=' + id,
-      method: 'GET',
-      header: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      },
-      success(res) {
-        //res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+    getRequest({
+      url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
+      method:'GET',
+      success(res){
+        res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
         console.log(res.data)
-      
-        that.data.goods =  res.data
-        
+        that.setData({
+          goods:res.data
+        })
       }
     })
-    // getRequest({
-    //   url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
-    //   method:'GET',
-    //   success(res){
-    //     res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
-    //     console.log(res.data)
-    //     that.setData({
-    //       goods:res.data
-    //     })
-    //   }
-    // })
   },
   //兑换
   exchange(){
@@ -159,31 +143,25 @@ Page({
    */
   onLoad: function (options) {
     //wx.hideShareMenu();
-    setTimeout(function() {
-      console.log(1)
-    }, 1000)
     var that = this;
-    var id = options.id
-    
-    //获取详情
-    var token = wx.getStorageSync('token');
-    var goods = [];
-    wx.request({
-      url: utils.getBaseUrl() + '/v1/sign/hot_exchange_info?goods_id=' + id,
-      method: 'GET',
-      header: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      },
-      success(res) {
-        console.log(res.data)
-        //res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
-        that.data.goods = res.data
-        
-      }
+    console.log(app.globalData.token)
+    that.setData({
+      id: options.id
     })
-    console.log(that.data.goods + 'kkk')
-    that.getMyscore();
+    //获取详情
+    //that.getGoods();
+    //that.getMyscore();
+    getRequest({
+      url: '/v1/sign/hot_exchange_info?goods_id=' + that.data.id,
+      method: 'GET',
+      success(res) {
+        res.data.goods_rules = res.data.goods_rules.replace(/\\n/g, "\n")
+        console.log(res.data)
+        that.setData({
+          goods: res.data
+        })
+      }
+    });
     
   },
 

@@ -224,6 +224,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.hideShareMenu();
     wx.setNavigationBarTitle({
       title: "就诊人信息"//页面标题为路由参数
     })
