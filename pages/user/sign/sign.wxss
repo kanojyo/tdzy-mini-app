@@ -97,7 +97,7 @@ page{
 .sign .tab .tab-ul .tab-item{
   /* flex: 1; */
   position: relative;
-  width: 45rpx;
+  width: 50rpx;
 }
 .sign .tab .tab-ul .tab-item .score{
   display: flex;
@@ -118,7 +118,7 @@ page{
   height: 61rpx;
 }
 .sign .tab-item .date{
-  font-size: 22rpx;
+  font-size: 18rpx;
   margin-top: 36rpx;
 }
 .sign .tab .underline{

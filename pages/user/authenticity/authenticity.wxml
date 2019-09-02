@@ -24,7 +24,7 @@
     <view class="address declare">
       <!-- <view wx:for="{{addressData}}" wx:key="index" class="text">{{item.text}}</view> -->
       <view  class="text site">地址：湖北省武汉市洪山区雄楚大街428号</view>
-      <view  class="text phone" bindtap="call">电话：027-85555789</view>
+      <view  class="text phone" bindtap="call">电话：027-87777567</view>
       <view  class="text web">官网：www.whtdzyy.com</view>
     </view>
   </view>

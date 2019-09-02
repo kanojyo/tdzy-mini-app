@@ -5,7 +5,7 @@
 }
 
 .video-list .video-info:last-child{
-  border: none;
+  /* border: none; */
 }
 
 .video-info {

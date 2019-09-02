@@ -81,9 +81,26 @@ function buttonClicked(self) {
   }, 500)
 }
 
+
+function parseUrl(url) {
+  if (url && url.indexOf("?") == -1) return {}
+
+  var startIndex = url.indexOf("?") + 1;
+  var str = url.substr(startIndex);
+  var strs = str.split("&");
+  var param = {}
+  for (var i = 0; i < strs.length; i++) {
+    var result = strs[i].split("=");
+    var key = result[0];
+    var value = result[1];
+    param[key] = value;
+  }
+  return param
+}
 module.exports = {
   formatTime: formatTime,
   getRequest: getRequest,
   getBaseUrl: getBaseUrl,
-  buttonClicked: buttonClicked
+  buttonClicked: buttonClicked,
+  parseUrl: parseUrl
 }

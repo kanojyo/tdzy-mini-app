@@ -208,8 +208,7 @@
 
 
 .show-more {
-  padding-top: 30rpx;
-  padding-bottom: 10rpx;
+  padding-bottom: 20rpx;
 }
 
 .show-more image {

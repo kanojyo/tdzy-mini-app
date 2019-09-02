@@ -5,6 +5,13 @@ import { getRequest } from '../../utils/util.js';
 const app = getApp();
 const baseUrl = utils.getBaseUrl();
 var session_key = '';
+//提取地址栏参数
+const getQueryString = (url, name) => {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var r = url.substr(1).match(reg);
+  if (r != null) return unescape(r[2]); return null;
+}
+
 
 Page({
   data: {
@@ -26,6 +33,7 @@ Page({
     doctorList:[],
     article: [],
     height: 0,
+    kf_id:0
   },
   //轮播图点击跳转
   imageUrl: function (e) {
@@ -105,6 +113,7 @@ Page({
               session: app.globalData.session_key,
               encryptData: res.encryptedData,
               iv: res.iv,
+              kf_id: that.data.kf_id
             },
             method: 'POST',
             header: {
@@ -150,6 +159,7 @@ Page({
                   session: app.globalData.session_key,
                   encryptData: res.encryptedData,
                   iv: res.iv,
+                  kf_id: that.data.kf_id
                 },
                 method: 'POST',
                 header: {
@@ -172,9 +182,19 @@ Page({
       }
     });
   },
-  onLoad: function () {
+  onLoad: function (options) {
     //console.log(app.globalData.token)
     var that = this;
+    var url = decodeURIComponent(options.q);//decodeURIComponent
+    if (url != "") {
+      var param = utils.parseUrl(url);
+      //获取kf_id
+      var kf_id = param.kf_id;
+      that.setData({
+        kf_id: kf_id
+      })
+    }
+    console.log(that.data.kf_id)
     that.getHeight();
     that.getIndex();
     that.shouquan();

@@ -51,6 +51,9 @@ App({
     token:'',
     device:'',
     session_key:'',
+    //测试接口地址
     baseUrl:"https://tdxcx.wuhanlst.com",
+    //正式接口地址
+    //baseUrl: "https://tdxcx.whtdzyy.com"
   }
 })
