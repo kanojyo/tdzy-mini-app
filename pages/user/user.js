@@ -39,12 +39,6 @@ Page({
       // 获取到用户的信息了，打印到控制台上看下
       // console.log("用户的信息如下：");
       // console.log(e.detail.userInfo);
-      //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
-      that.setData({
-        isHide: false
-      });
-      wx.showTabBar();
-      console.log('授权后')
       that.check();
       //获取基本资料
       that.getInfo();
@@ -70,7 +64,6 @@ Page({
           })
         }
       });
-      
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -261,7 +254,7 @@ Page({
     //是否消息中心有新消息
     that.hasMessage();
     that.getHeight();
-    that.shouquan();
+    // that.shouquan();
   },
 
   /**

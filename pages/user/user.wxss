@@ -115,7 +115,7 @@ button { background-color: #fff; padding: 0;margin:0;}
 }
  
 .bottom {
-  margin: 40rpx auto;
+  /* margin: 40rpx auto; */
   border-radius: 39rpx;
   height: 78rpx;
   line-height: 78rpx;
