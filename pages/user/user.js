@@ -34,6 +34,15 @@ Page({
   },
   bindGetUserInfo: function (e) {
     var that = this;
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting,'111')
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+        //   "scope.userLocation": true
+        // }
+      }
+    })
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       // 获取到用户的信息了，打印到控制台上看下
